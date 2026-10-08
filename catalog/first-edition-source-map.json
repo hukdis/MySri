@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-07",
+  "mappings": [
+    {
+      "source": "sources/科技论文.md",
+      "articleId": "basic-0002",
+      "target": "docs/basics/research-writing.md"
+    },
+    {
+      "source": "sources/强化学习算法知识地图.md",
+      "articleId": "rl-0003",
+      "target": "docs/reinforcement-learning/algorithm-map.md"
+    },
+    {
+      "source": "sources/论文/先读/DeepCAD.md",
+      "articleId": "cad-0101",
+      "target": "docs/cad/deepcad.md"
+    },
+    {
+      "source": "sources/论文/先读/Text2CAD.md",
+      "articleId": "cad-0102",
+      "target": "docs/cad/text2cad.md"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "articleId": "cad-0103",
+      "target": "docs/cad/cad-llama.md"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "articleId": "cad-0104",
+      "target": "docs/cad/cad-recode.md"
+    },
+    {
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "articleId": "cad-0105",
+      "target": "docs/cad/cad-mllm.md"
+    },
+    {
+      "source": "sources/论文/先读/CADReview.md",
+      "articleId": "cad-0106",
+      "target": "docs/cad/cadreview.md"
+    },
+    {
+      "source": "sources/论文/先读/CADTests.md",
+      "articleId": "cad-0107",
+      "target": "docs/cad/cadtests.md"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "articleId": "cad-0108",
+      "target": "docs/cad/cad-editor.md"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "articleId": "cad-0109",
+      "target": "docs/cad/cad-assistant.md"
+    },
+    {
+      "source": "sources/论文/先读/DeepCAD.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/Text2CAD.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/CADReview.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/CADTests.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/SketchGraphs.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/CAD-GPT.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/CADmium.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/LLM4CAD-Editor.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/IterCAD-Orthographic.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/CIT-CAD.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/BenchCAD.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/HistCAD.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/IterCAD-Agent.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/补读/Pointer-CAD.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md",
+      "relationship": "navigation-only"
+    },
+    {
+      "source": "sources/论文/00_阅读导航.md",
+      "articleId": "cad-0002",
+      "target": "docs/cad/reading-navigation.md"
+    }
+  ],
+  "issues": [
+    "原导航中的 Windows 绝对路径不适合作为网页链接，已改用稿件中记录的原始论文链接。",
+    "强化学习课件与原分类图未在 sources 中找到，已标记来源缺失。",
+    "DPG 公式的表格分隔符已恢复为独立公式，未宣称核验原课件。",
+    "书籍原文未提供，写作材料保留笔记中的来源归属，待人工核对。"
+  ]
+}

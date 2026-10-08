@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-08",
+  "source": "sources/强化学习算法知识地图.md",
+  "articleId": "rl-0003",
+  "target": "docs/reinforcement-learning/algorithm-map.md",
+  "removed": [
+    "docs/reinforcement-learning/introduction.md",
+    "docs/reinforcement-learning/mdp.md",
+    "非来源稿的 TD 手算练习及 CAD 阅读关联"
+  ],
+  "adjustments": [
+    "标题与栏目命名为 RL基础",
+    "网页公式与导图排版",
+    "原稿缺失公式和课件链接的提示"
+  ],
+  "future": "按用户后续选择整理 LLM Atlas 高阶算法，当前尚未引入",
+  "reviewed": false
+}

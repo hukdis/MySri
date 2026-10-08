@@ -1,0 +1,106 @@
+{
+  "version": "1.1",
+  "date": "2026-10-07",
+  "scope": "九篇先读稿的摘要、关系和派生方法示意；不修改原文件",
+  "mappings": [
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "original": "https://arxiv.org/abs/2105.09492",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0102",
+      "source": "sources/论文/先读/Text2CAD.md",
+      "original": "https://arxiv.org/abs/2409.17106",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0103",
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "original": "https://arxiv.org/abs/2505.04481",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0104",
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "original": "https://arxiv.org/abs/2412.14042",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0105",
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "original": "https://arxiv.org/abs/2411.04954",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0106",
+      "source": "sources/论文/先读/CADReview.md",
+      "original": "https://arxiv.org/abs/2505.22304",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "original": "https://arxiv.org/abs/2605.07807",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0108",
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "original": "https://arxiv.org/abs/2502.03997",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "original": "https://arxiv.org/abs/2412.13810",
+      "derived": [
+        "速读摘要",
+        "方法示意",
+        "阅读关联"
+      ],
+      "reviewed": false
+    }
+  ]
+}

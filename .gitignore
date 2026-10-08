@@ -1,0 +1,13 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+sources/*
+!sources/README.md
+catalog/source-manifest.json
+catalog/source-report.json
+notes/*
+!notes/README.md
+artifacts/
+.env
+.env.*
+!.env.example

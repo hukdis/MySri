@@ -1,0 +1,516 @@
+[
+  {
+    "id": "basic-0001",
+    "title": "信息论基础：熵、交叉熵与 KL 散度",
+    "navTitle": "信息论基础",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "信息论",
+      "熵",
+      "交叉熵",
+      "KL散度",
+      "困惑度"
+    ],
+    "prerequisites": [],
+    "related": [
+      "rl-0003"
+    ],
+    "sources": [
+      "https://zhoujx4.github.io/llm-atlas/guide/info-theory",
+      "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf",
+      "https://docs.pytorch.org/docs/2.14/generated/torch.nn.CrossEntropyLoss.html",
+      "https://docs.pytorch.org/docs/2.14/generated/torch.nn.KLDivLoss.html",
+      "https://huggingface.co/docs/transformers/perplexity",
+      "https://arxiv.org/abs/1503.02531"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 1,
+    "created": "2026-10-07",
+    "updated": "2026-10-08",
+    "file": "basics/probability.md",
+    "url": "/basics/probability"
+  },
+  {
+    "id": "cad-0001",
+    "title": "论文解读模板",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文阅读",
+      "模板"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "template",
+    "reviewed": false,
+    "order": 4,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/paper-reading.md",
+    "url": "/cad/paper-reading"
+  },
+  {
+    "id": "basic-0002",
+    "title": "从找方向到讲清楚研究",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "论文阅读",
+      "研究方法",
+      "学术写作"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "order": 10,
+    "sources": [
+      "sources/科技论文.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "basics/research-writing.md",
+    "url": "/basics/research-writing"
+  },
+  {
+    "id": "rl-0003",
+    "title": "RL基础",
+    "navTitle": "RL基础：课程知识地图",
+    "category": "reinforcement-learning",
+    "type": "concept",
+    "tags": [
+      "RL基础",
+      "课程笔记",
+      "算法地图"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "sources/强化学习算法知识地图.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 11,
+    "created": "2026-10-07",
+    "updated": "2026-10-08",
+    "file": "reinforcement-learning/algorithm-map.md",
+    "url": "/reinforcement-learning/algorithm-map"
+  },
+  {
+    "id": "cad-0002",
+    "title": "CAD 论文资料导航",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "资料导航",
+      "先读",
+      "补读"
+    ],
+    "prerequisites": [],
+    "related": [
+      "cad-0001",
+      "basic-0002"
+    ],
+    "sources": [
+      "sources/论文/00_阅读导航.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 12,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/reading-navigation.md",
+    "url": "/cad/reading-navigation"
+  },
+  {
+    "id": "rl-0004",
+    "title": "PPO：裁剪目标与语言模型训练",
+    "navTitle": "PPO：裁剪策略优化",
+    "category": "reinforcement-learning",
+    "type": "concept",
+    "tags": [
+      "PPO",
+      "策略梯度",
+      "Actor–Critic",
+      "RLHF"
+    ],
+    "prerequisites": [
+      "rl-0003",
+      "basic-0001"
+    ],
+    "related": [
+      "rl-0005"
+    ],
+    "sources": [
+      "https://zhoujx4.github.io/llm-atlas/rlhf/ppo",
+      "https://zhoujx4.github.io/llm-atlas/rlhf/training-loop",
+      "https://arxiv.org/abs/1707.06347",
+      "https://arxiv.org/abs/1506.02438",
+      "https://arxiv.org/abs/2203.02155"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 12,
+    "created": "2026-10-08",
+    "updated": "2026-10-08",
+    "file": "reinforcement-learning/ppo.md",
+    "url": "/reinforcement-learning/ppo"
+  },
+  {
+    "id": "cad-0003",
+    "title": "CAD 术语与小练习",
+    "navTitle": "术语与小练习",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "前置知识",
+      "CAD 表示",
+      "阅读练习"
+    ],
+    "prerequisites": [],
+    "related": [
+      "cad-0101",
+      "cad-0104",
+      "cad-0107"
+    ],
+    "sources": [
+      "sources/论文/先读/DeepCAD.md",
+      "sources/论文/先读/CAD-Recode.md",
+      "sources/论文/先读/CADTests.md",
+      "https://arxiv.org/abs/2105.09492",
+      "https://arxiv.org/abs/2412.14042",
+      "https://arxiv.org/abs/2605.07807"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 13,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/concepts.md",
+    "url": "/cad/concepts"
+  },
+  {
+    "id": "rl-0005",
+    "title": "GRPO：组内相对优势与 PPO 对比",
+    "navTitle": "GRPO：组内相对优势",
+    "category": "reinforcement-learning",
+    "type": "concept",
+    "tags": [
+      "GRPO",
+      "组内优势",
+      "PPO",
+      "语言模型"
+    ],
+    "prerequisites": [
+      "rl-0003",
+      "basic-0001",
+      "rl-0004"
+    ],
+    "related": [
+      "rl-0004"
+    ],
+    "sources": [
+      "https://zhoujx4.github.io/llm-atlas/rlhf/grpo",
+      "https://zhoujx4.github.io/llm-atlas/rlhf/",
+      "https://arxiv.org/abs/2402.03300",
+      "https://huggingface.co/docs/trl/grpo_trainer"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 13,
+    "created": "2026-10-08",
+    "updated": "2026-10-08",
+    "file": "reinforcement-learning/grpo.md",
+    "url": "/reinforcement-learning/grpo"
+  },
+  {
+    "id": "cad-0101",
+    "title": "DeepCAD：把 CAD 建模过程变成可学习的操作序列",
+    "navTitle": "DeepCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "表示基础"
+    ],
+    "prerequisites": [
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0102",
+      "cad-0104"
+    ],
+    "order": 20,
+    "sources": [
+      "sources/论文/先读/DeepCAD.md",
+      "https://arxiv.org/abs/2105.09492"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/deepcad.md",
+    "url": "/cad/deepcad"
+  },
+  {
+    "id": "cad-0102",
+    "title": "Text2CAD：从不同详细程度的文本生成 CAD 建模序列",
+    "navTitle": "Text2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "条件生成"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0103",
+      "cad-0108"
+    ],
+    "order": 21,
+    "sources": [
+      "sources/论文/先读/Text2CAD.md",
+      "https://arxiv.org/abs/2409.17106"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/text2cad.md",
+    "url": "/cad/text2cad"
+  },
+  {
+    "id": "cad-0103",
+    "title": "CAD-Llama：让预训练语言模型学习带层次描述的 CAD 代码",
+    "navTitle": "CAD-Llama",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "条件生成"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0105",
+      "cad-0104"
+    ],
+    "order": 22,
+    "sources": [
+      "sources/论文/先读/CAD-Llama.md",
+      "https://arxiv.org/abs/2505.04481"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/cad-llama.md",
+    "url": "/cad/cad-llama"
+  },
+  {
+    "id": "cad-0104",
+    "title": "CAD-Recode：把点云反向工程成可执行 CadQuery 代码",
+    "navTitle": "CAD-Recode",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "几何重建"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0105",
+      "cad-0107"
+    ],
+    "order": 23,
+    "sources": [
+      "sources/论文/先读/CAD-Recode.md",
+      "https://arxiv.org/abs/2412.14042"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/cad-recode.md",
+    "url": "/cad/cad-recode"
+  },
+  {
+    "id": "cad-0105",
+    "title": "CAD-MLLM：统一文本、图像和点云条件的 CAD 生成",
+    "navTitle": "CAD-MLLM",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "条件生成"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0104",
+      "cad-0106"
+    ],
+    "order": 24,
+    "sources": [
+      "sources/论文/先读/CAD-MLLM.md",
+      "https://arxiv.org/abs/2411.04954"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/cad-mllm.md",
+    "url": "/cad/cad-mllm"
+  },
+  {
+    "id": "cad-0106",
+    "title": "CADReview：先定位 CAD 程序错误，再生成反馈与修正代码",
+    "navTitle": "CADReview",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "反馈与评测"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0107",
+      "cad-0108"
+    ],
+    "order": 25,
+    "sources": [
+      "sources/论文/先读/CADReview.md",
+      "https://arxiv.org/abs/2505.22304"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/cadreview.md",
+    "url": "/cad/cadreview"
+  },
+  {
+    "id": "cad-0107",
+    "title": "CADTests：用可执行几何测试检查文本要求是否满足",
+    "navTitle": "CADTests",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "反馈与评测"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0109",
+      "cad-0106"
+    ],
+    "order": 26,
+    "sources": [
+      "sources/论文/先读/CADTests.md",
+      "https://arxiv.org/abs/2605.07807"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/cadtests.md",
+    "url": "/cad/cadtests"
+  },
+  {
+    "id": "cad-0108",
+    "title": "CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列",
+    "navTitle": "CAD-Editor",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "指令编辑"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0106",
+      "cad-0109"
+    ],
+    "order": 27,
+    "sources": [
+      "sources/论文/先读/CAD-Editor.md",
+      "https://arxiv.org/abs/2502.03997"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/cad-editor.md",
+    "url": "/cad/cad-editor"
+  },
+  {
+    "id": "cad-0109",
+    "title": "CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务",
+    "navTitle": "CAD-Assistant",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "先读",
+      "论文阅读",
+      "反馈与评测"
+    ],
+    "prerequisites": [
+      "cad-0101",
+      "cad-0003"
+    ],
+    "related": [
+      "cad-0002",
+      "cad-0107",
+      "cad-0108"
+    ],
+    "order": 28,
+    "sources": [
+      "sources/论文/先读/CAD-Assistant.md",
+      "https://arxiv.org/abs/2412.13810"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "created": "2026-10-07",
+    "updated": "2026-10-07",
+    "file": "cad/cad-assistant.md",
+    "url": "/cad/cad-assistant"
+  }
+]
