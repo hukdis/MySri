@@ -1,24 +1,12 @@
 # CAD · 从表示到验证
 
-<div class="edition-label">学习图谱 1.1 · 9 篇先读</div>
-
-> 先弄清模型输出什么，再比较它怎样生成、编辑和验证。这里按阅读问题组织已有论文，不预设你的最终研究方向。
+> 按研究问题浏览 9 篇已接入的论文；每篇正文沿用 source 阅读稿结构，并恢复原论文图表截图。
 
 ::: info 阅读状态
-摘要与方法示意依据所提供的阅读稿整理，均待人工复核；比较表用于理解任务差异，不作为统一性能排名。
+内容待人工复核，比较表不构成统一性能排名。截图保留原图注、页码与论文出处；原 PDF 不发布。
 :::
 
-## 从哪里开始
-
-| 你的问题 | 推荐路线 | 阅读后应能解释 |
-| --- | --- | --- |
-| 想读懂 CAD 生成 | [DeepCAD](/cad/deepcad) → [Text2CAD](/cad/text2cad) → [CAD-Llama](/cad/cad-llama) | 操作序列、文本条件和预训练 LLM 分别起什么作用 |
-| 想理解几何重建 | [DeepCAD](/cad/deepcad) → [CAD-Recode](/cad/cad-recode) → [CAD-MLLM](/cad/cad-mllm) | 点云如何进入模型；命令序列与程序输出的区别 |
-| 想研究修改与反馈 | [CAD-Editor](/cad/cad-editor) → [CADReview](/cad/cadreview) → [CADTests](/cad/cadtests) → [CAD-Assistant](/cad/cad-assistant) | 编辑、错误诊断、要求测试与工具执行各提供什么证据 |
-
-先读 [CAD 术语与小练习](/cad/concepts)，再进入论文。路线是本站的阅读建议，可按已有基础调整。
-
-## 按问题阅读
+## 按问题浏览
 
 ### 表示基础
 

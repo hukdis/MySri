@@ -48,7 +48,7 @@ export const papers = [
 export function renderCadOverview(rows) {
   const byId = new Map(rows.map(row => [row.id,row]))
   const link = id => {const row=byId.get(id);if(!row)throw new Error(`缺少 CAD 阅读页 ${id}`);return `[${row.navTitle??row.title}](${row.url})`}
-  let content = '# CAD · 从表示到验证\n\n<div class="edition-label">学习图谱 1.1 · 9 篇先读</div>\n\n> 先弄清模型输出什么，再比较它怎样生成、编辑和验证。这里按阅读问题组织已有论文，不预设你的最终研究方向。\n\n::: info 阅读状态\n摘要与方法示意依据所提供的阅读稿整理，均待人工复核；比较表用于理解任务差异，不作为统一性能排名。\n:::\n\n## 从哪里开始\n\n| 你的问题 | 推荐路线 | 阅读后应能解释 |\n| --- | --- | --- |\n| 想读懂 CAD 生成 | '+link('cad-0101')+' → '+link('cad-0102')+' → '+link('cad-0103')+' | 操作序列、文本条件和预训练 LLM 分别起什么作用 |\n| 想理解几何重建 | '+link('cad-0101')+' → '+link('cad-0104')+' → '+link('cad-0105')+' | 点云如何进入模型；命令序列与程序输出的区别 |\n| 想研究修改与反馈 | '+link('cad-0108')+' → '+link('cad-0106')+' → '+link('cad-0107')+' → '+link('cad-0109')+' | 编辑、错误诊断、要求测试与工具执行各提供什么证据 |\n\n先读 [CAD 术语与小练习](/cad/concepts)，再进入论文。路线是本站的阅读建议，可按已有基础调整。\n\n## 按问题阅读\n'
+  let content = '# CAD · 从表示到验证\n\n> 按研究问题浏览 9 篇已接入的论文；每篇正文沿用 source 阅读稿结构，并恢复原论文图表截图。\n\n::: info 阅读状态\n内容待人工复核，比较表不构成统一性能排名。截图保留原图注、页码与论文出处；原 PDF 不发布。\n:::\n\n## 按问题浏览\n'
   for (const group of groups) {
     content += `\n### ${group.title}\n\n${group.question}\n\n| 论文 | 先抓住这一点 |\n| --- | --- |\n`
     for (const paper of papers.filter(p=>p.group===group.key)) content += `| ${link(paper.id)} | ${paper.question} |\n`

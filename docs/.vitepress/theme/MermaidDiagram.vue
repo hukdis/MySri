@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getCurrentInstance, nextTick, onMounted, ref, watch } from 'vue'
 import { useData } from 'vitepress'
-const props = withDefaults(defineProps<{code: string; title?: string; caption?: string}>(), {
+const props = withDefaults(defineProps<{code: string; title?: string; caption?: string; compact?: boolean}>(), {
   title:'强化学习算法地图',caption:'课程算法地图 · 按知识层级阅读；具体区别见下方表格'
 })
 const { isDark } = useData()
@@ -32,7 +32,7 @@ async function openDiagram() {
 </script>
 
 <template>
-  <figure class="algorithm-diagram">
+  <figure class="algorithm-diagram" :class="{ 'diagram-compact': compact }">
     <div class="diagram-toolbar"><span>{{ title }}</span><button type="button" :disabled="!svg || failed" @click="openDiagram">放大查看</button></div>
     <div role="img" :aria-label="title" v-html="svg" />
     <pre v-if="failed">{{ code }}</pre>

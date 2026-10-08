@@ -118,19 +118,97 @@ $$
 
 ## 一轮训练如何流动？
 
-<MermaidDiagram title="PPO 一轮训练" caption="本站绘制：展示基本 Actor–Critic 数据流，具体调度依实现而定。" code='flowchart TD
-A["提示词与本轮旧策略"] --> B["生成回答并缓存旧 logprob"]
-B --> C["计算任务奖励、参考惩罚和价值"]
-C --> D["固定优势与价值目标"]
-D --> E["重算当前 logprob 和价值"]
-E --> F["更新策略与 Critic"]
-F --> G["有限次数复用本批数据"]
-G --> E
-G --> H["刷新采样策略，生成下一批"]' />
+<MermaidDiagram title="PPO 一轮训练" caption="本站绘制：展示基本 Actor–Critic 数据流，具体调度依实现而定。" :compact="true" code='flowchart LR
+ A["旧策略采样"] --> B["奖励与优势"] --> C["小批量更新"] --> D["刷新采样策略"]
+ C --> C' />
 
 论文的基本循环是在旧策略采样后，进行多轮小批量优化，再刷新旧策略；见 [PPO 论文 Algorithm 1](https://arxiv.org/pdf/1707.06347)。本页采用同步流程说明，异步训练还需处理策略版本与数据滞后。
 
 **阅读代码时检查**：旧 logprob 是否固定，优势是否停止梯度，响应与 padding 的 mask 是否正确，以及更新后的概率比与 KL 是否异常。训练奖励升高还需要独立评测确认任务效果。
+
+## 把 PPO 拆成一次可检查的更新
+
+### 一批样本中，哪些量应当保持不变？
+
+采样阶段保存状态、动作、旧 logprob、奖励和旧价值。计算优势与价值目标后，把它们当作这一批数据的固定标注。学习阶段重新前向计算当前策略和当前 Critic 的输出；更新参数后，旧 logprob 仍然来自采样时的策略。
+
+**由概率比公式推导**：在对数空间中计算比值更直接：
+
+$$
+\rho_t=\exp\bigl(\log\pi_\theta(a_t\mid s_t)
+-\log\pi_{\mathrm{old}}(a_t\mid s_t)\bigr).
+$$
+
+若在每次小批量更新时把分母也换成当前策略，概率比会重新变成 1，便无法表达“已经离采样策略多远”。这是 old 与当前策略必须分开的原因。
+
+### 从奖励算到 GAE 的数值示例
+
+**本站手算**：一条两步且真正终止的轨迹，奖励为 $[0,4]$，旧价值为 $[1,2]$，终止状态价值为 0。取 $\gamma=1$、$\lambda=0.8$：
+
+$$
+\delta_0=0+2-1=1,\qquad
+\delta_1=4+0-2=2,
+$$
+
+$$
+\hat A_0=1+0.8\times2=2.6,\qquad
+\hat A_1=2.
+$$
+
+价值拟合目标相应为 $\hat R=[3.6,4]$。第一步的实际完整回报为 4，但此例的 GAE 价值目标为 3.6：$\lambda<1$ 混合了价值自举，不能把每一个 GAE 目标都称为原始蒙特卡洛回报。令 $\lambda=1$，这个终止轨迹的目标才回到 $[4,4]$。
+
+GAE 的多步加权定义来自 [原始论文](https://arxiv.org/abs/1506.02438)；以上数值为独立教学推导。
+
+### 策略损失、价值损失和熵项如何组合？
+
+一个基本的最小化损失可以写为：
+
+$$
+\mathcal L=
+-J_{\mathrm{clip}}
++c_V\,\mathbb E_t[(V_\psi(s_t)-\hat R_t)^2]
+-c_H\,\mathbb E_t[H(\pi_\theta(\cdot\mid s_t))].
+$$
+
+三个部分分别优化动作选择、价值估计与策略熵。$c_V,c_H$ 是权重，熵项可按任务配置启用；参考策略 KL 则通过前文的奖励构造进入优势。这是对 [PPO 论文式 (9)](https://arxiv.org/pdf/1707.06347)的基本形式说明，不表示所有实现都采用完全相同的缩放和裁剪。
+
+### 最小训练伪代码
+
+下面只展示量的依赖关系，省略分布式训练、价值裁剪和优化器配置：
+
+~~~python
+# 采样策略固定；保存样本动作在该策略下的 logprob
+batch = rollout(policy)
+advantage, value_target = compute_gae(batch)
+old_logprob = batch.old_logprob.detach()
+advantage = advantage.detach()
+value_target = value_target.detach()
+
+for minibatch in finite_reuse(batch):
+    new_logprob, value = forward_policy_and_value(minibatch)
+    ratio = exp(new_logprob - old_logprob[minibatch.indices])
+    clipped = clamp(ratio, 1 - epsilon, 1 + epsilon)
+    mb_advantage = advantage[minibatch.indices]
+    mb_target = value_target[minibatch.indices]
+    actor_loss = -masked_mean(min(ratio * mb_advantage, clipped * mb_advantage), minibatch.mask)
+    value_loss = masked_mean((value - mb_target) ** 2, minibatch.mask)
+    optimize(actor_loss + value_weight * value_loss)
+# 使用更新后的策略生成下一批
+~~~
+
+优势、价值目标与旧 logprob 使用相同的小批量索引。token 级训练的 mask 应排除 padding 与不参与学习的位置。EOS 与因最大长度而截断的回答，需要按明确的任务规则区分处理。
+
+## 如何判断 PPO 更新是否出了问题？
+
+| 观察量 | 含义 | 应一起核查的条件 |
+| --- | --- | --- |
+| 概率比与裁剪比例 | 本批样本相对采样策略的变化 | 学习率、复用次数、优势尺度 |
+| Critic 拟合误差 | 价值输出与固定目标的差异 | 奖励构造、终止与自举规则 |
+| 策略熵 | 当前输出分布的集中程度 | 集中是否伴随独立任务效果改善 |
+| 参考 KL | 相对参考分布的漂移 | 估计方向、采样分布和惩罚系数 |
+| 独立评测结果 | 训练之外的实际任务效果 | 数据集、生成参数、统计分母 |
+
+**解释**：这些量用于定位问题，不能凭一个固定阈值判断所有训练。裁剪比例高不等于更新必然正确，价值误差低也不等于策略效果更好。
 
 ## 自测与接着阅读
 

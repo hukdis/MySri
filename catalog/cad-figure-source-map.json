@@ -1,0 +1,618 @@
+{
+  "date": "2026-10-08",
+  "authorization": "用户明确要求将 source 中的论文截图加入网站",
+  "scope": "仅发布九篇已接入论文正文引用的截图；不发布原 PDF 或个人笔记",
+  "mappings": [
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/figure02_construction.png",
+      "publishedImage": "docs/public/papers/deepcad/figure02_construction.png",
+      "title": "DeepCAD 原论文图 2：CAD 构建过程",
+      "pdfPage": 3,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "43b1c007a8f1d584736296cf6cc83a276d0797fb4fc59e44aac9438fee887e3c"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/table01_commands.png",
+      "publishedImage": "docs/public/papers/deepcad/table01_commands.png",
+      "title": "DeepCAD 原论文表 1：命令与参数",
+      "pdfPage": 3,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "fcc94d85f1f4dd798d8c6d6f528cbddd697ef33a255be793126f72d4a0674e68"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/figure03_architecture.png",
+      "publishedImage": "docs/public/papers/deepcad/figure03_architecture.png",
+      "title": "DeepCAD 原论文图 3：网络结构",
+      "pdfPage": 4,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "e31ee2015693f761b8f1f822a53d95657bb1b641cc355c2086e88652c16e3525"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/table02_autoencoding.png",
+      "publishedImage": "docs/public/papers/deepcad/table02_autoencoding.png",
+      "title": "DeepCAD 原论文表 2：自编码重建与消融",
+      "pdfPage": 6,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "026f0029d4c87f8e8b9fc286f64e48f747e52561c600c0d51948c40156088bc9"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/figure04_comparison.png",
+      "publishedImage": "docs/public/papers/deepcad/figure04_comparison.png",
+      "title": "DeepCAD 原论文图 4：定性重建比较",
+      "pdfPage": 6,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "60a2e62b12dc76da2d66e1d8c506877b4e363ad756d0a3c30c503fb59fcc37ba"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/table03_generation.png",
+      "publishedImage": "docs/public/papers/deepcad/table03_generation.png",
+      "title": "DeepCAD 原论文表 3：随机生成评测",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "3907bd5e68bab411bf7c41b07063f5fec5e2af3f26e7b5c94f9c70cba9835d7f"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/figure06_pointcloud.png",
+      "publishedImage": "docs/public/papers/deepcad/figure06_pointcloud.png",
+      "title": "DeepCAD 原论文图 6：点云到 CAD",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "d07c639b616fa0cb9e82f3f31c351f2d72558c302e78b8d089050cb51d8f89e9"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/table06_pointcloud.png",
+      "publishedImage": "docs/public/papers/deepcad/table06_pointcloud.png",
+      "title": "DeepCAD 原论文表 6：点云重建评测",
+      "pdfPage": 14,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "8cdc225a6cf4317c0ddb52491368b4a3f5aa3f6eee9032061af429011f99c96d"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/figure07_editing.png",
+      "publishedImage": "docs/public/papers/deepcad/figure07_editing.png",
+      "title": "DeepCAD 原论文图 7：CAD 软件中的后续编辑",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "d0d6924e77d4c1cc44ebed943197e86a86f18b434b5a5cabebe719ed8e448437"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/figure11_failures.png",
+      "publishedImage": "docs/public/papers/deepcad/figure11_failures.png",
+      "title": "DeepCAD 原论文图 11：失败案例",
+      "pdfPage": 14,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "35484f95b8f2e71c375a167d0f5f6740a4e026262cdddc580b7ee6494a388867"
+    },
+    {
+      "articleId": "cad-0101",
+      "source": "sources/论文/先读/DeepCAD.md",
+      "originalImage": "sources/论文/assets/DeepCAD/figure12_length.png",
+      "publishedImage": "docs/public/papers/deepcad/figure12_length.png",
+      "title": "DeepCAD 原论文图 12：序列长度与表现",
+      "pdfPage": 14,
+      "originalPaper": "https://arxiv.org/abs/2105.09492",
+      "sha256": "c22b6e0443779912a71ed64bdab27b0ffd4702405a2c152f909a50a688ba8a9c"
+    },
+    {
+      "articleId": "cad-0102",
+      "source": "sources/论文/先读/Text2CAD.md",
+      "originalImage": "sources/论文/assets/Text2CAD/figure04_prompt_levels.png",
+      "publishedImage": "docs/public/papers/text2cad/figure04_prompt_levels.png",
+      "title": "Text2CAD 原图 4：四级文本提示",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2409.17106",
+      "sha256": "06fdba03d17bdfad68e54cbba3d2bb917412ba75abd1e30fa9e900fdfbf3c94a"
+    },
+    {
+      "articleId": "cad-0102",
+      "source": "sources/论文/先读/Text2CAD.md",
+      "originalImage": "sources/论文/assets/Text2CAD/figure02_annotation.png",
+      "publishedImage": "docs/public/papers/text2cad/figure02_annotation.png",
+      "title": "Text2CAD 原图 2：标注流水线",
+      "pdfPage": 4,
+      "originalPaper": "https://arxiv.org/abs/2409.17106",
+      "sha256": "f561f9e754c11324e258d1bd90156d94ad515f549f87a3b5ed8b7692ac2a0d7f"
+    },
+    {
+      "articleId": "cad-0102",
+      "source": "sources/论文/先读/Text2CAD.md",
+      "originalImage": "sources/论文/assets/Text2CAD/figure03_network.png",
+      "publishedImage": "docs/public/papers/text2cad/figure03_network.png",
+      "title": "Text2CAD 原图 3：生成网络",
+      "pdfPage": 6,
+      "originalPaper": "https://arxiv.org/abs/2409.17106",
+      "sha256": "3c95a6d751afc8911b33153a826c0816faa74efa524b31ce9788bc138fd8238d"
+    },
+    {
+      "articleId": "cad-0102",
+      "source": "sources/论文/先读/Text2CAD.md",
+      "originalImage": "sources/论文/assets/Text2CAD/table01_expert.png",
+      "publishedImage": "docs/public/papers/text2cad/table01_expert.png",
+      "title": "Text2CAD 原表 1：L3 提示下的结果",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2409.17106",
+      "sha256": "6f4cc34b29b86dd0bd9b493cb3230d9e620a9edeadade1c1d9568061934cc222"
+    },
+    {
+      "articleId": "cad-0102",
+      "source": "sources/论文/先读/Text2CAD.md",
+      "originalImage": "sources/论文/assets/Text2CAD/table02_preferences.png",
+      "publishedImage": "docs/public/papers/text2cad/table02_preferences.png",
+      "title": "Text2CAD 原表 2：自动与人工偏好评价",
+      "pdfPage": 9,
+      "originalPaper": "https://arxiv.org/abs/2409.17106",
+      "sha256": "29b6d86e2e8d936d1481d773a4cefecc6f22b5f82a877ca6b55c5a64cdf5377d"
+    },
+    {
+      "articleId": "cad-0102",
+      "source": "sources/论文/先读/Text2CAD.md",
+      "originalImage": "sources/论文/assets/Text2CAD/figure09_failures.png",
+      "publishedImage": "docs/public/papers/text2cad/figure09_failures.png",
+      "title": "Text2CAD 原图 9：无效结果与文本不匹配",
+      "pdfPage": 17,
+      "originalPaper": "https://arxiv.org/abs/2409.17106",
+      "sha256": "4df6d8628c47383b555ba67f2c2a5fa90a5630a09fa3f7e9eae42beee1a3aab2"
+    },
+    {
+      "articleId": "cad-0103",
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "originalImage": "sources/论文/assets/CAD-Llama/figure02_overview.png",
+      "publishedImage": "docs/public/papers/cad-llama/figure02_overview.png",
+      "title": "CAD-Llama 原图 2：整体框架与 SPCC",
+      "pdfPage": 3,
+      "originalPaper": "https://arxiv.org/abs/2505.04481",
+      "sha256": "3d4b0105a67d01e40ee3e873fda5bd1e32a497f9bd49a7316b2c543a02b0c658"
+    },
+    {
+      "articleId": "cad-0103",
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "originalImage": "sources/论文/assets/CAD-Llama/figure03_annotation.png",
+      "publishedImage": "docs/public/papers/cad-llama/figure03_annotation.png",
+      "title": "CAD-Llama 原图 3：两阶段层次标注",
+      "pdfPage": 4,
+      "originalPaper": "https://arxiv.org/abs/2505.04481",
+      "sha256": "6c3bbe92b008274bb94a9b97078f60aec045b2dfce9c63ea7faeef60fda64004"
+    },
+    {
+      "articleId": "cad-0103",
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "originalImage": "sources/论文/assets/CAD-Llama/table07_cost.png",
+      "publishedImage": "docs/public/papers/cad-llama/table07_cost.png",
+      "title": "CAD-Llama 原表 7：训练与标注成本",
+      "pdfPage": 12,
+      "originalPaper": "https://arxiv.org/abs/2505.04481",
+      "sha256": "4e9bd68705bbea58fbb0c3882d53c59808f6e516bc56d4481b922c32177fe31a"
+    },
+    {
+      "articleId": "cad-0103",
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "originalImage": "sources/论文/assets/CAD-Llama/table04_text.png",
+      "publishedImage": "docs/public/papers/cad-llama/table04_text.png",
+      "title": "CAD-Llama 原表 4：文本生成结果",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2505.04481",
+      "sha256": "86c92141fd96828456e08797f6067dc265575038ebc45e07f29d183dbb91c976"
+    },
+    {
+      "articleId": "cad-0103",
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "originalImage": "sources/论文/assets/CAD-Llama/table06_representation.png",
+      "publishedImage": "docs/public/papers/cad-llama/table06_representation.png",
+      "title": "CAD-Llama 原表 6：表示消融",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2505.04481",
+      "sha256": "b2328e363cfe63972da02aeab04e2312ee304cd97056decaa78d0ea6ec3c7665"
+    },
+    {
+      "articleId": "cad-0103",
+      "source": "sources/论文/先读/CAD-Llama.md",
+      "originalImage": "sources/论文/assets/CAD-Llama/figure25_failures.png",
+      "publishedImage": "docs/public/papers/cad-llama/figure25_failures.png",
+      "title": "CAD-Llama 原图 25：参数错误和文本不匹配",
+      "pdfPage": 31,
+      "originalPaper": "https://arxiv.org/abs/2505.04481",
+      "sha256": "038aa418db3cb27733e1afca0dca7088f63c1483846644f455539e42e33002eb"
+    },
+    {
+      "articleId": "cad-0104",
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "originalImage": "sources/论文/assets/CAD-Recode/figure02_representation.png",
+      "publishedImage": "docs/public/papers/cad-recode/figure02_representation.png",
+      "title": "CAD-Recode 原图 2：建模序列与代码",
+      "pdfPage": 3,
+      "originalPaper": "https://arxiv.org/abs/2412.14042",
+      "sha256": "63c8e236e19e4ddfdca10ffa8d0acc0bfad158421bb068c56cc8ebcca0f56543"
+    },
+    {
+      "articleId": "cad-0104",
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "originalImage": "sources/论文/assets/CAD-Recode/figure04_network.png",
+      "publishedImage": "docs/public/papers/cad-recode/figure04_network.png",
+      "title": "CAD-Recode 原图 4：网络结构",
+      "pdfPage": 5,
+      "originalPaper": "https://arxiv.org/abs/2412.14042",
+      "sha256": "f6baec07613253de0b8edc9c27b2cd74a54bfc9b3553b9ff62ff34482b311e6a"
+    },
+    {
+      "articleId": "cad-0104",
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "originalImage": "sources/论文/assets/CAD-Recode/table01_reconstruction.png",
+      "publishedImage": "docs/public/papers/cad-recode/table01_reconstruction.png",
+      "title": "CAD-Recode 原表 1：DeepCAD 与 Fusion360",
+      "pdfPage": 6,
+      "originalPaper": "https://arxiv.org/abs/2412.14042",
+      "sha256": "2c00be4d6c2094241b3e75d8ddd374b0a078d5a71853a21d1c0879d107fa4fcc"
+    },
+    {
+      "articleId": "cad-0104",
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "originalImage": "sources/论文/assets/CAD-Recode/table02_scans.png",
+      "publishedImage": "docs/public/papers/cad-recode/table02_scans.png",
+      "title": "CAD-Recode 原表 2：CC3D",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2412.14042",
+      "sha256": "abb337b487c5c103cb89dbde591fe8cf017ca0619fa8e32dfd7fea7412846aa0"
+    },
+    {
+      "articleId": "cad-0104",
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "originalImage": "sources/论文/assets/CAD-Recode/table03_sampling.png",
+      "publishedImage": "docs/public/papers/cad-recode/table03_sampling.png",
+      "title": "CAD-Recode 原表 3：数据与候选筛选消融",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2412.14042",
+      "sha256": "2ba782342b0dcaa3b23f191bf566d3021d847dbec2c979f881cc08d1b280fcf6"
+    },
+    {
+      "articleId": "cad-0104",
+      "source": "sources/论文/先读/CAD-Recode.md",
+      "originalImage": "sources/论文/assets/CAD-Recode/figure06_editing.png",
+      "publishedImage": "docs/public/papers/cad-recode/figure06_editing.png",
+      "title": "CAD-Recode 原图 6：GPT-4o 辅助编辑",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2412.14042",
+      "sha256": "00207f505dbb09b5991036bdd1d2f8916248043f6d3031754e22d8428240fb5b"
+    },
+    {
+      "articleId": "cad-0105",
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "originalImage": "sources/论文/assets/CAD-MLLM/figure02_dataset.png",
+      "publishedImage": "docs/public/papers/cad-mllm/figure02_dataset.png",
+      "title": "CAD-MLLM 原图 2：扩展数据示例",
+      "pdfPage": 5,
+      "originalPaper": "https://arxiv.org/abs/2411.04954",
+      "sha256": "e299a3135f7914aa451cb333fb8a76bc173ce04bfc07579b0dd5d439b8acfdd1"
+    },
+    {
+      "articleId": "cad-0105",
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "originalImage": "sources/论文/assets/CAD-MLLM/figure04_network.png",
+      "publishedImage": "docs/public/papers/cad-mllm/figure04_network.png",
+      "title": "CAD-MLLM 原图 4：多模态网络",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2411.04954",
+      "sha256": "87c1f26d709289024dfbd3ddc9d8669bb884d58294574a8c002a3c726b8f3cce"
+    },
+    {
+      "articleId": "cad-0105",
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "originalImage": "sources/论文/assets/CAD-MLLM/table03_points.png",
+      "publishedImage": "docs/public/papers/cad-mllm/table03_points.png",
+      "title": "CAD-MLLM 原表 3：点云任务",
+      "pdfPage": 10,
+      "originalPaper": "https://arxiv.org/abs/2411.04954",
+      "sha256": "ca4d5ef7d1141f5b3920053c8335ddb5561424f074e7fc7694c5841c928cf67c"
+    },
+    {
+      "articleId": "cad-0105",
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "originalImage": "sources/论文/assets/CAD-MLLM/table05_text.png",
+      "publishedImage": "docs/public/papers/cad-mllm/table05_text.png",
+      "title": "CAD-MLLM 原表 5：文本条件用户研究",
+      "pdfPage": 11,
+      "originalPaper": "https://arxiv.org/abs/2411.04954",
+      "sha256": "602f3926287f8e3c9c7d4d31afd3b4063d36fbb5833002994f531fc773a2c783"
+    },
+    {
+      "articleId": "cad-0105",
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "originalImage": "sources/论文/assets/CAD-MLLM/table07_multimodal.png",
+      "publishedImage": "docs/public/papers/cad-mllm/table07_multimodal.png",
+      "title": "CAD-MLLM 原表 7：多模态训练的收益与代价",
+      "pdfPage": 14,
+      "originalPaper": "https://arxiv.org/abs/2411.04954",
+      "sha256": "e3e4adf17aae0201e56f10ea7ca3c91a8506d376b7dd8b88ab0d3a3cb9f27c72"
+    },
+    {
+      "articleId": "cad-0105",
+      "source": "sources/论文/先读/CAD-MLLM.md",
+      "originalImage": "sources/论文/assets/CAD-MLLM/figure14_failures.png",
+      "publishedImage": "docs/public/papers/cad-mllm/figure14_failures.png",
+      "title": "CAD-MLLM 原图 14：薄结构与复杂细节失败",
+      "pdfPage": 14,
+      "originalPaper": "https://arxiv.org/abs/2411.04954",
+      "sha256": "09e47d07fcf6cd02cfabccdb0e192cd60e1851ebb545704066bb13efd47f3907"
+    },
+    {
+      "articleId": "cad-0106",
+      "source": "sources/论文/先读/CADReview.md",
+      "originalImage": "sources/论文/assets/CADReview/figure02_dataset.png",
+      "publishedImage": "docs/public/papers/cadreview/figure02_dataset.png",
+      "title": "CADReview 原图 2：数据构建",
+      "pdfPage": 3,
+      "originalPaper": "https://arxiv.org/abs/2505.22304",
+      "sha256": "28cfa0143c1e0a9c6c37edadd3af78cce9a5959fa2c70a6d58a75701b1b5c571"
+    },
+    {
+      "articleId": "cad-0106",
+      "source": "sources/论文/先读/CADReview.md",
+      "originalImage": "sources/论文/assets/CADReview/figure03_errors.png",
+      "publishedImage": "docs/public/papers/cadreview/figure03_errors.png",
+      "title": "CADReview 原图 3：八类程序错误",
+      "pdfPage": 4,
+      "originalPaper": "https://arxiv.org/abs/2505.22304",
+      "sha256": "47933102d09a44f227d074897d1d187cec134fe2b66d2015b39d6e0581c2f843"
+    },
+    {
+      "articleId": "cad-0106",
+      "source": "sources/论文/先读/CADReview.md",
+      "originalImage": "sources/论文/assets/CADReview/figure04_network.png",
+      "publishedImage": "docs/public/papers/cadreview/figure04_network.png",
+      "title": "CADReview 原图 4：ReCAD 框架",
+      "pdfPage": 5,
+      "originalPaper": "https://arxiv.org/abs/2505.22304",
+      "sha256": "29136b5393487af0da90a46e64b15b897dfd66e0d85d25729d7e4159d13a8a2f"
+    },
+    {
+      "articleId": "cad-0106",
+      "source": "sources/论文/先读/CADReview.md",
+      "originalImage": "sources/论文/assets/CADReview/table01_main.png",
+      "publishedImage": "docs/public/papers/cadreview/table01_main.png",
+      "title": "CADReview 原表 1：主结果",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2505.22304",
+      "sha256": "5dba6fe2a8bc1266cc7684ddf06a6cab5df24db639bb69ee922749aa3b3bd8fa"
+    },
+    {
+      "articleId": "cad-0106",
+      "source": "sources/论文/先读/CADReview.md",
+      "originalImage": "sources/论文/assets/CADReview/table02_ablation.png",
+      "publishedImage": "docs/public/papers/cadreview/table02_ablation.png",
+      "title": "CADReview 原表 2：模块消融",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2505.22304",
+      "sha256": "e7478250e030167b9774cdb7a6e158bb23536561abcd6603ade1b55f199c1a7f"
+    },
+    {
+      "articleId": "cad-0106",
+      "source": "sources/论文/先读/CADReview.md",
+      "originalImage": "sources/论文/assets/CADReview/figure06_correction.png",
+      "publishedImage": "docs/public/papers/cadreview/figure06_correction.png",
+      "title": "CADReview 原图 6：错误定位与修正案例",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2505.22304",
+      "sha256": "5d849f947b32d3c98880ec340510caf687f910ae0a2493b83f4d19fcdcc04af5"
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "originalImage": "sources/论文/assets/CADTests/figure01_motivation.png",
+      "publishedImage": "docs/public/papers/cadtests/figure01_motivation.png",
+      "title": "CADTests 原图 1：相似与符合要求的差别",
+      "pdfPage": 2,
+      "originalPaper": "https://arxiv.org/abs/2605.07807",
+      "sha256": "6b9a2a988dcb1f9fb0d20223e62872834a8b8c1e00f8eb7e6928ba49d7654fa2"
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "originalImage": "sources/论文/assets/CADTests/figure02_pipeline.png",
+      "publishedImage": "docs/public/papers/cadtests/figure02_pipeline.png",
+      "title": "CADTests 原图 2：测试合成与迭代改进",
+      "pdfPage": 5,
+      "originalPaper": "https://arxiv.org/abs/2605.07807",
+      "sha256": "a99eaba4fd37664ea369bdcee93c2aaebc399c07fef647b1e371f5422ed27a61"
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "originalImage": "sources/论文/assets/CADTests/table01_test_generation.png",
+      "publishedImage": "docs/public/papers/cadtests/table01_test_generation.png",
+      "title": "CADTests 原表 1：测试生成能力",
+      "pdfPage": 6,
+      "originalPaper": "https://arxiv.org/abs/2605.07807",
+      "sha256": "120f2081af321e95cf1daf5e02c665517440b2e3b127cb0905d5472c3f17c70e"
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "originalImage": "sources/论文/assets/CADTests/table02_refinement.png",
+      "publishedImage": "docs/public/papers/cadtests/table02_refinement.png",
+      "title": "CADTests 原表 2：反馈迭代改进",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2605.07807",
+      "sha256": "601d6b60675ed197b2c919191ec3d964ec406683c36febbf1187655c4b8f053d"
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "originalImage": "sources/论文/assets/CADTests/table03_generation.png",
+      "publishedImage": "docs/public/papers/cadtests/table03_generation.png",
+      "title": "CADTests 原表 3：文本到 CAD 基准",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2605.07807",
+      "sha256": "9ea2c406ca7820a143e08aa891ae5749b1d32338db5402c011c00481ecb5a521"
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "originalImage": "sources/论文/assets/CADTests/table04_human.png",
+      "publishedImage": "docs/public/papers/cadtests/table04_human.png",
+      "title": "CADTests 原表 4：人工一致性",
+      "pdfPage": 9,
+      "originalPaper": "https://arxiv.org/abs/2605.07807",
+      "sha256": "9915b1f6753acd5f0f07de72b0aa5df4fc496abbd574b6a57207230cf62e88c0"
+    },
+    {
+      "articleId": "cad-0107",
+      "source": "sources/论文/先读/CADTests.md",
+      "originalImage": "sources/论文/assets/CADTests/figure04_examples.png",
+      "publishedImage": "docs/public/papers/cadtests/figure04_examples.png",
+      "title": "CADTests 原图 4：测试通过与失败案例",
+      "pdfPage": 9,
+      "originalPaper": "https://arxiv.org/abs/2605.07807",
+      "sha256": "0af47cb0d76179291c6d439077f3b82f9ba68e03bae89f6762a36edc87793733"
+    },
+    {
+      "articleId": "cad-0108",
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "originalImage": "sources/论文/assets/CAD-Editor/figure02_task.png",
+      "publishedImage": "docs/public/papers/cad-editor/figure02_task.png",
+      "title": "CAD-Editor 原图 2：任务输入输出",
+      "pdfPage": 3,
+      "originalPaper": "https://arxiv.org/abs/2502.03997",
+      "sha256": "38725d78c7a9ba210798910b0512ae62f947e351bb721f9a4192ecef7f1ade18"
+    },
+    {
+      "articleId": "cad-0108",
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "originalImage": "sources/论文/assets/CAD-Editor/figure03_dataset.png",
+      "publishedImage": "docs/public/papers/cad-editor/figure03_dataset.png",
+      "title": "CAD-Editor 原图 3：训练数据合成",
+      "pdfPage": 4,
+      "originalPaper": "https://arxiv.org/abs/2502.03997",
+      "sha256": "459e7152cda4dbef495477d682f30251f11e6cf3658392feffd663dff882184c"
+    },
+    {
+      "articleId": "cad-0108",
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "originalImage": "sources/论文/assets/CAD-Editor/figure04_network.png",
+      "publishedImage": "docs/public/papers/cad-editor/figure04_network.png",
+      "title": "CAD-Editor 原图 4：定位与补全网络",
+      "pdfPage": 5,
+      "originalPaper": "https://arxiv.org/abs/2502.03997",
+      "sha256": "d617cf708c32e8d7a863ae513e4c44809c386e06cc74f1fc9967fe67a13995fe"
+    },
+    {
+      "articleId": "cad-0108",
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "originalImage": "sources/论文/assets/CAD-Editor/table01_main.png",
+      "publishedImage": "docs/public/papers/cad-editor/table01_main.png",
+      "title": "CAD-Editor 原表 1：主实验",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2502.03997",
+      "sha256": "ccd851a3f8947e8a40d59ac3d767e4c2249c61b74d457c65c2bd27bd639ce458"
+    },
+    {
+      "articleId": "cad-0108",
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "originalImage": "sources/论文/assets/CAD-Editor/table02_ablation.png",
+      "publishedImage": "docs/public/papers/cad-editor/table02_ablation.png",
+      "title": "CAD-Editor 原表 2：消融实验",
+      "pdfPage": 8,
+      "originalPaper": "https://arxiv.org/abs/2502.03997",
+      "sha256": "1e8bb0042906f699ae1bf7cdf815c0908afb29bdc212adc3f65627d73d660912"
+    },
+    {
+      "articleId": "cad-0108",
+      "source": "sources/论文/先读/CAD-Editor.md",
+      "originalImage": "sources/论文/assets/CAD-Editor/figure10_iterative.png",
+      "publishedImage": "docs/public/papers/cad-editor/figure10_iterative.png",
+      "title": "CAD-Editor 原图 10：连续编辑示例",
+      "pdfPage": 9,
+      "originalPaper": "https://arxiv.org/abs/2502.03997",
+      "sha256": "2717b77c7a2d9a65afeace968cdba88456d48e2c3fcccf97218e350f7b01b6ea"
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "originalImage": "sources/论文/assets/CAD-Assistant/figure02_loop.png",
+      "publishedImage": "docs/public/papers/cad-assistant/figure02_loop.png",
+      "title": "CAD-Assistant 原图 2：闭环框架",
+      "pdfPage": 4,
+      "originalPaper": "https://arxiv.org/abs/2412.13810",
+      "sha256": "35a52098b46f2ed7d7fb92f3b683ee6118c9fd83a3b0a8a069a28d5bfa2b35b0"
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "originalImage": "sources/论文/assets/CAD-Assistant/table01_tools.png",
+      "publishedImage": "docs/public/papers/cad-assistant/table01_tools.png",
+      "title": "CAD-Assistant 原表 1：工具集",
+      "pdfPage": 5,
+      "originalPaper": "https://arxiv.org/abs/2412.13810",
+      "sha256": "e983dae60d17ca344ee9d46755c1e8ec8d3c17a85acd42302d9e16aa19b7da0f"
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "originalImage": "sources/论文/assets/CAD-Assistant/table11_cost.png",
+      "publishedImage": "docs/public/papers/cad-assistant/table11_cost.png",
+      "title": "CAD-Assistant 原表 11：API 请求成本",
+      "pdfPage": 15,
+      "originalPaper": "https://arxiv.org/abs/2412.13810",
+      "sha256": "26fe787e8d25a07cbf1dddb1c41922b1574ae31d053dee426b77496d064b2af7"
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "originalImage": "sources/论文/assets/CAD-Assistant/table03_qa.png",
+      "publishedImage": "docs/public/papers/cad-assistant/table03_qa.png",
+      "title": "CAD-Assistant 原表 3：问答结果",
+      "pdfPage": 6,
+      "originalPaper": "https://arxiv.org/abs/2412.13810",
+      "sha256": "d6d1879167905674c59be8c2fddf34b4e97c860a2380571e39ddfc63bd56cc80"
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "originalImage": "sources/论文/assets/CAD-Assistant/table04_05_constraints.png",
+      "publishedImage": "docs/public/papers/cad-assistant/table04_05_constraints.png",
+      "title": "CAD-Assistant 原表 4–5：约束任务与工具消融",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2412.13810",
+      "sha256": "0edf9853b0ac4b451e6fcf2e81235d61b7dde945ce35b92dafc9a91226a88539"
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "originalImage": "sources/论文/assets/CAD-Assistant/table06_sketches.png",
+      "publishedImage": "docs/public/papers/cad-assistant/table06_sketches.png",
+      "title": "CAD-Assistant 原表 6：手绘参数化",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2412.13810",
+      "sha256": "345eaa7489bc6384294c118a14d5de1ff59ebf2303fe3548701a8002ec319f7d"
+    },
+    {
+      "articleId": "cad-0109",
+      "source": "sources/论文/先读/CAD-Assistant.md",
+      "originalImage": "sources/论文/assets/CAD-Assistant/figure04_failures.png",
+      "publishedImage": "docs/public/papers/cad-assistant/figure04_failures.png",
+      "title": "CAD-Assistant 原图 4：问答失败类型",
+      "pdfPage": 7,
+      "originalPaper": "https://arxiv.org/abs/2412.13810",
+      "sha256": "fb09b9f06a7e4c93c15a72668700ffb97200a3ccd1e025d84a073f5ab1c3a036"
+    }
+  ],
+  "reviewed": false
+}

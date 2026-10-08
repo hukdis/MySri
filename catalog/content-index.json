@@ -253,7 +253,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/deepcad.md",
     "url": "/cad/deepcad"
   },
@@ -285,7 +285,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/text2cad.md",
     "url": "/cad/text2cad"
   },
@@ -317,7 +317,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/cad-llama.md",
     "url": "/cad/cad-llama"
   },
@@ -349,7 +349,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/cad-recode.md",
     "url": "/cad/cad-recode"
   },
@@ -381,7 +381,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/cad-mllm.md",
     "url": "/cad/cad-mllm"
   },
@@ -413,7 +413,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/cadreview.md",
     "url": "/cad/cadreview"
   },
@@ -445,7 +445,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/cadtests.md",
     "url": "/cad/cadtests"
   },
@@ -477,7 +477,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/cad-editor.md",
     "url": "/cad/cad-editor"
   },
@@ -509,7 +509,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-08",
     "file": "cad/cad-assistant.md",
     "url": "/cad/cad-assistant"
   }

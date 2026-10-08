@@ -44,9 +44,11 @@ for (const [index, name] of papers.entries()) {
   })
 }
 
+await import('./restore-cad-source.mjs')
+
 const navigation = await read('sources/论文/00_阅读导航.md')
 const groups = [{title:'一、先读材料', folder:'先读'}, {title:'二、补读材料', folder:'补读'}]
-let body = '# CAD 论文资料导航\n\n> **一句话**：沿用现有阅读材料的优先级，将 19 篇论文按“名称、原始来源、阅读问题”组织起来。\n\n> **怎么用**：先阅读本站的 9 篇先读草稿，再按问题选择补读。以下清单沿用材料的阅读优先级，不代表已确定你的 CAD 研究方向。\n\n::: info 导航草稿 · 待人工复核\n按照你的选择，已接入“先读”的 9 篇正文，10 篇补读仅保留导航。原始 PDF 和图表保留在本地。来源链接提取自现有阅读稿，本次未逐篇核验论文。\n:::\n'
+let body = '# CAD 论文资料导航\n\n> **一句话**：沿用现有阅读材料的优先级，将 19 篇论文按“名称、原始来源、阅读问题”组织起来。\n\n> **怎么用**：先阅读本站的 9 篇先读草稿，再按问题选择补读。以下清单沿用材料的阅读优先级，不代表已确定你的 CAD 研究方向。\n\n::: info 导航草稿 · 待人工复核\n按照你的选择，已接入“先读”的 9 篇正文，10 篇补读仅保留导航。原始 PDF 保留在本地；九篇正文引用的图表截图已加入网站。来源链接提取自现有阅读稿，本次未逐篇核验论文。\n:::\n'
 for (const group of groups) {
   body += `\n## ${group.title}\n\n| 论文 | 原始来源 | 优先理解的问题 |\n| --- | --- | --- |\n`
   const lines = navigation.split(/\r?\n/).filter(line => line.includes(`/论文/${group.folder}/`) && line.startsWith('|'))

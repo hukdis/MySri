@@ -22,55 +22,17 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-07'
+updated: '2026-10-08'
 ---
 # CADTests：用可执行几何测试检查文本要求是否满足
 
-<!-- v1.1:start -->
-<div class="edition-label">先读 · CADTests · 速读入口</div>
-
-## 速读摘要
-
-| 要抓住的问题 | 本篇要点 |
-| --- | --- |
-| 研究问题 | 用可执行测试检查 CAD 是否满足文字要求。 |
-| 输入 → 输出 | 要求、参考模型与变体；待评价实体 → Python 几何测试与通过／失败结果 |
-| 核心方法 | 把要求转成几何属性测试，借助正确示例和故意改错的变体改进辨别力，再评价生成结果。 |
-| 关键证据怎么读 | 先读原表 1–2 检查测试本身，再读原表 3–4 检查生成评价与人工一致性。 |
-| 适用边界 | 测试覆盖有限且可能误判；通过已列测试不保证满足所有可能要求。 |
-
-**来源与范围**：摘要依据本页原有阅读稿中的方法、实验和局限整理。论文事实请对照 [原论文](https://arxiv.org/abs/2605.07807)；本次未独立核验实验。
-
-**前置阅读**：[CAD 术语与小练习](/cad/concepts) · [横向比较](/cad/#横向比较-输入、输出与表示)。
-
-## 方法示意
-
-<MermaidDiagram title="CADTests 方法流程" caption="本站依据阅读稿绘制的流程示意；省略实现细节，原论文图表另见来源。" code='flowchart LR
- R["文字要求"] --> G["生成几何测试"] --> T["测试执行"]
- V["正确示例与错误变体"] --> T
- T --> F["反馈改进测试"] --> G
- G --> E["评价待测 CAD"]' />
-
-## 接着读什么
-
-[CAD-Assistant](/cad/cad-assistant) · [CADReview](/cad/cadreview)
-
-读 CAD-Assistant 区分工具执行与任务成功，再与 CADReview 比较反馈依据。
-
-::: tip 本篇阅读练习
-用自己的话写出输入、输出和反馈来源。先读原表 1–2 检查测试本身，再读原表 3–4 检查生成评价与人工一致性。分别记录一项可支持的结论和一项不能据此推出的结论。完成标准：说明任务设置，并留下原表位置。
-:::
-<!-- v1.1:end -->
-
-
-
-::: info 整理草稿 · 待人工复核
-依据你提供的材料整理；保留来源说明。网页排版检查不代表学术正确性已验证。
+::: info 来源稿整理 · 待人工复核
+按你提供的 source 阅读稿保留章节与图表位置，去除首次阅读安排；原章节编号保留，截图可点击放大。原 PDF 与个人笔记不发布。
 :::
 
 > 阅读定位：G 方向的评价基础，连接 A 文本生成、D 设计要求和 E 反馈修复。建议完成生成路线后再读，反过来审视前面论文的指标。
 > 
-> 阅读状态：依据你提供的阅读稿整理，待人工复核；你的阅读和复现状态尚未记录。
+> 阅读状态：依据所提供的 source 阅读稿整理，待人工复核。
 
 ## 1. 论文信息与方向定位
 
@@ -83,18 +45,9 @@ updated: '2026-10-07'
 
 **一句话理解**：<u>针对形状距离难以判断生成 CAD 是否满足文字中的孔数、尺寸和位置等具体要求的问题，CADTests 将要求转成在 B-rep（边界表示）上运行的属性测试（property tests），通过变异测试（mutation testing）检查正确参考模型应通过、故意违规模型应失败，并迭代改进测试，再用这些测试评价生成结果，并为生成器提供未满足要求的反馈。</u>
 
-## 2. 首次阅读顺序
-
-- [ ] **10 分钟**：看图 1，理解“像参考”与“满足要求”的区别。
-- [ ] **15 分钟**：读 §3–4（PDF 第 4–6 页），认识 property test、mutant、passing set。
-- [ ] **15 分钟**：读 §5（PDF 第 6 页），理解基准、指标和无效结果计分。
-- [ ] **20 分钟**：看表 1–3（PDF 第 6–7 页），区分“测试生成质量”与“CAD 生成质量”。
-- [ ] **15 分钟**：看表 4、图 4和 §7（PDF 第 9 页），理解人工一致性与测试覆盖局限。
-- [ ] **10 分钟**：完成自测，为前几篇补一条评价边界笔记。
-
 ## 3. 为什么 CD 和 IoU 不够？
 
-> **图表定位：CADTests 原图 1：相似与符合要求的差别** · [到原论文查看](https://arxiv.org/abs/2605.07807)。原图保留在本地材料中。
+<PaperFigure src="/papers/cadtests/figure01_motivation.png" title="CADTests 原图 1：相似与符合要求的差别" source="https://arxiv.org/abs/2605.07807" :page="2" />
 
 **来源**：原图 1，PDF 第 2 页。
 
@@ -135,7 +88,7 @@ updated: '2026-10-07'
 
 ## 5. 方法：如何用故意错误改进测试？
 
-> **图表定位：CADTests 原图 2：测试合成与迭代改进** · [到原论文查看](https://arxiv.org/abs/2605.07807)。原图保留在本地材料中。
+<PaperFigure src="/papers/cadtests/figure02_pipeline.png" title="CADTests 原图 2：测试合成与迭代改进" source="https://arxiv.org/abs/2605.07807" :page="5" />
 
 **来源**：原图 2，PDF 第 5 页；对应 §4。
 
@@ -193,7 +146,7 @@ mutant 生成使用 GPT-4.1，基准测试生成使用 Claude-Sonnet-4.6，见�
 
 ### 7.1 初始测试质量
 
-> **图表定位：CADTests 原表 1：测试生成能力** · [到原论文查看](https://arxiv.org/abs/2605.07807)。原图保留在本地材料中。
+<PaperFigure src="/papers/cadtests/table01_test_generation.png" title="CADTests 原表 1：测试生成能力" source="https://arxiv.org/abs/2605.07807" :page="6" />
 
 **来源**：原表 1，PDF 第 6 页；抽象提示实验。
 
@@ -203,7 +156,7 @@ Claude-4.6-Sonnet 初始测试 Valid **97.8%**，Sound **90.6%**，mutation scor
 
 ### 7.2 迭代改进的效果
 
-> **图表定位：CADTests 原表 2：反馈迭代改进** · [到原论文查看](https://arxiv.org/abs/2605.07807)。原图保留在本地材料中。
+<PaperFigure src="/papers/cadtests/table02_refinement.png" title="CADTests 原表 2：反馈迭代改进" source="https://arxiv.org/abs/2605.07807" :page="7" />
 
 **来源**：原表 2，PDF 第 7 页。
 
@@ -213,7 +166,7 @@ Claude-4.6-Sonnet 初始测试 Valid **97.8%**，Sound **90.6%**，mutation scor
 
 ### 7.3 用测试评测 CAD 生成
 
-> **图表定位：CADTests 原表 3：文本到 CAD 基准** · [到原论文查看](https://arxiv.org/abs/2605.07807)。原图保留在本地材料中。
+<PaperFigure src="/papers/cadtests/table03_generation.png" title="CADTests 原表 3：文本到 CAD 基准" source="https://arxiv.org/abs/2605.07807" :page="7" />
 
 **来源**：原表 3，PDF 第 7 页。
 
@@ -227,7 +180,7 @@ Claude-4.6-Sonnet 的 ReAct 详细/抽象 PR 为 **0.580 / 0.715**；CADTests+Lo
 
 ### 7.4 与人工判断是否一致？
 
-> **图表定位：CADTests 原表 4：人工一致性** · [到原论文查看](https://arxiv.org/abs/2605.07807)。原图保留在本地材料中。
+<PaperFigure src="/papers/cadtests/table04_human.png" title="CADTests 原表 4：人工一致性" source="https://arxiv.org/abs/2605.07807" :page="9" />
 
 **来源**：原表 4，PDF 第 9 页；125 个随机生成结果、两名专家标注者。
 
@@ -237,7 +190,7 @@ CADTests 与人工共识的准确率 **0.938**，RS 的 AUC **0.928**。两名�
 
 ## 8. 局限与测试误判
 
-> **图表定位：CADTests 原图 4：测试通过与失败案例** · [到原论文查看](https://arxiv.org/abs/2605.07807)。原图保留在本地材料中。
+<PaperFigure src="/papers/cadtests/figure04_examples.png" title="CADTests 原图 4：测试通过与失败案例" source="https://arxiv.org/abs/2605.07807" :page="9" />
 
 **来源**：原图 4，PDF 第 9 页。绿色通过、红色失败，原图仅展示部分测试说明。
 
@@ -308,18 +261,18 @@ CADTests 与人工共识的准确率 **0.938**，RS 的 AUC **0.928**。两名�
 
 原阅读稿标注依据以下原论文及补充材料整理。页码均为 **PDF 文件页码**，不是补充材料页脚重新编号的页码。正文中的中文讲解为阅读辅助，“本笔记解读”表示研究理解或推断。
 
-- [原论文 PDF](https://arxiv.org/abs/2605.07807)
-- [原文提取文本：用于搜索，公式与阅读顺序以 PDF 为准](https://arxiv.org/abs/2605.07807)
-- [图表来源清单：页码、裁切坐标和 PDF 校验信息](https://arxiv.org/abs/2605.07807)
-- 论文来源与校验信息（保留在本地 sources）
+- [原论文 PDF](https://arxiv.org/pdf/2605.07807)
+- 原文提取文本：用于搜索，公式与阅读顺序以 PDF 为准（来源稿的本地记录，未发布）
+- 图表来源清单：页码、裁切坐标和 PDF 校验信息（来源稿的本地记录，未发布）
+- 论文来源与校验信息（来源稿的本地记录，未发布）
 
-本网页保留原图表的名称、正文说明与论文出处；原始裁切图和 PDF 保存在本地 sources，未复制到发布目录。
+嵌入图表均由上述原 PDF 直接裁切、保留英文图注或表注，没有重绘或用 AI 生成替代。原图表著作权归原作者及相应权利人，此处保留出处用于个人学术阅读。
 
-本次完成阅读稿的网页整理，未独立核验原论文结论、运行代码或复现实验。文中数值与版本信息来自所提供的阅读稿，仍需对照原论文人工复核。
+本次恢复来源稿的正文结构与原论文截图，未独立核验论文结论、运行代码或复现实验。
+
 
 ## 本站阅读来源
 
-本页来自你提供的 `sources/论文/先读/CADTests.md`。正文的论文主张、解读与推断沿用原稿标记，本次只整理排版、来源入口和阅读状态。
+正文来自 sources/论文/先读/CADTests.md；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。
 
-[返回 CAD 资料导航](/cad/reading-navigation)
-
+[返回 CAD 总览](/cad/)

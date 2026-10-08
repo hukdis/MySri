@@ -121,14 +121,8 @@ $$
 
 ## 训练流程：省去 Critic 后还剩什么？
 
-<MermaidDiagram title="GRPO 一轮训练" caption="本站绘制：结果奖励版本的基本数据流。" code='flowchart TD
-A["一批提示词"] --> B["旧策略为每题生成 G 个回答"]
-B --> C["奖励模型或规则评分"]
-C --> D["逐题计算组均值、标准差与优势"]
-D --> E["固定样本、旧 logprob 与优势"]
-E --> F["重算当前 logprob 和参考项"]
-F --> G["裁剪目标与 KL 正则"]
-G --> H["更新策略并刷新下一轮采样"]' />
+<MermaidDiagram title="GRPO 一轮训练" caption="本站绘制：结果奖励版本的基本数据流。" :compact="true" code='flowchart LR
+ A["每题多次采样"] --> B["组内奖励统计"] --> C["裁剪与参考项"] --> D["更新策略"]' />
 
 奖励可以由模型或任务规则提供。省去 Critic 不等于省去奖励、参考概率或组采样。模型角色、是否共享参数、是否使用参考项以及生成配置，都会影响实际资源开销。
 
@@ -158,6 +152,84 @@ G --> H["更新策略并刷新下一轮采样"]' />
 - 是否启用 KL、使用什么参考策略，以及旧 logprob 的缓存方式。
 
 **由公式解释**：全组奖励相同会丢失奖励的相对学习信号；共享序列优势也不等于识别出每个 token 的真实贡献。训练奖励与独立任务评测应分别记录。
+
+## 从组奖励到一次参数更新
+
+### 一题一组，不能把不同题目随意混起来
+
+**本站例题**：两道题分别得到奖励 $[0,0,2,2]$ 和 $[10,10,12,12]$。按每题独立统计，两组都得到优势 $[-1,-1,1,1]$。这反映各自题目内的相对好坏。
+
+若将八个奖励合在一起求均值，均值为 6，第一题的回答会全部低于基线，第二题的回答全部高于基线。此时优化信号同时混入了题目奖励尺度差异，不再是原本的逐题相对比较。
+
+**由公式推导**：忽略稳定项时，对一个组的全部奖励作 $R_i'=aR_i+b$、$a>0$，组内标准化优势保持不变。启用稳定项、改变缩放方式或混合不同奖励时，应重新核对这个性质的适用范围。
+
+### 多种奖励先写清聚合方式
+
+假设任务有答案正确性、格式和工具执行等评分，先定义奖励函数各自的取值范围，再说明权重与聚合步骤：
+
+$$
+R_i=\sum_{m=1}^{M}w_m r_m(x,y_i).
+$$
+
+这只是一个**本站教学配置**。按“先加权求和、再组内标准化”计算，与“每类奖励先标准化、再求和”一般不同。分数很大的奖励项可能主导前一种配置；后一种配置则改变各项对更新的相对贡献。
+
+不要只记录总奖励。分别保存各奖励项，才能区分“答案变好了”和“格式分刷高了”。
+
+### 有效 token、长度与梯度权重
+
+原始目标先对一条回答的 $T_i$ 个 token 求平均，再对 $G$ 条回答求平均。若两条回答分别长 20 与 100 个 token，在相同优势、相同概率比下，每个 token 的目标权重分别包含 $1/20$ 与 $1/100$。
+
+**由公式推导**：回答在外层平均中具有相同权重，但 token 的权重不同。改成全批有效 token 平均，就会改变长短回答之间的权重关系。这里描述的是目标中的加权，不能据此直接断言模型一定更偏好哪种长度。
+
+[TRL 官方文档](https://huggingface.co/docs/trl/grpo_trainer)区分了多种 loss 与奖励缩放配置。实验记录应写出实际配置和版本，而不仅写“使用 GRPO”。
+
+### 最小训练伪代码
+
+~~~python
+# 同一提示词的回答要保留共同 group_id
+batch = sample_groups(policy, prompts, group_size)
+rewards = evaluate_reward(batch)
+advantage = normalize_within_prompt(rewards, batch.group_id)
+old_logprob = batch.old_logprob.detach()
+advantage = advantage.detach()
+
+for minibatch in finite_reuse(batch):
+    new_logprob = forward_policy(minibatch)
+    ratio = exp(new_logprob - old_logprob[minibatch.indices])
+    token_advantage = broadcast_sequence_advantage(advantage[minibatch.indices], minibatch)
+    surrogate = min(
+        ratio * token_advantage,
+        clamp(ratio, 1 - epsilon, 1 + epsilon) * token_advantage,
+    )
+    reference_term = estimate_reference_kl(minibatch)
+    # 本页对应原始按回答长度归一化版本
+    loss = -mean_of_response_means(surrogate - beta * reference_term, minibatch.mask)
+    optimize(loss)
+~~~
+
+以上是结构示例：各缓存量须按同一索引取出，padding 不参与求均值，组统计在进入小批量更新前计算完成。新 logprob 需要梯度，旧 logprob 和优势不应随学习阶段的参数更新变化。
+
+## 哪些组值得重点检查？
+
+| 情况 | 公式中的信号 | 需要进一步核查 |
+| --- | --- | --- |
+| 全部正确或全部错误 | 奖励差为 0 | 题目难度、采样多样性、评分器区分能力 |
+| 大部分相同，少数异常高分 | 少数回答获得较大相对优势 | 高分是否源于有效解答或奖励漏洞 |
+| 正确性升高但总奖励下降 | 多奖励聚合可能在起作用 | 各奖励项尺度与权重 |
+| 长回答占比不断增加 | 生成与加权配置可能影响行为 | 长度分布、截断率、实际正确率 |
+| 多轮复用后比值变化很大 | 当前策略远离采样时策略 | 更新次数、学习率、旧样本滞后 |
+
+**解释**：零方差组并不是“无用题目”的充分证据，也不等于必须删除；应结合实际成功率及采样配置判断。组内优势只能比较已经生成的回答，未采样到的解法不会自动提供训练信号。
+
+## 结果奖励和过程奖励应分开理解
+
+本页主要讨论每条回答得到一个最终分数的版本。如果每个推理步骤都有评分，token 的优势可以由后续步骤的归一化奖励累积构成：
+
+$$
+\hat A_{i,t}=\sum_{j:\,e_j\geq t}\widetilde r_{i,j},
+$$
+
+其中 $e_j$ 是步骤 $j$ 的结束位置。此时同一回答的不同 token 不一定共享完全相同的优势。该区别见 [DeepSeekMath 第 4.1.2–4.1.3 节](https://arxiv.org/html/2402.03300v1)；过程评分如何获得、是否可靠，仍需单独说明。
 
 ## 自测与相关阅读
 

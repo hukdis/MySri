@@ -22,53 +22,17 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-07'
+updated: '2026-10-08'
 ---
 # CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务
 
-<!-- v1.1:start -->
-<div class="edition-label">先读 · CAD-Assistant · 速读入口</div>
-
-## 速读摘要
-
-| 要抓住的问题 | 本篇要点 |
-| --- | --- |
-| 研究问题 | 让视觉语言模型通过工具与 CAD 环境交互。 |
-| 输入 → 输出 | 任务文字、草图或当前 CAD 状态 → 答案／更新的几何与约束，随任务而变 |
-| 核心方法 | 规划器根据当前状态调用工具，环境执行并返回观察，模型据此调整后续动作。 |
-| 关键证据怎么读 | 原表 3 看问答，原表 4–5 看约束与工具消融，原表 6 看手绘参数化。 |
-| 适用边界 | 工具调用有效率与任务成功率不同；扩展示例不构成完整工业建模基准。 |
-
-**来源与范围**：摘要依据本页原有阅读稿中的方法、实验和局限整理。论文事实请对照 [原论文](https://arxiv.org/abs/2412.13810)；本次未独立核验实验。
-
-**前置阅读**：[CAD 术语与小练习](/cad/concepts) · [横向比较](/cad/#横向比较-输入、输出与表示)。
-
-## 方法示意
-
-<MermaidDiagram title="CAD-Assistant 方法流程" caption="本站依据阅读稿绘制的流程示意；省略实现细节，原论文图表另见来源。" code='flowchart LR
- R["任务与当前状态"] --> P["视觉语言模型规划"] --> A["Python 工具动作"] --> E["CAD 环境执行"] --> O["观察与日志"] --> P
- P --> S["结束或继续"]' />
-
-## 接着读什么
-
-[CADTests](/cad/cadtests) · [CAD-Editor](/cad/cad-editor)
-
-用 CADTests 检查目标要求，再回到 CAD-Editor 比较交互式执行与直接序列编辑。
-
-::: tip 本篇阅读练习
-用自己的话写出输入、输出和反馈来源。原表 3 看问答，原表 4–5 看约束与工具消融，原表 6 看手绘参数化。分别记录一项可支持的结论和一项不能据此推出的结论。完成标准：说明任务设置，并留下原表位置。
-:::
-<!-- v1.1:end -->
-
-
-
-::: info 整理草稿 · 待人工复核
-依据你提供的材料整理；保留来源说明。网页排版检查不代表学术正确性已验证。
+::: info 来源稿整理 · 待人工复核
+按你提供的 source 阅读稿保留章节与图表位置，去除首次阅读安排；原章节编号保留，截图可点击放大。原 PDF 与个人笔记不发布。
 :::
 
 > 阅读定位：E 方向的工具与反馈闭环；同时连接 D 约束和 C 交互。重点读“模型—工具—环境”怎样合作。
 > 
-> 阅读状态：依据你提供的阅读稿整理，待人工复核；你的阅读和复现状态尚未记录。
+> 阅读状态：依据所提供的 source 阅读稿整理，待人工复核。
 
 ## 1. 论文信息与方向定位
 
@@ -81,14 +45,6 @@ updated: '2026-10-07'
 **一句话理解**：<u>针对通用视觉语言模型缺少直接操作 CAD 软件和检查几何状态的能力，CAD-Assistant 采用免训练的工具增强视觉语言模型（tool-augmented VLLM）框架，提供 Python/FreeCAD、草图识别和约束检查工具，让规划器把用户请求分解为操作，执行后读取几何与运行反馈并继续调整，直到模型判断任务结束或达到交互限制。</u>
 
 “免训练”指该框架不需要为这些 CAD 任务重新微调规划器，不代表没有预训练模块，也不代表推理免费。
-
-## 2. 首次阅读顺序
-
-- [ ] **10 分钟**：看图 2，按一轮计划、动作、执行、反馈追踪状态。
-- [ ] **15 分钟**：读 §3 和表 1（PDF 第 3–5 页），理解工具不是一段提示词。
-- [ ] **15 分钟**：读 §4.1（PDF 第 5–6 页），了解参数表示和渲染如何影响几何推理。
-- [ ] **20 分钟**：读 §4.2–4.3、表 3–6（PDF 第 6–7 页），分清三个量化任务。
-- [ ] **10 分钟**：看失败图 4，读补充 §10–11、表 11（PDF 第 13–15 页），完成自测。
 
 ## 3. 输入、输出与必要术语
 
@@ -112,7 +68,7 @@ updated: '2026-10-07'
 
 ## 4. 框架与工具集
 
-> **图表定位：CAD-Assistant 原图 2：闭环框架** · [到原论文查看](https://arxiv.org/abs/2412.13810)。原图保留在本地材料中。
+<PaperFigure src="/papers/cad-assistant/figure02_loop.png" title="CAD-Assistant 原图 2：闭环框架" source="https://arxiv.org/abs/2412.13810" :page="4" />
 
 **来源**：原图 2，PDF 第 4 页；对应 §3.1。
 
@@ -127,7 +83,7 @@ updated: '2026-10-07'
 
 **TERMINATE 是模型的结束判断，不是独立正确性证明。** 实际评价仍要检查答案、几何或约束是否正确。
 
-> **图表定位：CAD-Assistant 原表 1：工具集** · [到原论文查看](https://arxiv.org/abs/2412.13810)。原图保留在本地材料中。
+<PaperFigure src="/papers/cad-assistant/table01_tools.png" title="CAD-Assistant 原表 1：工具集" source="https://arxiv.org/abs/2412.13810" :page="5" />
 
 **来源**：原表 1，PDF 第 5 页。
 
@@ -165,7 +121,7 @@ PF1 要求基元类型和参数匹配；CF1 还要求相关基元正确，见 §
 
 ### 原论文推理成本
 
-> **图表定位：CAD-Assistant 原表 11：API 请求成本** · [到原论文查看](https://arxiv.org/abs/2412.13810)。原图保留在本地材料中。
+<PaperFigure src="/papers/cad-assistant/table11_cost.png" title="CAD-Assistant 原表 11：API 请求成本" source="https://arxiv.org/abs/2412.13810" :page="15" />
 
 **来源**：补充材料表 11，PDF 第 15 页。
 
@@ -181,7 +137,7 @@ PF1 要求基元类型和参数匹配；CF1 还要求相关基元正确，见 §
 
 ### 7.1 CAD 问答
 
-> **图表定位：CAD-Assistant 原表 3：问答结果** · [到原论文查看](https://arxiv.org/abs/2412.13810)。原图保留在本地材料中。
+<PaperFigure src="/papers/cad-assistant/table03_qa.png" title="CAD-Assistant 原表 3：问答结果" source="https://arxiv.org/abs/2412.13810" :page="6" />
 
 **来源**：原表 3，PDF 第 6 页。
 
@@ -191,7 +147,7 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 
 ### 7.2 自动约束与工具消融
 
-> **图表定位：CAD-Assistant 原表 4–5：约束任务与工具消融** · [到原论文查看](https://arxiv.org/abs/2412.13810)。原图保留在本地材料中。
+<PaperFigure src="/papers/cad-assistant/table04_05_constraints.png" title="CAD-Assistant 原表 4–5：约束任务与工具消融" source="https://arxiv.org/abs/2412.13810" :page="7" />
 
 **来源**：原表 4和表 5，PDF 第 7 页；同一原文区域保留两张表及表注。
 
@@ -203,7 +159,7 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 
 ### 7.3 手绘草图参数化
 
-> **图表定位：CAD-Assistant 原表 6：手绘参数化** · [到原论文查看](https://arxiv.org/abs/2412.13810)。原图保留在本地材料中。
+<PaperFigure src="/papers/cad-assistant/table06_sketches.png" title="CAD-Assistant 原表 6：手绘参数化" source="https://arxiv.org/abs/2412.13810" :page="7" />
 
 **来源**：原表 6，PDF 第 7 页。
 
@@ -211,7 +167,7 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 
 ## 8. 失败分析与扩展能力的范围
 
-> **图表定位：CAD-Assistant 原图 4：问答失败类型** · [到原论文查看](https://arxiv.org/abs/2412.13810)。原图保留在本地材料中。
+<PaperFigure src="/papers/cad-assistant/figure04_failures.png" title="CAD-Assistant 原图 4：问答失败类型" source="https://arxiv.org/abs/2412.13810" :page="7" />
 
 **来源**：原图 4，PDF 第 7 页。
 
@@ -282,18 +238,18 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 
 原阅读稿标注依据以下原论文及补充材料整理。页码均为 **PDF 文件页码**，不是补充材料页脚重新编号的页码。正文中的中文讲解为阅读辅助，“本笔记解读”表示研究理解或推断。
 
-- [原论文 PDF](https://arxiv.org/abs/2412.13810)
-- [原文提取文本：用于搜索，公式与阅读顺序以 PDF 为准](https://arxiv.org/abs/2412.13810)
-- [图表来源清单：页码、裁切坐标和 PDF 校验信息](https://arxiv.org/abs/2412.13810)
-- 论文来源与校验信息（保留在本地 sources）
+- [原论文 PDF](https://arxiv.org/pdf/2412.13810)
+- 原文提取文本：用于搜索，公式与阅读顺序以 PDF 为准（来源稿的本地记录，未发布）
+- 图表来源清单：页码、裁切坐标和 PDF 校验信息（来源稿的本地记录，未发布）
+- 论文来源与校验信息（来源稿的本地记录，未发布）
 
-本网页保留原图表的名称、正文说明与论文出处；原始裁切图和 PDF 保存在本地 sources，未复制到发布目录。
+嵌入图表均由上述原 PDF 直接裁切、保留英文图注或表注，没有重绘或用 AI 生成替代。原图表著作权归原作者及相应权利人，此处保留出处用于个人学术阅读。
 
-本次完成阅读稿的网页整理，未独立核验原论文结论、运行代码或复现实验。文中数值与版本信息来自所提供的阅读稿，仍需对照原论文人工复核。
+本次恢复来源稿的正文结构与原论文截图，未独立核验论文结论、运行代码或复现实验。
+
 
 ## 本站阅读来源
 
-本页来自你提供的 `sources/论文/先读/CAD-Assistant.md`。正文的论文主张、解读与推断沿用原稿标记，本次只整理排版、来源入口和阅读状态。
+正文来自 sources/论文/先读/CAD-Assistant.md；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。
 
-[返回 CAD 资料导航](/cad/reading-navigation)
-
+[返回 CAD 总览](/cad/)
