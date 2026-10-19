@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 import re
+import time
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -63,6 +64,16 @@ def main() -> None:
     errors = []
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
+        # A cold route module can arrive after the HTML; the first choice must survive initialization.
+        slow = browser.new_page(viewport={'width':1440, 'height':1000})
+        def delay_route(route):
+            time.sleep(1)
+            route.continue_()
+        slow.route('**/cad_index.md.*.js', delay_route)
+        slow.goto(BASE + 'cad/', wait_until='domcontentloaded')
+        slow.get_by_label('任务',exact=True).select_option('EDIT')
+        expect(slow.locator('.cad-record')).to_have_count(11)
+        slow.close()
         page = browser.new_page(viewport={'width':1440, 'height':1000})
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.on('response', lambda response: errors.append(f'HTTP {response.status}: {response.url}') if response.status >= 400 and response.url.startswith(BASE) else None)

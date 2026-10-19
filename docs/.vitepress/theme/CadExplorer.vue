@@ -13,6 +13,7 @@ const taskSlugs:Record<string,string> = {GEN:'generation',REC:'reconstruction',E
 const taskName = (id:string) => data.tasks.find(t=>t.id===id)?.title || '共用基础与资料'
 const filters = ref({q:'',task:props.task,from:'',to:'',sort:'asc',reading:false,kind:'',status:'',access:'',format:'',inputs:'',representations:'',methods:'',objects:'',requirements:''})
 const expanded = ref(false)
+const ready = ref(false)
 const isPaper = computed(()=>!['resources','issues'].includes(props.mode))
 const isTree = computed(()=>['overview','tree'].includes(props.mode))
 const cards = computed<Card[]>(()=> {
@@ -61,7 +62,7 @@ function readUrl(){
   if(data.facets.some(f=>filters.value[f.id as 'inputs'])) expanded.value=true
   nextTick(()=>{restoring=false})
 }
-onMounted(()=>{readUrl();window.addEventListener('popstate',readUrl)})
+onMounted(()=>{readUrl();ready.value=true;window.addEventListener('popstate',readUrl)})
 onUnmounted(()=>{clearTimeout(timer);window.removeEventListener('popstate',readUrl)})
 watch(filters,()=>{
   if(restoring||typeof window==='undefined')return
@@ -78,7 +79,7 @@ watch(filters,()=>{
 </script>
 
 <template>
-  <div class="cad-explorer">
+  <div class="cad-explorer" :data-ready="ready">
     <template v-if="mode==='overview'">
       <div class="cad-stat-strip"><span><strong>134</strong>论文记录</span><span><strong>4</strong>任务主线</span><span><strong>35</strong>数据资源</span><span><strong>26</strong>具体问题</span></div>
       <div class="cad-task-grid">
@@ -87,7 +88,8 @@ watch(filters,()=>{
       <nav class="cad-jump-links" aria-label="CAD 资料入口"><a :href="siteLink('/cad/foundations')">共用基础 →</a><a :href="siteLink('/cad/reading-navigation')">全部论文 →</a><a :href="siteLink('/cad/resources')">数据与评测 →</a><a :href="siteLink('/cad/issues')">问题分析 →</a></nav>
       <h2 id="任务时间树">任务时间树</h2><p class="cad-description">按主要研究交付组织方法工作。时间先后不自动表示继承；点击论文可查看贡献、来源与已记录的发展关系。</p>
     </template>
-    <form class="cad-filter-panel" role="search" aria-label="CAD 资料筛选" @submit.prevent>
+    <form class="cad-filter-panel" role="search" aria-label="CAD 资料筛选" :aria-busy="!ready" @submit.prevent>
+      <fieldset class="cad-filter-fields" :disabled="!ready">
       <div class="cad-filter-top"><label class="cad-query">搜索当前资料<input v-model="filters.q" type="search" placeholder="论文、问题、关键词或编号" /></label><button type="button" class="cad-control" @click="reset">重置筛选</button></div>
       <div class="cad-filter-row">
         <label v-if="mode!=='foundations'">任务<select aria-label="任务" v-model="filters.task" :disabled="!!props.task"><option value="">全部任务</option><option v-for="t in data.tasks" :key="t.id" :value="t.id">{{ t.title }}</option></select></label>
@@ -98,6 +100,7 @@ watch(filters,()=>{
       </div>
       <div v-if="isPaper" class="cad-filter-footer"><label v-if="mode!=='foundations'" class="cad-checkbox"><input v-model="filters.reading" type="checkbox" />仅看已有九篇详读</label><button class="cad-text-button" type="button" :aria-expanded="expanded" @click="expanded=!expanded">{{ expanded?'收起':'展开' }}五类标签筛选 {{ expanded?'−':'+' }}</button></div>
       <div v-if="isPaper&&expanded" class="cad-facet-row"><label v-for="f in data.facets" :key="f.id">{{ f.title }}<select :aria-label="f.title" v-model="filters[f.id as 'inputs']"><option value="">不限{{ f.title }}</option><option v-for="value in f.values" :key="value" :value="value">{{ value }}</option></select></label></div>
+      </fieldset>
     </form>
     <div class="cad-results-heading"><span role="status" aria-live="polite">找到 <strong>{{ results.length }}</strong> 条{{ mode==='resources'?'资源':mode==='issues'?'问题':'论文' }}</span><small>{{ isPaper?'资料记录 ≠ 全文详读':'来源材料记录 · 待人工复核' }}</small></div>
     <p v-if="activeCount" class="cad-active-filters">当前筛选：{{ summary }}</p>
@@ -110,7 +113,7 @@ watch(filters,()=>{
           <div class="cad-record-top"><span>{{ card.id }}<template v-if="card.date"> · {{ card.date }}</template></span><span class="cad-record-state" :class="{'is-reading':card.hasReading}">{{ card.hasReading?'已有详读':card.kind==='issue'?(card.status==='supported_scoped_problem'?'范围限定问题':'候选 · 待验证'):card.kind==='foundation'?'基础记录':card.kind==='resource'?'资源记录':'论文记录' }}</span></div>
           <a class="cad-record-title" :href="siteLink(card.url)">{{ card.title }} <span>↗</span></a>
           <p>{{ card.detail }}</p>
-          <div class="cad-tags"><span v-if="card.task" class="cad-task-tag">{{ taskName(card.task) }}</span><span v-if="card.kind==='resource'&&card.access">{{ accessLabels[card.access]||card.access }}</span><template v-for="facet in data.facets" :key="facet.id"><button v-for="value in (card.tags[facet.id]||[]).slice(0,2)" :key="facet.id+value" type="button" :aria-label="'筛选'+facet.title+'：'+value" @click="selectTag(facet.id,value)">{{ value }}</button></template><span v-for="format in card.formats.slice(0,4)" :key="format">{{ format }}</span></div>
+          <div class="cad-tags"><span v-if="card.task" class="cad-task-tag">{{ taskName(card.task) }}</span><span v-if="card.kind==='resource'&&card.access">{{ accessLabels[card.access]||card.access }}</span><template v-for="facet in data.facets" :key="facet.id"><button v-for="value in (card.tags[facet.id]||[]).slice(0,2)" :key="facet.id+value" type="button" :disabled="!ready" :aria-label="'筛选'+facet.title+'：'+value" @click="selectTag(facet.id,value)">{{ value }}</button></template><span v-for="format in card.formats.slice(0,4)" :key="format">{{ format }}</span></div>
         </article>
       </div>
     </div>
