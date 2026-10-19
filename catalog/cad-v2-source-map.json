@@ -1,0 +1,818 @@
+{
+  "sourceSha256": "39529ffe4c51a791dc75b86ccf2fc7628a2d00728875879ecbcd68f3c2f23f38",
+  "importedOn": "2026-10-19",
+  "paperMappings": [
+    {
+      "sourceId": "Sut63",
+      "articleId": "cad-ref-sut63",
+      "url": "/cad/papers/sut63",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Req80",
+      "articleId": "cad-ref-req80",
+      "url": "/cad/papers/req80",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kra90",
+      "articleId": "cad-ref-kra90",
+      "url": "/cad/papers/kra90",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "San90",
+      "articleId": "cad-ref-san90",
+      "url": "/cad/papers/san90",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Hof93",
+      "articleId": "cad-ref-hof93",
+      "url": "/cad/papers/hof93",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kri95",
+      "articleId": "cad-ref-kri95",
+      "url": "/cad/papers/kri95",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Lin03",
+      "articleId": "cad-ref-lin03",
+      "url": "/cad/papers/lin03",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Bid05",
+      "articleId": "cad-ref-bid05",
+      "url": "/cad/papers/bid05",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Jay06",
+      "articleId": "cad-ref-jay06",
+      "url": "/cad/papers/jay06",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Sha17",
+      "articleId": "cad-ref-sha17",
+      "url": "/cad/papers/sha17",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Du18",
+      "articleId": "cad-ref-du18",
+      "url": "/cad/papers/du18",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Koc18",
+      "articleId": "cad-ref-koc18",
+      "url": "/cad/papers/koc18",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Li18b",
+      "articleId": "cad-ref-li18b",
+      "url": "/cad/papers/li18b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Sef20",
+      "articleId": "cad-ref-sef20",
+      "url": "/cad/papers/sef20",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wil20b",
+      "articleId": "cad-ref-wil20b",
+      "url": "/cad/papers/wil20b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Li20",
+      "articleId": "cad-ref-li20",
+      "url": "/cad/papers/li20",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wil21",
+      "articleId": "cad-ref-wil21",
+      "url": "/cad/papers/wil21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Gan21",
+      "articleId": "cad-ref-gan21",
+      "url": "/cad/papers/gan21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wu21",
+      "articleId": "cad-0101",
+      "url": "/cad/deepcad",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Jay21",
+      "articleId": "cad-ref-jay21",
+      "url": "/cad/papers/jay21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Lam21",
+      "articleId": "cad-ref-lam21",
+      "url": "/cad/papers/lam21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Xu21",
+      "articleId": "cad-ref-xu21",
+      "url": "/cad/papers/xu21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Par21",
+      "articleId": "cad-ref-par21",
+      "url": "/cad/papers/par21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Sef21",
+      "articleId": "cad-ref-sef21",
+      "url": "/cad/papers/sef21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Jon21",
+      "articleId": "cad-ref-jon21",
+      "url": "/cad/papers/jon21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Tan22",
+      "articleId": "cad-ref-tan22",
+      "url": "/cad/papers/tan22",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Jay22",
+      "articleId": "cad-ref-jay22",
+      "url": "/cad/papers/jay22",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Col22",
+      "articleId": "cad-ref-col22",
+      "url": "/cad/papers/col22",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Uy21",
+      "articleId": "cad-ref-uy21",
+      "url": "/cad/papers/uy21",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wil21c",
+      "articleId": "cad-ref-wil21c",
+      "url": "/cad/papers/wil21c",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Guo22",
+      "articleId": "cad-ref-guo22",
+      "url": "/cad/papers/guo22",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Li22",
+      "articleId": "cad-ref-li22",
+      "url": "/cad/papers/li22",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Xu22",
+      "articleId": "cad-ref-xu22",
+      "url": "/cad/papers/xu22",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Noe22",
+      "articleId": "cad-ref-noe22",
+      "url": "/cad/papers/noe22",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kod23b",
+      "articleId": "cad-ref-kod23b",
+      "url": "/cad/papers/kod23b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Xu23",
+      "articleId": "cad-ref-xu23",
+      "url": "/cad/papers/xu23",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Zho23",
+      "articleId": "cad-ref-zho23",
+      "url": "/cad/papers/zho23",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Mal23",
+      "articleId": "cad-ref-mal23",
+      "url": "/cad/papers/mal23",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Liu23",
+      "articleId": "cad-ref-liu23",
+      "url": "/cad/papers/liu23",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Yua24",
+      "articleId": "cad-ref-yua24",
+      "url": "/cad/papers/yua24",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kha24c",
+      "articleId": "cad-ref-kha24c",
+      "url": "/cad/papers/kha24c",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Yua23",
+      "articleId": "cad-ref-yua23",
+      "url": "/cad/papers/yua23",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Dup24",
+      "articleId": "cad-ref-dup24",
+      "url": "/cad/papers/dup24",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Xu24b",
+      "articleId": "cad-ref-xu24b",
+      "url": "/cad/papers/xu24b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "You24",
+      "articleId": "cad-ref-you24",
+      "url": "/cad/papers/you24",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kha24b",
+      "articleId": "cad-0102",
+      "url": "/cad/text2cad",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "AX2410_03417",
+      "articleId": "cad-ref-ax2410_03417",
+      "url": "/cad/papers/ax2410_03417",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Alr24",
+      "articleId": "cad-ref-alr24",
+      "url": "/cad/papers/alr24",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Xu24",
+      "articleId": "cad-0105",
+      "url": "/cad/cad-mllm",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Mal24",
+      "articleId": "cad-0109",
+      "url": "/cad/cad-assistant",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Ruk24",
+      "articleId": "cad-0104",
+      "url": "/cad/cad-recode",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Wan24b",
+      "articleId": "cad-ref-wan24b",
+      "url": "/cad/papers/wan24b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Ana25",
+      "articleId": "cad-ref-ana25",
+      "url": "/cad/papers/ana25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wan25",
+      "articleId": "cad-ref-wan25",
+      "url": "/cad/papers/wan25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Yua25",
+      "articleId": "cad-0108",
+      "url": "/cad/cad-editor",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Jon25b",
+      "articleId": "cad-ref-jon25b",
+      "url": "/cad/papers/jon25b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Zou25",
+      "articleId": "cad-ref-zou25",
+      "url": "/cad/papers/zou25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Cas25",
+      "articleId": "cad-ref-cas25",
+      "url": "/cad/papers/cas25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Li25",
+      "articleId": "cad-0103",
+      "url": "/cad/cad-llama",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Xie25",
+      "articleId": "cad-ref-xie25",
+      "url": "/cad/papers/xie25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Dor25",
+      "articleId": "cad-ref-dor25",
+      "url": "/cad/papers/dor25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Gua25",
+      "articleId": "cad-ref-gua25",
+      "url": "/cad/papers/gua25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Che25",
+      "articleId": "cad-0106",
+      "url": "/cad/cadreview",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Gov25",
+      "articleId": "cad-ref-gov25",
+      "url": "/cad/papers/gov25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Liu25b",
+      "articleId": "cad-ref-liu25b",
+      "url": "/cad/papers/liu25b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Qin25",
+      "articleId": "cad-ref-qin25",
+      "url": "/cad/papers/qin25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Don25",
+      "articleId": "cad-ref-don25",
+      "url": "/cad/papers/don25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Ma25",
+      "articleId": "cad-ref-ma25",
+      "url": "/cad/papers/ma25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Clamp26",
+      "articleId": "cad-ref-clamp26",
+      "url": "/cad/papers/clamp26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Drawings26",
+      "articleId": "cad-ref-drawings26",
+      "url": "/cad/papers/drawings26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Intent26",
+      "articleId": "cad-ref-intent26",
+      "url": "/cad/papers/intent26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "PhysicalPosition26",
+      "articleId": "cad-ref-physicalposition26",
+      "url": "/cad/papers/physicalposition26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "SO3Brep26",
+      "articleId": "cad-ref-so3brep26",
+      "url": "/cad/papers/so3brep26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Li26i",
+      "articleId": "cad-ref-li26i",
+      "url": "/cad/papers/li26i",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Jad24",
+      "articleId": "cad-ref-jad24",
+      "url": "/cad/papers/jad24",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kim26b",
+      "articleId": "cad-ref-kim26b",
+      "url": "/cad/papers/kim26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Qi26b",
+      "articleId": "cad-ref-qi26b",
+      "url": "/cad/papers/qi26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Bar26",
+      "articleId": "cad-ref-bar26",
+      "url": "/cad/papers/bar26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Gia26",
+      "articleId": "cad-ref-gia26",
+      "url": "/cad/papers/gia26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Per26",
+      "articleId": "cad-ref-per26",
+      "url": "/cad/papers/per26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Ata26",
+      "articleId": "cad-ref-ata26",
+      "url": "/cad/papers/ata26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Pya26",
+      "articleId": "cad-ref-pya26",
+      "url": "/cad/papers/pya26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Mal26",
+      "articleId": "cad-0107",
+      "url": "/cad/cadtests",
+      "action": "关联现有详读"
+    },
+    {
+      "sourceId": "Dor26",
+      "articleId": "cad-ref-dor26",
+      "url": "/cad/papers/dor26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Zha26",
+      "articleId": "cad-ref-zha26",
+      "url": "/cad/papers/zha26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Son26",
+      "articleId": "cad-ref-son26",
+      "url": "/cad/papers/son26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wan26",
+      "articleId": "cad-ref-wan26",
+      "url": "/cad/papers/wan26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Sun26",
+      "articleId": "cad-ref-sun26",
+      "url": "/cad/papers/sun26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Don26c",
+      "articleId": "cad-ref-don26c",
+      "url": "/cad/papers/don26c",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "CodeBench26",
+      "articleId": "cad-ref-codebench26",
+      "url": "/cad/papers/codebench26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Hu26",
+      "articleId": "cad-ref-hu26",
+      "url": "/cad/papers/hu26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Zha26b",
+      "articleId": "cad-ref-zha26b",
+      "url": "/cad/papers/zha26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Qi26",
+      "articleId": "cad-ref-qi26",
+      "url": "/cad/papers/qi26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Liu26c",
+      "articleId": "cad-ref-liu26c",
+      "url": "/cad/papers/liu26c",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Geo26",
+      "articleId": "cad-ref-geo26",
+      "url": "/cad/papers/geo26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Don26b",
+      "articleId": "cad-ref-don26b",
+      "url": "/cad/papers/don26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Bal26",
+      "articleId": "cad-ref-bal26",
+      "url": "/cad/papers/bal26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Xu26b",
+      "articleId": "cad-ref-xu26b",
+      "url": "/cad/papers/xu26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Liu25",
+      "articleId": "cad-ref-liu25",
+      "url": "/cad/papers/liu25",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Liu26",
+      "articleId": "cad-ref-liu26",
+      "url": "/cad/papers/liu26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kim26",
+      "articleId": "cad-ref-kim26",
+      "url": "/cad/papers/kim26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Kab26",
+      "articleId": "cad-ref-kab26",
+      "url": "/cad/papers/kab26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Liu26b",
+      "articleId": "cad-ref-liu26b",
+      "url": "/cad/papers/liu26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Fan26",
+      "articleId": "cad-ref-fan26",
+      "url": "/cad/papers/fan26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Lu26",
+      "articleId": "cad-ref-lu26",
+      "url": "/cad/papers/lu26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Fre26",
+      "articleId": "cad-ref-fre26",
+      "url": "/cad/papers/fre26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Sin26",
+      "articleId": "cad-ref-sin26",
+      "url": "/cad/papers/sin26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Bha26",
+      "articleId": "cad-ref-bha26",
+      "url": "/cad/papers/bha26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Zha26c",
+      "articleId": "cad-ref-zha26c",
+      "url": "/cad/papers/zha26c",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wu26",
+      "articleId": "cad-ref-wu26",
+      "url": "/cad/papers/wu26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Sin26b",
+      "articleId": "cad-ref-sin26b",
+      "url": "/cad/papers/sin26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Li26f",
+      "articleId": "cad-ref-li26f",
+      "url": "/cad/papers/li26f",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Li26g",
+      "articleId": "cad-ref-li26g",
+      "url": "/cad/papers/li26g",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Wel26",
+      "articleId": "cad-ref-wel26",
+      "url": "/cad/papers/wel26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Du26",
+      "articleId": "cad-ref-du26",
+      "url": "/cad/papers/du26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Jia26b",
+      "articleId": "cad-ref-jia26b",
+      "url": "/cad/papers/jia26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Bal26c",
+      "articleId": "cad-ref-bal26c",
+      "url": "/cad/papers/bal26c",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Don26",
+      "articleId": "cad-ref-don26",
+      "url": "/cad/papers/don26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Har26b",
+      "articleId": "cad-ref-har26b",
+      "url": "/cad/papers/har26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Zhe26",
+      "articleId": "cad-ref-zhe26",
+      "url": "/cad/papers/zhe26",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Yu26b",
+      "articleId": "cad-ref-yu26b",
+      "url": "/cad/papers/yu26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Che26e",
+      "articleId": "cad-ref-che26e",
+      "url": "/cad/papers/che26e",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Zha26g",
+      "articleId": "cad-ref-zha26g",
+      "url": "/cad/papers/zha26g",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2609_36806",
+      "articleId": "cad-ref-ax2609_36806",
+      "url": "/cad/papers/ax2609_36806",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2609_39738",
+      "articleId": "cad-ref-ax2609_39738",
+      "url": "/cad/papers/ax2609_39738",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Neh26b",
+      "articleId": "cad-ref-neh26b",
+      "url": "/cad/papers/neh26b",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Yin26f",
+      "articleId": "cad-ref-yin26f",
+      "url": "/cad/papers/yin26f",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "Lu26g",
+      "articleId": "cad-ref-lu26g",
+      "url": "/cad/papers/lu26g",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2610_08698",
+      "articleId": "cad-ref-ax2610_08698",
+      "url": "/cad/papers/ax2610_08698",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2610_09127",
+      "articleId": "cad-ref-ax2610_09127",
+      "url": "/cad/papers/ax2610_09127",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2610_11896",
+      "articleId": "cad-ref-ax2610_11896",
+      "url": "/cad/papers/ax2610_11896",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2610_11954",
+      "articleId": "cad-ref-ax2610_11954",
+      "url": "/cad/papers/ax2610_11954",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2610_13466",
+      "articleId": "cad-ref-ax2610_13466",
+      "url": "/cad/papers/ax2610_13466",
+      "action": "新增资料记录"
+    },
+    {
+      "sourceId": "AX2610_15681",
+      "articleId": "cad-ref-ax2610_15681",
+      "url": "/cad/papers/ax2610_15681",
+      "action": "新增资料记录"
+    }
+  ],
+  "counts": {
+    "papers": 134,
+    "datasets": 35,
+    "issues": 26,
+    "relations": 30
+  },
+  "duplicatePolicy": "每条来源记录保留稳定 ID；九篇同一论文关联已有详读，不按短名合并其他版本或同名工作。",
+  "reviewed": false
+}

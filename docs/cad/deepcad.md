@@ -5,7 +5,6 @@ navTitle: DeepCAD
 category: cad
 type: paper
 tags:
-  - 先读
   - 论文阅读
   - 表示基础
 prerequisites:
@@ -21,9 +20,13 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-08'
+updated: '2026-10-19'
 ---
 # DeepCAD：把 CAD 建模过程变成可学习的操作序列
+
+<!-- cad-v2-context -->
+> **第二版研究树 · CAD生成** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)
+<!-- /cad-v2-context -->
 
 ::: info 来源稿整理 · 待人工复核
 按你提供的 source 阅读稿保留章节与图表位置，去除首次阅读安排；原章节编号保留，截图可点击放大。原 PDF 与个人笔记不发布。
@@ -326,3 +329,47 @@ Ours 的 COV/MMD/JSD 为 **78.13 / 1.45 / 3.76**；l-GAN 为 **77.73 / 1.27 / 5.
 正文来自 sources/论文/先读/DeepCAD.md；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。
 
 [返回 CAD 总览](/cad/)
+
+<!-- cad-v2-relations -->
+::: details 研究树关联：发展关系、资源与问题
+
+
+### R01 · 直接改进
+
+[DeepCAD](/cad/deepcad) → [SkexGen](/cad/papers/xu22)
+
+SkexGen明确在DeepCAD等表示上修改，增加面层次并改为解耦码本生成；不表示复用整个DeepCAD模型。
+
+证据定位（来源材料记录）：Xu22 §3，PDF第2页。
+
+### R07 · 相关基础
+
+[DeepCAD](/cad/deepcad) → [Text2CAD](/cad/text2cad)
+
+Text2CAD对DeepCAD模型构造多层次文本描述，用于文本条件CAD序列学习。
+
+证据定位（来源材料记录）：Text2CAD §3，Data Annotation。
+
+### R08 · 相关基础
+
+[DeepCAD](/cad/deepcad) → [CAD-Llama](/cad/cad-llama)
+
+CAD-Llama的数据与命令表示以DeepCAD为基础，再转换为SPCC并适配LLM；不继承DeepCAD的生成网络。
+
+证据定位（来源材料记录）：数据与表示章节；原文§3–4。
+
+### R09 · 相关基础
+
+[DeepCAD](/cad/deepcad) → [CAD-Editor](/cad/cad-editor)
+
+CAD-Editor从DeepCAD出发构造原始模型和编辑数据。
+
+证据定位（来源材料记录）：原文§4、§6。
+
+资源：[DeepCAD](/cad/datasets/ds_deepcad)。
+
+问题：未单列。
+
+[CAD生成](/cad/tasks/generation) · [发展关系](/cad/relationships)
+:::
+<!-- /cad-v2-relations -->

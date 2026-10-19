@@ -250,6 +250,75 @@
 .atlas-shell .VPNavBarMenuLink .text {font-size:16px;}
 .atlas-shell .VPDocAsideOutline .outline-title {font-size:14px;}
 
+/* CAD 2.0 shares the existing Atlas typography and black/white surfaces. */
+.cad-explorer {margin:24px 0;}
+.cad-stat-strip {display:flex;gap:34px;flex-wrap:wrap;padding:8px 0 28px;border-bottom:1px solid var(--vp-c-divider);}
+.cad-stat-strip span {display:flex;gap:10px;align-items:baseline;font-size:15px;color:var(--vp-c-text-2);}
+.cad-stat-strip strong {font:32px var(--atlas-heading);color:var(--vp-c-text-1);}
+.cad-task-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:28px 0;}
+.vp-doc .cad-task-card {display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:22px 24px;border:1px solid var(--vp-c-divider);border-radius:8px;background:var(--atlas-paper);text-decoration:none;transition:border-color .15s;}
+.cad-task-card:hover {border-color:var(--vp-c-brand-1);}
+.cad-eyebrow {font:13px monospace;letter-spacing:.1em;color:var(--vp-c-text-3);}
+.cad-task-card strong {display:flex;justify-content:space-between;gap:16px;width:100%;font-size:21px;font-weight:600;color:var(--vp-c-text-1);}
+.vp-doc .cad-task-card p {margin:0;color:var(--vp-c-text-2);font-size:17px;}
+.cad-task-card small {font-size:14px;color:var(--vp-c-text-3);}
+.cad-jump-links {display:flex;flex-wrap:wrap;gap:10px 26px;margin:24px 0 36px;font-size:16px;}
+.cad-description {color:var(--vp-c-text-2);}
+.cad-filter-panel {padding:20px;border:1px solid var(--vp-c-divider);border-radius:8px;background:var(--vp-c-bg-soft);margin:24px 0;}
+.cad-filter-top {display:flex;align-items:flex-end;gap:16px;}
+.cad-query {flex:1;}
+.cad-filter-panel label {display:flex;flex-direction:column;gap:7px;font-size:14px;color:var(--vp-c-text-2);min-width:0;}
+.cad-filter-panel input:not([type=checkbox]),.cad-filter-panel select {width:100%;min-width:0;height:42px;padding:8px 10px;border:1px solid var(--vp-c-divider);border-radius:5px;background:var(--vp-c-bg);color:var(--vp-c-text-1);font:16px var(--vp-font-family-base);}
+.cad-filter-row,.cad-facet-row {display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:14px;margin-top:16px;}
+.cad-control {padding:8px 12px;min-height:42px;border:1px solid var(--vp-c-divider);border-radius:5px;background:var(--vp-c-bg);font-size:15px;white-space:nowrap;}
+.cad-filter-footer {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:18px;}
+.cad-filter-panel .cad-checkbox {flex-direction:row;align-items:center;gap:8px;font-size:15px;cursor:pointer;}
+.cad-checkbox input {width:17px;height:17px;accent-color:var(--vp-c-brand-1);}
+.cad-text-button {color:var(--vp-c-brand-1);font-size:15px;}
+.cad-explorer button {cursor:pointer;}
+.cad-explorer :is(button,a,input,select):focus-visible {outline:2px solid var(--vp-c-brand-1);outline-offset:3px;}
+.cad-results-heading {display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--vp-c-divider);font-size:17px;}
+.cad-results-heading small {font-size:14px;color:var(--vp-c-text-3);}
+.cad-active-filters {color:var(--vp-c-brand-1);font-size:15px;overflow-wrap:anywhere;}
+.vp-doc .cad-year-group h3 {margin:30px 0 16px;font:26px var(--atlas-heading);display:flex;align-items:center;gap:14px;}
+.cad-year-group h3 small {font:14px var(--vp-font-family-base);color:var(--vp-c-text-3);}
+.cad-timeline {border-left:1px solid var(--vp-c-divider);margin-left:8px;padding-left:24px;}
+.cad-record {position:relative;padding:4px 0 24px;margin-bottom:22px;border-bottom:1px solid var(--vp-c-divider);min-width:0;}
+.cad-record::before {content:'';position:absolute;left:-29px;top:12px;width:9px;height:9px;border:2px solid var(--vp-c-brand-1);border-radius:50%;background:var(--vp-c-bg);}
+.cad-record-top {display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;color:var(--vp-c-text-3);font-size:14px;}
+.cad-record-state {font-size:13px;padding:2px 8px;background:var(--vp-c-bg-soft);border-radius:4px;}
+.cad-record-state.is-reading {color:var(--vp-c-brand-1);background:var(--vp-c-brand-soft);}
+.vp-doc .cad-record-title {display:inline-block;font-size:21px;font-weight:600;line-height:1.7;color:var(--vp-c-text-1);text-decoration:none;overflow-wrap:anywhere;}
+.cad-record-title:hover {color:var(--vp-c-brand-1);}
+.vp-doc .cad-record p {font-size:17px;line-height:1.9;margin:10px 0 14px;color:var(--vp-c-text-2);}
+.cad-tags {display:flex;flex-wrap:wrap;gap:6px;}
+.cad-tags button,.cad-tags span {font-size:13px;line-height:1.7;padding:3px 8px;border:1px solid var(--vp-c-divider);border-radius:4px;color:var(--vp-c-text-2);}
+.cad-tags button:hover {border-color:var(--vp-c-brand-1);color:var(--vp-c-brand-1);}
+.cad-tags .cad-task-tag {border-color:transparent;background:var(--vp-c-bg-soft);}
+.cad-empty {padding:26px 20px;border:1px dashed var(--vp-c-divider);border-radius:6px;text-align:center;color:var(--vp-c-text-2);}
+.cad-relations {margin:28px 0;}
+.cad-relations label {display:flex;flex-direction:column;gap:10px;font-size:16px;}
+.cad-relations select {border:1px solid var(--vp-c-divider);border-radius:5px;background:var(--vp-c-bg-soft);padding:10px;font-size:16px;color:var(--vp-c-text-1);max-width:100%;}
+.cad-relation-edge {border:1px solid var(--vp-c-divider);border-radius:8px;padding:20px;margin:16px 0;}
+.cad-edge-nodes {display:flex;align-items:center;gap:16px;margin-bottom:18px;font-weight:600;overflow-wrap:anywhere;}
+.cad-edge-nodes > a,.cad-edge-nodes > span:not(.cad-edge-arrow) {flex:1;min-width:0;padding:12px;background:var(--vp-c-bg-soft);border-radius:5px;text-align:center;}
+.cad-edge-arrow {flex:0 0 auto;color:var(--vp-c-brand-1);}
+.vp-doc .cad-relation-edge p {margin:12px 0;font-size:17px;}
+.cad-relation-edge small {font-size:14px;color:var(--vp-c-text-2);}
+@media(max-width:700px) {
+  .cad-stat-strip {gap:18px 24px;display:grid;grid-template-columns:1fr 1fr;}
+  .cad-stat-strip strong {font-size:28px;}
+  .cad-task-grid {grid-template-columns:1fr;gap:12px;}
+  .vp-doc .cad-task-card {padding:18px;}
+  .cad-filter-panel {padding:14px;}
+  .cad-filter-top {gap:10px;}
+  .cad-filter-row,.cad-facet-row {grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .cad-control {font-size:14px;padding:8px;}
+  .cad-timeline {padding-left:18px;}
+  .cad-record::before {left:-23px;}
+  .vp-doc .cad-record-title {font-size:20px;}
+}
+
 .algorithm-diagram.diagram-compact {padding:14px 18px;margin:20px 0;}
 .algorithm-diagram.diagram-compact svg {width:100%;min-width:0;max-height:180px;}
 .diagram-compact .diagram-toolbar {margin-bottom:8px;}

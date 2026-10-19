@@ -105,15 +105,10 @@
     "category": "cad",
     "type": "concept",
     "tags": [
-      "资料导航",
-      "先读",
-      "补读"
+      "研究树第二版"
     ],
     "prerequisites": [],
-    "related": [
-      "cad-0001",
-      "basic-0002"
-    ],
+    "related": [],
     "sources": [
       "sources/论文/00_阅读导航.md"
     ],
@@ -121,7 +116,7 @@
     "reviewed": false,
     "order": 12,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-19",
     "file": "cad/reading-navigation.md",
     "url": "/cad/reading-navigation"
   },
@@ -233,7 +228,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "表示基础"
     ],
@@ -253,7 +247,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/deepcad.md",
     "url": "/cad/deepcad"
   },
@@ -264,7 +258,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "条件生成"
     ],
@@ -285,7 +278,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/text2cad.md",
     "url": "/cad/text2cad"
   },
@@ -296,7 +289,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "条件生成"
     ],
@@ -317,7 +309,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/cad-llama.md",
     "url": "/cad/cad-llama"
   },
@@ -328,7 +320,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "几何重建"
     ],
@@ -349,7 +340,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/cad-recode.md",
     "url": "/cad/cad-recode"
   },
@@ -360,7 +351,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "条件生成"
     ],
@@ -381,7 +371,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/cad-mllm.md",
     "url": "/cad/cad-mllm"
   },
@@ -392,7 +382,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "反馈与评测"
     ],
@@ -413,7 +402,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/cadreview.md",
     "url": "/cad/cadreview"
   },
@@ -424,7 +413,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "反馈与评测"
     ],
@@ -445,7 +433,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/cadtests.md",
     "url": "/cad/cadtests"
   },
@@ -456,7 +444,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "指令编辑"
     ],
@@ -477,7 +464,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/cad-editor.md",
     "url": "/cad/cad-editor"
   },
@@ -488,7 +475,6 @@
     "category": "cad",
     "type": "paper",
     "tags": [
-      "先读",
       "论文阅读",
       "反馈与评测"
     ],
@@ -509,8 +495,4674 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-19",
     "file": "cad/cad-assistant.md",
     "url": "/cad/cad-assistant"
+  },
+  {
+    "id": "cad-ref-yua24",
+    "title": "3D-PreMise",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2401.06437",
+      "https://arxiv.org/abs/2401.06437v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/yua24.md",
+    "url": "/cad/papers/yua24"
+  },
+  {
+    "id": "cad-ref-codebench26",
+    "title": "3DCodeBench",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2606.01057",
+      "https://neurips.cc/virtual/2026/poster/139453"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/codebench26.md",
+    "url": "/cad/papers/codebench26"
+  },
+  {
+    "id": "cad-issue-i-b-02",
+    "title": "薄结构与复杂拓扑使图像feature-mesh转B-Rep仍在分割、装配和有效性检查中失败",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2610.04092",
+      "https://arxiv.org/html/2608.04955"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-b-02.md",
+    "url": "/cad/issues/i-b-02"
+  },
+  {
+    "id": "cad-ref-kri95",
+    "title": "持久拓扑命名",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/218013.218024",
+      "https://www.sciencedirect.com/science/article/pii/S0010448596000401"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/kri95.md",
+    "url": "/cad/papers/kri95"
+  },
+  {
+    "id": "cad-issue-i-e-02",
+    "title": "多轮生成与修复的最终输出仍可能遗漏复杂轮廓和布尔孔腔",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2606.13368v3",
+      "https://arxiv.org/html/2608.24020v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-e-02.md",
+    "url": "/cad/issues/i-e-02"
+  },
+  {
+    "id": "cad-v2-relationships",
+    "title": "发展关系与技术联系",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/relationships.md",
+    "url": "/cad/relationships"
+  },
+  {
+    "id": "cad-issue-i-e-01",
+    "title": "高形状相似度下，细小连接缝隙仍可能被验证器误接受",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2603.26512v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-e-01.md",
+    "url": "/cad/issues/i-e-01"
+  },
+  {
+    "id": "cad-ref-bal26c",
+    "title": "工艺感知厚度分析",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "几何分析"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.15245v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/bal26c.md",
+    "url": "/cad/papers/bal26c"
+  },
+  {
+    "id": "cad-v2-foundations",
+    "title": "共用基础",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/foundations.md",
+    "url": "/cad/foundations"
+  },
+  {
+    "id": "cad-ref-kra90",
+    "title": "几何约束的自由度分析",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://www.semanticscholar.org/paper/9dcb75e990ed2cd4f12733ac033b0b15d315ef58",
+      "https://cdn.aaai.org/AAAI/1990/AAAI90-106.pdf"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/kra90.md",
+    "url": "/cad/papers/kra90"
+  },
+  {
+    "id": "cad-ref-tan22",
+    "title": "几何约束求解综述",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2202.13795",
+      "https://arxiv.org/abs/2202.13795v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/tan22.md",
+    "url": "/cad/papers/tan22"
+  },
+  {
+    "id": "cad-issue-i-h-02",
+    "title": "技能输出格式合法，下一步仍可能选错操作或重复零件",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2606.31252v1",
+      "https://arxiv.org/html/2607.05123v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-h-02.md",
+    "url": "/cad/issues/i-h-02"
+  },
+  {
+    "id": "cad-ref-li18b",
+    "title": "监督几何基元拟合",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR.2019.00276",
+      "https://doi.org/10.1109/cvpr.2019.00276"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/li18b.md",
+    "url": "/cad/papers/li18b"
+  },
+  {
+    "id": "cad-issue-i-g-03",
+    "title": "检索到相似CAD程序后，能否在少量修改内满足新的尺寸与接口要求",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "候选问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2608.00891v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-g-03.md",
+    "url": "/cad/issues/i-g-03"
+  },
+  {
+    "id": "cad-v2-issues",
+    "title": "具体问题与待验证方法",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/issues.md",
+    "url": "/cad/issues"
+  },
+  {
+    "id": "cad-issue-i-g-04",
+    "title": "孔识别换一个CAD来源后，单面与多面建模习惯变化会导致完整孔漏检",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2610.13466v1",
+      "https://arxiv.org/html/2609.11573v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-g-04.md",
+    "url": "/cad/issues/i-g-04"
+  },
+  {
+    "id": "cad-issue-i-f-01",
+    "title": "跨CAD后端重建成功，仍可能因目标软件缺少等价原生特征而无法继续编辑",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2608.00891v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-f-01.md",
+    "url": "/cad/issues/i-f-01"
+  },
+  {
+    "id": "cad-v2-about",
+    "title": "来源、范围与维护",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/about.md",
+    "url": "/cad/about"
+  },
+  {
+    "id": "cad-issue-i-a-01",
+    "title": "连续参数计划后，小孔和薄柱仍会因计划或参数引用链错误而遗漏、错位",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2606.29301",
+      "https://arxiv.org/html/2607.11339",
+      "https://arxiv.org/html/2412.14042",
+      "https://arxiv.org/html/2609.07434v2",
+      "https://arxiv.org/html/2609.22325v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-a-01.md",
+    "url": "/cad/issues/i-a-01"
+  },
+  {
+    "id": "cad-issue-i-h-04",
+    "title": "三轴刀路在粗毛坯占据指标上合格，窄槽与边界过切仍缺细尺度保证",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2609.39738v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-h-04.md",
+    "url": "/cad/issues/i-h-04"
+  },
+  {
+    "id": "cad-ref-hof93",
+    "title": "生成式几何的语义",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://www.semanticscholar.org/paper/dc7f45d866b98de813b554ab5aebb791408bb8dc",
+      "https://docs.lib.purdue.edu/cstech/1029/"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/hof93.md",
+    "url": "/cad/papers/hof93"
+  },
+  {
+    "id": "cad-ref-req80",
+    "title": "实体表示理论",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/356827.356833",
+      "https://lvelho.impa.br/i3d14/modtec/p437-requicha.pdf"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/req80.md",
+    "url": "/cad/papers/req80"
+  },
+  {
+    "id": "cad-issue-i-b-03",
+    "title": "受限视角下隐藏几何仍易恢复不全，在线采集的位姿与成本条件尚待验证",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2609.21225",
+      "https://arxiv.org/html/2610.11954",
+      "https://arxiv.org/html/2610.04262",
+      "https://arxiv.org/html/2610.04092"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-b-03.md",
+    "url": "/cad/issues/i-b-03"
+  },
+  {
+    "id": "cad-v2-resources",
+    "title": "数据与评测资源",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/resources.md",
+    "url": "/cad/resources"
+  },
+  {
+    "id": "cad-ref-bid05",
+    "title": "特征级持久实体",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1080/16864360.2005.10738401"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/bid05.md",
+    "url": "/cad/papers/bid05"
+  },
+  {
+    "id": "cad-issue-i-f-02",
+    "title": "同一实体换一种BRep导出后，采样特征漂移是否会使下游实体选择失稳",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "候选问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2609.11573v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-f-02.md",
+    "url": "/cad/issues/i-f-02"
+  },
+  {
+    "id": "cad-issue-i-h-06",
+    "title": "网格细化选点看似更准，仍不一定降低关键应力误差",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2607.08798v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-h-06.md",
+    "url": "/cad/issues/i-h-06"
+  },
+  {
+    "id": "cad-issue-i-c-02",
+    "title": "无历史BRep的语言编辑会改变形状，却未可靠保持指定的对称、平行或正交关系",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2508.10201",
+      "https://arxiv.org/html/2604.16170v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-c-02.md",
+    "url": "/cad/issues/i-c-02"
+  },
+  {
+    "id": "cad-ref-physicalposition26",
+    "title": "物理构造评价立场论文",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://neurips.cc/virtual/2026/poster/140116"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/physicalposition26.md",
+    "url": "/cad/papers/physicalposition26"
+  },
+  {
+    "id": "cad-issue-i-e-03",
+    "title": "修复记忆的收益对任务顺序和并行日程是否稳健",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "候选问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2608.03062v1",
+      "https://arxiv.org/html/2610.04262v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-e-03.md",
+    "url": "/cad/issues/i-e-03"
+  },
+  {
+    "id": "cad-issue-i-g-02",
+    "title": "一次参数扰动或单次编辑通过，不能说明连续修改后的受保护特征仍正确",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2608.09296v1",
+      "https://arxiv.org/html/2605.10873v2",
+      "https://arxiv.org/html/2609.15122v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-g-02.md",
+    "url": "/cad/issues/i-g-02"
+  },
+  {
+    "id": "cad-issue-i-c-01",
+    "title": "一条请求同时删改多个特征时，部分操作完成但其余目标或依赖被遗漏",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2606.20607v1",
+      "https://arxiv.org/html/2609.29621v1",
+      "https://arxiv.org/html/2502.03997v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-c-01.md",
+    "url": "/cad/issues/i-c-01"
+  },
+  {
+    "id": "cad-issue-i-d-01",
+    "title": "预测约束能重建初始零件，却在尺寸修改后丢失保护关系或使后续特征重建失败",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2602.19171v4",
+      "https://arxiv.org/html/2504.13178v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-d-01.md",
+    "url": "/cad/issues/i-d-01"
+  },
+  {
+    "id": "cad-issue-i-d-02",
+    "title": "原始需求提错规格后，生成与验证可能围绕同一错误意图自洽通过",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2609.07434v2",
+      "https://arxiv.org/html/2609.22325v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-d-02.md",
+    "url": "/cad/issues/i-d-02"
+  },
+  {
+    "id": "cad-ref-lin03",
+    "title": "早期机械设计语言框架",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1007/3-540-45011-4_25",
+      "https://link.springer.com/chapter/10.1007/3-540-45011-4_25"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/lin03.md",
+    "url": "/cad/papers/lin03"
+  },
+  {
+    "id": "cad-issue-i-b-01",
+    "title": "栅格工程图仍存在参数恢复错误，合成扫描稳健性尚不能替代真实图纸尺寸验收",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2607.27558",
+      "https://arxiv.org/html/2508.18733",
+      "https://arxiv.org/html/2610.15681"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-b-01.md",
+    "url": "/cad/issues/i-b-01"
+  },
+  {
+    "id": "cad-ref-ax2610_13466",
+    "title": "真实CAD孔检测基准",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.13466v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2610_13466.md",
+    "url": "/cad/papers/ax2610_13466"
+  },
+  {
+    "id": "cad-issue-i-h-01",
+    "title": "装配模型找到了相近配合区域，却选错关节类型、实体或坐标框架",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2608.09296v1",
+      "https://arxiv.org/html/2608.26238v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-h-01.md",
+    "url": "/cad/issues/i-h-01"
+  },
+  {
+    "id": "cad-issue-i-h-07",
+    "title": "装配说明与产品图一致，也可能给出几何上无法插入或不稳定的步骤",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2610.11896v1",
+      "https://arxiv.org/html/2609.17263v1",
+      "https://www.mdpi.com/2673-2688/7/10/395"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-h-07.md",
+    "url": "/cad/issues/i-h-07"
+  },
+  {
+    "id": "cad-data-ds_abc",
+    "title": "ABC",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "STEP",
+      "Parasolid"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://deep-geometry.github.io/abc-dataset/"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_abc.md",
+    "url": "/cad/datasets/ds_abc"
+  },
+  {
+    "id": "cad-ref-koc18",
+    "title": "ABC",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR.2019.00983",
+      "https://doi.org/10.1109/cvpr.2019.00983"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/koc18.md",
+    "url": "/cad/papers/koc18"
+  },
+  {
+    "id": "cad-ref-sin26b",
+    "title": "AgenticCADedit",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "工具调用",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.29621",
+      "https://arxiv.org/abs/2609.29621v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/sin26b.md",
+    "url": "/cad/papers/sin26b"
+  },
+  {
+    "id": "cad-ref-geo26",
+    "title": "AgentsCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2607.02448",
+      "https://arxiv.org/abs/2607.02448v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/geo26.md",
+    "url": "/cad/papers/geo26"
+  },
+  {
+    "id": "cad-ref-jon25b",
+    "title": "AIDL",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2502.09819",
+      "https://arxiv.org/abs/2502.09819v1",
+      "https://doi.org/10.1111/cgf.70250",
+      "https://api.crossref.org/works/10.1111%2Fcgf.70250"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/jon25b.md",
+    "url": "/cad/papers/jon25b"
+  },
+  {
+    "id": "cad-ref-san90",
+    "title": "Assembly Sequence Planning",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "搜索"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1609/aimag.v11i1.824"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/san90.md",
+    "url": "/cad/papers/san90"
+  },
+  {
+    "id": "cad-ref-don26b",
+    "title": "AssemCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2607.05123",
+      "https://arxiv.org/abs/2607.05123v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/don26b.md",
+    "url": "/cad/papers/don26b"
+  },
+  {
+    "id": "cad-data-ds_automate",
+    "title": "AutoMate",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "STEP",
+      "Parasolid"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://datadryad.org/dataset/doi:10.5061/dryad.2547d7wvw",
+      "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.2547d7wvw"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_automate.md",
+    "url": "/cad/datasets/ds_automate"
+  },
+  {
+    "id": "cad-ref-jon21",
+    "title": "AutoMate",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "图网络"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3478513.3480562"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/jon21.md",
+    "url": "/cad/papers/jon21"
+  },
+  {
+    "id": "cad-ref-liu25",
+    "title": "B-repLer",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "潜空间生成"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3799902.3811166"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/liu25.md",
+    "url": "/cad/papers/liu25"
+  },
+  {
+    "id": "cad-ref-zha26",
+    "title": "BenchCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2605.10865",
+      "https://arxiv.org/abs/2605.10865v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/zha26.md",
+    "url": "/cad/papers/zha26"
+  },
+  {
+    "id": "cad-data-ds_benchcad",
+    "title": "BenchCAD（代码/问答/编辑）",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Parquet",
+      "CadQuery"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/BenchCAD/BenchCAD/raw/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_benchcad.md",
+    "url": "/cad/datasets/ds_benchcad"
+  },
+  {
+    "id": "cad-issue-i-f-03",
+    "title": "BRep生成或编辑的面、曲线看似合理，却因几何精度不一致无法形成有效实体",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2601.16771v2",
+      "https://arxiv.org/html/2508.10201"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-f-03.md",
+    "url": "/cad/issues/i-f-03"
+  },
+  {
+    "id": "cad-ref-li26i",
+    "title": "BrepARG",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2601.16771",
+      "https://arxiv.org/abs/2601.16771v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/li26i.md",
+    "url": "/cad/papers/li26i"
+  },
+  {
+    "id": "cad-ref-kim26b",
+    "title": "BrepCoder",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2602.22284",
+      "https://arxiv.org/abs/2602.22284v3"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/kim26b.md",
+    "url": "/cad/papers/kim26b"
+  },
+  {
+    "id": "cad-ref-xu24b",
+    "title": "BrepGen",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "扩散"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3658129"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/xu24b.md",
+    "url": "/cad/papers/xu24b"
+  },
+  {
+    "id": "cad-ref-lam21",
+    "title": "BRepNet",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "图网络"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR46437.2021.01258",
+      "https://doi.org/10.1109/cvpr46437.2021.01258"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/lam21.md",
+    "url": "/cad/papers/lam21"
+  },
+  {
+    "id": "cad-ref-gan21",
+    "title": "CAD as Language",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2105.02769",
+      "https://arxiv.org/abs/2105.02769v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/gan21.md",
+    "url": "/cad/papers/gan21"
+  },
+  {
+    "id": "cad-ref-dor25",
+    "title": "CAD-Coder · Doris",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2505.14646",
+      "https://arxiv.org/abs/2505.14646v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/dor25.md",
+    "url": "/cad/papers/dor25"
+  },
+  {
+    "id": "cad-ref-gua25",
+    "title": "CAD-Coder · Guan",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "强化学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2505.19713",
+      "https://arxiv.org/abs/2505.19713v3"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/gua25.md",
+    "url": "/cad/papers/gua25"
+  },
+  {
+    "id": "cad-data-ds_cadeditor",
+    "title": "CAD-Editor编辑三元组",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON",
+      "ZIP"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/microsoft/CAD-Editor/main/README.md",
+      "https://huggingface.co/microsoft/CAD-Editor/raw/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadeditor.md",
+    "url": "/cad/datasets/ds_cadeditor"
+  },
+  {
+    "id": "cad-ref-liu26",
+    "title": "CAD-Factory",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "程序综合",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3799902.3811067"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/liu26.md",
+    "url": "/cad/papers/liu26"
+  },
+  {
+    "id": "cad-ref-wan24b",
+    "title": "CAD-GPT",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1609/aaai.v39i8.32849",
+      "https://arxiv.org/abs/2412.19663v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wan24b.md",
+    "url": "/cad/papers/wan24b"
+  },
+  {
+    "id": "cad-ref-ana25",
+    "title": "CAD-RAG · 多模态检索与可编辑生成",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "检索增强",
+      "语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.24132/jwscg.2025-11",
+      "http://wscg.zcu.cz/WSCG2025/papers/D11.pdf"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ana25.md",
+    "url": "/cad/papers/ana25"
+  },
+  {
+    "id": "cad-data-ds_cadrecode",
+    "title": "CAD-Recode（v1 / v1.5）",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Python CadQuery"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/filapro/cad-recode/raw/main/README.md",
+      "https://huggingface.co/datasets/filapro/cad-recode-v1.5/raw/main/README.md",
+      "https://raw.githubusercontent.com/filaPro/cad-recode/main/CHANGELOG.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadrecode.md",
+    "url": "/cad/datasets/ds_cadrecode"
+  },
+  {
+    "id": "cad-ref-kha24c",
+    "title": "CAD-SIGNet",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR52733.2024.00451",
+      "https://doi.org/10.1109/cvpr52733.2024.00451"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/kha24c.md",
+    "url": "/cad/papers/kha24c"
+  },
+  {
+    "id": "cad-data-ds_drawing2cad",
+    "title": "CAD-VGDrawing / Drawing2CAD",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "SVG",
+      "NPY图纸向量"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/lllssc/Drawing2CAD/main/README.md",
+      "https://raw.githubusercontent.com/lllssc/STEP2SVG-Pipeline/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_drawing2cad.md",
+    "url": "/cad/datasets/ds_drawing2cad"
+  },
+  {
+    "id": "cad-task-edit",
+    "title": "CAD编辑",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/tasks/editing.md",
+    "url": "/cad/tasks/editing"
+  },
+  {
+    "id": "cad-ref-har26b",
+    "title": "CAD关系与机器人装配规划",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "图网络",
+      "搜索"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.17263v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/har26b.md",
+    "url": "/cad/papers/har26b"
+  },
+  {
+    "id": "cad-task-analyze",
+    "title": "CAD理解、评估与规划",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/tasks/analysis.md",
+    "url": "/cad/tasks/analysis"
+  },
+  {
+    "id": "cad-ref-ax2610_11896",
+    "title": "CAD落地装配说明",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "规则检查"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.11896v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2610_11896.md",
+    "url": "/cad/papers/ax2610_11896"
+  },
+  {
+    "id": "cad-task-gen",
+    "title": "CAD生成",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/tasks/generation.md",
+    "url": "/cad/tasks/generation"
+  },
+  {
+    "id": "cad-issue-i-g-01",
+    "title": "CAD要求测试通过后，仍可能漏掉未被生成器覆盖的几何关系错误",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2605.07807v1",
+      "https://arxiv.org/html/2608.09296v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-g-01.md",
+    "url": "/cad/issues/i-g-01"
+  },
+  {
+    "id": "cad-task-rec",
+    "title": "CAD重建",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "file": "cad/tasks/reconstruction.md",
+    "url": "/cad/tasks/reconstruction"
+  },
+  {
+    "id": "cad-ref-dor26",
+    "title": "CADBench",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2605.10873",
+      "https://arxiv.org/abs/2605.10873v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/dor26.md",
+    "url": "/cad/papers/dor26"
+  },
+  {
+    "id": "cad-data-ds_cadbench",
+    "title": "CADBench（DeCoDELab）",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Parquet",
+      "STEP"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/DeCoDELab/CADBench/raw/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadbench.md",
+    "url": "/cad/datasets/ds_cadbench"
+  },
+  {
+    "id": "cad-ref-alr24",
+    "title": "CADCodeVerify",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "视觉语言模型",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2410.05340",
+      "https://arxiv.org/abs/2410.05340v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/alr24.md",
+    "url": "/cad/papers/alr24"
+  },
+  {
+    "id": "cad-ref-kab26",
+    "title": "CADENA · 逐步重建与中间观察",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.00799"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/kab26.md",
+    "url": "/cad/papers/kab26"
+  },
+  {
+    "id": "cad-data-ds_cadenabench",
+    "title": "CADENA-Bench",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Parquet",
+      "STL字节"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/kulibinai/cadena-bench/raw/main/README.md",
+      "https://raw.githubusercontent.com/zhemdi/cadena/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadenabench.md",
+    "url": "/cad/datasets/ds_cadenabench"
+  },
+  {
+    "id": "cad-ref-sin26",
+    "title": "CADEngBench",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.09296",
+      "https://arxiv.org/abs/2608.09296v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/sin26.md",
+    "url": "/cad/papers/sin26"
+  },
+  {
+    "id": "cad-ref-ax2610_09127",
+    "title": "CADFather",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "搜索",
+      "数值优化"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.09127v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2610_09127.md",
+    "url": "/cad/papers/ax2610_09127"
+  },
+  {
+    "id": "cad-ref-lu26g",
+    "title": "CADForge",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "约束求解",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.04262",
+      "https://arxiv.org/abs/2610.04262v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/lu26g.md",
+    "url": "/cad/papers/lu26g"
+  },
+  {
+    "id": "cad-data-ds_cadfs",
+    "title": "CADFS",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "FeatureScript",
+      "JSONL"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/VladPyatov/CADFS",
+      "https://raw.githubusercontent.com/VladPyatov/CADFS/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadfs.md",
+    "url": "/cad/datasets/ds_cadfs"
+  },
+  {
+    "id": "cad-ref-pya26",
+    "title": "CADFS",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2605.01925",
+      "https://arxiv.org/abs/2605.01925v1",
+      "https://openaccess.thecvf.com/content/CVPR2026/html/Pyatov_CADFS_A_Big_CAD_Program_Dataset_and_Framework_for_Computer-Aided_CVPR_2026_paper.html"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/pya26.md",
+    "url": "/cad/papers/pya26"
+  },
+  {
+    "id": "cad-ref-wan25",
+    "title": "CADFusion · 序列学习与视觉反馈",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督微调",
+      "强化学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2501.19054"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wan25.md",
+    "url": "/cad/papers/wan25"
+  },
+  {
+    "id": "cad-data-ds_cadfusion",
+    "title": "CADFusion文本标注与视觉反馈样例",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON文本/序列",
+      "ZIP"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/microsoft/CADFusion/main/README.md",
+      "https://raw.githubusercontent.com/microsoft/CADFusion/main/LICENSE"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadfusion.md",
+    "url": "/cad/datasets/ds_cadfusion"
+  },
+  {
+    "id": "cad-data-ds_cadgenbench",
+    "title": "CADGenBench · 公开输入",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "STEP输入",
+      "工程图"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/HuggingAI4Engineering/cadgenbench-data/raw/main/README.md",
+      "https://raw.githubusercontent.com/huggingface/cadgenbench/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadgenbench.md",
+    "url": "/cad/datasets/ds_cadgenbench"
+  },
+  {
+    "id": "cad-ref-liu26b",
+    "title": "CADIR",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "程序变换",
+      "检索增强"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.00891",
+      "https://arxiv.org/abs/2608.00891v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/liu26b.md",
+    "url": "/cad/papers/liu26b"
+  },
+  {
+    "id": "cad-ref-gov25",
+    "title": "CADmium",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2507.09792",
+      "https://arxiv.org/abs/2507.09792v3"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/gov25.md",
+    "url": "/cad/papers/gov25"
+  },
+  {
+    "id": "cad-ref-ma25",
+    "title": "CADMorph",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "搜索",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2512.11480",
+      "https://arxiv.org/abs/2512.11480v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ma25.md",
+    "url": "/cad/papers/ma25"
+  },
+  {
+    "id": "cad-ref-zho23",
+    "title": "CADParser",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.24963/ijcai.2023/200"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/zho23.md",
+    "url": "/cad/papers/zho23"
+  },
+  {
+    "id": "cad-data-ds_cadreview",
+    "title": "CADReview",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Parquet",
+      "OpenSCAD代码"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/Gary-code/CADReview/main/README.md",
+      "https://huggingface.co/datasets/Garygedegege/CADReview/raw/main/README.md",
+      "https://arxiv.org/abs/2505.22304"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadreview.md",
+    "url": "/cad/datasets/ds_cadreview"
+  },
+  {
+    "id": "cad-ref-bar26",
+    "title": "CADSmith",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "执行反馈",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2603.26512",
+      "https://arxiv.org/abs/2603.26512v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/bar26.md",
+    "url": "/cad/papers/bar26"
+  },
+  {
+    "id": "cad-ref-yua23",
+    "title": "CADTalk",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR52733.2024.00360",
+      "https://doi.org/10.1109/cvpr52733.2024.00360"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/yua23.md",
+    "url": "/cad/papers/yua23"
+  },
+  {
+    "id": "cad-data-ds_cadtalk",
+    "title": "CADTalk语义注释数据",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "OpenSCAD",
+      "语义注释"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/YYYYYHC/CADTalk/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadtalk.md",
+    "url": "/cad/datasets/ds_cadtalk"
+  },
+  {
+    "id": "cad-data-ds_cadtestbench",
+    "title": "CADTestBench / CADTests",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Parquet",
+      "文本提示"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/dimitrismallis/CADTestBench/raw/main/README.md",
+      "https://raw.githubusercontent.com/dimitrismallis/CADTestBench/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cadtestbench.md",
+    "url": "/cad/datasets/ds_cadtestbench"
+  },
+  {
+    "id": "cad-ref-don26",
+    "title": "CADWorld",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.16251v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/don26.md",
+    "url": "/cad/papers/don26"
+  },
+  {
+    "id": "cad-ref-jia26b",
+    "title": "Canonical Region Graph",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "表示学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.11573v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/jia26b.md",
+    "url": "/cad/papers/jia26b"
+  },
+  {
+    "id": "cad-ref-ax2609_36806",
+    "title": "CANTO",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "神经算子"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.36806v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2609_36806.md",
+    "url": "/cad/papers/ax2609_36806"
+  },
+  {
+    "id": "cad-data-ds_cc3d",
+    "title": "CC3D / SHARP 2023",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "扫描点云",
+      "B-Rep边/面标注"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://cvi2.uni.lu/sharp2023-challenge/"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cc3d.md",
+    "url": "/cad/datasets/ds_cc3d"
+  },
+  {
+    "id": "cad-ref-du26",
+    "title": "CIT-CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.07434",
+      "https://arxiv.org/abs/2609.07434v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/du26.md",
+    "url": "/cad/papers/du26"
+  },
+  {
+    "id": "cad-ref-clamp26",
+    "title": "CLAMP",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://neurips.cc/virtual/2026/poster/139311"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/clamp26.md",
+    "url": "/cad/papers/clamp26"
+  },
+  {
+    "id": "cad-issue-i-h-03",
+    "title": "CNC重设计改善了可加工几何，却无法量化证明安装接口与关键尺寸被保留",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2609.05559v1",
+      "https://arxiv.org/html/2608.09296v1",
+      "https://arxiv.org/html/2607.02448v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-h-03.md",
+    "url": "/cad/issues/i-h-03"
+  },
+  {
+    "id": "cad-data-ds_cncgen",
+    "title": "CNCGEN",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "以原论文说明为准"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.39738v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_cncgen.md",
+    "url": "/cad/datasets/ds_cncgen"
+  },
+  {
+    "id": "cad-ref-ax2609_39738",
+    "title": "CNCGEN",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.39738v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2609_39738.md",
+    "url": "/cad/papers/ax2609_39738"
+  },
+  {
+    "id": "cad-ref-fre26",
+    "title": "CodeCAD · 人类编写OpenSCAD程序",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3770855.3817592",
+      "https://api.crossref.org/works/10.1145%2F3770855.3817592"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/fre26.md",
+    "url": "/cad/papers/fre26"
+  },
+  {
+    "id": "cad-data-ds_codecad",
+    "title": "CodeCAD（v2）",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "OpenSCAD",
+      "CSV"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://gitlab.lrz.de/ai-ad/codecad"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_codecad.md",
+    "url": "/cad/datasets/ds_codecad"
+  },
+  {
+    "id": "cad-ref-guo22",
+    "title": "ComplexGen",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3528223.3530078"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/guo22.md",
+    "url": "/cad/papers/guo22"
+  },
+  {
+    "id": "cad-ref-zha26g",
+    "title": "ConCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "强化学习",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.34494",
+      "https://arxiv.org/abs/2609.34494v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/zha26g.md",
+    "url": "/cad/papers/zha26g"
+  },
+  {
+    "id": "cad-ref-sha17",
+    "title": "CSGNet",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "程序综合"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR.2018.00578",
+      "https://doi.org/10.1109/cvpr.2018.00578"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/sha17.md",
+    "url": "/cad/papers/sha17"
+  },
+  {
+    "id": "cad-ref-wil21",
+    "title": "CurveGen / TurtleGen",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPRW53098.2021.00239",
+      "https://arxiv.org/abs/2104.09621v1",
+      "https://doi.org/10.1109/cvprw53098.2021.00239"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wil21.md",
+    "url": "/cad/papers/wil21"
+  },
+  {
+    "id": "cad-data-ds_deepcad",
+    "title": "DeepCAD",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON",
+      "HDF5命令向量"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/rundiwu/DeepCAD/master/README.md",
+      "https://raw.githubusercontent.com/rundiwu/DeepCAD/master/LICENSE"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_deepcad.md",
+    "url": "/cad/datasets/ds_deepcad"
+  },
+  {
+    "id": "cad-ref-cas25",
+    "title": "Design Alignment",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "强化学习",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/ICCV51701.2025.00806",
+      "https://arxiv.org/abs/2504.13178v2",
+      "https://doi.org/10.1109/iccv51701.2025.00806"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/cas25.md",
+    "url": "/cad/papers/cas25"
+  },
+  {
+    "id": "cad-ref-wel26",
+    "title": "DFM-Redesign",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.05559",
+      "https://arxiv.org/abs/2609.05559v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wel26.md",
+    "url": "/cad/papers/wel26"
+  },
+  {
+    "id": "cad-ref-kim26",
+    "title": "Drawing-Recode · 标注到几何的对应",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2607.27558"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/kim26.md",
+    "url": "/cad/papers/kim26"
+  },
+  {
+    "id": "cad-ref-qin25",
+    "title": "Drawing2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3746027.3755782",
+      "https://arxiv.org/abs/2508.18733v5"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/qin25.md",
+    "url": "/cad/papers/qin25"
+  },
+  {
+    "id": "cad-ref-drawings26",
+    "title": "DrawingsDreamer",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://neurips.cc/virtual/2026/poster/149006"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/drawings26.md",
+    "url": "/cad/papers/drawings26"
+  },
+  {
+    "id": "cad-ref-liu26c",
+    "title": "Embodied CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "工具调用",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2606.31252",
+      "https://arxiv.org/abs/2606.31252v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/liu26c.md",
+    "url": "/cad/papers/liu26c"
+  },
+  {
+    "id": "cad-ref-jay06",
+    "title": "Engineering Shape Benchmark",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1016/j.cad.2006.06.007",
+      "https://www.sciencedirect.com/science/article/abs/pii/S001044850600100X"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/jay06.md",
+    "url": "/cad/papers/jay06"
+  },
+  {
+    "id": "cad-ref-son26",
+    "title": "FEA反馈设计代理",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "仿真反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2605.17448",
+      "https://arxiv.org/abs/2605.17448v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/son26.md",
+    "url": "/cad/papers/son26"
+  },
+  {
+    "id": "cad-issue-i-h-05",
+    "title": "FEA反馈修复能改善部分要求，却很少同时闭合几何、接口与结构验收合同",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "范围限定问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2605.17448v2",
+      "https://arxiv.org/html/2608.09296v1",
+      "https://arxiv.org/html/2605.19717v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-h-05.md",
+    "url": "/cad/issues/i-h-05"
+  },
+  {
+    "id": "cad-ref-zha26b",
+    "title": "FllumaOne · 程序与特征树配对",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2606.17696"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/zha26b.md",
+    "url": "/cad/papers/zha26b"
+  },
+  {
+    "id": "cad-data-ds_fllumaone",
+    "title": "FllumaOne-100K",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "以原论文说明为准"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2606.17696"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_fllumaone.md",
+    "url": "/cad/datasets/ds_fllumaone"
+  },
+  {
+    "id": "cad-ref-li22",
+    "title": "Free2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3528223.3530133"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/li22.md",
+    "url": "/cad/papers/li22"
+  },
+  {
+    "id": "cad-ref-wil20b",
+    "title": "Fusion 360 Gallery",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3476576.3476602",
+      "https://arxiv.org/abs/2010.02392v2",
+      "https://doi.org/10.1145/3450626.3459818"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wil20b.md",
+    "url": "/cad/papers/wil20b"
+  },
+  {
+    "id": "cad-data-ds_f360_assembly",
+    "title": "Fusion 360 Gallery · Assembly",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON",
+      "STEP"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/docs/assembly.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/README.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/LICENSE.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_f360_assembly.md",
+    "url": "/cad/datasets/ds_f360_assembly"
+  },
+  {
+    "id": "cad-data-ds_f360_joints",
+    "title": "Fusion 360 Gallery · JoinABLe joint pairs",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON关节",
+      "STEP"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/docs/assembly_joint.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/README.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/LICENSE.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_f360_joints.md",
+    "url": "/cad/datasets/ds_f360_joints"
+  },
+  {
+    "id": "cad-data-ds_f360_reconstruction",
+    "title": "Fusion 360 Gallery · Reconstruction",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON",
+      "STEP"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/docs/reconstruction.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/README.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/LICENSE.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_f360_reconstruction.md",
+    "url": "/cad/datasets/ds_f360_reconstruction"
+  },
+  {
+    "id": "cad-data-ds_f360_segmentation",
+    "title": "Fusion 360 Gallery · Segmentation",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "STEP",
+      "SMT"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/docs/segmentation.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/README.md",
+      "https://raw.githubusercontent.com/AutodeskAILab/Fusion360GalleryDataset/master/LICENSE.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_f360_segmentation.md",
+    "url": "/cad/datasets/ds_f360_segmentation"
+  },
+  {
+    "id": "cad-ref-gia26",
+    "title": "GIFT",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "搜索",
+      "几何反馈",
+      "数据自举"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2603.27448",
+      "https://arxiv.org/abs/2603.27448v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/gia26.md",
+    "url": "/cad/papers/gia26"
+  },
+  {
+    "id": "cad-ref-bal26",
+    "title": "GReFEM",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型",
+      "仿真反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2607.08798",
+      "https://arxiv.org/abs/2607.08798v2",
+      "https://neurips.cc/virtual/2026/poster/154294"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/bal26.md",
+    "url": "/cad/papers/bal26"
+  },
+  {
+    "id": "cad-issue-i-e-04",
+    "title": "GUI代理在文件对话框中重复无效点击而不能恢复任务",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "候选问题",
+      "待验证方法"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/html/2609.16251v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/issues/i-e-04.md",
+    "url": "/cad/issues/i-e-04"
+  },
+  {
+    "id": "cad-ref-ax2610_15681",
+    "title": "HiCAD · Human Intent-to-CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型",
+      "强化学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.15681v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2610_15681.md",
+    "url": "/cad/papers/ax2610_15681"
+  },
+  {
+    "id": "cad-ref-col22",
+    "title": "Hierarchical CADNet · 加工特征识别",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "图网络"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1016/j.cad.2022.103226",
+      "https://api.crossref.org/works/10.1016%2Fj.cad.2022.103226"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/col22.md",
+    "url": "/cad/papers/col22"
+  },
+  {
+    "id": "cad-ref-xu26b",
+    "title": "HierCAD · 层级结构与参数对应",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2607.11339"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/xu26b.md",
+    "url": "/cad/papers/xu26b"
+  },
+  {
+    "id": "cad-ref-don25",
+    "title": "HistCAD · v4",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2602.19171",
+      "https://arxiv.org/abs/2602.19171v4"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/don25.md",
+    "url": "/cad/papers/don25"
+  },
+  {
+    "id": "cad-data-ds_histcad",
+    "title": "HistCAD（当前v4）",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "以原论文说明为准"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2602.19171v4"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_histcad.md",
+    "url": "/cad/datasets/ds_histcad"
+  },
+  {
+    "id": "cad-ref-xu23",
+    "title": "HNC-CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归",
+      "码本"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2307.00149",
+      "https://arxiv.org/abs/2307.00149v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/xu23.md",
+    "url": "/cad/papers/xu23"
+  },
+  {
+    "id": "cad-ref-liu25b",
+    "title": "HoLa",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "潜空间生成"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3730842"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/liu25b.md",
+    "url": "/cad/papers/liu25b"
+  },
+  {
+    "id": "cad-ref-you24",
+    "title": "Img2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3757377.3763891",
+      "https://arxiv.org/abs/2408.01437v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/you24.md",
+    "url": "/cad/papers/you24"
+  },
+  {
+    "id": "cad-ref-ax2410_03417",
+    "title": "Img2CAD · Structured Visual Geometry",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2410.03417v1",
+      "https://doi.org/10.1109/tii.2025.3584476"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2410_03417.md",
+    "url": "/cad/papers/ax2410_03417"
+  },
+  {
+    "id": "cad-ref-intent26",
+    "title": "Intent2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://neurips.cc/virtual/2026/poster/155244"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/intent26.md",
+    "url": "/cad/papers/intent26"
+  },
+  {
+    "id": "cad-ref-du18",
+    "title": "InverseCSG",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "程序综合",
+      "搜索"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3272127.3275006"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/du18.md",
+    "url": "/cad/papers/du18"
+  },
+  {
+    "id": "cad-ref-hu26",
+    "title": "IterCAD · 多模态代理",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "监督微调",
+      "强化学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2606.13368",
+      "https://arxiv.org/abs/2606.13368v3"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/hu26.md",
+    "url": "/cad/papers/hu26"
+  },
+  {
+    "id": "cad-ref-wu26",
+    "title": "IterCAD · 正投影修复",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督微调",
+      "强化学习",
+      "执行反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.24020",
+      "https://arxiv.org/abs/2608.24020v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wu26.md",
+    "url": "/cad/papers/wu26"
+  },
+  {
+    "id": "cad-ref-wil21c",
+    "title": "JoinABLe",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "图网络",
+      "搜索"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR52688.2022.01539",
+      "https://doi.org/10.1109/cvpr52688.2022.01539"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wil21c.md",
+    "url": "/cad/papers/wil21c"
+  },
+  {
+    "id": "cad-ref-sun26",
+    "title": "LLM4CAD-Editor",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "监督微调"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2606.20607",
+      "https://arxiv.org/abs/2606.20607v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/sun26.md",
+    "url": "/cad/papers/sun26"
+  },
+  {
+    "id": "cad-ref-jad24",
+    "title": "LLM机械设计者",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "仿真反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1080/09544828.2026.2624356"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/jad24.md",
+    "url": "/cad/papers/jad24"
+  },
+  {
+    "id": "cad-ref-noe22",
+    "title": "Mates2Motion",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2208.01779",
+      "https://arxiv.org/abs/2208.01779v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/noe22.md",
+    "url": "/cad/papers/noe22"
+  },
+  {
+    "id": "cad-data-ds_mfcad",
+    "title": "MFCAD",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "STEP",
+      "face_truth标签"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/hducg/MFCAD/master/README.md",
+      "https://raw.githubusercontent.com/hducg/MFCAD/master/LICENSE",
+      "https://gitlab.com/qub_femg/machine-learning/mfcad2-dataset"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_mfcad.md",
+    "url": "/cad/datasets/ds_mfcad"
+  },
+  {
+    "id": "cad-data-ds_mfcadpp",
+    "title": "MFCAD++",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "STEP内面标签",
+      "TXT"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://pure.qub.ac.uk/en/datasets/mfcad-dataset-dataset-for-paper-hierarchical-cadnet-learning-from/",
+      "https://gitlab.com/qub_femg/machine-learning/mfcad2-dataset"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_mfcadpp.md",
+    "url": "/cad/datasets/ds_mfcadpp"
+  },
+  {
+    "id": "cad-ref-zha26c",
+    "title": "MIRAGE-CAD · 共享构造计划",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.28669"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/zha26c.md",
+    "url": "/cad/papers/zha26c"
+  },
+  {
+    "id": "cad-data-ds_mmcad",
+    "title": "MM-CAD",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "以原论文说明为准"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1111/cgf.70523"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_mmcad.md",
+    "url": "/cad/datasets/ds_mmcad"
+  },
+  {
+    "id": "cad-ref-bha26",
+    "title": "MM-CAD · 跨模态几何检索",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "表示学习",
+      "检索增强"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1111/cgf.70523",
+      "https://api.crossref.org/works/10.1111%2Fcgf.70523"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/bha26.md",
+    "url": "/cad/papers/bha26"
+  },
+  {
+    "id": "cad-ref-don26c",
+    "title": "MUSE",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2605.28579",
+      "https://arxiv.org/abs/2605.28579v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/don26c.md",
+    "url": "/cad/papers/don26c"
+  },
+  {
+    "id": "cad-data-ds_neuralcadedit",
+    "title": "neuralCAD-Edit",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "ZIP",
+      "Mongita数据库"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/AutodeskAILab/neuralCAD-Edit/main/README.md",
+      "https://huggingface.co/datasets/autodesk/neuralCAD-Edit/raw/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_neuralcadedit.md",
+    "url": "/cad/datasets/ds_neuralcadedit"
+  },
+  {
+    "id": "cad-ref-per26",
+    "title": "neuralCAD-Edit",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2604.16170",
+      "https://arxiv.org/abs/2604.16170v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/per26.md",
+    "url": "/cad/papers/per26"
+  },
+  {
+    "id": "cad-data-ds_omnicad",
+    "title": "Omni-CAD / CAD-MLLM",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "CAD JSON",
+      "文本JSON"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/jingwei-xu-00/Omni-CAD/raw/main/README.md",
+      "https://raw.githubusercontent.com/CAD-MLLM/CAD-MLLM/main/README.md",
+      "https://arxiv.org/abs/2411.04954"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_omnicad.md",
+    "url": "/cad/datasets/ds_omnicad"
+  },
+  {
+    "id": "cad-data-ds_omnimech",
+    "title": "OmniMech",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "以原论文说明为准"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.05539"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_omnimech.md",
+    "url": "/cad/datasets/ds_omnimech"
+  },
+  {
+    "id": "cad-ref-lu26",
+    "title": "OmniMech · 工业图纸与多任务评测",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.05539"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/lu26.md",
+    "url": "/cad/papers/lu26"
+  },
+  {
+    "id": "cad-ref-liu23",
+    "title": "Point2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "几何拟合"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR52733.2024.00361",
+      "https://arxiv.org/abs/2312.04962v1",
+      "https://doi.org/10.1109/cvpr52733.2024.00361"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/liu23.md",
+    "url": "/cad/papers/liu23"
+  },
+  {
+    "id": "cad-ref-uy21",
+    "title": "Point2Cyl",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR52688.2022.01155",
+      "https://doi.org/10.1109/cvpr52688.2022.01155"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/uy21.md",
+    "url": "/cad/papers/uy21"
+  },
+  {
+    "id": "cad-ref-qi26b",
+    "title": "Pointer-CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "指针选择"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2603.04337",
+      "https://arxiv.org/abs/2603.04337v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/qi26b.md",
+    "url": "/cad/papers/qi26b"
+  },
+  {
+    "id": "cad-ref-qi26",
+    "title": "Pointer-CAD v2 · 先规划再构造",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "指针选择",
+      "语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2606.29301"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/qi26.md",
+    "url": "/cad/papers/qi26"
+  },
+  {
+    "id": "cad-ref-ax2610_08698",
+    "title": "PrimitiveCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "强化学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.08698v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2610_08698.md",
+    "url": "/cad/papers/ax2610_08698"
+  },
+  {
+    "id": "cad-ref-li26g",
+    "title": "RealCADBench",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.03773",
+      "https://arxiv.org/abs/2609.03773v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/li26g.md",
+    "url": "/cad/papers/li26g"
+  },
+  {
+    "id": "cad-ref-zhe26",
+    "title": "ReliCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型",
+      "执行反馈",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.22325",
+      "https://arxiv.org/abs/2609.22325v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/zhe26.md",
+    "url": "/cad/papers/zhe26"
+  },
+  {
+    "id": "cad-ref-kod23b",
+    "title": "ReparamCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "程序变换"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3610548.3618219",
+      "https://arxiv.org/abs/2306.03217v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/kod23b.md",
+    "url": "/cad/papers/kod23b"
+  },
+  {
+    "id": "cad-ref-zou25",
+    "title": "Semantic Direct Modeling",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2504.13893",
+      "https://arxiv.org/abs/2504.13893v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/zou25.md",
+    "url": "/cad/papers/zou25"
+  },
+  {
+    "id": "cad-ref-mal23",
+    "title": "SHARP 2023",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/ICCVW60793.2023.00194",
+      "https://doi.org/10.1109/iccvw60793.2023.00194"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/mal23.md",
+    "url": "/cad/papers/mal23"
+  },
+  {
+    "id": "cad-ref-ax2610_11954",
+    "title": "SightCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "主动观察",
+      "视觉语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.11954v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ax2610_11954.md",
+    "url": "/cad/papers/ax2610_11954"
+  },
+  {
+    "id": "cad-ref-li20",
+    "title": "Sketch2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/3414685.3417807"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/li20.md",
+    "url": "/cad/papers/li20"
+  },
+  {
+    "id": "cad-ref-par21",
+    "title": "SketchGen",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2106.02711",
+      "https://arxiv.org/abs/2106.02711v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/par21.md",
+    "url": "/cad/papers/par21"
+  },
+  {
+    "id": "cad-data-ds_sketchgraphs",
+    "title": "SketchGraphs",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON.zst",
+      "NPY自定义序列"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/PrincetonLIPS/SketchGraphs/master/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_sketchgraphs.md",
+    "url": "/cad/datasets/ds_sketchgraphs"
+  },
+  {
+    "id": "cad-ref-sef20",
+    "title": "SketchGraphs",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2007.08506",
+      "https://arxiv.org/abs/2007.08506v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/sef20.md",
+    "url": "/cad/papers/sef20"
+  },
+  {
+    "id": "cad-ref-sut63",
+    "title": "Sketchpad",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1145/1461551.1461591",
+      "https://dspace.mit.edu/entities/publication/b5e8025c-c8b2-4843-84e0-76db824e07e6"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/sut63.md",
+    "url": "/cad/papers/sut63"
+  },
+  {
+    "id": "cad-ref-xu22",
+    "title": "SkexGen",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归",
+      "码本"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2207.04632",
+      "https://arxiv.org/abs/2207.04632v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/xu22.md",
+    "url": "/cad/papers/xu22"
+  },
+  {
+    "id": "cad-data-ds_skexgen",
+    "title": "SkexGen预处理DeepCAD数据",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "JSON",
+      "PKL"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://raw.githubusercontent.com/samxuxiang/SkexGen/main/README.md",
+      "https://raw.githubusercontent.com/samxuxiang/SkexGen/main/LICENSE"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_skexgen.md",
+    "url": "/cad/datasets/ds_skexgen"
+  },
+  {
+    "id": "cad-ref-so3brep26",
+    "title": "SO3brep",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "图网络",
+      "等变学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://neurips.cc/virtual/2026/poster/148985"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/so3brep26.md",
+    "url": "/cad/papers/so3brep26"
+  },
+  {
+    "id": "cad-ref-jay22",
+    "title": "SolidGen",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2203.13944",
+      "https://arxiv.org/abs/2203.13944v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/jay22.md",
+    "url": "/cad/papers/jay22"
+  },
+  {
+    "id": "cad-ref-neh26b",
+    "title": "StepCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "搜索",
+      "几何反馈"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.03799",
+      "https://arxiv.org/abs/2610.03799v1",
+      "https://neurips.cc/virtual/2026/poster/149665"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/neh26b.md",
+    "url": "/cad/papers/neh26b"
+  },
+  {
+    "id": "cad-ref-xie25",
+    "title": "Text-to-CadQuery",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "语言模型"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2505.06507",
+      "https://arxiv.org/abs/2505.06507v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/xie25.md",
+    "url": "/cad/papers/xie25"
+  },
+  {
+    "id": "cad-data-ds_text2cad",
+    "title": "Text2CAD",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "CSV",
+      "JSON"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/SadilKhan/Text2CAD",
+      "https://raw.githubusercontent.com/SadilKhan/Text2CAD/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_text2cad.md",
+    "url": "/cad/datasets/ds_text2cad"
+  },
+  {
+    "id": "cad-ref-wan26",
+    "title": "Text2CAD-Bench",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2605.18430",
+      "https://arxiv.org/abs/2605.18430v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/wan26.md",
+    "url": "/cad/papers/wan26"
+  },
+  {
+    "id": "cad-ref-fan26",
+    "title": "TraceCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "执行反馈",
+      "记忆"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2608.03062",
+      "https://arxiv.org/abs/2608.03062v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/fan26.md",
+    "url": "/cad/papers/fan26"
+  },
+  {
+    "id": "cad-ref-dup24",
+    "title": "TransCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "监督学习",
+      "几何拟合"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2407.12702",
+      "https://arxiv.org/abs/2407.12702v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/dup24.md",
+    "url": "/cad/papers/dup24"
+  },
+  {
+    "id": "cad-ref-yin26f",
+    "title": "UniBRep",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "几何拟合"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2610.04092",
+      "https://arxiv.org/abs/2610.04092v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/yin26f.md",
+    "url": "/cad/papers/yin26f"
+  },
+  {
+    "id": "cad-ref-jay21",
+    "title": "UV-Net",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "表示学习"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR46437.2021.01153",
+      "https://doi.org/10.1109/cvpr46437.2021.01153"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/jay21.md",
+    "url": "/cad/papers/jay21"
+  },
+  {
+    "id": "cad-ref-yu26b",
+    "title": "VGGT-CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "多视图融合",
+      "主动观察"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.21225",
+      "https://arxiv.org/abs/2609.21225v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/yu26b.md",
+    "url": "/cad/papers/yu26b"
+  },
+  {
+    "id": "cad-ref-li26f",
+    "title": "VisCAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "视觉语言模型",
+      "监督微调"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.03811v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/li26f.md",
+    "url": "/cad/papers/li26f"
+  },
+  {
+    "id": "cad-ref-che26e",
+    "title": "Vision2CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "工具调用",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2609.22688",
+      "https://arxiv.org/abs/2609.22688v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/che26e.md",
+    "url": "/cad/papers/che26e"
+  },
+  {
+    "id": "cad-ref-sef21",
+    "title": "Vitruvion",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "自回归",
+      "约束求解"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://arxiv.org/abs/2109.14124",
+      "https://arxiv.org/abs/2109.14124v2"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/sef21.md",
+    "url": "/cad/papers/sef21"
+  },
+  {
+    "id": "cad-ref-ata26",
+    "title": "Zero-to-CAD",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "代理",
+      "执行反馈",
+      "数据合成"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.48550/arXiv.2604.24479",
+      "https://arxiv.org/abs/2604.24479v1"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/ata26.md",
+    "url": "/cad/papers/ata26"
+  },
+  {
+    "id": "cad-data-ds_zerocad_100k",
+    "title": "Zero-to-CAD 100K",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Parquet",
+      "CadQuery代码"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/ADSKAILab/Zero-To-CAD-100k/raw/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_zerocad_100k.md",
+    "url": "/cad/datasets/ds_zerocad_100k"
+  },
+  {
+    "id": "cad-data-ds_zerocad_1m",
+    "title": "Zero-to-CAD 1M",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "数据资源",
+      "Parquet",
+      "CadQuery代码"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://huggingface.co/datasets/ADSKAILab/Zero-To-CAD-1m/raw/main/README.md"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/datasets/ds_zerocad_1m.md",
+    "url": "/cad/datasets/ds_zerocad_1m"
+  },
+  {
+    "id": "cad-ref-xu21",
+    "title": "Zone Graphs",
+    "category": "cad",
+    "type": "paper",
+    "tags": [
+      "论文资料记录",
+      "搜索"
+    ],
+    "prerequisites": [],
+    "related": [],
+    "sources": [
+      "https://doi.org/10.1109/CVPR46437.2021.00600",
+      "https://doi.org/10.1109/cvpr46437.2021.00600"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-19",
+    "cadRecord": true,
+    "file": "cad/papers/xu21.md",
+    "url": "/cad/papers/xu21"
   }
 ]

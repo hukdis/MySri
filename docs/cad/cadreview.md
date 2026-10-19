@@ -5,7 +5,6 @@ navTitle: CADReview
 category: cad
 type: paper
 tags:
-  - 先读
   - 论文阅读
   - 反馈与评测
 prerequisites:
@@ -22,9 +21,13 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-08'
+updated: '2026-10-19'
 ---
 # CADReview：先定位 CAD 程序错误，再生成反馈与修正代码
+
+<!-- cad-v2-context -->
+> **第二版研究树 · CAD编辑** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)
+<!-- /cad-v2-context -->
 
 ::: info 来源稿整理 · 待人工复核
 按你提供的 source 阅读稿保留章节与图表位置，去除首次阅读安排；原章节编号保留，截图可点击放大。原 PDF 与个人笔记不发布。
@@ -272,3 +275,23 @@ GPT-4o 的机器/人工程序诊断 Acc 分别为 **41.54% / 31.84%**。这两�
 正文来自 sources/论文/先读/CADReview.md；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。
 
 [返回 CAD 总览](/cad/)
+
+<!-- cad-v2-relations -->
+::: details 研究树关联：发展关系、资源与问题
+
+
+### R11 · 相关基础
+
+[CADTalk](/cad/papers/yua23) → [CADReview / ReCAD](/cad/cadreview)
+
+CADReview的辅助学习数据使用CADTalk来源；这里只记录数据关系。
+
+证据定位（来源材料记录）：Che25 §4.1.1，第5页；附录B。
+
+资源：[CADReview](/cad/datasets/ds_cadreview)。
+
+问题：未单列。
+
+[CAD编辑](/cad/tasks/editing) · [发展关系](/cad/relationships)
+:::
+<!-- /cad-v2-relations -->

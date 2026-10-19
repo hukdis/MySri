@@ -5,7 +5,6 @@ navTitle: Text2CAD
 category: cad
 type: paper
 tags:
-  - 先读
   - 论文阅读
   - 条件生成
 prerequisites:
@@ -22,9 +21,13 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-08'
+updated: '2026-10-19'
 ---
 # Text2CAD：从不同详细程度的文本生成 CAD 建模序列
+
+<!-- cad-v2-context -->
+> **第二版研究树 · CAD生成** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)
+<!-- /cad-v2-context -->
 
 ::: info 来源稿整理 · 待人工复核
 按你提供的 source 阅读稿保留章节与图表位置，去除首次阅读安排；原章节编号保留，截图可点击放大。原 PDF 与个人笔记不发布。
@@ -239,3 +242,31 @@ GPT 评价中，L1 下 Text2CAD 的偏好比例为 **48.35%**，低于 DeepCAD �
 正文来自 sources/论文/先读/Text2CAD.md；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。
 
 [返回 CAD 总览](/cad/)
+
+<!-- cad-v2-relations -->
+::: details 研究树关联：发展关系、资源与问题
+
+
+### R07 · 相关基础
+
+[DeepCAD](/cad/deepcad) → [Text2CAD](/cad/text2cad)
+
+Text2CAD对DeepCAD模型构造多层次文本描述，用于文本条件CAD序列学习。
+
+证据定位（来源材料记录）：Text2CAD §3，Data Annotation。
+
+### R12 · 相关基础
+
+[Text2CAD](/cad/text2cad) → [CIT-CAD](/cad/papers/du26)
+
+CIT-CAD使用Text2CAD相关样本构建其验证实验；不等于采用Text2CAD生成网络。
+
+证据定位（来源材料记录）：Du26 §IV.A，第7页；预处理说明。
+
+资源：[Text2CAD](/cad/datasets/ds_text2cad)。
+
+问题：未单列。
+
+[CAD生成](/cad/tasks/generation) · [发展关系](/cad/relationships)
+:::
+<!-- /cad-v2-relations -->

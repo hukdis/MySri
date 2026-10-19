@@ -5,7 +5,6 @@ navTitle: CADTests
 category: cad
 type: paper
 tags:
-  - 先读
   - 论文阅读
   - 反馈与评测
 prerequisites:
@@ -22,9 +21,13 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-08'
+updated: '2026-10-19'
 ---
 # CADTests：用可执行几何测试检查文本要求是否满足
+
+<!-- cad-v2-context -->
+> **第二版研究树 · CAD理解、评估与规划** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)
+<!-- /cad-v2-context -->
 
 ::: info 来源稿整理 · 待人工复核
 按你提供的 source 阅读稿保留章节与图表位置，去除首次阅读安排；原章节编号保留，截图可点击放大。原 PDF 与个人笔记不发布。
@@ -276,3 +279,23 @@ CADTests 与人工共识的准确率 **0.938**，RS 的 AUC **0.928**。两名�
 正文来自 sources/论文/先读/CADTests.md；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。
 
 [返回 CAD 总览](/cad/)
+
+<!-- cad-v2-relations -->
+::: details 研究树关联：发展关系、资源与问题
+
+
+### R13 · 相关基础
+
+[CADCodeVerify](/cad/papers/alr24) → [CADTests](/cad/cadtests)
+
+CADTestBench基于CADPrompt设计要求测试与评价；这条线区分数据/任务基础和方法继承。
+
+证据定位（来源材料记录）：Mal26 §5，第6页。
+
+资源：[CADTestBench / CADTests](/cad/datasets/ds_cadtestbench)。
+
+问题：[I-E-01](/cad/issues/i-e-01) · [I-G-01](/cad/issues/i-g-01)。
+
+[CAD理解、评估与规划](/cad/tasks/analysis) · [发展关系](/cad/relationships)
+:::
+<!-- /cad-v2-relations -->

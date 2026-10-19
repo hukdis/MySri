@@ -5,7 +5,6 @@ navTitle: CAD-MLLM
 category: cad
 type: paper
 tags:
-  - 先读
   - 论文阅读
   - 条件生成
 prerequisites:
@@ -22,9 +21,13 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-08'
+updated: '2026-10-19'
 ---
 # CAD-MLLM：统一文本、图像和点云条件的 CAD 生成
+
+<!-- cad-v2-context -->
+> **第二版研究树 · CAD生成** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)
+<!-- /cad-v2-context -->
 
 ::: info 来源稿整理 · 待人工复核
 按你提供的 source 阅读稿保留章节与图表位置，去除首次阅读安排；原章节编号保留，截图可点击放大。原 PDF 与个人笔记不发布。
@@ -254,3 +257,16 @@ Ours(Point) 的 Chamfer 显示值为 **1.85**，DeepCAD(Point) 为 **4.51**；F-
 正文来自 sources/论文/先读/CAD-MLLM.md；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。
 
 [返回 CAD 总览](/cad/)
+
+<!-- cad-v2-relations -->
+::: details 研究树关联：发展关系、资源与问题
+
+当前材料没有为此记录单列发展关系；不代表不存在相关工作。
+
+资源：[Omni-CAD / CAD-MLLM](/cad/datasets/ds_omnicad)。
+
+问题：未单列。
+
+[CAD生成](/cad/tasks/generation) · [发展关系](/cad/relationships)
+:::
+<!-- /cad-v2-relations -->

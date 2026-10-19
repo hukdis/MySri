@@ -23,9 +23,9 @@ GitHub 仓库：`hukdis/MySri`。网站通过 GitHub Actions 部署到 https://h
 
 本地默认路径为 `/`；发布构建通过 `VITEPRESS_BASE=/MySri/` 指定仓库子路径。sources 原始资料、notes 个人笔记、artifacts 本地检查产物不上传。
 
-## 本次整理记录
+## 第一版资料整理记录（历史）
 
-来源映射与待核对问题记录在 `catalog/first-edition-source-map.json`。原 PDF、原图表和个人笔记保留在本地，没有复制到发布目录。CAD 页面保留图表名称、说明及公开论文入口。
+来源映射与待核对问题记录在 `catalog/first-edition-source-map.json`。第一版曾仅保留图表说明；当前已按用户要求公开九篇正文引用的截图，原 PDF 与个人笔记仍保留在本地。
 
 `node scripts/prepare-first-edition.mjs` 可从本次 sources 重新生成相应草稿，**会覆盖这些生成稿的正文**；手工编辑后不要直接重跑。常规阅读和维护只需使用 `pnpm dev`、`pnpm build`。
 
@@ -35,7 +35,7 @@ GitHub 仓库：`hukdis/MySri`。网站通过 GitHub Actions 部署到 https://h
 
 CAD 总览按表示、生成、重建、编辑、反馈与评测组织阅读路线，比较输入输出、表示、模型作用和反馈来源。九篇阅读稿按 sources 原章节组织，移除首次阅读顺序，恢复 61 张原论文截图并记录图片来源映射；新增 CAD 术语和教学练习。导图支持放大查看与缩放，手机表格支持横向滚动。
 
-1.1 的阅读组织与摘要数据位于 `scripts/cad-guide.mjs`，栏目总览仍由索引脚本生成。`scripts/upgrade-v1.1.mjs` 更新带标记的摘要区域并保留原正文；重新运行会替换该区域，编辑后应先检查。来源关联记录在 `catalog/v1.1-source-map.json`。
+1.1 的阅读组织与摘要数据位于 `scripts/cad-guide.mjs`，栏目总览仍由索引脚本生成。`scripts/upgrade-v1.1.mjs` 现调用来源稿恢复脚本，会重建九篇正文与截图引用，运行前应检查手工编辑。来源关联记录在 `catalog/v1.1-source-map.json`。
 
 ## RL基础内容约定 · 2026-10-08
 
@@ -44,3 +44,13 @@ RL基础仅依据 `sources/强化学习算法知识地图.md` 整理；自行生
 按用户选择，从 [LLM Atlas 的 RLHF 系列](https://zhoujx4.github.io/llm-atlas/rlhf/)接入 PPO（rl-0004）与 GRPO（rl-0005）两篇高阶算法草稿。栏目显示为强化学习，RL基础课程稿保留原名称与路径；新增文章区分原论文定义、公式推导与本站教学示例。
 
 PPO、GRPO 使用紧凑流程图，补充计算示例、更新伪代码和训练诊断；CAD 原图支持放大查看，原 PDF 仍保留在本地。
+
+## CAD 第二版 · 2026-10-19
+
+沿用 Atlas 现有黑白主题与排版，将用户提供的研究发展树第四版整合为 CAD 第二版。四任务为生成、重建、编辑、理解/评估/规划，输入、表示、方法、对象和要求作为独立标签。
+
+`catalog/cad-research.json` 是经过字段白名单处理的公开快照，保留 134 条论文、35 项资源、26 项问题及 30 条关系。`catalog/cad-v2-source-map.json` 记录稳定 ID 映射。九篇详读原路径与 61 张截图继续保留。
+
+`node scripts/index.mjs` 会调用 `scripts/build-cad-v2.mjs` 生成资料记录与入口页；自动生成页面应修改该脚本或公开快照，不直接改生成结果。原 HTML、私人计划和本地证据文件不随网站发布。重新导入原 HTML 时使用 `python scripts/import-cad-tree.py 原文件路径`，再检查公开字段与映射，最后执行 `pnpm build`。
+
+完整检索截止为 2026-10-14、来源分类更新于 2026-10-15；整合不等于本次独立核查论文、数据可用性或学术正确性。
