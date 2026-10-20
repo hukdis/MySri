@@ -72,7 +72,7 @@ export async function buildCadV2() {
   }
   for (const d of data.datasets) {
     let body=warning+`\n> 资源记录 · ${d.id} · 版本与访问状态沿用材料记录，不代表整库已下载或已执行几何验证。\n\n## 任务、格式与版本\n\n- **任务入口**：${(d.task_ids??[]).map(taskLink).join(' · ')}\n- **格式**：${text(d.formats.join(' · '))}\n- **规模**：${text(d.scale)}\n- **年份依据**：${text(d.year_basis)}\n- **版本**：${text((d.versions??[]).join(' · '))}\n\n## 官方入口与获取记录\n\n${sourceList(d.source_refs,d.access?.entry_url)}\n\n- **记录状态**：${text(d.access?.label ?? d.access?.status)}\n- **资料核查日期**：${text(d.access?.checked_on)}\n- **核查范围**：${text(d.access?.verification)}\n- **存储与获取**：${text(d.storage)}\n\n${text(d.availability_note)}\n\n## 许可、划分与来源\n\n${fields(d.license)}\n${fields(d.split)}\n${fields(d.provenance)}\n\n## 最小使用方式\n\n${fields(d.first_use)}\n\n## 已知限制\n\n${list(d.limitations)}\n\n## 样例检查范围\n\n`
-    for(const check of d.sample_checks??[]) body+=`- ${text(check.id)}：${text(check.checked_on)}；${text(check.format_check??check.status)}；几何执行：${text(check.geometry_execution??'未执行')}。\n`
+    for(const check of d.sample_checks??[]) body+=`- ${text(check.id)}：${text(check.checked_on)}；${text(check.format_check??check.status)}${check.geometry_execution?'；几何执行：'+text(check.geometry_execution)+'。':''}\n`
     body+=`\n样例文件或格式检查不等于 CAD 内核有效性检查，也不代表全部数据均可获取。\n\n## 关联论文与问题\n\n${(d.paper_links??[]).map(p=>paperLink(p.paper_id)).join(' · ')||''}\n\n${(d.issue_ids??[]).map(issueLink).join(' · ')}\n\n[返回数据与评测资源](/cad/resources)\n`
     await write('datasets/'+d.id.toLowerCase(),'cad-data-'+d.id.toLowerCase(),d.name,body,(d.source_refs??[]).map(r=>r.url),{tags:['数据资源',...d.formats.slice(0,2)],cadRecord:true})
   }
