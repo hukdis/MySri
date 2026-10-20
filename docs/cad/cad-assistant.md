@@ -69,12 +69,9 @@ updated: '2026-10-20'
 
 图2：CAD-Assistant 框架概览。将多模态用户请求作为上下文提供给 VLLM 规划器 P。在时间步 t，规划器生成计划 pt 与动作 at（Python 代码）。动作在环境 E 中执行，产生的执行输出 ft 被反馈给规划器，用于生成下一个时间步的内容。
 
-**图内文字与标记**
+**关键标记**
 
-- Planner / ToolSet / Environment：规划器／工具集／环境；Context：上下文；Plan / Action：计划／动作。
-- Generated FreeCAD Sketch / Input Hand-drawn Sketch：生成的 FreeCAD 草图／输入的手绘草图。
-- 用户请求：“将手绘图像转换为带约束的 CAD 草图。”计划示例：“要把图像转换为带约束的 CAD 草图，我先使用 sketch_from_image 提取几何元素。”
-- Plan at time step t, expressed as natural language：时间步 t 的计划，用自然语言表示；Action at time step t, expressed as Python code：时间步 t 的动作，用 Python 代码表示。
+Planner／ToolSet／Environment：规划器／工具集／环境；Plan／Action：自然语言计划／Python 动作。
 
 ::: details 对照英文原文
 
@@ -104,13 +101,9 @@ Figure 2. Overview of CAD-Assistant framework. A multimodal user request is prov
 
 表1：CAD 专用工具概览。
 
-**图内文字与标记**
+**关键标记**
 
-- Module Type / Module Description：模块类型／模块描述。
-- Python：动作格式与逻辑运算；FreeCAD：与 CAD 软件[11]集成。
-- Sketch Parameterizer（草图参数化工具）：借助文献[21]将手绘草图图像转换为 CAD 草图。
-- Sketch Recognizer（草图识别工具）：渲染草图并标出参数；Solid Recognizer（实体识别工具）：渲染三维 CAD 模型并标出参数。
-- Constraint Checker（约束检查工具）：分析几何约束；Crosssection Extract（截面提取工具）：从三维网格生成截面图像。
+Constraint Checker：约束检查工具；Crosssection Extract：截面提取工具。
 
 ::: details 对照英文原文
 
@@ -163,11 +156,9 @@ PF1 要求基元类型和参数匹配；CF1 还要求相关基元正确，见 §
 
 表11：使用 GPT-4o 作为 VLLM 规划器时，CAD-Assistant 每个用户请求的成本。
 
-**图内文字与标记**
+**关键标记**
 
-- Task：任务；Avg Input / Output Tokens：平均输入／输出 token 数；Avg Cost per User Request：每个用户请求的平均成本。
-- CAD Question Answering：CAD 问答；Autoconstraining：自动添加约束；Handdrawn sketch parameterization：手绘草图参数化。
-- 图中金额单位为美元，数值沿用论文实验记录。
+Avg Cost per User Request：每个用户请求的平均成本，金额单位为美元。
 
 ::: details 对照英文原文
 
@@ -198,10 +189,9 @@ Table 11. Cost per user request for the CAD-Assistant utilizing GPT-4o as VLLM p
 
 表3：在 SGPBench[45]的二维和三维子集上，比较所提出的 CAD-Assistant 与 CAD 问答（CQA）基线。CAD-Assistant 的结果分别使用不同规划器报告。
 
-**图内文字与标记**
+**关键标记**
 
-- Method / Planner：方法／规划器；2D Acc / 3D Acc：二维／三维准确率。
-- 表中上半部分为 SGPBench 基线，下半部分为 CAD-Assistant；各 GPT 模型名称保留原文。
+2D Acc／3D Acc：二维／三维准确率。
 
 ::: details 对照英文原文
 
@@ -228,11 +218,9 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 
 表5：CAD 专用工具和提示策略对 CAD-Assistant 自动添加约束任务的影响。
 
-**图内文字与标记**
+**关键标记**
 
-- Method / Type：方法／类型；zero-shot / supervised：零样本／监督学习；PF1 / CF1：几何基元／约束的 F1 分数。
-- CAD-Specific Tools / Prompting：CAD 专用工具／提示方式；MMrecog：多模态识别；ConstrCheck：约束检查。
-- Demonstr：示例数；Docstr：文档字符串；0-shot / 5-shot：零个／五个示例；✓／✕表示使用／不使用。
+PF1／CF1：几何基元／约束的 F1 分数；ConstrCheck：约束检查。
 
 ::: details 对照英文原文
 
@@ -260,9 +248,9 @@ Table 5. Impact of CAD-specific tools and prompting strategies for CAD-Assistant
 
 表6：手绘图像参数化任务的评价，与文献[21、49]中的任务专用模型进行比较。
 
-**图内文字与标记**
+**关键标记**
 
-- Method：方法；Acc：准确率；CD：倒角距离；↑越大越好，↓越小越好。
+Acc：准确率；CD：倒角距离。
 
 ::: details 对照英文原文
 
@@ -285,11 +273,9 @@ Table 6. Evaluation on the task of hand-drawn image parametrization. Comparison 
 
 图4：CAD 问答任务中错误回答的失败类型分类。
 
-**图内文字与标记**
+**关键标记**
 
-- Error Classification of Misclassified CQA Trajectories：回答错误的 CAD 问答轨迹的错误分类。
-- Incorrect Reasoning：推理错误；Image Interpretation：图像理解；JSON Interpretation：JSON 理解；Incorrect Coding Logic：代码逻辑错误。
-- # of Cases：案例数量。
+Incorrect Reasoning／Image Interpretation：推理错误／图像理解；Incorrect Coding Logic：代码逻辑错误。
 
 ::: details 对照英文原文
 

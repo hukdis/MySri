@@ -69,10 +69,6 @@ updated: '2026-10-20'
 
 图2：本文 CAD 命令序列数据集与 DeepCAD[1]数据集的定性比较。如第4节所述，DeepCAD 是本文所建数据集的一部分。展示本文数据集时，排除了已经收录在 DeepCAD 中的模型 ID。扩展部分包含更复杂、更接近真实、细节更多的模型。建议放大查看。
 
-**图内文字与标记**
-
-- DeepCAD dataset：DeepCAD 数据集；Our dataset：本文数据集。
-
 ::: details 对照英文原文
 
 Fig. 2: Qualitative comparison between our CAD command sequence dataset and DeepCAD [1] dataset. According to Sec. 4, DeepCAD dataset is part of our created dataset. In the visualization of our dataset, we exclude the CAD models’ IDs that have been included in the DeepCAD dataset. The extension part of our dataset contains more complex and realistic models with more details. Best viewed zoomed in.
@@ -108,12 +104,9 @@ Fig. 2: Qualitative comparison between our CAD command sequence dataset and Deep
 
 图4：网络结构。网络能够处理三种单独的输入模态，或它们的任意组合；不同模态用不同颜色表示。图中展示最复杂的组合，即同时提供三种输入。除文本描述外，每种模态首先经过各自的冻结编码器，再进一步整合；随后通过可训练投影层，对齐到统一的语言特征空间。加入低秩适配（LoRA）的微调语言模型处理提示与投影后嵌入的组合，从而准确生成 CAD 模型。
 
-**图内文字与标记**
+**关键标记**
 
-- Multi-view Images / Textual Description / Point Cloud：多视图图像／文本描述／点云；Image / Point Encoder：图像／点云编码器。
-- Image / Point Projection：图像／点云投影；Perceiver：Perceiver 模块；Large Language Model (Vicuna)：大语言模型 Vicuna；Generated CAD model：生成的 CAD 模型。
-- 文本描述：“生成一个 CAD 模型，具有圆形底座，周缘均匀分布五个圆形切口。”
-- 输入指令：“根据给定的三种模态信息生成对应 CAD 模型。”回复：“收到，请稍等，让我为你生成。”
+Multi-view Images／Textual Description／Point Cloud：多视图图像／文本描述／点云。
 
 ::: details 对照英文原文
 
@@ -178,11 +171,9 @@ Fig. 4: Our network architecture. The network could process three single modalit
 
 表3：基于点云的重建任务的定量结果。在基于点云的重建指标（Chamfer、F-score、Normal C）上，本文方法与部分基于 B-rep 的重建方法相当；但在本文提出的拓扑指标（SegE、DangEL、SIR）和闭合性指标（FluxEE）上显著优于这些方法。此外，本文方法在全部评价指标上均优于基于命令序列的生成基线。
 
-**图内文字与标记**
+**关键标记**
 
-- Point-based CAD Reconstruction：基于点云的 CAD 重建；Reconstruction / Generation Methods：重建／生成方法。
-- Chamfer：倒角距离；F-score：F 分数；Normal C：法向一致性；SegE、DangEL、SIR、FluxEE 保留原指标缩写，定义见下文。
-- ×100：显示值乘以100；SIR(%)：SIR 以百分比显示；↑越大越好，↓越小越好。
+Normal C：法向一致性；×100 表示显示值乘以100。
 
 ::: details 对照英文原文
 
@@ -207,9 +198,9 @@ Ours(Point) 的 Chamfer 显示值为 **1.85**，DeepCAD(Point) 为 **4.51**；F-
 
 表5：文本条件生成任务的用户研究结果。从文本对齐和模型质量两个方面评价生成模型。两项均采用五分制，分数越高越好。
 
-**图内文字与标记**
+**关键标记**
 
-- Methods：方法；Text Alignment：文本对齐；Model Quality：模型质量；Ours(Text)：本文方法的文本输入版本。
+Text Alignment：文本对齐；Model Quality：模型质量。
 
 ::: details 对照英文原文
 
@@ -234,11 +225,9 @@ TABLE 5: The user study results on text-conditioned generation tasks. We evaluat
 
 表7：使用多模态数据训练的定量研究。(a) 多模态模型在全部重建、拓扑和闭合性指标上优于仅图像模型。(b) 在拓扑和闭合性指标上，多模态模型与仅点云模型相当；但其点云重建性能略弱于仅点云模型。
 
-**图内文字与标记**
+**关键标记**
 
-- (a) Image Reconstruction Comparison：图像重建比较；(b) Point Reconstruction Comparison：点云重建比较。
-- Ours(Image) / Ours(Point) / Ours(Multimodal)：本文方法的仅图像／仅点云／多模态版本。
-- Chamfer、F-score、Normal C、SegE、DangEL、SIR、FluxEE 与表3对应；×100 为显示缩放，↑越大越好，↓越小越好。
+Ours(Image)／Ours(Point)／Ours(Multimodal)：仅图像／仅点云／多模态版本。
 
 ::: details 对照英文原文
 
@@ -265,10 +254,6 @@ TABLE 7: The quantitative study on training with multimodal data. (a) Our multim
 **原文翻译（图注）**
 
 图14：本文方法在薄结构、复杂细节等具有挑战性的情形下的失败案例。这些失败结果中存在悬空边。
-
-**图内文字与标记**
-
-- Ground Truth：真实模型；Ours：本文方法。
 
 ::: details 对照英文原文
 

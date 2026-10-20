@@ -12,6 +12,7 @@ export function insertFigureTranslations(content) {
     if(!entry)throw new Error('缺少原图翻译：'+src)
     if(content.slice(offset+figure.length).trimStart().startsWith('<!-- figure-translation:'))return figure
     const kind=src.split('/').at(-1).startsWith('table')?'表注':'图注'
-    return `${figure}\n\n<!-- figure-translation:${src} -->\n**原文翻译（${kind}）**\n\n${escape(entry.captionChinese)}\n\n**图内文字与标记**\n\n${entry.labelsChinese.map(label=>'- '+escape(label)).join('\n')}\n${entry.translatorNote?'\n**译注**：'+escape(entry.translatorNote)+'\n':''}\n::: details 对照英文原文\n\n${escape(entry.captionEnglish)}\n:::\n\n**图表解读**\n<!-- /figure-translation -->`
+    const labels=entry.labelsChinese.length?'**关键标记**\n\n'+entry.labelsChinese.map(escape).join('\n\n')+'\n':''
+    return `${figure}\n\n<!-- figure-translation:${src} -->\n**原文翻译（${kind}）**\n\n${escape(entry.captionChinese)}\n\n${labels}${entry.translatorNote?'\n**译注**：'+escape(entry.translatorNote)+'\n':''}\n::: details 对照英文原文\n\n${escape(entry.captionEnglish)}\n:::\n\n**图表解读**\n<!-- /figure-translation -->`
   })
 }

@@ -74,10 +74,9 @@ updated: '2026-10-20'
 
 图2：使用表1中的命令定义的一个 CAD 模型示例。上部展示模型的构建顺序，并标注命令类型；下部给出模型的命令序列。本例未展示参数归一化和量化。在“草图1”中，L2–A3–L4–L5 构成一个蓝色的环，C7 构成另一个绿色的环，这两个环共同限定灰色的草图轮廓。
 
-**图内文字与标记**
+**关键标记**
 
-- CAD construction process：CAD 构建过程；Parametrized command sequence：参数化命令序列。
-- Sketch 1/2：草图1/2；Extrude 1/2：第1/2次拉伸。
+Parametrized command sequence：参数化命令序列。
 
 **译注**：原图注写 C7，而图内圆命令标记为 R7；译文分别保留这两个符号。
 
@@ -101,13 +100,6 @@ Figure 2. A CAD model example specified by the commands in Table 1. (Top) the CA
 **原文翻译（表注）**
 
 表1：CAD 命令及其参数。〈SOL〉表示一个环的开始；〈EOS〉表示整个序列的结束。
-
-**图内文字与标记**
-
-- Commands / Parameters：命令／参数；∅：无参数。
-- L (Line)：直线，x、y 为终点坐标。A (Arc)：圆弧，x、y 为终点坐标，α 为扫掠角，f 为逆时针方向标记。
-- R (Circle)：圆，x、y 为圆心坐标，r 为半径。
-- E (Extrude)：拉伸；θ、φ、γ 为草图平面方向，px、py、pz 为平面原点，s 为对应草图轮廓的尺度，e1、e2 为两侧拉伸距离，b 为布尔类型，u 为拉伸类型。
 
 ::: details 对照英文原文
 
@@ -151,10 +143,9 @@ Table 1. CAD commands and their parameters. ⟨SOL⟩indicates the start of a lo
 
 图3：我们的网络结构。输入 CAD 模型表示为包含 Nc 条命令的序列 M={Ci}（i=1,…,Nc），首先投影到嵌入空间，再输入编码器 E，得到潜向量 z。解码器 D 以学习得到的常量嵌入为输入，同时关注潜向量 z，随后输出预测的命令序列。
 
-**图内文字与标记**
+**关键标记**
 
-- Embedding：嵌入；Transformer Encoder / Decoder：Transformer 编码器／解码器。
-- Average Pooling：平均池化；Learned Constant Embeddings：学习得到的常量嵌入；Linear：线性层。
+Learned Constant Embeddings：学习得到的常量嵌入，是解码器的输入。
 
 ::: details 对照英文原文
 
@@ -225,10 +216,9 @@ CAD 操作序列 → 命令与参数嵌入 → Transformer 编码器 → 潜向�
 
 表2：自编码的定量评价。ACCcmd 和 ACCparam 以百分比报告，CD 的显示值乘以10³。↑表示数值越大，自编码质量越好；↓表示数值越小越好。Alt-Regr 不使用量化参数，因此没有对应的 ACC 数值。
 
-**图内文字与标记**
+**关键标记**
 
-- Method：方法；ACCcmd / ACCparam：命令／参数准确率；median CD：CD 中位数；Invalid Ratio：无效比例。
-- Ours：本文方法；Ours+Aug：本文方法加数据增强；各 Alt-* 名称保留原文。
+ACCcmd／ACCparam：命令／参数准确率；Invalid Ratio：无效比例。
 
 ::: details 对照英文原文
 
@@ -256,9 +246,9 @@ Table 2. Quantitative evaluation of autoencoding. ACCcmd and ACCparam are both m
 
 图4：自编码结果比较。隐藏边也被渲染为可见的白色线条。最下方一行为真实模型（GT）；本文方法的最佳结果用虚线框突出显示。
 
-**图内文字与标记**
+**关键标记**
 
-- GT (Ground truth)：真实模型；Ours：本文方法；Ours+Aug：本文方法加数据增强。
+Ours+Aug：加入数据增强的本文方法。
 
 ::: details 对照英文原文
 
@@ -283,9 +273,9 @@ Figure 4. Comparison of autoencoding results. Hidden edges are also rendered vis
 
 表3：在点云指标下衡量形状生成质量。使用 l-GAN 文献[6]中的指标。MMD 和 JSD 的显示值均乘以10²。↑表示越大越好，↓表示越小越好。
 
-**图内文字与标记**
+**关键标记**
 
-- Method：方法；COV：覆盖率；MMD、JSD 保留原指标缩写；Ours：本文方法。
+COV：覆盖率；其余指标的含义见下文。
 
 ::: details 对照英文原文
 
@@ -316,10 +306,6 @@ Ours 的 COV/MMD/JSD 为 **78.13 / 1.45 / 3.76**；l-GAN 为 **77.73 / 1.27 / 5.
 
 图6：从点云重建 CAD 模型。上方为输入点云，下方为重建的 CAD 模型。
 
-**图内文字与标记**
-
-- Input：输入；Output：输出。
-
 ::: details 对照英文原文
 
 Figure 6. CAD model reconstruction from point clouds. (Top) input point clouds. (Bottom) reconstructed CAD models.
@@ -339,9 +325,9 @@ Figure 6. CAD model reconstruction from point clouds. (Top) input point clouds. 
 
 表6：从点云重建 CAD 的定量结果。Ours-noise 对应带噪声的输入，即沿法向加入范围为[−0.02, 0.02]的均匀噪声。采用与自编码任务相同的指标；ACCcmd 和 ACCparam 以百分比报告，CD 的显示值乘以10³。
 
-**图内文字与标记**
+**关键标记**
 
-- Method：方法；median CD：CD 中位数；Invalid Ratio：无效比例；Ours-noise：带噪声输入下的本文方法。
+Ours-noise：带噪声输入下的本文方法；Invalid Ratio：无效比例。
 
 ::: details 对照英文原文
 
@@ -364,9 +350,9 @@ Table 6. Quantitative results for CAD reconstruction from point clouds. Ours-noi
 
 图7：用户编辑。本文重建的 CAD 模型可以方便地在 CAD 工具中编辑。图中以橙色突出显示施加 CAD 操作的区域。
 
-**图内文字与标记**
+**关键标记**
 
-- Reconstruct：重建；Move face：移动面；Fillet：圆角。
+Move face：移动面；Fillet：圆角。
 
 ::: details 对照英文原文
 
@@ -388,10 +374,6 @@ Figure 7. User Editing. Our reconstructed CAD model can be easily edited in any 
 **原文翻译（图注）**
 
 图11：形状自编码的失败示例。上方为本文方法输出的重建 CAD 模型，下方为真实 CAD 模型。
-
-**图内文字与标记**
-
-- Outputs：输出；GT：真实模型。
 
 ::: details 对照英文原文
 
@@ -418,9 +400,9 @@ Figure 11. Failure examples in shape autoencoding. Top: our reconstructed CAD ou
 
 图12：形状自编码定量指标随 CAD 序列长度的变化。左图为倒角距离中位数，越低越好；右图为参数准确率，越高越好。
 
-**图内文字与标记**
+**关键标记**
 
-- Sequence Length：序列长度；Med CD：CD 中位数；Param ACC：参数准确率。
+横轴为序列长度；Med CD 为 CD 中位数，Param ACC 为参数准确率。
 
 ::: details 对照英文原文
 

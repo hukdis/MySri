@@ -49,10 +49,9 @@ updated: '2026-10-20'
 
 图2：左侧为 CAD-Editor 的输入与输出示例。输入由原始 CAD 序列和编辑指令构成，输出为编辑后的 CAD 序列。为节省空间，具体序列缩写为“[原始 CAD 序列]”或“[编辑后 CAD 序列]”。右侧展示一条具体 CAD 序列及其渲染模型。
 
-**图内文字与标记**
+**关键标记**
 
-- INPUT / OUTPUT：输入／输出；Original / Edited CAD Sequence：原始／编辑后的 CAD 序列；Instruction：指令。
-- 示例指令：“增大圆柱的高度，并以中心为基准减小其直径。”CAD Sequence / Rendered CAD Model：CAD 序列／渲染的 CAD 模型；命令与数值保留原文。
+示例指令：“增大圆柱的高度，并以中心为基准减小其直径。”
 
 ::: details 对照英文原文
 
@@ -87,11 +86,9 @@ Figure 2. Left: Example input and output for CAD-Editor. The input combines the 
 
 图3：自动数据合成流水线示意。
 
-**图内文字与标记**
+**关键标记**
 
-- (a) Paired CAD Models Generation：成对 CAD 模型生成；Design Variation Generation：设计变体生成。
-- (b) Editing Instruction Generation：编辑指令生成；Multi-modal Representation：多模态表示；Textual / Visual：文本／视觉；Stepwise Captioning：逐步描述。
-- (c) Assembling：组装；示例编辑指令分别为“减小圆柱的半径”“将圆柱半径减小10个单位”“在中心孔中插入一根圆柱杆”“将圆柱替换为矩形棱柱”。
+Design Variation Generation：设计变体生成；Stepwise Captioning：逐步描述。
 
 ::: details 对照英文原文
 
@@ -126,11 +123,9 @@ Figure 3. Illustration of automated data synthesis pipeline.
 
 图4：(a)–(b)为先定位、后补全（Locate-then-Infill）框架的概览。(c)为输入与输出示例：左列以图例抽象表示，中列给出具体序列，右列展示渲染后的可视物体。
 
-**图内文字与标记**
+**关键标记**
 
-- Locating Stage / Infilling Stage：定位阶段／补全阶段；Original / Masked / Edited CAD Sequence：原始／遮盖后／编辑后的 CAD 序列。
-- Editing Instruction：“减小圆柱的半径。”
-- Legends：图例；Editing Instruction Token：编辑指令标记；Original CAD Token：原始 CAD 标记；Masked CAD Token：被遮盖的 CAD 标记；Modified CAD Token：修改后的 CAD 标记。
+Locating Stage／Infilling Stage：定位阶段／补全阶段。
 
 ::: details 对照英文原文
 
@@ -191,10 +186,9 @@ CD 依赖参考目标；模糊指令可能有多个合理结果。D-CLIP 属于�
 
 表1：定量评价。SkexGen、Hnc-CAD、FlexCAD 和 Text2CAD 不支持基于文本的编辑，因此只比较它们的生成质量。JSD、CD 和 D-CLIP 的显示值乘以10²。↑表示越大越好，↓表示越小越好。
 
-**图内文字与标记**
+**关键标记**
 
-- Method：方法；VR：有效比例；JSD、CD、D-CLIP 保留原指标缩写；H-Eval：人工评价。
-- GPT-4o-Basic / GPT-4o-IC：原表中的两种 GPT-4o 设置名称；空缺项以原表横线保留。
+VR：有效比例；H-Eval：人工评价。
 
 ::: details 对照英文原文
 
@@ -228,10 +222,9 @@ GPT-4o-IC 的 VR 为 **84.5%**、H-Eval 为 **15.6%**。这支持本文在该任
 
 表2：消融研究。CAD-Editor-mini 使用包含1万个示例的小数据集训练。
 
-**图内文字与标记**
+**关键标记**
 
-- w/ Basic / Step：采用基础／逐步描述；w/ Direct：采用直接编辑设置；w/ L-I：采用先定位后补全；HS：人工筛选。
-- VR：有效比例；JSD、CD、D-CLIP 保留原指标缩写；↑越大越好，↓越小越好。
+Basic／Step：基础／逐步描述；Direct／L-I：直接编辑／先定位后补全；HS：人工筛选。
 
 ::: details 对照英文原文
 
@@ -259,10 +252,6 @@ Table 2. Ablation studies. The CAD-Editor-mini is trained on a small set with 10
 **原文翻译（图注）**
 
 图10：反复应用 CAD-Editor 编辑一个 CAD 模型，直至满足用户要求。
-
-**图内文字与标记**
-
-- 图中显示的编辑指令包括：“将底座改为六边形，并从孔处拉伸出圆柱”“去掉顶部圆柱，保持中心孔不变”“增加一个更大的矩形底座”“将中心圆孔改为长槽”“将圆孔改为六边形切口”“将角部倒圆”“填上两个较小的孔”“填补切口”“增加四条圆柱腿”。
 
 ::: details 对照英文原文
 

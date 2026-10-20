@@ -68,11 +68,9 @@ updated: '2026-10-20'
 
 图2：CADReview 数据集的构建流程，包括收集程序—图像对、创建错误，以及标注反馈。
 
-**图内文字与标记**
+**关键标记**
 
-- Human-made / Machine-made Program：人工编写／机器生成的程序；Program-Image Collection：程序—图像收集。
-- Error Creation：错误创建；Manual Edit：人工编辑；Correct Code / Error Code：正确／错误代码；Feedback Annotation：反馈标注。
-- 反馈模板：“三维物体……错误类型〈err_typ〉影响……不正确的参数〈para〉导致视觉异常〈vis_anomaly〉。要修正……调整代码块〈block_id〉中的变量或函数〈var/func〉。”省略处按原图保留。
+Error Creation：错误创建；Feedback Annotation：反馈标注。
 
 ::: details 对照英文原文
 
@@ -102,10 +100,9 @@ Figure 2: Construction workflow of our CADReview dataset, including program-draw
 
 图3：CADReview 数据集中八类 CAD 程序错误的示例。第一行为从一个采样视角观察到的参考图像；第二行展示对 CAD 程序创建错误时修改的代码片段；最后一行为错误程序渲染出的三维物体。
 
-**图内文字与标记**
+**关键标记**
 
-- Primitive：基元；Rotation：旋转；Position：位置；Size：尺寸；constant：常量；Logic：逻辑；Missing：缺失；Redundant：冗余。
-- 代码关键字、变量名和具体参数保留原样。
+Primitive／Rotation／Position／Size：基元／旋转／位置／尺寸；Logic／Missing／Redundant：逻辑／缺失／冗余。
 
 ::: details 对照英文原文
 
@@ -136,13 +133,9 @@ Figure 3: Examples of 8 types of CAD program error from our CADReview dataset. T
 
 图4：ReCAD 概览。分别设计几何部件识别（GCR）与空间几何操作（SGO）机制，初始化反馈生成器 φ1 和代码编辑器 φ2。
 
-**图内文字与标记**
+**关键标记**
 
-- Geometric Component Recognition：几何部件识别；Spatial Geometric Operation：空间几何操作。
-- CAD Caption &amp; Localization：CAD 描述与定位；Code Completion：代码补全；Mask 30%：遮盖30%；Input Program：输入程序。
-- Reference Images / Rendered Image：参考图像／渲染图像；Vision Encoder / Projector：视觉编码器／投影器。
-- 反馈示例：“三维物体的位置……错误位于〈Block 4〉。该参数导致〈position error〉。”
-- Rewards：奖励；DPO：直接偏好优化；LoRA：低秩适配；LLM：大语言模型。
+GCR：几何部件识别；SGO：空间几何操作；DPO：直接偏好优化。
 
 ::: details 对照英文原文
 
@@ -215,11 +208,9 @@ Figure 4: Overview of our ReCAD. We design geometric component recognition (GCR)
 
 表1：基线与 ReCAD 的主要结果。†表示在 CADReview 数据集上进行微调。CD、MMD 和 JSD 的显示值乘以10³；粗体表示最佳结果。
 
-**图内文字与标记**
+**关键标记**
 
-- Method：方法；Machine-made / Human-made Program：机器生成／人工编写的程序。
-- RL：ROUGE-L；BS：BERTScore；Acc：错误定位准确率；CD、MMD、JSD 保留原指标缩写；IR：无效比例。
-- ↑越大越好，↓越小越好；ReCAD-LA 与 ReCAD-QW 保留原模型名称。
+RL：ROUGE-L，此处并非强化学习；BS：BERTScore；Acc：错误定位准确率。
 
 ::: details 对照英文原文
 
@@ -249,10 +240,9 @@ GPT-4o 的机器/人工程序诊断 Acc 分别为 **41.54% / 31.84%**。这两�
 
 表2：消融研究结果。Fed 表示反馈，Red 表示奖励函数。CD 和 JSD 的显示值乘以10³；粗体表示最佳结果。
 
-**图内文字与标记**
+**关键标记**
 
-- w/o：不使用；Machine-made / Human-made：机器生成／人工编写；GCR：几何部件识别；SGO：空间几何操作。
-- Acc：准确率；CD、JSD 保留指标缩写；LA、QW 保留模型版本名称；↑越大越好，↓越小越好。
+w/o：去掉对应模块；GCR／SGO：几何部件识别／空间几何操作。
 
 ::: details 对照英文原文
 
@@ -277,11 +267,9 @@ Table 2: Results of ablation study. Fed: feedback. Red: reward functions. CD and
 
 图6：不同方法的案例。绿色表示预测正确，红色表示预测错误。
 
-**图内文字与标记**
+**关键标记**
 
-- Input Program：输入程序；Reference Images：参考图像；Rendered 3D Object：渲染的三维物体。
-- GPT-4o 反馈片段：“三维物体的槽比预期少……错误位于〈Block 1〉……错误类型为〈constant error〉。”
-- 本文 ReCAD-QW 反馈片段：“槽的数量存在差异……错误位于〈Block 3〉……该程序包含〈logic error〉。”constant error 为常量错误，logic error 为逻辑错误；代码片段保持原样。
+constant error：常量错误；logic error：逻辑错误。
 
 ::: details 对照英文原文
 
