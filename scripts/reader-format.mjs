@@ -42,7 +42,7 @@ export function readerBody(input, url='') {
     .replace(/姓名按下载 PDF 记录，矩阵简称仍为 CAD-Assistant。/g,'')
     .replace(/矩阵记录 /g,'').replace(/本笔记使用 /g,'所用版本为 ')
   const directions={A:'条件生成',B:'几何重建',C:'编辑与交互',D:'设计约束',E:'执行反馈',F:'CAD 表示',G:'数据与评测'}
-  body=body.replace(/^- \*\*([A-G])\*\*：/gm,(_,key)=>'- **'+directions[key]+'**：')
+  body=body.replace(/^## (?:9\. [^\n]+|相关研究(?: \{#[^}]+\})?)\n[\s\S]*?(?=^## |$(?![\s\S]))/gm,section=>section.replace(/^- \*\*([A-G])\*\*：/gm,(_,key)=>'- **'+directions[key]+'**：'))
   body=body.replace(/^(?:资源|问题)：。?\s*$/gm,'')
   for(const ref of removedSources)if(!body.includes(ref.url))body+=`\n\n参考阅读：[${ref.label}](${ref.url})。\n`
   return body.replace(/\n{3,}/g,'\n\n').trimEnd()+'\n'

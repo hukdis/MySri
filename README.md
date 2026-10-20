@@ -60,3 +60,9 @@ PPO、GRPO 使用紧凑流程图，补充计算示例、更新伪代码和训练
 页面不再展示整理过程、复核状态、空白填写卡与维护入口；draft/reviewed 元数据保留用于内部管理。论文来源、原图、条件限制和方法假设继续保留。
 
 `scripts/reader-format.mjs` 统一清理作者提示与占位内容；`catalog/reader-heading-anchors.json` 保存旧章节锚点，显示标题去编号后旧链接仍可访问。`scripts/build-cad-v2.mjs` 负责资料页的公共阅读结构；未填写的字段不展示。原模板与维护地址保留简短导航，设为 unlisted 且不进入全文搜索。
+
+## 图表双语阅读 · 2026-10-20
+
+九篇详读中的 61 张图表按“原图 → 图注/表注译文 → 图内文字对照 → 图表解读”排列，并提供可折叠的英文原文。译文和说明直接写入各篇 Markdown，后续常规构建会保留手工修改。
+
+`catalog/figure-translations.json` 保存初始译文与页码；`scripts/figure-translations.mjs` 为尚未有译文块的原图插入内容，普通构建不会覆盖已存在的译文块。重新从 sources 恢复文章时会用该文件重新插入。原图与原始 PDF 不修改。

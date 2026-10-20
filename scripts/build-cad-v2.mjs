@@ -3,6 +3,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import matter from 'gray-matter'
 import { readerBody } from './reader-format.mjs'
+import { insertFigureTranslations } from './figure-translations.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const data = JSON.parse(await fs.readFile(path.join(root, 'catalog/cad-research.json'), 'utf8'))
@@ -61,7 +62,7 @@ export async function buildCadV2() {
       content=content.trimEnd()+`\n\n<!-- cad-v2-relations -->\n::: details 研究树关联：发展关系、资源与问题\n\n${relationsFor(p.id)}\n\n资源：${p.dataset_ids.map(datasetLink).join(' · ')||''}。\n\n问题：${p.issue_ids.map(issueLink).join(' · ')||''}。\n\n${taskLink(p.classification.primary_task)} · [发展关系](/cad/relationships)\n:::\n<!-- /cad-v2-relations -->\n`
       existing.data.updated='2026-10-20';existing.data.status='draft';existing.data.reviewed=false
       existing.data.tags=existing.data.tags.filter(tag=>tag!=='先读')
-      await fs.writeFile(filename,matter.stringify(readerBody(content,p.urlLocal),existing.data))
+      await fs.writeFile(filename,matter.stringify(insertFigureTranslations(readerBody(content,p.urlLocal)),existing.data))
       continue
     }
     const c=p.classification

@@ -69,6 +69,26 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/deepcad/figure02_construction.png" title="DeepCAD 原论文图 2：CAD 构建过程" source="https://arxiv.org/abs/2105.09492" :page="3" />
 
+<!-- figure-translation:/papers/deepcad/figure02_construction.png -->
+**原文翻译（图注）**
+
+图2：使用表1中的命令定义的一个 CAD 模型示例。上部展示模型的构建顺序，并标注命令类型；下部给出模型的命令序列。本例未展示参数归一化和量化。在“草图1”中，L2–A3–L4–L5 构成一个蓝色的环，C7 构成另一个绿色的环，这两个环共同限定灰色的草图轮廓。
+
+**图内文字与标记**
+
+- CAD construction process：CAD 构建过程；Parametrized command sequence：参数化命令序列。
+- Sketch 1/2：草图1/2；Extrude 1/2：第1/2次拉伸。
+
+**译注**：原图注写 C7，而图内圆命令标记为 R7；译文分别保留这两个符号。
+
+::: details 对照英文原文
+
+Figure 2. A CAD model example specified by the commands in Table 1. (Top) the CAD model’s construction sequence, annotated with the command types. (Bottom) the command sequence description of the model. Parameter normalization and quantization are not shown in this case. In “Sketch 1”, L2-A3-L4-L5 forms a loop (in blue) and C7 forms another loop (in green), and the two loops bounds a sketch profile (in gray).
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **原图来源**：图 2，PDF 第 3 页。图中用草图与拉伸步骤展示 CAD 构建过程及对应序列。
 
 阅读时沿着图中的步骤问：当前画了什么二维边界？在哪个平面？拉伸多少？这一步如何与已有实体组合？不要只看最终三维形状。
@@ -77,16 +97,36 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/deepcad/table01_commands.png" title="DeepCAD 原论文表 1：命令与参数" source="https://arxiv.org/abs/2105.09492" :page="3" />
 
+<!-- figure-translation:/papers/deepcad/table01_commands.png -->
+**原文翻译（表注）**
+
+表1：CAD 命令及其参数。〈SOL〉表示一个环的开始；〈EOS〉表示整个序列的结束。
+
+**图内文字与标记**
+
+- Commands / Parameters：命令／参数；∅：无参数。
+- L (Line)：直线，x、y 为终点坐标。A (Arc)：圆弧，x、y 为终点坐标，α 为扫掠角，f 为逆时针方向标记。
+- R (Circle)：圆，x、y 为圆心坐标，r 为半径。
+- E (Extrude)：拉伸；θ、φ、γ 为草图平面方向，px、py、pz 为平面原点，s 为对应草图轮廓的尺度，e1、e2 为两侧拉伸距离，b 为布尔类型，u 为拉伸类型。
+
+::: details 对照英文原文
+
+Table 1. CAD commands and their parameters. ⟨SOL⟩indicates the start of a loop; ⟨EOS⟩indicates the end of the whole sequence.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **原表来源**：表 1，PDF 第 3 页；参数定义见 §3.1。
 
 六种命令为：
 
 - **L**：直线。
-- **条件生成**：圆弧。
+- **A**：圆弧。
 - **R**：圆。
 - **SOL**：一个环的开始标记。
 - **EOS**：序列结束标记，也用于补齐序列。
-- **执行反馈**：拉伸，包含草图平面的姿态与位置、轮廓尺度、拉伸距离、布尔类型和拉伸类型等参数。
+- **E**：拉伸，包含草图平面的姿态与位置、轮廓尺度、拉伸距离、布尔类型和拉伸类型等参数。
 
 每条命令统一表示为“**命令类型 + 16 个参数槽位**”。每种命令只使用其中部分槽位，未使用参数标记为 −1。**16 个槽位不代表每条命令都有 16 个有效参数。**
 
@@ -105,6 +145,24 @@ updated: '2026-10-20'
 ## 核心二：网络如何学习与生成？ {#_5-核心二-网络如何学习与生成}
 
 <PaperFigure src="/papers/deepcad/figure03_architecture.png" title="DeepCAD 原论文图 3：网络结构" source="https://arxiv.org/abs/2105.09492" :page="4" />
+
+<!-- figure-translation:/papers/deepcad/figure03_architecture.png -->
+**原文翻译（图注）**
+
+图3：我们的网络结构。输入 CAD 模型表示为包含 Nc 条命令的序列 M={Ci}（i=1,…,Nc），首先投影到嵌入空间，再输入编码器 E，得到潜向量 z。解码器 D 以学习得到的常量嵌入为输入，同时关注潜向量 z，随后输出预测的命令序列。
+
+**图内文字与标记**
+
+- Embedding：嵌入；Transformer Encoder / Decoder：Transformer 编码器／解码器。
+- Average Pooling：平均池化；Learned Constant Embeddings：学习得到的常量嵌入；Linear：线性层。
+
+::: details 对照英文原文
+
+Figure 3. Our network architecture. The input CAD model, represented as a command sequence M = {C_i}_{i=1}^{N_c} is first projected to an embedding space and then fed to the encoder E resulting in a latent vector z. The decoder D takes learned constant embeddings as input, and also attends to the latent vector z. It then outputs the predicted command sequence M-hat = {C-hat_i}_{i=1}^{N_c}.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **原图来源**：图 3，PDF 第 4 页；网络细节见 §3.2 和补充材料 C。
 
@@ -162,6 +220,24 @@ CAD 操作序列 → 命令与参数嵌入 → Transformer 编码器 → 潜向�
 
 <PaperFigure src="/papers/deepcad/table02_autoencoding.png" title="DeepCAD 原论文表 2：自编码重建与消融" source="https://arxiv.org/abs/2105.09492" :page="6" />
 
+<!-- figure-translation:/papers/deepcad/table02_autoencoding.png -->
+**原文翻译（表注）**
+
+表2：自编码的定量评价。ACCcmd 和 ACCparam 以百分比报告，CD 的显示值乘以10³。↑表示数值越大，自编码质量越好；↓表示数值越小越好。Alt-Regr 不使用量化参数，因此没有对应的 ACC 数值。
+
+**图内文字与标记**
+
+- Method：方法；ACCcmd / ACCparam：命令／参数准确率；median CD：CD 中位数；Invalid Ratio：无效比例。
+- Ours：本文方法；Ours+Aug：本文方法加数据增强；各 Alt-* 名称保留原文。
+
+::: details 对照英文原文
+
+Table 2. Quantitative evaluation of autoencoding. ACCcmd and ACCparam are both multiplied by 100%, and CD is multiplied by 10³. ↑: a higher metric value indicates better autoencoding quality. ↓: a lower metric value is better. ACC values for Alt-Regr are not available since Alt-Regr does not use quantized parameters.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **原表来源**：表 2，PDF 第 6 页；对应 §4.1。
 
 主要方法 Ours 的命令准确率为 **99.36%**，参数准确率为 **97.47%**，表中 CD 为 **0.787**，无效比例为 **3.30%**。其中 CD 对应原始数值约 0.000787，不能解释为毫米。
@@ -175,6 +251,23 @@ CAD 操作序列 → 命令与参数嵌入 → Transformer 编码器 → 潜向�
 
 <PaperFigure src="/papers/deepcad/figure04_comparison.png" title="DeepCAD 原论文图 4：定性重建比较" source="https://arxiv.org/abs/2105.09492" :page="6" />
 
+<!-- figure-translation:/papers/deepcad/figure04_comparison.png -->
+**原文翻译（图注）**
+
+图4：自编码结果比较。隐藏边也被渲染为可见的白色线条。最下方一行为真实模型（GT）；本文方法的最佳结果用虚线框突出显示。
+
+**图内文字与标记**
+
+- GT (Ground truth)：真实模型；Ours：本文方法；Ours+Aug：本文方法加数据增强。
+
+::: details 对照英文原文
+
+Figure 4. Comparison of autoencoding results. Hidden edges are also rendered visible (white). Ground truth (GT) is shown in the bottom row. Our best results are highlighted in the dash-line box.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **原图来源**：图 4，PDF 第 6 页。对照输入与各方法输出，检查局部结构变化，再回到表 2，而不是只判断“看起来像”。
 
 **可支持的结论**：在论文数据及网络设置下，所提出表示可以有效恢复操作序列，归一化、坐标选择和参数预测方式影响实体重建质量。
@@ -184,6 +277,23 @@ CAD 操作序列 → 命令与参数嵌入 → Transformer 编码器 → 潜向�
 ### 随机生成：不能把所有指标说成领先 {#_7-2-随机生成-不能把所有指标说成领先}
 
 <PaperFigure src="/papers/deepcad/table03_generation.png" title="DeepCAD 原论文表 3：随机生成评测" source="https://arxiv.org/abs/2105.09492" :page="7" />
+
+<!-- figure-translation:/papers/deepcad/table03_generation.png -->
+**原文翻译（表注）**
+
+表3：在点云指标下衡量形状生成质量。使用 l-GAN 文献[6]中的指标。MMD 和 JSD 的显示值均乘以10²。↑表示越大越好，↓表示越小越好。
+
+**图内文字与标记**
+
+- Method：方法；COV：覆盖率；MMD、JSD 保留原指标缩写；Ours：本文方法。
+
+::: details 对照英文原文
+
+Table 3. Shape generation measured under point-cloud metrics. We use the metrics in l-GAN [6]. Both MMD and JSD are multiplied by 10². ↑: the higher the better, ↓: the lower the better.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **原表来源**：表 3，PDF 第 7 页；对应 §4.2。MMD 和 JSD 按表注乘以 100 显示。
 
@@ -201,11 +311,45 @@ Ours 的 COV/MMD/JSD 为 **78.13 / 1.45 / 3.76**；l-GAN 为 **77.73 / 1.27 / 5.
 
 <PaperFigure src="/papers/deepcad/figure06_pointcloud.png" title="DeepCAD 原论文图 6：点云到 CAD" source="https://arxiv.org/abs/2105.09492" :page="8" />
 
+<!-- figure-translation:/papers/deepcad/figure06_pointcloud.png -->
+**原文翻译（图注）**
+
+图6：从点云重建 CAD 模型。上方为输入点云，下方为重建的 CAD 模型。
+
+**图内文字与标记**
+
+- Input：输入；Output：输出。
+
+::: details 对照英文原文
+
+Figure 6. CAD model reconstruction from point clouds. (Top) input point clouds. (Bottom) reconstructed CAD models.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **原图来源**：图 6，PDF 第 8 页；对应 §4.3。
 
 作者训练 PointNet++ 编码器，将点云映射到 CAD 自编码器的潜空间，再用 CAD 解码器重建。这是表示迁移到重建任务的示例；阅读时应区分点云输入和已知操作序列输入。
 
 <PaperFigure src="/papers/deepcad/table06_pointcloud.png" title="DeepCAD 原论文表 6：点云重建评测" source="https://arxiv.org/abs/2105.09492" :page="14" />
+
+<!-- figure-translation:/papers/deepcad/table06_pointcloud.png -->
+**原文翻译（表注）**
+
+表6：从点云重建 CAD 的定量结果。Ours-noise 对应带噪声的输入，即沿法向加入范围为[−0.02, 0.02]的均匀噪声。采用与自编码任务相同的指标；ACCcmd 和 ACCparam 以百分比报告，CD 的显示值乘以10³。
+
+**图内文字与标记**
+
+- Method：方法；median CD：CD 中位数；Invalid Ratio：无效比例；Ours-noise：带噪声输入下的本文方法。
+
+::: details 对照英文原文
+
+Table 6. Quantitative results for CAD reconstruction from point clouds. Ours-noise corresponds to noisy inputs (uniform noise in [−0.02, 0.02] along normal direction). We use the same metrics as in autoencoding task; ACCcmd and ACCparam are both multiplied by 100%, and CD is multiplied by 10³.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **原表来源**：补充材料表 6，PDF 第 14 页。其 CD 显示值乘以 1000。
 
@@ -215,6 +359,23 @@ Ours 的 COV/MMD/JSD 为 **78.13 / 1.45 / 3.76**；l-GAN 为 **77.73 / 1.27 / 5.
 
 <PaperFigure src="/papers/deepcad/figure07_editing.png" title="DeepCAD 原论文图 7：CAD 软件中的后续编辑" source="https://arxiv.org/abs/2105.09492" :page="8" />
 
+<!-- figure-translation:/papers/deepcad/figure07_editing.png -->
+**原文翻译（图注）**
+
+图7：用户编辑。本文重建的 CAD 模型可以方便地在 CAD 工具中编辑。图中以橙色突出显示施加 CAD 操作的区域。
+
+**图内文字与标记**
+
+- Reconstruct：重建；Move face：移动面；Fillet：圆角。
+
+::: details 对照英文原文
+
+Figure 7. User Editing. Our reconstructed CAD model can be easily edited in any CAD tools. Here, the regions that undergo CAD operations are highlighted in orange color.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **原图来源**：图 7，PDF 第 8 页。
 
 这里展示生成模型可在 CAD 软件中继续编辑，包括移动面和添加圆角。**圆角是后续软件编辑操作，不是 DeepCAD 的生成命令。** 如果你从图 7 得出“该模型能够预测圆角及目标边”，就超出了论文证据。
@@ -222,6 +383,23 @@ Ours 的 COV/MMD/JSD 为 **78.13 / 1.45 / 3.76**；l-GAN 为 **77.73 / 1.27 / 5.
 ## 局限：这篇论文留出了哪些问题？ {#_8-局限-这篇论文留出了哪些问题}
 
 <PaperFigure src="/papers/deepcad/figure11_failures.png" title="DeepCAD 原论文图 11：失败案例" source="https://arxiv.org/abs/2105.09492" :page="14" />
+
+<!-- figure-translation:/papers/deepcad/figure11_failures.png -->
+**原文翻译（图注）**
+
+图11：形状自编码的失败示例。上方为本文方法输出的重建 CAD 模型，下方为真实 CAD 模型。
+
+**图内文字与标记**
+
+- Outputs：输出；GT：真实模型。
+
+::: details 对照英文原文
+
+Figure 11. Failure examples in shape autoencoding. Top: our reconstructed CAD outputs. Bottom: ground-truth CAD models.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **原图来源**：补充材料图 11，PDF 第 14 页。
 
@@ -234,6 +412,23 @@ Ours 的 COV/MMD/JSD 为 **78.13 / 1.45 / 3.76**；l-GAN 为 **77.73 / 1.27 / 5.
 - **训练分布偏向较短序列**：长度和操作复杂度会影响恢复效果。
 
 <PaperFigure src="/papers/deepcad/figure12_length.png" title="DeepCAD 原论文图 12：序列长度与表现" source="https://arxiv.org/abs/2105.09492" :page="14" />
+
+<!-- figure-translation:/papers/deepcad/figure12_length.png -->
+**原文翻译（图注）**
+
+图12：形状自编码定量指标随 CAD 序列长度的变化。左图为倒角距离中位数，越低越好；右图为参数准确率，越高越好。
+
+**图内文字与标记**
+
+- Sequence Length：序列长度；Med CD：CD 中位数；Param ACC：参数准确率。
+
+::: details 对照英文原文
+
+Figure 12. Quantitative metrics for shape autoencoding w.r.t. CAD sequence length. Left: median chamfer distance (the lower the better). Right: parameter accuracy (the higher the better).
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **原图来源**：补充材料图 12，PDF 第 14 页。结合命令长度和拉伸数量看性能趋势，不要脱离数据分布推断任意长度模型的能力。
 

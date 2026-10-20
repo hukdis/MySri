@@ -1,0 +1,655 @@
+{
+  "/papers/deepcad/figure02_construction.png": {
+    "captionEnglish": "Figure 2. A CAD model example specified by the commands in Table 1. (Top) the CAD model’s construction sequence, annotated with the command types. (Bottom) the command sequence description of the model. Parameter normalization and quantization are not shown in this case. In “Sketch 1”, L2-A3-L4-L5 forms a loop (in blue) and C7 forms another loop (in green), and the two loops bounds a sketch profile (in gray).",
+    "captionChinese": "图2：使用表1中的命令定义的一个 CAD 模型示例。上部展示模型的构建顺序，并标注命令类型；下部给出模型的命令序列。本例未展示参数归一化和量化。在“草图1”中，L2–A3–L4–L5 构成一个蓝色的环，C7 构成另一个绿色的环，这两个环共同限定灰色的草图轮廓。",
+    "labelsChinese": [
+      "CAD construction process：CAD 构建过程；Parametrized command sequence：参数化命令序列。",
+      "Sketch 1/2：草图1/2；Extrude 1/2：第1/2次拉伸。"
+    ],
+    "pdfPage": 3,
+    "reviewed": false,
+    "translatorNote": "原图注写 C7，而图内圆命令标记为 R7；译文分别保留这两个符号。"
+  },
+  "/papers/deepcad/table01_commands.png": {
+    "captionEnglish": "Table 1. CAD commands and their parameters. ⟨SOL⟩indicates the start of a loop; ⟨EOS⟩indicates the end of the whole sequence.",
+    "captionChinese": "表1：CAD 命令及其参数。〈SOL〉表示一个环的开始；〈EOS〉表示整个序列的结束。",
+    "labelsChinese": [
+      "Commands / Parameters：命令／参数；∅：无参数。",
+      "L (Line)：直线，x、y 为终点坐标。A (Arc)：圆弧，x、y 为终点坐标，α 为扫掠角，f 为逆时针方向标记。",
+      "R (Circle)：圆，x、y 为圆心坐标，r 为半径。",
+      "E (Extrude)：拉伸；θ、φ、γ 为草图平面方向，px、py、pz 为平面原点，s 为对应草图轮廓的尺度，e1、e2 为两侧拉伸距离，b 为布尔类型，u 为拉伸类型。"
+    ],
+    "pdfPage": 3,
+    "reviewed": false
+  },
+  "/papers/deepcad/figure03_architecture.png": {
+    "captionEnglish": "Figure 3. Our network architecture. The input CAD model, represented as a command sequence M = {C_i}_{i=1}^{N_c} is first projected to an embedding space and then fed to the encoder E resulting in a latent vector z. The decoder D takes learned constant embeddings as input, and also attends to the latent vector z. It then outputs the predicted command sequence M-hat = {C-hat_i}_{i=1}^{N_c}.",
+    "captionChinese": "图3：我们的网络结构。输入 CAD 模型表示为包含 Nc 条命令的序列 M={Ci}（i=1,…,Nc），首先投影到嵌入空间，再输入编码器 E，得到潜向量 z。解码器 D 以学习得到的常量嵌入为输入，同时关注潜向量 z，随后输出预测的命令序列。",
+    "labelsChinese": [
+      "Embedding：嵌入；Transformer Encoder / Decoder：Transformer 编码器／解码器。",
+      "Average Pooling：平均池化；Learned Constant Embeddings：学习得到的常量嵌入；Linear：线性层。"
+    ],
+    "pdfPage": 4,
+    "reviewed": false
+  },
+  "/papers/deepcad/table02_autoencoding.png": {
+    "captionEnglish": "Table 2. Quantitative evaluation of autoencoding. ACCcmd and ACCparam are both multiplied by 100%, and CD is multiplied by 10³. ↑: a higher metric value indicates better autoencoding quality. ↓: a lower metric value is better. ACC values for Alt-Regr are not available since Alt-Regr does not use quantized parameters.",
+    "captionChinese": "表2：自编码的定量评价。ACCcmd 和 ACCparam 以百分比报告，CD 的显示值乘以10³。↑表示数值越大，自编码质量越好；↓表示数值越小越好。Alt-Regr 不使用量化参数，因此没有对应的 ACC 数值。",
+    "labelsChinese": [
+      "Method：方法；ACCcmd / ACCparam：命令／参数准确率；median CD：CD 中位数；Invalid Ratio：无效比例。",
+      "Ours：本文方法；Ours+Aug：本文方法加数据增强；各 Alt-* 名称保留原文。"
+    ],
+    "pdfPage": 6,
+    "reviewed": false
+  },
+  "/papers/deepcad/figure04_comparison.png": {
+    "captionEnglish": "Figure 4. Comparison of autoencoding results. Hidden edges are also rendered visible (white). Ground truth (GT) is shown in the bottom row. Our best results are highlighted in the dash-line box.",
+    "captionChinese": "图4：自编码结果比较。隐藏边也被渲染为可见的白色线条。最下方一行为真实模型（GT）；本文方法的最佳结果用虚线框突出显示。",
+    "labelsChinese": [
+      "GT (Ground truth)：真实模型；Ours：本文方法；Ours+Aug：本文方法加数据增强。"
+    ],
+    "pdfPage": 6,
+    "reviewed": false
+  },
+  "/papers/deepcad/table03_generation.png": {
+    "captionEnglish": "Table 3. Shape generation measured under point-cloud metrics. We use the metrics in l-GAN [6]. Both MMD and JSD are multiplied by 10². ↑: the higher the better, ↓: the lower the better.",
+    "captionChinese": "表3：在点云指标下衡量形状生成质量。使用 l-GAN 文献[6]中的指标。MMD 和 JSD 的显示值均乘以10²。↑表示越大越好，↓表示越小越好。",
+    "labelsChinese": [
+      "Method：方法；COV：覆盖率；MMD、JSD 保留原指标缩写；Ours：本文方法。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/deepcad/figure06_pointcloud.png": {
+    "captionEnglish": "Figure 6. CAD model reconstruction from point clouds. (Top) input point clouds. (Bottom) reconstructed CAD models.",
+    "captionChinese": "图6：从点云重建 CAD 模型。上方为输入点云，下方为重建的 CAD 模型。",
+    "labelsChinese": [
+      "Input：输入；Output：输出。"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/deepcad/table06_pointcloud.png": {
+    "captionEnglish": "Table 6. Quantitative results for CAD reconstruction from point clouds. Ours-noise corresponds to noisy inputs (uniform noise in [−0.02, 0.02] along normal direction). We use the same metrics as in autoencoding task; ACCcmd and ACCparam are both multiplied by 100%, and CD is multiplied by 10³.",
+    "captionChinese": "表6：从点云重建 CAD 的定量结果。Ours-noise 对应带噪声的输入，即沿法向加入范围为[−0.02, 0.02]的均匀噪声。采用与自编码任务相同的指标；ACCcmd 和 ACCparam 以百分比报告，CD 的显示值乘以10³。",
+    "labelsChinese": [
+      "Method：方法；median CD：CD 中位数；Invalid Ratio：无效比例；Ours-noise：带噪声输入下的本文方法。"
+    ],
+    "pdfPage": 14,
+    "reviewed": false
+  },
+  "/papers/deepcad/figure07_editing.png": {
+    "captionEnglish": "Figure 7. User Editing. Our reconstructed CAD model can be easily edited in any CAD tools. Here, the regions that undergo CAD operations are highlighted in orange color.",
+    "captionChinese": "图7：用户编辑。本文重建的 CAD 模型可以方便地在 CAD 工具中编辑。图中以橙色突出显示施加 CAD 操作的区域。",
+    "labelsChinese": [
+      "Reconstruct：重建；Move face：移动面；Fillet：圆角。"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/deepcad/figure11_failures.png": {
+    "captionEnglish": "Figure 11. Failure examples in shape autoencoding. Top: our reconstructed CAD outputs. Bottom: ground-truth CAD models.",
+    "captionChinese": "图11：形状自编码的失败示例。上方为本文方法输出的重建 CAD 模型，下方为真实 CAD 模型。",
+    "labelsChinese": [
+      "Outputs：输出；GT：真实模型。"
+    ],
+    "pdfPage": 14,
+    "reviewed": false
+  },
+  "/papers/deepcad/figure12_length.png": {
+    "captionEnglish": "Figure 12. Quantitative metrics for shape autoencoding w.r.t. CAD sequence length. Left: median chamfer distance (the lower the better). Right: parameter accuracy (the higher the better).",
+    "captionChinese": "图12：形状自编码定量指标随 CAD 序列长度的变化。左图为倒角距离中位数，越低越好；右图为参数准确率，越高越好。",
+    "labelsChinese": [
+      "Sequence Length：序列长度；Med CD：CD 中位数；Param ACC：参数准确率。"
+    ],
+    "pdfPage": 14,
+    "reviewed": false
+  },
+  "/papers/text2cad/figure04_prompt_levels.png": {
+    "captionEnglish": "Figure 4: Parametric CAD model generation by Text2CAD transformer using different text prompts. Our text prompts follow a certain structure highlighting the different design aspects of CAD construction workflow (shown in different colors).",
+    "captionChinese": "图4：Text2CAD Transformer 使用不同文本提示生成参数化 CAD 模型。文本提示遵循一定结构，强调 CAD 构建流程中不同的设计要素，并以不同颜色区分。",
+    "labelsChinese": [
+      "Groundtruth CAD model：真实 CAD 模型；Abstract / Beginner / Intermediate / Expert Level：抽象级 L0／初学者级 L1／中等级 L2／专家级 L3；Prompt and Output Model：提示及输出模型。",
+      "L0 提示：“一个圆柱形物体。”L1 提示：“该 CAD 模型由一个圆柱形物体构成。”",
+      "L2 提示：“该 CAD 模型由一个中间圆柱形物体构成。通过建立坐标系、在同一平面上绘制两个同心圆，再沿法向拉伸草图，形成实体。得到的部件高度约为0.75个单位。”",
+      "L3 提示（第一段）：“创建 CAD 模型的第一个部件，一个中间圆柱形物体。首先在原点建立没有旋转的新坐标系，欧拉角为(0.0, 0.0, 0.0)，平移向量为(0.0, 0.0, 0.0)。”",
+      "L3 提示（第二段）：“在该坐标系的面1上创建二维草图，并以两个同心圆作为环。环1的圆心为(0.1875, 0.1875)，半径为0.1875；环2圆心相同，半径较小，为0.0754。”",
+      "L3 提示（第三段）：“沿法向将草图拉伸0.75，反方向不拉伸。草图尺度设为0.375，执行‘新建实体’操作，创建新的实体。”",
+      "L3 提示（第四段）：“第一个部件的长和宽均为0.375，来自草图尺度；高为0.75，来自拉伸深度。该部件接近圆柱形物体，沿长度方向略有弯曲。”",
+      "Extrusion Height：拉伸高度；Extrusion Details：拉伸细节；Simple sketch details：简单草图细节；Shape description：形状描述。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/text2cad/figure02_annotation.png": {
+    "captionEnglish": "Figure 2: Text2CAD Data Annotation Pipeline: Our data annotation pipeline generates multi-level text prompts describing the construction workflow of a CAD model with varying complexities. We use a two-stage method - (Stage 1) Shape description generation using VLM (Stage 2) Multi-Level textual annotation generation using LLM.",
+    "captionChinese": "图2：Text2CAD 数据标注流水线。该流程生成不同复杂程度的多层次文本提示，用于描述 CAD 模型的构建过程。采用两个阶段：第一阶段使用视觉语言模型（VLM）生成形状描述；第二阶段使用大语言模型（LLM）生成多层次文本标注。",
+    "labelsChinese": [
+      "3D CAD Model：三维 CAD 模型；Multi-View Images Extractor：多视图图像提取器；Shape information：形状信息。",
+      "Minimal Metadata Generator：最小元数据生成器；Minimal JSON：最小化 JSON；K-Shot：K 个示例提示。",
+      "Natural Language Instruction (NLI)：自然语言指令；Generation Prompt：生成提示。",
+      "Level-0/1/2/3：抽象级／初学者级／中等级／专家级 CAD 指令；LLaVaNext、Mistral-7B 为模型名称。",
+      "示例元数据中的 final_shape、parts、coordinate_system、sketch、extrusion 分别表示最终形状、部件、坐标系、草图和拉伸；代码与数值保持原样。"
+    ],
+    "pdfPage": 4,
+    "reviewed": false
+  },
+  "/papers/text2cad/figure03_network.png": {
+    "captionEnglish": "Figure 3: Network architecture: Text2CAD Transformer takes as input a text prompt T and a CAD subsequence C1:t−1 of length t−1. The text embedding Tadapt is extracted from T using a pretrained BeRT Encoder ([7]) followed by a trainable Adaptive layer. The resulting embedding Tadapt and the CAD sequence embedding F0t−1 is passed through L decoder blocks to generate the full CAD sequence in auto-regressive way.",
+    "captionChinese": "图3：网络结构。Text2CAD Transformer 的输入为文本提示 T 和长度为 t−1 的 CAD 子序列 C1:t−1。使用预训练 BeRT 编码器[7]及其后的可训练自适应层，从 T 中提取文本嵌入 Tadapt。该嵌入与 CAD 序列嵌入 F⁰t−1 一起经过 L 个解码器模块，以自回归方式生成完整 CAD 序列。",
+    "labelsChinese": [
+      "Pre-trained BeRT Encoder：预训练 BeRT 编码器；Adaptive Layer：自适应层；Downsampler：下采样器。",
+      "Sketch Tokens / Extrusion Tokens：草图／拉伸标记；Input / Output CAD Tokens：输入／输出 CAD 标记。",
+      "MHA：多头注意力；Cross-Attention：交叉注意力；FFN：前馈网络；MLP：多层感知机；Positional Encoding：位置编码。",
+      "Trainable / Frozen Parameters：可训练／冻结参数；Reconstructed 3D CAD Model：重建的三维 CAD 模型。",
+      "图中抽象描述：“该 CAD 模型具有优雅、弯曲、中空的设计，灵感来自风格化的字母 O。”较详细描述说明先在坐标平面绘制草图，再拉伸成高约0.75个单位的实体；专家提示进一步给出欧拉角(0.0, 0.0, −90.0)、平移向量(0, 0.0208, 0)以及环、面的构建信息，省略号按原图保留。"
+    ],
+    "pdfPage": 6,
+    "reviewed": false
+  },
+  "/papers/text2cad/table01_expert.png": {
+    "captionEnglish": "Table 1: Quantitative evaluation between DeepCAD [55] and our method (AL is Adaptive Layer). The scores are evaluated only for Expert Level (L3) prompts. The results include F1 scores for primitives and extrusions as well as mean and median CD and IR. CD is multiplied by 10³.",
+    "captionChinese": "表1：DeepCAD[55]与本文方法的定量比较，AL 表示自适应层。只使用专家级（L3）提示计算分数。结果包括几何基元和拉伸的 F1 分数，以及 CD 的均值、中位数和 IR。CD 的显示值乘以10³。",
+    "labelsChinese": [
+      "Model：模型；Line / Arc / Circle / Extrusion：直线／圆弧／圆／拉伸。",
+      "Median / Mean CD：CD 中位数／均值；IR：无效比例；w/o AL：不使用自适应层。"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/text2cad/table02_preferences.png": {
+    "captionEnglish": "Table 2: We conduct GPT-4 evaluation of the CAD models generated from 1000 prompts per level and User studies of 100 samples per level. In both evaluations, overall Text2CAD is a favored choice over DeepCAD.",
+    "captionChinese": "表2：每个提示层级使用1000条提示所生成的 CAD 模型进行 GPT-4 评价，并对每个层级的100个样本开展用户研究。在两类评价中，总体上 Text2CAD 比 DeepCAD 更受偏好。",
+    "labelsChinese": [
+      "GPT-4 Evaluation / User Study-based Evaluation：GPT-4 评价／基于用户研究的评价，单位均为百分比。",
+      "Undecided：未作出选择；Abstract / Beginner / Intermediate / Expert：抽象级／初学者级／中等级／专家级。"
+    ],
+    "pdfPage": 9,
+    "reviewed": false
+  },
+  "/papers/text2cad/figure09_failures.png": {
+    "captionEnglish": "Figure 9: Failure cases for Text2CAD Transformer. Invalid Samples (left): The network fails to generate any valid CAD model. Discrepancy Cases (right): The generated CAD model does not match the input text prompts.",
+    "captionChinese": "图9：Text2CAD Transformer 的失败案例。左侧的无效样本中，网络未能生成任何有效的 CAD 模型；右侧的不一致案例中，生成的 CAD 模型与输入文本提示不符。",
+    "labelsChinese": [
+      "Invalidity / INVALID：无效／无效模型；Discrepancy：不一致；Input Text：输入文本。",
+      "左侧提示片段包含直线端点(0.0, 0.0)、(0.001, 0.0)、草图尺度0.25、拉伸0.75，以及沿 Z 方向拉伸0.0012的长方体等信息。",
+      "右侧提示片段分别描述矩形棱柱底座及与已有部件连接的第二个部件、类似字母 S 或扭曲带子的弯曲环状金属物体，以及具有弯曲边缘、类似锅铲或桨的平面形状；片段中的省略号与原图一致。"
+    ],
+    "pdfPage": 17,
+    "reviewed": false
+  },
+  "/papers/cad-llama/figure02_overview.png": {
+    "captionEnglish": "Figure 2. Overview of the proposed framework CAD-Llama. The framework consists of two parts: (1) SPCC data synthesis, which employs the hierarchical annotation pipeline to convert CAD sequences into SPCC representations, and (2) the pretraining and instruction tuning process, where the resulting SPCC corpus is leveraged to enhance model performance.",
+    "captionChinese": "图2：所提出的 CAD-Llama 框架概览。框架包括两部分：第一部分是 SPCC 数据合成，利用层次标注流水线将 CAD 序列转换为 SPCC 表示；第二部分是预训练与指令微调，利用所得 SPCC 语料提升模型性能。",
+    "labelsChinese": [
+      "CAD Dataset / CAD Sequences：CAD 数据集／CAD 序列；Code Formatting：代码格式化；Raw CAD Code：原始 CAD 代码；Embed：嵌入。",
+      "All descriptions：全部描述，包括 Abstract Description（抽象描述）、Detailed Description（详细描述）、Component Names（部件名称）、Component Descriptions（部件描述）。",
+      "SPCC Corpus：SPCC 语料，图中标注1.43亿个 token；Similar CAD / same context / Contexts：相似 CAD／相同上下文／上下文。",
+      "SPCC Adaptive Pretraining：SPCC 适配预训练；Pretrained LLM：预训练语言模型；48K CAD Multitask Instructional Data：4.8万条 CAD 多任务指令数据。",
+      "CAD-Centric Instruction Tuning：面向 CAD 的指令微调；Training：训练；火焰／雪花分别表示参与训练／冻结。",
+      "左侧 SPCC 示例将整体描述、圆柱形底座、带圆柱切口的方块等部件描述插入对应 CAD 代码；图中未完整展示的描述以省略号保留。"
+    ],
+    "pdfPage": 3,
+    "reviewed": false
+  },
+  "/papers/cad-llama/figure03_annotation.png": {
+    "captionEnglish": "Figure 3. Hierarchical Annotation Pipeline. The figure illustrates our two-stage annotation process for CAD models. In the first stage, detailed descriptions of individual components are generated. In the second stage, a global description is produced, which includes both an abstract overview and detailed descriptions that capture the spatial relationships between components.",
+    "captionChinese": "图3：层次标注流水线。图中展示 CAD 模型的两阶段标注过程：第一阶段生成各部件的详细描述；第二阶段生成全局描述，同时包含抽象概述，以及能够表达部件间空间关系的详细描述。",
+    "labelsChinese": [
+      "Stage 1 / Stage 2：阶段1／阶段2；Component Images Extractor：部件图像提取器；Outline Images Extractor：轮廓图像提取器。",
+      "Components Desc / Overall Desc：部件描述／整体描述；Origin CAD Image：原始 CAD 图像。",
+      "Component Names：部件名称，示例包括带矩形延伸的圆盘、中心圆柱、用于切除的六棱柱；Abstract / Detailed Desc：抽象／详细描述。",
+      "Prompt 1：“背景：用户有一个通过拉伸草图形成的 CAD 模型。用户输入两张图片，第一张是草图，第二张是草图拉伸后的 CAD 模型。任务：描述 CAD 模型。请先详细描述草图……示例：{描述示例}。”",
+      "Prompt 2：“一个 CAD 模型可能由多个模块组成，每个模块构成模型的一部分，可以是实体，也可以是用于切除的特征，例如创建一个孔……任务：输出三行，第1行根据……简要描述 CAD 的整体宏观形状。示例：{描述示例}。”省略处与原图一致。"
+    ],
+    "pdfPage": 4,
+    "reviewed": false
+  },
+  "/papers/cad-llama/table07_cost.png": {
+    "captionEnglish": "Table 7. Training costs and token consumption during the two training stages. Tokens are used for prompt generation in each stage.",
+    "captionChinese": "表7：两个训练阶段的训练成本与 token 消耗。表中的 token 用于各阶段的提示生成。",
+    "labelsChinese": [
+      "Stage：阶段；A100-GPU Hours：A100 GPU 小时数；Tokens (GPT-4o)：GPT-4o token 数。",
+      "SPCC-Adaptive Pretraining：SPCC 适配预训练；Instruction Tuning：指令微调；70M / 6M：7000万／600万。"
+    ],
+    "pdfPage": 12,
+    "reviewed": false
+  },
+  "/papers/cad-llama/table04_text.png": {
+    "captionEnglish": "Table 4. Results on text-to-CAD task. The metric ACCT is multiplied by 100%. MCD, MMD, and JSD are multiplied by 10².",
+    "captionChinese": "表4：文本到 CAD 任务的结果。ACCT 以百分比报告；MCD、MMD、JSD 的显示值乘以10²。",
+    "labelsChinese": [
+      "Method：方法；各模型名称及指标缩写保持原文；↑表示越大越好，↓表示越小越好。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cad-llama/table06_representation.png": {
+    "captionEnglish": "Table 6. Evaluation of different CAD representation methods in the Text-to-CAD task. SDCS uses a single textual description as a prefix along with CAD command sequences, while SDCC uses CAD code with a single description. SPCS incorporates hierarchical descriptions with CAD command sequences, and SPCC combines hierarchical descriptions with CAD code.",
+    "captionChinese": "表6：文本到 CAD 任务中不同 CAD 表示方法的评价。SDCS 使用单个文本描述作为 CAD 命令序列的前缀；SDCC 使用单个描述配合 CAD 代码；SPCS 将层次描述与 CAD 命令序列结合；SPCC 则将层次描述与 CAD 代码结合。",
+    "labelsChinese": [
+      "ACCcmd / ACCparam：命令／参数准确率；SR：成功率；MCD、MMD、JSD 保留指标缩写。",
+      "SDCS、SDCC、SPCS、SPCC 为四种表示方案名称；↑越大越好，↓越小越好。"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/cad-llama/figure25_failures.png": {
+    "captionEnglish": "Figure 25. Failure cases for CAD-Llama-INS. We illustrate two types of errors: inaccuracies in parameter settings and misalignment with the text prompts.",
+    "captionChinese": "图25：CAD-Llama-INS 的失败案例。这里展示两类错误：参数设置不准确，以及与文本提示不匹配。",
+    "labelsChinese": [
+      "Input Text：输入文本；Generated CAD Models：生成的 CAD 模型；Parameter Error：参数错误；Mismatch Text Description：与文本描述不符。",
+      "从左到右的输入描述：①一个中心中空圆柱体，两侧对称伸出矩形块，每个矩形块上都有一个圆孔；②顶部具有分层圆形特征的中心圆柱结构，底部由四条对称排列的竖直圆柱腿支撑；③一块平坦圆盘，中央有凸起圆柱，周围分布四个孔；④六个面均敞开的中空立方体，由细边构成立方体框架。"
+    ],
+    "pdfPage": 31,
+    "reviewed": false
+  },
+  "/papers/cad-recode/figure02_representation.png": {
+    "captionEnglish": "Figure 2. Sketch-extrude sequence (top) in DeepCAD representation (middle) and our CadQuery code (bottom).",
+    "captionChinese": "图2：草图—拉伸序列位于上方；其中间形式为 DeepCAD 表示，下方为本文的 CadQuery 代码。",
+    "labelsChinese": [
+      "(a) Sketch-Extrude sequence：草图—拉伸序列；(b) DeepCAD representation：DeepCAD 表示；(c) Our CadQuery representation：本文的 CadQuery 表示。",
+      "Sketch / Extrude：草图／拉伸；Line / Circle：直线／圆；NewBody / Union：新建实体／并集。Python 语句和参数值保留原样。"
+    ],
+    "pdfPage": 3,
+    "reviewed": false
+  },
+  "/papers/cad-recode/figure04_network.png": {
+    "captionEnglish": "Figure 4. Overview of CAD-Recode. The pipeline comprises two parts: (1) a point cloud projector (marked blue) (2) a fine-tuned pretrained LLM (yellow). An input point cloud is processed using (1), and outputs are then passed to an LLM (2), which predicts a CAD sketch-extrude sequence in the form of executable Python code.",
+    "captionChinese": "图4：CAD-Recode 概览。流程包括两部分：蓝色部分是点云投影器，黄色部分是经过微调的预训练大语言模型。输入点云先由点云投影器处理，所得输出再传给语言模型，由其以可执行 Python 代码的形式预测 CAD 草图—拉伸序列。",
+    "labelsChinese": [
+      "Point Cloud：点云；Linear Layer：线性层；Large Language Model：大语言模型；Tokenizer：分词器。",
+      "Python interpreter：Python 解释器；CAD model：CAD 模型；代码、序列起止标记与数字保持原文。"
+    ],
+    "pdfPage": 5,
+    "reviewed": false
+  },
+  "/papers/cad-recode/table01_reconstruction.png": {
+    "captionEnglish": "Table 1. Comparison of CAD reverse engineering methods on DeepCAD and Fusion360 datasets. Our CAD-Recode trained on the 160 k DeepCAD dataset demonstrates an improvement over existing state-of-the-art methods both in terms of geometric fidelity and validity of the generated sketch-extrude sequences. Our procedurally generated dataset provides a significant boost in the prediction quality.",
+    "captionChinese": "表1：在 DeepCAD 与 Fusion360 数据集上比较 CAD 逆向工程方法。使用16万条 DeepCAD 数据训练的 CAD-Recode，在生成草图—拉伸序列的几何保真度和有效性上优于现有先进方法。本文程序化生成的数据集进一步显著提升预测质量。",
+    "labelsChinese": [
+      "Method：方法；Train Dataset Name / Size：训练数据集名称／规模；DeepCAD / Fusion360 Test Set：对应测试集。",
+      "Mean / Med. CD：CD 均值／中位数；IoU：交并比；IR：无效比例；Ours：本文数据；160k / 1M：16万／100万。"
+    ],
+    "pdfPage": 6,
+    "reviewed": false
+  },
+  "/papers/cad-recode/table02_scans.png": {
+    "captionEnglish": "Table 2. Results on the CC3D dataset, where input point clouds are sampled from real 3D scans. CAD-Recode significantly outperforms DeepCAD, and CAD-SIGNet.",
+    "captionChinese": "表2：CC3D 数据集上的结果，其输入点云采样自真实三维扫描。CAD-Recode 显著优于 DeepCAD 和 CAD-SIGNet。",
+    "labelsChinese": [
+      "Method：方法；Mean / Med. CD：CD 均值／中位数；IoU：交并比；IR：无效比例；↑越大越好，↓越小越好。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cad-recode/table03_sampling.png": {
+    "captionEnglish": "Table 3. Ablation of training data and test-time sampling. The results demonstrate the advantage of training on our procedurally generated data, while the test-time sampling helps reducing the invalidity ratio. CD stands for mean Chamfer distance.",
+    "captionChinese": "表3：训练数据和测试时采样的消融。结果展示了程序化生成训练数据的优势，测试时采样则有助于降低无效比例。CD 指平均倒角距离。",
+    "labelsChinese": [
+      "Train Dataset Name / Size：训练数据集名称／规模；Test-time Sampling：测试时采样；Real-World CC3D：真实场景 CC3D。",
+      "Previous best：此前最佳方法；Ours：本文数据；✓／✗：采用／不采用；IoU：交并比；IR：无效比例。"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/cad-recode/figure06_editing.png": {
+    "captionEnglish": "Figure 6. Interactive editing of a CAD model. Given the code output from CAD-Recode and a generic prompt, GPT-4o allows automated and interactive editing of the CAD model.",
+    "captionChinese": "图6：CAD 模型的交互式编辑。给定 CAD-Recode 输出的代码和一个通用提示，可以利用 GPT-4o 对 CAD 模型进行自动化、交互式编辑。",
+    "labelsChinese": [
+      "CAD-Recode Output：CAD-Recode 输出；User Prompt：用户提示；Executed Code：已执行代码；User Edit：用户编辑。",
+      "Base Diam. / Base Height：底座直径／高度；Top Diam. / Top Height：顶部直径／高度。",
+      "用户提示：“重构代码，增加能让代码更易编辑、更可解释的函数和变量。在代码中加入滑块，以编辑每个基元的尺寸。”"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/cad-mllm/figure02_dataset.png": {
+    "captionEnglish": "Fig. 2: Qualitative comparison between our CAD command sequence dataset and DeepCAD [1] dataset. According to Sec. 4, DeepCAD dataset is part of our created dataset. In the visualization of our dataset, we exclude the CAD models’ IDs that have been included in the DeepCAD dataset. The extension part of our dataset contains more complex and realistic models with more details. Best viewed zoomed in.",
+    "captionChinese": "图2：本文 CAD 命令序列数据集与 DeepCAD[1]数据集的定性比较。如第4节所述，DeepCAD 是本文所建数据集的一部分。展示本文数据集时，排除了已经收录在 DeepCAD 中的模型 ID。扩展部分包含更复杂、更接近真实、细节更多的模型。建议放大查看。",
+    "labelsChinese": [
+      "DeepCAD dataset：DeepCAD 数据集；Our dataset：本文数据集。"
+    ],
+    "pdfPage": 5,
+    "reviewed": false
+  },
+  "/papers/cad-mllm/figure04_network.png": {
+    "captionEnglish": "Fig. 4: Our network architecture. The network could process three single modalities of information of input or any combinations of them, each uniquely color-coded. We consider the most complex combination of modalities, where three different inputs are provided simultaneously. Except for the textual descriptions, each modality is first processed through its corresponding frozen encoder before being further integrated. Subsequently, they are passed through a trainable projection layer, aligning them within a unified language feature space. The fine-tuned Large Language Models (LLMs), augmented with Low-Rank Adaptation (LoRA), then process a combination of the prompt and the projected embeddings, enabling the accurate generation of CAD models.",
+    "captionChinese": "图4：网络结构。网络能够处理三种单独的输入模态，或它们的任意组合；不同模态用不同颜色表示。图中展示最复杂的组合，即同时提供三种输入。除文本描述外，每种模态首先经过各自的冻结编码器，再进一步整合；随后通过可训练投影层，对齐到统一的语言特征空间。加入低秩适配（LoRA）的微调语言模型处理提示与投影后嵌入的组合，从而准确生成 CAD 模型。",
+    "labelsChinese": [
+      "Multi-view Images / Textual Description / Point Cloud：多视图图像／文本描述／点云；Image / Point Encoder：图像／点云编码器。",
+      "Image / Point Projection：图像／点云投影；Perceiver：Perceiver 模块；Large Language Model (Vicuna)：大语言模型 Vicuna；Generated CAD model：生成的 CAD 模型。",
+      "文本描述：“生成一个 CAD 模型，具有圆形底座，周缘均匀分布五个圆形切口。”",
+      "输入指令：“根据给定的三种模态信息生成对应 CAD 模型。”回复：“收到，请稍等，让我为你生成。”"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cad-mllm/table03_points.png": {
+    "captionEnglish": "TABLE 3: The quantitative results on point-based reconstruction tasks. Our method’s performance is comparable to some “B-rep”-based reconstruction methods in “point cloud”-based reconstruction metrics (Chamfer, F-score, Normal C). However, it significantly outperforms these methods in our proposed topological metrics (SegE, DangEL, and SIR) and the enclosure metric (FluxEE). Moreover, our method consistently surpasses the command sequence-based generation baseline across all evaluated metrics.",
+    "captionChinese": "表3：基于点云的重建任务的定量结果。在基于点云的重建指标（Chamfer、F-score、Normal C）上，本文方法与部分基于 B-rep 的重建方法相当；但在本文提出的拓扑指标（SegE、DangEL、SIR）和闭合性指标（FluxEE）上显著优于这些方法。此外，本文方法在全部评价指标上均优于基于命令序列的生成基线。",
+    "labelsChinese": [
+      "Point-based CAD Reconstruction：基于点云的 CAD 重建；Reconstruction / Generation Methods：重建／生成方法。",
+      "Chamfer：倒角距离；F-score：F 分数；Normal C：法向一致性；SegE、DangEL、SIR、FluxEE 保留原指标缩写，定义见下文。",
+      "×100：显示值乘以100；SIR(%)：SIR 以百分比显示；↑越大越好，↓越小越好。"
+    ],
+    "pdfPage": 10,
+    "reviewed": false
+  },
+  "/papers/cad-mllm/table05_text.png": {
+    "captionEnglish": "TABLE 5: The user study results on text-conditioned generation tasks. We evaluate the generated models based on two criteria: text alignment and model quality. A higher score indicates better performance, with both criteria rated on a 5-point scale.",
+    "captionChinese": "表5：文本条件生成任务的用户研究结果。从文本对齐和模型质量两个方面评价生成模型。两项均采用五分制，分数越高越好。",
+    "labelsChinese": [
+      "Methods：方法；Text Alignment：文本对齐；Model Quality：模型质量；Ours(Text)：本文方法的文本输入版本。"
+    ],
+    "pdfPage": 11,
+    "reviewed": false
+  },
+  "/papers/cad-mllm/table07_multimodal.png": {
+    "captionEnglish": "TABLE 7: The quantitative study on training with multimodal data. (a) Our multimodal model outperforms the image-only model across all reconstruction, topology, and enclosure metrics. (b) Our multimodal model is comparable with the pointonly model in terms of topology and enclosure metrics. However, the point reconstruction performance of our multimodal model is slightly weaker than the point-only model.",
+    "captionChinese": "表7：使用多模态数据训练的定量研究。(a) 多模态模型在全部重建、拓扑和闭合性指标上优于仅图像模型。(b) 在拓扑和闭合性指标上，多模态模型与仅点云模型相当；但其点云重建性能略弱于仅点云模型。",
+    "labelsChinese": [
+      "(a) Image Reconstruction Comparison：图像重建比较；(b) Point Reconstruction Comparison：点云重建比较。",
+      "Ours(Image) / Ours(Point) / Ours(Multimodal)：本文方法的仅图像／仅点云／多模态版本。",
+      "Chamfer、F-score、Normal C、SegE、DangEL、SIR、FluxEE 与表3对应；×100 为显示缩放，↑越大越好，↓越小越好。"
+    ],
+    "pdfPage": 14,
+    "reviewed": false
+  },
+  "/papers/cad-mllm/figure14_failures.png": {
+    "captionEnglish": "Fig. 14: We present the failure case of our method on some challenging cases, such as thin structures and complicated details. Dangling edges exist in these failure results.",
+    "captionChinese": "图14：本文方法在薄结构、复杂细节等具有挑战性的情形下的失败案例。这些失败结果中存在悬空边。",
+    "labelsChinese": [
+      "Ground Truth：真实模型；Ours：本文方法。"
+    ],
+    "pdfPage": 14,
+    "reviewed": false
+  },
+  "/papers/cadreview/figure02_dataset.png": {
+    "captionEnglish": "Figure 2: Construction workflow of our CADReview dataset, including program-drawing pairs collection, error creation and feedback annotation.",
+    "captionChinese": "图2：CADReview 数据集的构建流程，包括收集程序—图像对、创建错误，以及标注反馈。",
+    "labelsChinese": [
+      "Human-made / Machine-made Program：人工编写／机器生成的程序；Program-Image Collection：程序—图像收集。",
+      "Error Creation：错误创建；Manual Edit：人工编辑；Correct Code / Error Code：正确／错误代码；Feedback Annotation：反馈标注。",
+      "反馈模板：“三维物体……错误类型〈err_typ〉影响……不正确的参数〈para〉导致视觉异常〈vis_anomaly〉。要修正……调整代码块〈block_id〉中的变量或函数〈var/func〉。”省略处按原图保留。"
+    ],
+    "pdfPage": 3,
+    "reviewed": false
+  },
+  "/papers/cadreview/figure03_errors.png": {
+    "captionEnglish": "Figure 3: Examples of 8 types of CAD program error from our CADReview dataset. Top row: The reference images from one sampled viewpoint. Second row: Error creation on CAD programs, showing the edited code segments. Bottom row: The rendered 3D objects by erroneous programs.",
+    "captionChinese": "图3：CADReview 数据集中八类 CAD 程序错误的示例。第一行为从一个采样视角观察到的参考图像；第二行展示对 CAD 程序创建错误时修改的代码片段；最后一行为错误程序渲染出的三维物体。",
+    "labelsChinese": [
+      "Primitive：基元；Rotation：旋转；Position：位置；Size：尺寸；constant：常量；Logic：逻辑；Missing：缺失；Redundant：冗余。",
+      "代码关键字、变量名和具体参数保留原样。"
+    ],
+    "pdfPage": 4,
+    "reviewed": false
+  },
+  "/papers/cadreview/figure04_network.png": {
+    "captionEnglish": "Figure 4: Overview of our ReCAD. We design geometric component recognition (GCR) and spatial geometric operation (SGO) mechanisms to initialize feedback generator φ1 and code editor φ2, respectively.",
+    "captionChinese": "图4：ReCAD 概览。分别设计几何部件识别（GCR）与空间几何操作（SGO）机制，初始化反馈生成器 φ1 和代码编辑器 φ2。",
+    "labelsChinese": [
+      "Geometric Component Recognition：几何部件识别；Spatial Geometric Operation：空间几何操作。",
+      "CAD Caption & Localization：CAD 描述与定位；Code Completion：代码补全；Mask 30%：遮盖30%；Input Program：输入程序。",
+      "Reference Images / Rendered Image：参考图像／渲染图像；Vision Encoder / Projector：视觉编码器／投影器。",
+      "反馈示例：“三维物体的位置……错误位于〈Block 4〉。该参数导致〈position error〉。”",
+      "Rewards：奖励；DPO：直接偏好优化；LoRA：低秩适配；LLM：大语言模型。"
+    ],
+    "pdfPage": 5,
+    "reviewed": false
+  },
+  "/papers/cadreview/table01_main.png": {
+    "captionEnglish": "Table 1: Main results of baselines and our ReCAD. †: fine-tuning on CADReview dataset. CD, MMD and JSD are multiplied by 10³. Bold: best results.",
+    "captionChinese": "表1：基线与 ReCAD 的主要结果。†表示在 CADReview 数据集上进行微调。CD、MMD 和 JSD 的显示值乘以10³；粗体表示最佳结果。",
+    "labelsChinese": [
+      "Method：方法；Machine-made / Human-made Program：机器生成／人工编写的程序。",
+      "RL：ROUGE-L；BS：BERTScore；Acc：错误定位准确率；CD、MMD、JSD 保留原指标缩写；IR：无效比例。",
+      "↑越大越好，↓越小越好；ReCAD-LA 与 ReCAD-QW 保留原模型名称。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cadreview/table02_ablation.png": {
+    "captionEnglish": "Table 2: Results of ablation study. Fed: feedback. Red: reward functions. CD and JSD are multiplied by 10³. Bold: best results.",
+    "captionChinese": "表2：消融研究结果。Fed 表示反馈，Red 表示奖励函数。CD 和 JSD 的显示值乘以10³；粗体表示最佳结果。",
+    "labelsChinese": [
+      "w/o：不使用；Machine-made / Human-made：机器生成／人工编写；GCR：几何部件识别；SGO：空间几何操作。",
+      "Acc：准确率；CD、JSD 保留指标缩写；LA、QW 保留模型版本名称；↑越大越好，↓越小越好。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cadreview/figure06_correction.png": {
+    "captionEnglish": "Figure 6: Cases of different methods. The green and red denote correct and incorrect prediction, respectively.",
+    "captionChinese": "图6：不同方法的案例。绿色表示预测正确，红色表示预测错误。",
+    "labelsChinese": [
+      "Input Program：输入程序；Reference Images：参考图像；Rendered 3D Object：渲染的三维物体。",
+      "GPT-4o 反馈片段：“三维物体的槽比预期少……错误位于〈Block 1〉……错误类型为〈constant error〉。”",
+      "本文 ReCAD-QW 反馈片段：“槽的数量存在差异……错误位于〈Block 3〉……该程序包含〈logic error〉。”constant error 为常量错误，logic error 为逻辑错误；代码片段保持原样。"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/cadtests/figure01_motivation.png": {
+    "captionEnglish": "Figure 1: CADTESTS are executable programs that verify prompt specifications directly on the generated geometry. CADTESTS can account for ambiguous design prompts (left) and identify subtle structural errors (right). The figure ommits CADTEST implementations for clarity.",
+    "captionChinese": "图1：CADTESTS 是直接在生成几何上验证提示规格的可执行程序。它们能够处理含糊的设计提示（左），并识别细微的结构错误（右）。为便于展示，图中省略了 CADTESTS 的实现。",
+    "labelsChinese": [
+      "Reference / Generated B-Rep：参考／生成的边界表示；Chamfer Distance (high / low)：倒角距离（高／低）；Passed All Tests (True / False)：全部测试通过（是／否）。",
+      "左侧提示：“创建一个细长的矩形棱柱，然后沿其长度切除一个半圆形。”测试1检查至少存在一个由半圆切口形成的圆柱面；测试2检查模型是否细长，即最大尺寸显著大于最小尺寸。",
+      "右侧提示：“创建一个矩形块，在顶部中心开一个圆孔，并从圆孔向最近边缘延伸出一条细的线切割槽。”测试4要求顶点总数恰为16，以符合矩形块、贯通孔与贯通槽的预期拓扑。",
+      "右侧失败提示：“预计带贯通孔和槽的矩形块恰有16个顶点，实际发现18个。”参考模型的细槽完全切穿；生成模型的槽未切穿，仍残留一层薄壁。",
+      "左图注记：“与参考模型偏差较大，但通过全部 CADTests。”右图注记：“与参考模型接近，但因结构错误未通过测试。”"
+    ],
+    "pdfPage": 2,
+    "reviewed": false
+  },
+  "/papers/cadtests/figure02_pipeline.png": {
+    "captionEnglish": "Figure 2: Illustration of the proposed CADTest synthesis pipeline. (Top) A design prompt and reference CAD program are provided to an LLM planner to generate CAD mutants. (Bottom) The planner generates a test suite that is iteratively refined using execution feedback from the passing and mutation sets. In this example, a mutation that is not killed in R = 1 is detected in R = N after adding a test comparing the volumes of the inner and outer cylindrical faces.",
+    "captionChinese": "图2：所提出的 CADTest 合成流水线。上部将设计提示与参考 CAD 程序提供给 LLM 规划器，以生成 CAD 变异体；下部由规划器生成测试套件，并根据正确样本集合与变异集合上的执行反馈迭代改进。本例中，第1轮未被检出的变异，在第 N 轮加入比较内外圆柱面“体积”的测试后被检出。",
+    "labelsChinese": [
+      "Planner：规划器；Mutation Generation：变异生成；Mutated CAD Program：变异 CAD 程序；Execution：执行；Test Suite：测试套件；Passing Set / Mutation Set：正确样本集合／变异集合。",
+      "设计提示：“创建一个矮而宽的圆柱体，宽度大于高度，并在中心开一个贯穿整个高度的圆孔。”",
+      "四个变异分别违反以下要求：①主体应为圆柱，却被改成立方体；②中心切口应较小，却被改大；③只应有一个中心切口，却被改成多个小孔；④内部切口应贯穿圆柱的全部高度。",
+      "第1轮的测试：检查有两个圆柱面（外圆柱和内切口）；通过检查实体中心不在材料内部来确认通孔；检查总面数为4（两个圆柱面、两个平面）。",
+      "第 N 轮新增测试4：“验证内部圆柱面的面积远小于外部圆柱面的面积。”Round 1 / Round N：第1轮／第 N 轮。"
+    ],
+    "pdfPage": 5,
+    "reviewed": false,
+    "translatorNote": "原图注使用 volumes（体积），图内新增测试文字使用 face area（面面积）；译文按原图分别保留，二者不能混作同一几何量。"
+  },
+  "/papers/cadtests/table01_test_generation.png": {
+    "captionEnglish": "Table 1: CADTESTS generation performance for abstract prompts in terms of validity, soundness, and mutation score. We evaluate various LLM planners and compare two prompting strategies: providing the planner with 20 CAD test demonstrations in its context, or supplying a skill file that disambiguated how tests should be written. The table presents both percentages and total counts.",
+    "captionChinese": "表1：针对抽象提示，以有效性、健全性和变异分数评价 CADTESTS 的生成性能。比较不同 LLM 规划器，以及两种提示策略：在上下文中提供20个 CAD 测试示例，或提供说明测试编写方式的技能文件。表中同时给出百分比和总计数。",
+    "labelsChinese": [
+      "Model / Prompting：模型／提示方式；20-shot：20个示例；Skilled：提供技能文件。",
+      "Valid (#valid/#total)：有效测试数／全部测试数；Sound (#sound/#valid)：健全测试数／有效测试数；MScore：变异分数。",
+      "✓／✕表示使用／不使用相应提示方式；模型名称保留原文。"
+    ],
+    "pdfPage": 6,
+    "reviewed": false
+  },
+  "/papers/cadtests/table02_refinement.png": {
+    "captionEnglish": "Table 2: Effectiveness of the refinement loop. Scores are reported for the reference implementation, CAD mutants, as well as their augmented variants.",
+    "captionChinese": "表2：迭代改进闭环的有效性。分别对参考实现、CAD 变异体及其增强版本报告分数。",
+    "labelsChinese": [
+      "Prompt：提示；Detailed / Abstract：详细／抽象提示；Model：模型；#total：总数。",
+      "Sound：健全性；SoundAugm：增强版本的健全性；MScore：变异分数；MScoreAugm：增强版本的变异分数；± 后的数值按原表保留。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cadtests/table03_generation.png": {
+    "captionEnglish": "Table 3: Evaluation of Text-to-CAD methods on CADTESTBENCH. Results are reported for both the abstract and detailed partitions. Text-to-CAD baselines are evaluated using different LLM planners. Performance is measured in terms of pass rate, requirement score, and invalidity rate.",
+    "captionChinese": "表3：在 CADTESTBENCH 上评价文本到 CAD 方法，分别报告抽象与详细两个子集的结果。文本到 CAD 基线使用不同的 LLM 规划器，以通过率、要求得分和无效比例衡量性能。",
+    "labelsChinese": [
+      "Method / Planner：方法／规划器；Detailed / Abstract：详细／抽象提示子集。",
+      "IR：无效比例；RS：要求得分；PR：通过率；↑越大越好，↓越小越好。",
+      "Finetuned Method：微调方法；Train-Free Methods：免训练方法；Test-based Baselines：基于测试的基线；CADTests + Log：CADTests 加执行日志。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cadtests/table04_human.png": {
+    "captionEnglish": "Table 4: Agreement with human consensus annotations (Cohen’s κ=0.54). Left: Pass-rate agreement for CADTESTS and the LLM-based metric of [38]. Right: AUC for continuous score metrics against the binary human label.",
+    "captionChinese": "表4：与人工共识标注的一致性，Cohen 的 κ=0.54。左侧比较 CADTESTS 与文献[38]中基于 LLM 的指标在通过率判定上的一致性；右侧以二元人工标签为依据，报告连续评分指标的 AUC。",
+    "labelsChinese": [
+      "Pass-Rate Metric：通过率指标；Accuracy：准确率；Precision：精确率；Recall：召回率；F1：F1 分数。",
+      "Metric：指标；AUC：曲线下面积；Chamfer Distance：倒角距离；CLIP Score：CLIP 得分；CADTests (RS Score)：CADTests 要求得分；LVM 保留原指标名称。"
+    ],
+    "pdfPage": 9,
+    "reviewed": false
+  },
+  "/papers/cadtests/figure04_examples.png": {
+    "captionEnglish": "Figure 4: Example generations from the CADTest-Claude baseline evaluated via CADTESTS. Green indicates passed tests and red indicates failed tests. For clarity, only a subset of test descriptions is shown and full test implementations are omitted.",
+    "captionChinese": "图4：由 CADTest-Claude 基线生成、并使用 CADTESTS 评价的示例。绿色表示测试通过，红色表示测试失败。为便于阅读，图中仅展示部分测试描述，省略完整测试实现。",
+    "labelsChinese": [
+      "Reference / Generated B-Rep：参考／生成的边界表示；Prompt：提示；Failure：失败。",
+      "左侧提示：“创建一个星形三维物体。先绘制一个五角星草图，再将其拉伸，每个顶点应形成略有不同的角度。”测试依次检查：至少12个面；存在拉伸且最大尺寸明显大于最小尺寸；顶点数为偶数；恰有一个实体；五个外侧星尖在轮廓平面内具有不均匀角间距。",
+      "左侧失败提示：“星尖角间距近似均匀，相对离散程度为0.0031，间距为[72.11,72.07,71.94,71.89,71.99]；但提示要求各顶点形成略有不同的角度。”",
+      "中间提示：“创建一张四腿桌子。先创建矩形，再从矩形各角的底部连接四个细长的拉伸正方形。”测试检查：桌面与四腿构成一个统一实体；所有面均为平面；四个最小面即腿底为正方形；总面数恰为18；包围盒长宽比在细长桌腿的合理范围内。",
+      "右侧提示：“创建一个圆并将其拉伸，再开四个小孔，使它们按正方形排列。”测试检查：恰有一个实体；恰有5个圆柱面（主体与四个孔壁）；至少10条圆边；平面多于2个；体积小于完整包围盒体积；四个孔壁圆柱面的半径相同。",
+      "右侧失败提示：“预计有5个圆柱面（1个主体圆柱和4个孔），实际发现8个。”"
+    ],
+    "pdfPage": 9,
+    "reviewed": false
+  },
+  "/papers/cad-editor/figure02_task.png": {
+    "captionEnglish": "Figure 2. Left: Example input and output for CAD-Editor. The input combines the original CAD sequence with the editing instruction, and the output is the edited CAD sequence. The specific CAD sequence is shortened to ‘[Original (or Edited) CAD Sequence]’ to save space. Right: An illustration for a specific CAD sequence and its rendered CAD model.",
+    "captionChinese": "图2：左侧为 CAD-Editor 的输入与输出示例。输入由原始 CAD 序列和编辑指令构成，输出为编辑后的 CAD 序列。为节省空间，具体序列缩写为“[原始 CAD 序列]”或“[编辑后 CAD 序列]”。右侧展示一条具体 CAD 序列及其渲染模型。",
+    "labelsChinese": [
+      "INPUT / OUTPUT：输入／输出；Original / Edited CAD Sequence：原始／编辑后的 CAD 序列；Instruction：指令。",
+      "示例指令：“增大圆柱的高度，并以中心为基准减小其直径。”CAD Sequence / Rendered CAD Model：CAD 序列／渲染的 CAD 模型；命令与数值保留原文。"
+    ],
+    "pdfPage": 3,
+    "reviewed": false
+  },
+  "/papers/cad-editor/figure03_dataset.png": {
+    "captionEnglish": "Figure 3. Illustration of automated data synthesis pipeline.",
+    "captionChinese": "图3：自动数据合成流水线示意。",
+    "labelsChinese": [
+      "(a) Paired CAD Models Generation：成对 CAD 模型生成；Design Variation Generation：设计变体生成。",
+      "(b) Editing Instruction Generation：编辑指令生成；Multi-modal Representation：多模态表示；Textual / Visual：文本／视觉；Stepwise Captioning：逐步描述。",
+      "(c) Assembling：组装；示例编辑指令分别为“减小圆柱的半径”“将圆柱半径减小10个单位”“在中心孔中插入一根圆柱杆”“将圆柱替换为矩形棱柱”。"
+    ],
+    "pdfPage": 4,
+    "reviewed": false
+  },
+  "/papers/cad-editor/figure04_network.png": {
+    "captionEnglish": "Figure 4. (a)-(b): Overview of Locate-then-Infill framework. (c): Examples of input and output, where the left column shows abstracted representations using legends, the middle column displays concrete sequences and the right column presents rendered visual objects.",
+    "captionChinese": "图4：(a)–(b)为先定位、后补全（Locate-then-Infill）框架的概览。(c)为输入与输出示例：左列以图例抽象表示，中列给出具体序列，右列展示渲染后的可视物体。",
+    "labelsChinese": [
+      "Locating Stage / Infilling Stage：定位阶段／补全阶段；Original / Masked / Edited CAD Sequence：原始／遮盖后／编辑后的 CAD 序列。",
+      "Editing Instruction：“减小圆柱的半径。”",
+      "Legends：图例；Editing Instruction Token：编辑指令标记；Original CAD Token：原始 CAD 标记；Masked CAD Token：被遮盖的 CAD 标记；Modified CAD Token：修改后的 CAD 标记。"
+    ],
+    "pdfPage": 5,
+    "reviewed": false
+  },
+  "/papers/cad-editor/table01_main.png": {
+    "captionEnglish": "Table 1. Quantitative evaluations. SkexGen, Hnc-CAD, FlexCAD and Text2CAD do not support text-based editing, so only their generation quality is compared. JSD, CD, and D-CLIP values are scaled by 10². ↑: the higher the better, ↓: the lower the better.",
+    "captionChinese": "表1：定量评价。SkexGen、Hnc-CAD、FlexCAD 和 Text2CAD 不支持基于文本的编辑，因此只比较它们的生成质量。JSD、CD 和 D-CLIP 的显示值乘以10²。↑表示越大越好，↓表示越小越好。",
+    "labelsChinese": [
+      "Method：方法；VR：有效比例；JSD、CD、D-CLIP 保留原指标缩写；H-Eval：人工评价。",
+      "GPT-4o-Basic / GPT-4o-IC：原表中的两种 GPT-4o 设置名称；空缺项以原表横线保留。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cad-editor/table02_ablation.png": {
+    "captionEnglish": "Table 2. Ablation studies. The CAD-Editor-mini is trained on a small set with 10k examples.",
+    "captionChinese": "表2：消融研究。CAD-Editor-mini 使用包含1万个示例的小数据集训练。",
+    "labelsChinese": [
+      "w/ Basic / Step：采用基础／逐步描述；w/ Direct：采用直接编辑设置；w/ L-I：采用先定位后补全；HS：人工筛选。",
+      "VR：有效比例；JSD、CD、D-CLIP 保留原指标缩写；↑越大越好，↓越小越好。"
+    ],
+    "pdfPage": 8,
+    "reviewed": false
+  },
+  "/papers/cad-editor/figure10_iterative.png": {
+    "captionEnglish": "Figure 10. Apply CAD-Editor iteratively to edit a CAD model until it meets user requirements.",
+    "captionChinese": "图10：反复应用 CAD-Editor 编辑一个 CAD 模型，直至满足用户要求。",
+    "labelsChinese": [
+      "图中显示的编辑指令包括：“将底座改为六边形，并从孔处拉伸出圆柱”“去掉顶部圆柱，保持中心孔不变”“增加一个更大的矩形底座”“将中心圆孔改为长槽”“将圆孔改为六边形切口”“将角部倒圆”“填上两个较小的孔”“填补切口”“增加四条圆柱腿”。"
+    ],
+    "pdfPage": 9,
+    "reviewed": false
+  },
+  "/papers/cad-assistant/figure02_loop.png": {
+    "captionEnglish": "Figure 2. Overview of CAD-Assistant framework. A multimodal user request is provided as context to a VLLM planner P. At step t, the planner generates a plan pt and an action at (python code). The action is executed on an environment E and the generated execution output ft is fed back to the planner, enabling generation for the next timestep.",
+    "captionChinese": "图2：CAD-Assistant 框架概览。将多模态用户请求作为上下文提供给 VLLM 规划器 P。在时间步 t，规划器生成计划 pt 与动作 at（Python 代码）。动作在环境 E 中执行，产生的执行输出 ft 被反馈给规划器，用于生成下一个时间步的内容。",
+    "labelsChinese": [
+      "Planner / ToolSet / Environment：规划器／工具集／环境；Context：上下文；Plan / Action：计划／动作。",
+      "Generated FreeCAD Sketch / Input Hand-drawn Sketch：生成的 FreeCAD 草图／输入的手绘草图。",
+      "用户请求：“将手绘图像转换为带约束的 CAD 草图。”计划示例：“要把图像转换为带约束的 CAD 草图，我先使用 sketch_from_image 提取几何元素。”",
+      "Plan at time step t, expressed as natural language：时间步 t 的计划，用自然语言表示；Action at time step t, expressed as Python code：时间步 t 的动作，用 Python 代码表示。"
+    ],
+    "pdfPage": 4,
+    "reviewed": false
+  },
+  "/papers/cad-assistant/table01_tools.png": {
+    "captionEnglish": "Table 1. Overview of CAD-specific tools.",
+    "captionChinese": "表1：CAD 专用工具概览。",
+    "labelsChinese": [
+      "Module Type / Module Description：模块类型／模块描述。",
+      "Python：动作格式与逻辑运算；FreeCAD：与 CAD 软件[11]集成。",
+      "Sketch Parameterizer（草图参数化工具）：借助文献[21]将手绘草图图像转换为 CAD 草图。",
+      "Sketch Recognizer（草图识别工具）：渲染草图并标出参数；Solid Recognizer（实体识别工具）：渲染三维 CAD 模型并标出参数。",
+      "Constraint Checker（约束检查工具）：分析几何约束；Crosssection Extract（截面提取工具）：从三维网格生成截面图像。"
+    ],
+    "pdfPage": 5,
+    "reviewed": false
+  },
+  "/papers/cad-assistant/table11_cost.png": {
+    "captionEnglish": "Table 11. Cost per user request for the CAD-Assistant utilizing GPT-4o as VLLM planner.",
+    "captionChinese": "表11：使用 GPT-4o 作为 VLLM 规划器时，CAD-Assistant 每个用户请求的成本。",
+    "labelsChinese": [
+      "Task：任务；Avg Input / Output Tokens：平均输入／输出 token 数；Avg Cost per User Request：每个用户请求的平均成本。",
+      "CAD Question Answering：CAD 问答；Autoconstraining：自动添加约束；Handdrawn sketch parameterization：手绘草图参数化。",
+      "图中金额单位为美元，数值沿用论文实验记录。"
+    ],
+    "pdfPage": 15,
+    "reviewed": false
+  },
+  "/papers/cad-assistant/table03_qa.png": {
+    "captionEnglish": "Table 3. Comparison for the proposed CAD-ASSISTANT to baselines for CQA on the 2D and 3D subsets of SGPBench [45]. For CAD-Assistant performance is reported for different planners.",
+    "captionChinese": "表3：在 SGPBench[45]的二维和三维子集上，比较所提出的 CAD-Assistant 与 CAD 问答（CQA）基线。CAD-Assistant 的结果分别使用不同规划器报告。",
+    "labelsChinese": [
+      "Method / Planner：方法／规划器；2D Acc / 3D Acc：二维／三维准确率。",
+      "表中上半部分为 SGPBench 基线，下半部分为 CAD-Assistant；各 GPT 模型名称保留原文。"
+    ],
+    "pdfPage": 6,
+    "reviewed": false
+  },
+  "/papers/cad-assistant/table04_05_constraints.png": {
+    "captionEnglish": "Table 4. Evaluation on the task of autoconstraining. Performance is measured in terms of PF1 and CF1 on the SketchGraphs [48].\nTable 5. Impact of CAD-specific tools and prompting strategies for CAD-Assistant on the autoconstraining task.",
+    "captionChinese": "表4：自动添加约束任务的评价。在 SketchGraphs[48]上使用 PF1 和 CF1 衡量性能。\n\n表5：CAD 专用工具和提示策略对 CAD-Assistant 自动添加约束任务的影响。",
+    "labelsChinese": [
+      "Method / Type：方法／类型；zero-shot / supervised：零样本／监督学习；PF1 / CF1：几何基元／约束的 F1 分数。",
+      "CAD-Specific Tools / Prompting：CAD 专用工具／提示方式；MMrecog：多模态识别；ConstrCheck：约束检查。",
+      "Demonstr：示例数；Docstr：文档字符串；0-shot / 5-shot：零个／五个示例；✓／✕表示使用／不使用。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cad-assistant/table06_sketches.png": {
+    "captionEnglish": "Table 6. Evaluation on the task of hand-drawn image parametrization. Comparison against the task-specific models of [21, 49].",
+    "captionChinese": "表6：手绘图像参数化任务的评价，与文献[21、49]中的任务专用模型进行比较。",
+    "labelsChinese": [
+      "Method：方法；Acc：准确率；CD：倒角距离；↑越大越好，↓越小越好。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  },
+  "/papers/cad-assistant/figure04_failures.png": {
+    "captionEnglish": "Figure 4. Classification of failure case types for erroneous responses in the CAD Question Answering task.",
+    "captionChinese": "图4：CAD 问答任务中错误回答的失败类型分类。",
+    "labelsChinese": [
+      "Error Classification of Misclassified CQA Trajectories：回答错误的 CAD 问答轨迹的错误分类。",
+      "Incorrect Reasoning：推理错误；Image Interpretation：图像理解；JSON Interpretation：JSON 理解；Incorrect Coding Logic：代码逻辑错误。",
+      "# of Cases：案例数量。"
+    ],
+    "pdfPage": 7,
+    "reviewed": false
+  }
+}

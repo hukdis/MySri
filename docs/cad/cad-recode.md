@@ -61,6 +61,24 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-recode/figure02_representation.png" title="CAD-Recode 原图 2：建模序列与代码" source="https://arxiv.org/abs/2412.14042" :page="3" />
 
+<!-- figure-translation:/papers/cad-recode/figure02_representation.png -->
+**原文翻译（图注）**
+
+图2：草图—拉伸序列位于上方；其中间形式为 DeepCAD 表示，下方为本文的 CadQuery 代码。
+
+**图内文字与标记**
+
+- (a) Sketch-Extrude sequence：草图—拉伸序列；(b) DeepCAD representation：DeepCAD 表示；(c) Our CadQuery representation：本文的 CadQuery 表示。
+- Sketch / Extrude：草图／拉伸；Line / Circle：直线／圆；NewBody / Union：新建实体／并集。Python 语句和参数值保留原样。
+
+::: details 对照英文原文
+
+Figure 2. Sketch-extrude sequence (top) in DeepCAD representation (middle) and our CadQuery code (bottom).
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 2，PDF 第 3 页；对应 §3.1。
 
 代码形式允许借用已有语言模型的 Python 先验，并用 box、circle、extrude、union 等调用表达形状。共享工作平面和坐标也使代码更紧凑。
@@ -80,6 +98,24 @@ updated: '2026-10-20'
 ## 方法：小模型如何接收点云？ {#_5-方法-小模型如何接收点云}
 
 <PaperFigure src="/papers/cad-recode/figure04_network.png" title="CAD-Recode 原图 4：网络结构" source="https://arxiv.org/abs/2412.14042" :page="5" />
+
+<!-- figure-translation:/papers/cad-recode/figure04_network.png -->
+**原文翻译（图注）**
+
+图4：CAD-Recode 概览。流程包括两部分：蓝色部分是点云投影器，黄色部分是经过微调的预训练大语言模型。输入点云先由点云投影器处理，所得输出再传给语言模型，由其以可执行 Python 代码的形式预测 CAD 草图—拉伸序列。
+
+**图内文字与标记**
+
+- Point Cloud：点云；Linear Layer：线性层；Large Language Model：大语言模型；Tokenizer：分词器。
+- Python interpreter：Python 解释器；CAD model：CAD 模型；代码、序列起止标记与数字保持原文。
+
+::: details 对照英文原文
+
+Figure 4. Overview of CAD-Recode. The pipeline comprises two parts: (1) a point cloud projector (marked blue) (2) a fine-tuned pretrained LLM (yellow). An input point cloud is processed using (1), and outputs are then passed to an LLM (2), which predicts a CAD sketch-extrude sequence in the form of executable Python code.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 4，PDF 第 5 页；对应 §4.2–4.3。
 
@@ -142,6 +178,24 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-recode/table01_reconstruction.png" title="CAD-Recode 原表 1：DeepCAD 与 Fusion360" source="https://arxiv.org/abs/2412.14042" :page="6" />
 
+<!-- figure-translation:/papers/cad-recode/table01_reconstruction.png -->
+**原文翻译（表注）**
+
+表1：在 DeepCAD 与 Fusion360 数据集上比较 CAD 逆向工程方法。使用16万条 DeepCAD 数据训练的 CAD-Recode，在生成草图—拉伸序列的几何保真度和有效性上优于现有先进方法。本文程序化生成的数据集进一步显著提升预测质量。
+
+**图内文字与标记**
+
+- Method：方法；Train Dataset Name / Size：训练数据集名称／规模；DeepCAD / Fusion360 Test Set：对应测试集。
+- Mean / Med. CD：CD 均值／中位数；IoU：交并比；IR：无效比例；Ours：本文数据；160k / 1M：16万／100万。
+
+::: details 对照英文原文
+
+Table 1. Comparison of CAD reverse engineering methods on DeepCAD and Fusion360 datasets. Our CAD-Recode trained on the 160 k DeepCAD dataset demonstrates an improvement over existing state-of-the-art methods both in terms of geometric fidelity and validity of the generated sketch-extrude sequences. Our procedurally generated dataset provides a significant boost in the prediction quality.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 1，PDF 第 6 页。
 
 用 1M 合成数据训练时：
@@ -157,6 +211,23 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-recode/table02_scans.png" title="CAD-Recode 原表 2：CC3D" source="https://arxiv.org/abs/2412.14042" :page="7" />
 
+<!-- figure-translation:/papers/cad-recode/table02_scans.png -->
+**原文翻译（表注）**
+
+表2：CC3D 数据集上的结果，其输入点云采样自真实三维扫描。CAD-Recode 显著优于 DeepCAD 和 CAD-SIGNet。
+
+**图内文字与标记**
+
+- Method：方法；Mean / Med. CD：CD 均值／中位数；IoU：交并比；IR：无效比例；↑越大越好，↓越小越好。
+
+::: details 对照英文原文
+
+Table 2. Results on the CC3D dataset, where input point clouds are sampled from real 3D scans. CAD-Recode significantly outperforms DeepCAD, and CAD-SIGNet.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 2，PDF 第 7 页。
 
 CAD-Recode 的平均 CD **0.76**、中位 CD **0.31**、IoU **74.2%**、IR **0.3%**。这支持合成训练对该真实扫描集合具有一定迁移能力，但不能据此说所有实际工业扫描都已解决。
@@ -164,6 +235,24 @@ CAD-Recode 的平均 CD **0.76**、中位 CD **0.31**、IoU **74.2%**、IR **0.3
 ### 多候选筛选有多大影响？ {#_7-3-多候选筛选有多大影响}
 
 <PaperFigure src="/papers/cad-recode/table03_sampling.png" title="CAD-Recode 原表 3：数据与候选筛选消融" source="https://arxiv.org/abs/2412.14042" :page="8" />
+
+<!-- figure-translation:/papers/cad-recode/table03_sampling.png -->
+**原文翻译（表注）**
+
+表3：训练数据和测试时采样的消融。结果展示了程序化生成训练数据的优势，测试时采样则有助于降低无效比例。CD 指平均倒角距离。
+
+**图内文字与标记**
+
+- Train Dataset Name / Size：训练数据集名称／规模；Test-time Sampling：测试时采样；Real-World CC3D：真实场景 CC3D。
+- Previous best：此前最佳方法；Ours：本文数据；✓／✗：采用／不采用；IoU：交并比；IR：无效比例。
+
+::: details 对照英文原文
+
+Table 3. Ablation of training data and test-time sampling. The results demonstrate the advantage of training on our procedurally generated data, while the test-time sampling helps reducing the invalidity ratio. CD stands for mean Chamfer distance.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原表 3，PDF 第 8 页。此表 CD 为**平均值**，不要与表 4 的中位值混用。
 
@@ -180,6 +269,25 @@ CAD-Recode 的平均 CD **0.76**、中位 CD **0.31**、IoU **74.2%**、IR **0.3
 ## 局限与编辑示例的证据范围 {#_8-局限与编辑示例的证据范围}
 
 <PaperFigure src="/papers/cad-recode/figure06_editing.png" title="CAD-Recode 原图 6：GPT-4o 辅助编辑" source="https://arxiv.org/abs/2412.14042" :page="8" />
+
+<!-- figure-translation:/papers/cad-recode/figure06_editing.png -->
+**原文翻译（图注）**
+
+图6：CAD 模型的交互式编辑。给定 CAD-Recode 输出的代码和一个通用提示，可以利用 GPT-4o 对 CAD 模型进行自动化、交互式编辑。
+
+**图内文字与标记**
+
+- CAD-Recode Output：CAD-Recode 输出；User Prompt：用户提示；Executed Code：已执行代码；User Edit：用户编辑。
+- Base Diam. / Base Height：底座直径／高度；Top Diam. / Top Height：顶部直径／高度。
+- 用户提示：“重构代码，增加能让代码更易编辑、更可解释的函数和变量。在代码中加入滑块，以编辑每个基元的尺寸。”
+
+::: details 对照英文原文
+
+Figure 6. Interactive editing of a CAD model. Given the code output from CAD-Recode and a generic prompt, GPT-4o allows automated and interactive editing of the CAD model.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 6，PDF 第 8 页；对应 §5.2。
 

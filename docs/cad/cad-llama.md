@@ -66,6 +66,28 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-llama/figure02_overview.png" title="CAD-Llama 原图 2：整体框架与 SPCC" source="https://arxiv.org/abs/2505.04481" :page="3" />
 
+<!-- figure-translation:/papers/cad-llama/figure02_overview.png -->
+**原文翻译（图注）**
+
+图2：所提出的 CAD-Llama 框架概览。框架包括两部分：第一部分是 SPCC 数据合成，利用层次标注流水线将 CAD 序列转换为 SPCC 表示；第二部分是预训练与指令微调，利用所得 SPCC 语料提升模型性能。
+
+**图内文字与标记**
+
+- CAD Dataset / CAD Sequences：CAD 数据集／CAD 序列；Code Formatting：代码格式化；Raw CAD Code：原始 CAD 代码；Embed：嵌入。
+- All descriptions：全部描述，包括 Abstract Description（抽象描述）、Detailed Description（详细描述）、Component Names（部件名称）、Component Descriptions（部件描述）。
+- SPCC Corpus：SPCC 语料，图中标注1.43亿个 token；Similar CAD / same context / Contexts：相似 CAD／相同上下文／上下文。
+- SPCC Adaptive Pretraining：SPCC 适配预训练；Pretrained LLM：预训练语言模型；48K CAD Multitask Instructional Data：4.8万条 CAD 多任务指令数据。
+- CAD-Centric Instruction Tuning：面向 CAD 的指令微调；Training：训练；火焰／雪花分别表示参与训练／冻结。
+- 左侧 SPCC 示例将整体描述、圆柱形底座、带圆柱切口的方块等部件描述插入对应 CAD 代码；图中未完整展示的描述以省略号保留。
+
+::: details 对照英文原文
+
+Figure 2. Overview of the proposed framework CAD-Llama. The framework consists of two parts: (1) SPCC data synthesis, which employs the hierarchical annotation pipeline to convert CAD sequences into SPCC representations, and (2) the pretraining and instruction tuning process, where the resulting SPCC corpus is leveraged to enhance model performance.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 2，PDF 第 3 页；对应 §3。
 
 SPCC 将整体抽象/详细描述、部件名称/描述与对应建模代码组合起来，让几何结构与语言在同一文本中出现。
@@ -77,6 +99,27 @@ SPCC 将整体抽象/详细描述、部件名称/描述与对应建模代码组�
 ### 层次标注流程 {#_4-2-层次标注流程}
 
 <PaperFigure src="/papers/cad-llama/figure03_annotation.png" title="CAD-Llama 原图 3：两阶段层次标注" source="https://arxiv.org/abs/2505.04481" :page="4" />
+
+<!-- figure-translation:/papers/cad-llama/figure03_annotation.png -->
+**原文翻译（图注）**
+
+图3：层次标注流水线。图中展示 CAD 模型的两阶段标注过程：第一阶段生成各部件的详细描述；第二阶段生成全局描述，同时包含抽象概述，以及能够表达部件间空间关系的详细描述。
+
+**图内文字与标记**
+
+- Stage 1 / Stage 2：阶段1／阶段2；Component Images Extractor：部件图像提取器；Outline Images Extractor：轮廓图像提取器。
+- Components Desc / Overall Desc：部件描述／整体描述；Origin CAD Image：原始 CAD 图像。
+- Component Names：部件名称，示例包括带矩形延伸的圆盘、中心圆柱、用于切除的六棱柱；Abstract / Detailed Desc：抽象／详细描述。
+- Prompt 1：“背景：用户有一个通过拉伸草图形成的 CAD 模型。用户输入两张图片，第一张是草图，第二张是草图拉伸后的 CAD 模型。任务：描述 CAD 模型。请先详细描述草图……示例：{描述示例}。”
+- Prompt 2：“一个 CAD 模型可能由多个模块组成，每个模块构成模型的一部分，可以是实体，也可以是用于切除的特征，例如创建一个孔……任务：输出三行，第1行根据……简要描述 CAD 的整体宏观形状。示例：{描述示例}。”省略处与原图一致。
+
+::: details 对照英文原文
+
+Figure 3. Hierarchical Annotation Pipeline. The figure illustrates our two-stage annotation process for CAD models. In the first stage, detailed descriptions of individual components are generated. In the second stage, a global description is produced, which includes both an abstract overview and detailed descriptions that capture the spatial relationships between components.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 3，PDF 第 4 页；对应 §3.2。
 
@@ -103,6 +146,24 @@ SPCC 将整体抽象/详细描述、部件名称/描述与对应建模代码组�
 ### 原论文成本 {#_5-3-原论文成本}
 
 <PaperFigure src="/papers/cad-llama/table07_cost.png" title="CAD-Llama 原表 7：训练与标注成本" source="https://arxiv.org/abs/2505.04481" :page="12" />
+
+<!-- figure-translation:/papers/cad-llama/table07_cost.png -->
+**原文翻译（表注）**
+
+表7：两个训练阶段的训练成本与 token 消耗。表中的 token 用于各阶段的提示生成。
+
+**图内文字与标记**
+
+- Stage：阶段；A100-GPU Hours：A100 GPU 小时数；Tokens (GPT-4o)：GPT-4o token 数。
+- SPCC-Adaptive Pretraining：SPCC 适配预训练；Instruction Tuning：指令微调；70M / 6M：7000万／600万。
+
+::: details 对照英文原文
+
+Table 7. Training costs and token consumption during the two training stages. Tokens are used for prompt generation in each stage.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：补充材料表 7，PDF 第 12 页。
 
@@ -142,6 +203,23 @@ Novel 主要检验生成序列与训练样本是否重复，不自动证明生�
 
 <PaperFigure src="/papers/cad-llama/table04_text.png" title="CAD-Llama 原表 4：文本生成结果" source="https://arxiv.org/abs/2505.04481" :page="7" />
 
+<!-- figure-translation:/papers/cad-llama/table04_text.png -->
+**原文翻译（表注）**
+
+表4：文本到 CAD 任务的结果。ACCT 以百分比报告；MCD、MMD、JSD 的显示值乘以10²。
+
+**图内文字与标记**
+
+- Method：方法；各模型名称及指标缩写保持原文；↑表示越大越好，↓表示越小越好。
+
+::: details 对照英文原文
+
+Table 4. Results on text-to-CAD task. The metric ACCT is multiplied by 100%. MCD, MMD, and JSD are multiplied by 10².
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 4，PDF 第 7 页。ACCT 按百分比显示，MCD/MMD/JSD 显示值乘以 100。
 
 CAD-Llama-INS 的 ACCT 为 **84.72**，Text2CAD 在本篇设置下为 **69.91**。差为 **14.81 个百分点**，不应混淆为相对提升 14.81%。
@@ -151,6 +229,24 @@ MCD 为 **10.53**，与 Text2CAD 的 **20.64** 相比更低。不能再拿这些
 ### 表示消融更接近方法贡献 {#_7-2-表示消融更接近方法贡献}
 
 <PaperFigure src="/papers/cad-llama/table06_representation.png" title="CAD-Llama 原表 6：表示消融" source="https://arxiv.org/abs/2505.04481" :page="8" />
+
+<!-- figure-translation:/papers/cad-llama/table06_representation.png -->
+**原文翻译（表注）**
+
+表6：文本到 CAD 任务中不同 CAD 表示方法的评价。SDCS 使用单个文本描述作为 CAD 命令序列的前缀；SDCC 使用单个描述配合 CAD 代码；SPCS 将层次描述与 CAD 命令序列结合；SPCC 则将层次描述与 CAD 代码结合。
+
+**图内文字与标记**
+
+- ACCcmd / ACCparam：命令／参数准确率；SR：成功率；MCD、MMD、JSD 保留指标缩写。
+- SDCS、SDCC、SPCS、SPCC 为四种表示方案名称；↑越大越好，↓越小越好。
+
+::: details 对照英文原文
+
+Table 6. Evaluation of different CAD representation methods in the Text-to-CAD task. SDCS uses a single textual description as a prefix along with CAD command sequences, while SDCC uses CAD code with a single description. SPCS incorporates hierarchical descriptions with CAD command sequences, and SPCC combines hierarchical descriptions with CAD code.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原表 6，PDF 第 8 页。
 
@@ -170,6 +266,24 @@ SPCC 的命令/参数准确率为 **80.41% / 59.09%**，SR **99.30%**。SPCS 的
 ## 局限与失败案例 {#_8-局限与失败案例}
 
 <PaperFigure src="/papers/cad-llama/figure25_failures.png" title="CAD-Llama 原图 25：参数错误和文本不匹配" source="https://arxiv.org/abs/2505.04481" :page="31" />
+
+<!-- figure-translation:/papers/cad-llama/figure25_failures.png -->
+**原文翻译（图注）**
+
+图25：CAD-Llama-INS 的失败案例。这里展示两类错误：参数设置不准确，以及与文本提示不匹配。
+
+**图内文字与标记**
+
+- Input Text：输入文本；Generated CAD Models：生成的 CAD 模型；Parameter Error：参数错误；Mismatch Text Description：与文本描述不符。
+- 从左到右的输入描述：①一个中心中空圆柱体，两侧对称伸出矩形块，每个矩形块上都有一个圆孔；②顶部具有分层圆形特征的中心圆柱结构，底部由四条对称排列的竖直圆柱腿支撑；③一块平坦圆盘，中央有凸起圆柱，周围分布四个孔；④六个面均敞开的中空立方体，由细边构成立方体框架。
+
+::: details 对照英文原文
+
+Figure 25. Failure cases for CAD-Llama-INS. We illustrate two types of errors: inaccuracies in parameter settings and misalignment with the text prompts.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：补充材料图 25，PDF 第 31 页；失败分析见补充材料 E.6。
 

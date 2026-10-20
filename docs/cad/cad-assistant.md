@@ -64,6 +64,26 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-assistant/figure02_loop.png" title="CAD-Assistant 原图 2：闭环框架" source="https://arxiv.org/abs/2412.13810" :page="4" />
 
+<!-- figure-translation:/papers/cad-assistant/figure02_loop.png -->
+**原文翻译（图注）**
+
+图2：CAD-Assistant 框架概览。将多模态用户请求作为上下文提供给 VLLM 规划器 P。在时间步 t，规划器生成计划 pt 与动作 at（Python 代码）。动作在环境 E 中执行，产生的执行输出 ft 被反馈给规划器，用于生成下一个时间步的内容。
+
+**图内文字与标记**
+
+- Planner / ToolSet / Environment：规划器／工具集／环境；Context：上下文；Plan / Action：计划／动作。
+- Generated FreeCAD Sketch / Input Hand-drawn Sketch：生成的 FreeCAD 草图／输入的手绘草图。
+- 用户请求：“将手绘图像转换为带约束的 CAD 草图。”计划示例：“要把图像转换为带约束的 CAD 草图，我先使用 sketch_from_image 提取几何元素。”
+- Plan at time step t, expressed as natural language：时间步 t 的计划，用自然语言表示；Action at time step t, expressed as Python code：时间步 t 的动作，用 Python 代码表示。
+
+::: details 对照英文原文
+
+Figure 2. Overview of CAD-Assistant framework. A multimodal user request is provided as context to a VLLM planner P. At step t, the planner generates a plan pt and an action at (python code). The action is executed on an environment E and the generated execution output ft is fed back to the planner, enabling generation for the next timestep.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 2，PDF 第 4 页；对应 §3.1。
 
 一轮流程：
@@ -78,6 +98,27 @@ updated: '2026-10-20'
 **TERMINATE 是模型的结束判断，不是独立正确性证明。** 实际评价仍要检查答案、几何或约束是否正确。
 
 <PaperFigure src="/papers/cad-assistant/table01_tools.png" title="CAD-Assistant 原表 1：工具集" source="https://arxiv.org/abs/2412.13810" :page="5" />
+
+<!-- figure-translation:/papers/cad-assistant/table01_tools.png -->
+**原文翻译（表注）**
+
+表1：CAD 专用工具概览。
+
+**图内文字与标记**
+
+- Module Type / Module Description：模块类型／模块描述。
+- Python：动作格式与逻辑运算；FreeCAD：与 CAD 软件[11]集成。
+- Sketch Parameterizer（草图参数化工具）：借助文献[21]将手绘草图图像转换为 CAD 草图。
+- Sketch Recognizer（草图识别工具）：渲染草图并标出参数；Solid Recognizer（实体识别工具）：渲染三维 CAD 模型并标出参数。
+- Constraint Checker（约束检查工具）：分析几何约束；Crosssection Extract（截面提取工具）：从三维网格生成截面图像。
+
+::: details 对照英文原文
+
+Table 1. Overview of CAD-specific tools.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原表 1，PDF 第 5 页。
 
@@ -117,6 +158,25 @@ PF1 要求基元类型和参数匹配；CF1 还要求相关基元正确，见 §
 
 <PaperFigure src="/papers/cad-assistant/table11_cost.png" title="CAD-Assistant 原表 11：API 请求成本" source="https://arxiv.org/abs/2412.13810" :page="15" />
 
+<!-- figure-translation:/papers/cad-assistant/table11_cost.png -->
+**原文翻译（表注）**
+
+表11：使用 GPT-4o 作为 VLLM 规划器时，CAD-Assistant 每个用户请求的成本。
+
+**图内文字与标记**
+
+- Task：任务；Avg Input / Output Tokens：平均输入／输出 token 数；Avg Cost per User Request：每个用户请求的平均成本。
+- CAD Question Answering：CAD 问答；Autoconstraining：自动添加约束；Handdrawn sketch parameterization：手绘草图参数化。
+- 图中金额单位为美元，数值沿用论文实验记录。
+
+::: details 对照英文原文
+
+Table 11. Cost per user request for the CAD-Assistant utilizing GPT-4o as VLLM planner.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：补充材料表 11，PDF 第 15 页。
 
 论文使用 GPT-4o 规划器，报告每个请求的历史平均成本：
@@ -133,6 +193,24 @@ PF1 要求基元类型和参数匹配；CF1 还要求相关基元正确，见 §
 
 <PaperFigure src="/papers/cad-assistant/table03_qa.png" title="CAD-Assistant 原表 3：问答结果" source="https://arxiv.org/abs/2412.13810" :page="6" />
 
+<!-- figure-translation:/papers/cad-assistant/table03_qa.png -->
+**原文翻译（表注）**
+
+表3：在 SGPBench[45]的二维和三维子集上，比较所提出的 CAD-Assistant 与 CAD 问答（CQA）基线。CAD-Assistant 的结果分别使用不同规划器报告。
+
+**图内文字与标记**
+
+- Method / Planner：方法／规划器；2D Acc / 3D Acc：二维／三维准确率。
+- 表中上半部分为 SGPBench 基线，下半部分为 CAD-Assistant；各 GPT 模型名称保留原文。
+
+::: details 对照英文原文
+
+Table 3. Comparison for the proposed CAD-ASSISTANT to baselines for CQA on the 2D and 3D subsets of SGPBench [45]. For CAD-Assistant performance is reported for different planners.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 3，PDF 第 6 页。
 
 GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.686 / 0.782**。
@@ -142,6 +220,28 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 ### 自动约束与工具消融 {#_7-2-自动约束与工具消融}
 
 <PaperFigure src="/papers/cad-assistant/table04_05_constraints.png" title="CAD-Assistant 原表 4–5：约束任务与工具消融" source="https://arxiv.org/abs/2412.13810" :page="7" />
+
+<!-- figure-translation:/papers/cad-assistant/table04_05_constraints.png -->
+**原文翻译（表注）**
+
+表4：自动添加约束任务的评价。在 SketchGraphs[48]上使用 PF1 和 CF1 衡量性能。
+
+表5：CAD 专用工具和提示策略对 CAD-Assistant 自动添加约束任务的影响。
+
+**图内文字与标记**
+
+- Method / Type：方法／类型；zero-shot / supervised：零样本／监督学习；PF1 / CF1：几何基元／约束的 F1 分数。
+- CAD-Specific Tools / Prompting：CAD 专用工具／提示方式；MMrecog：多模态识别；ConstrCheck：约束检查。
+- Demonstr：示例数；Docstr：文档字符串；0-shot / 5-shot：零个／五个示例；✓／✕表示使用／不使用。
+
+::: details 对照英文原文
+
+Table 4. Evaluation on the task of autoconstraining. Performance is measured in terms of PF1 and CF1 on the SketchGraphs [48].
+Table 5. Impact of CAD-specific tools and prompting strategies for CAD-Assistant on the autoconstraining task.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原表 4和表 5，PDF 第 7 页；同一原文区域保留两张表及表注。
 
@@ -155,6 +255,23 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 
 <PaperFigure src="/papers/cad-assistant/table06_sketches.png" title="CAD-Assistant 原表 6：手绘参数化" source="https://arxiv.org/abs/2412.13810" :page="7" />
 
+<!-- figure-translation:/papers/cad-assistant/table06_sketches.png -->
+**原文翻译（表注）**
+
+表6：手绘图像参数化任务的评价，与文献[21、49]中的任务专用模型进行比较。
+
+**图内文字与标记**
+
+- Method：方法；Acc：准确率；CD：倒角距离；↑越大越好，↓越小越好。
+
+::: details 对照英文原文
+
+Table 6. Evaluation on the task of hand-drawn image parametrization. Comparison against the task-specific models of [21, 49].
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 6，PDF 第 7 页。
 
 本方法准确率 **0.784**，略低于 Davinci 的 **0.789**；CD **0.680**，低于 Davinci **1.184**。因此应描述“几何距离改善、参数准确率相近”，不能写成两项均最优。
@@ -162,6 +279,25 @@ GPT-4o 下，CAD-Assistant 2D/3D 准确率为 **0.791 / 0.857**，基线为 **0.
 ## 失败分析与扩展能力的范围 {#_8-失败分析与扩展能力的范围}
 
 <PaperFigure src="/papers/cad-assistant/figure04_failures.png" title="CAD-Assistant 原图 4：问答失败类型" source="https://arxiv.org/abs/2412.13810" :page="7" />
+
+<!-- figure-translation:/papers/cad-assistant/figure04_failures.png -->
+**原文翻译（图注）**
+
+图4：CAD 问答任务中错误回答的失败类型分类。
+
+**图内文字与标记**
+
+- Error Classification of Misclassified CQA Trajectories：回答错误的 CAD 问答轨迹的错误分类。
+- Incorrect Reasoning：推理错误；Image Interpretation：图像理解；JSON Interpretation：JSON 理解；Incorrect Coding Logic：代码逻辑错误。
+- # of Cases：案例数量。
+
+::: details 对照英文原文
+
+Figure 4. Classification of failure case types for erroneous responses in the CAD Question Answering task.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 4，PDF 第 7 页。
 

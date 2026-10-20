@@ -64,6 +64,23 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-mllm/figure02_dataset.png" title="CAD-MLLM 原图 2：扩展数据示例" source="https://arxiv.org/abs/2411.04954" :page="5" />
 
+<!-- figure-translation:/papers/cad-mllm/figure02_dataset.png -->
+**原文翻译（图注）**
+
+图2：本文 CAD 命令序列数据集与 DeepCAD[1]数据集的定性比较。如第4节所述，DeepCAD 是本文所建数据集的一部分。展示本文数据集时，排除了已经收录在 DeepCAD 中的模型 ID。扩展部分包含更复杂、更接近真实、细节更多的模型。建议放大查看。
+
+**图内文字与标记**
+
+- DeepCAD dataset：DeepCAD 数据集；Our dataset：本文数据集。
+
+::: details 对照英文原文
+
+Fig. 2: Qualitative comparison between our CAD command sequence dataset and DeepCAD [1] dataset. According to Sec. 4, DeepCAD dataset is part of our created dataset. In the visualization of our dataset, we exclude the CAD models’ IDs that have been included in the DeepCAD dataset. The extension part of our dataset contains more complex and realistic models with more details. Best viewed zoomed in.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 2，PDF 第 5 页；对应 §4.1。
 
 数据仍起源于 ABC/Onshape。与 DeepCAD 过滤整个含圆角/倒角模型不同，作者**逐个去掉圆角和倒角操作**，只要剩余模型拓扑完整就保留。
@@ -85,6 +102,26 @@ updated: '2026-10-20'
 ## 方法与计算资源 {#_5-方法与计算资源}
 
 <PaperFigure src="/papers/cad-mllm/figure04_network.png" title="CAD-MLLM 原图 4：多模态网络" source="https://arxiv.org/abs/2411.04954" :page="7" />
+
+<!-- figure-translation:/papers/cad-mllm/figure04_network.png -->
+**原文翻译（图注）**
+
+图4：网络结构。网络能够处理三种单独的输入模态，或它们的任意组合；不同模态用不同颜色表示。图中展示最复杂的组合，即同时提供三种输入。除文本描述外，每种模态首先经过各自的冻结编码器，再进一步整合；随后通过可训练投影层，对齐到统一的语言特征空间。加入低秩适配（LoRA）的微调语言模型处理提示与投影后嵌入的组合，从而准确生成 CAD 模型。
+
+**图内文字与标记**
+
+- Multi-view Images / Textual Description / Point Cloud：多视图图像／文本描述／点云；Image / Point Encoder：图像／点云编码器。
+- Image / Point Projection：图像／点云投影；Perceiver：Perceiver 模块；Large Language Model (Vicuna)：大语言模型 Vicuna；Generated CAD model：生成的 CAD 模型。
+- 文本描述：“生成一个 CAD 模型，具有圆形底座，周缘均匀分布五个圆形切口。”
+- 输入指令：“根据给定的三种模态信息生成对应 CAD 模型。”回复：“收到，请稍等，让我为你生成。”
+
+::: details 对照英文原文
+
+Fig. 4: Our network architecture. The network could process three single modalities of information of input or any combinations of them, each uniquely color-coded. We consider the most complex combination of modalities, where three different inputs are provided simultaneously. Except for the textual descriptions, each modality is first processed through its corresponding frozen encoder before being further integrated. Subsequently, they are passed through a trainable projection layer, aligning them within a unified language feature space. The fine-tuned Large Language Models (LLMs), augmented with Low-Rank Adaptation (LoRA), then process a combination of the prompt and the projected embeddings, enabling the accurate generation of CAD models.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 4，PDF 第 7 页；对应 §5。
 
@@ -136,6 +173,25 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-mllm/table03_points.png" title="CAD-MLLM 原表 3：点云任务" source="https://arxiv.org/abs/2411.04954" :page="10" />
 
+<!-- figure-translation:/papers/cad-mllm/table03_points.png -->
+**原文翻译（表注）**
+
+表3：基于点云的重建任务的定量结果。在基于点云的重建指标（Chamfer、F-score、Normal C）上，本文方法与部分基于 B-rep 的重建方法相当；但在本文提出的拓扑指标（SegE、DangEL、SIR）和闭合性指标（FluxEE）上显著优于这些方法。此外，本文方法在全部评价指标上均优于基于命令序列的生成基线。
+
+**图内文字与标记**
+
+- Point-based CAD Reconstruction：基于点云的 CAD 重建；Reconstruction / Generation Methods：重建／生成方法。
+- Chamfer：倒角距离；F-score：F 分数；Normal C：法向一致性；SegE、DangEL、SIR、FluxEE 保留原指标缩写，定义见下文。
+- ×100：显示值乘以100；SIR(%)：SIR 以百分比显示；↑越大越好，↓越小越好。
+
+::: details 对照英文原文
+
+TABLE 3: The quantitative results on point-based reconstruction tasks. Our method’s performance is comparable to some “B-rep”-based reconstruction methods in “point cloud”-based reconstruction metrics (Chamfer, F-score, Normal C). However, it significantly outperforms these methods in our proposed topological metrics (SegE, DangEL, and SIR) and the enclosure metric (FluxEE). Moreover, our method consistently surpasses the command sequence-based generation baseline across all evaluated metrics.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 3，PDF 第 10 页。
 
 Ours(Point) 的 Chamfer 显示值为 **1.85**，DeepCAD(Point) 为 **4.51**；F-score 为 **90.88**，DeepCAD 为 **71.83**。
@@ -146,6 +202,23 @@ Ours(Point) 的 Chamfer 显示值为 **1.85**，DeepCAD(Point) 为 **4.51**；F-
 
 <PaperFigure src="/papers/cad-mllm/table05_text.png" title="CAD-MLLM 原表 5：文本条件用户研究" source="https://arxiv.org/abs/2411.04954" :page="11" />
 
+<!-- figure-translation:/papers/cad-mllm/table05_text.png -->
+**原文翻译（表注）**
+
+表5：文本条件生成任务的用户研究结果。从文本对齐和模型质量两个方面评价生成模型。两项均采用五分制，分数越高越好。
+
+**图内文字与标记**
+
+- Methods：方法；Text Alignment：文本对齐；Model Quality：模型质量；Ours(Text)：本文方法的文本输入版本。
+
+::: details 对照英文原文
+
+TABLE 5: The user study results on text-conditioned generation tasks. We evaluate the generated models based on two criteria: text alignment and model quality. A higher score indicates better performance, with both criteria rated on a 5-point scale.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 5，PDF 第 11 页；§6.2.3。16 名参与者评价 10 对文本与生成模型，使用 1–5 分制。
 
 本方法文本对齐 **4.16**，高于 Tripo **3.30**；模型质量 **4.45**，低于 Tripo **4.58**。
@@ -155,6 +228,25 @@ Ours(Point) 的 Chamfer 显示值为 **1.85**，DeepCAD(Point) 为 **4.51**；F-
 ### 多模态模型与单模态模型 {#_7-3-多模态模型与单模态模型}
 
 <PaperFigure src="/papers/cad-mllm/table07_multimodal.png" title="CAD-MLLM 原表 7：多模态训练的收益与代价" source="https://arxiv.org/abs/2411.04954" :page="14" />
+
+<!-- figure-translation:/papers/cad-mllm/table07_multimodal.png -->
+**原文翻译（表注）**
+
+表7：使用多模态数据训练的定量研究。(a) 多模态模型在全部重建、拓扑和闭合性指标上优于仅图像模型。(b) 在拓扑和闭合性指标上，多模态模型与仅点云模型相当；但其点云重建性能略弱于仅点云模型。
+
+**图内文字与标记**
+
+- (a) Image Reconstruction Comparison：图像重建比较；(b) Point Reconstruction Comparison：点云重建比较。
+- Ours(Image) / Ours(Point) / Ours(Multimodal)：本文方法的仅图像／仅点云／多模态版本。
+- Chamfer、F-score、Normal C、SegE、DangEL、SIR、FluxEE 与表3对应；×100 为显示缩放，↑越大越好，↓越小越好。
+
+::: details 对照英文原文
+
+TABLE 7: The quantitative study on training with multimodal data. (a) Our multimodal model outperforms the image-only model across all reconstruction, topology, and enclosure metrics. (b) Our multimodal model is comparable with the pointonly model in terms of topology and enclosure metrics. However, the point reconstruction performance of our multimodal model is slightly weaker than the point-only model.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原表 7，PDF 第 14 页。
 
@@ -168,6 +260,23 @@ Ours(Point) 的 Chamfer 显示值为 **1.85**，DeepCAD(Point) 为 **4.51**；F-
 ## 局限与失败案例 {#_8-局限与失败案例}
 
 <PaperFigure src="/papers/cad-mllm/figure14_failures.png" title="CAD-MLLM 原图 14：薄结构与复杂细节失败" source="https://arxiv.org/abs/2411.04954" :page="14" />
+
+<!-- figure-translation:/papers/cad-mllm/figure14_failures.png -->
+**原文翻译（图注）**
+
+图14：本文方法在薄结构、复杂细节等具有挑战性的情形下的失败案例。这些失败结果中存在悬空边。
+
+**图内文字与标记**
+
+- Ground Truth：真实模型；Ours：本文方法。
+
+::: details 对照英文原文
+
+Fig. 14: We present the failure case of our method on some challenging cases, such as thin structures and complicated details. Dangling edges exist in these failure results.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 14，PDF 第 14 页；对应 §7。
 

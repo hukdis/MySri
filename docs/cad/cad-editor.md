@@ -44,6 +44,24 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-editor/figure02_task.png" title="CAD-Editor 原图 2：任务输入输出" source="https://arxiv.org/abs/2502.03997" :page="3" />
 
+<!-- figure-translation:/papers/cad-editor/figure02_task.png -->
+**原文翻译（图注）**
+
+图2：左侧为 CAD-Editor 的输入与输出示例。输入由原始 CAD 序列和编辑指令构成，输出为编辑后的 CAD 序列。为节省空间，具体序列缩写为“[原始 CAD 序列]”或“[编辑后 CAD 序列]”。右侧展示一条具体 CAD 序列及其渲染模型。
+
+**图内文字与标记**
+
+- INPUT / OUTPUT：输入／输出；Original / Edited CAD Sequence：原始／编辑后的 CAD 序列；Instruction：指令。
+- 示例指令：“增大圆柱的高度，并以中心为基准减小其直径。”CAD Sequence / Rendered CAD Model：CAD 序列／渲染的 CAD 模型；命令与数值保留原文。
+
+::: details 对照英文原文
+
+Figure 2. Left: Example input and output for CAD-Editor. The input combines the original CAD sequence with the editing instruction, and the output is the edited CAD sequence. The specific CAD sequence is shortened to ‘[Original (or Edited) CAD Sequence]’ to save space. Right: An illustration for a specific CAD sequence and its rendered CAD model.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 2，PDF 第 3 页；对应 §3。
 
 **输入**：原始 CAD 序列 + 自然语言编辑指令。
@@ -64,6 +82,25 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cad-editor/figure03_dataset.png" title="CAD-Editor 原图 3：训练数据合成" source="https://arxiv.org/abs/2502.03997" :page="4" />
 
+<!-- figure-translation:/papers/cad-editor/figure03_dataset.png -->
+**原文翻译（图注）**
+
+图3：自动数据合成流水线示意。
+
+**图内文字与标记**
+
+- (a) Paired CAD Models Generation：成对 CAD 模型生成；Design Variation Generation：设计变体生成。
+- (b) Editing Instruction Generation：编辑指令生成；Multi-modal Representation：多模态表示；Textual / Visual：文本／视觉；Stepwise Captioning：逐步描述。
+- (c) Assembling：组装；示例编辑指令分别为“减小圆柱的半径”“将圆柱半径减小10个单位”“在中心孔中插入一根圆柱杆”“将圆柱替换为矩形棱柱”。
+
+::: details 对照英文原文
+
+Figure 3. Illustration of automated data synthesis pipeline.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 3，PDF 第 4 页；对应 §4。
 
 流水线：
@@ -83,6 +120,25 @@ updated: '2026-10-20'
 ## 方法：定位与补全如何训练？ {#_5-方法-定位与补全如何训练}
 
 <PaperFigure src="/papers/cad-editor/figure04_network.png" title="CAD-Editor 原图 4：定位与补全网络" source="https://arxiv.org/abs/2502.03997" :page="5" />
+
+<!-- figure-translation:/papers/cad-editor/figure04_network.png -->
+**原文翻译（图注）**
+
+图4：(a)–(b)为先定位、后补全（Locate-then-Infill）框架的概览。(c)为输入与输出示例：左列以图例抽象表示，中列给出具体序列，右列展示渲染后的可视物体。
+
+**图内文字与标记**
+
+- Locating Stage / Infilling Stage：定位阶段／补全阶段；Original / Masked / Edited CAD Sequence：原始／遮盖后／编辑后的 CAD 序列。
+- Editing Instruction：“减小圆柱的半径。”
+- Legends：图例；Editing Instruction Token：编辑指令标记；Original CAD Token：原始 CAD 标记；Masked CAD Token：被遮盖的 CAD 标记；Modified CAD Token：修改后的 CAD 标记。
+
+::: details 对照英文原文
+
+Figure 4. (a)-(b): Overview of Locate-then-Infill framework. (c): Examples of input and output, where the left column shows abstracted representations using legends, the middle column displays concrete sequences and the right column presents rendered visual objects.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 4，PDF 第 5 页；对应 §5。
 
@@ -130,6 +186,24 @@ CD 依赖参考目标；模糊指令可能有多个合理结果。D-CLIP 属于�
 
 <PaperFigure src="/papers/cad-editor/table01_main.png" title="CAD-Editor 原表 1：主实验" source="https://arxiv.org/abs/2502.03997" :page="7" />
 
+<!-- figure-translation:/papers/cad-editor/table01_main.png -->
+**原文翻译（表注）**
+
+表1：定量评价。SkexGen、Hnc-CAD、FlexCAD 和 Text2CAD 不支持基于文本的编辑，因此只比较它们的生成质量。JSD、CD 和 D-CLIP 的显示值乘以10²。↑表示越大越好，↓表示越小越好。
+
+**图内文字与标记**
+
+- Method：方法；VR：有效比例；JSD、CD、D-CLIP 保留原指标缩写；H-Eval：人工评价。
+- GPT-4o-Basic / GPT-4o-IC：原表中的两种 GPT-4o 设置名称；空缺项以原表横线保留。
+
+::: details 对照英文原文
+
+Table 1. Quantitative evaluations. SkexGen, Hnc-CAD, FlexCAD and Text2CAD do not support text-based editing, so only their generation quality is compared. JSD, CD, and D-CLIP values are scaled by 10². ↑: the higher the better, ↓: the lower the better.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 1，PDF 第 7 页。JSD、CD 和 D-CLIP 显示值乘以 100；↑/↓ 见原表。
 
 CAD-Editor 的：
@@ -149,6 +223,24 @@ GPT-4o-IC 的 VR 为 **84.5%**、H-Eval 为 **15.6%**。这支持本文在该任
 
 <PaperFigure src="/papers/cad-editor/table02_ablation.png" title="CAD-Editor 原表 2：消融实验" source="https://arxiv.org/abs/2502.03997" :page="8" />
 
+<!-- figure-translation:/papers/cad-editor/table02_ablation.png -->
+**原文翻译（表注）**
+
+表2：消融研究。CAD-Editor-mini 使用包含1万个示例的小数据集训练。
+
+**图内文字与标记**
+
+- w/ Basic / Step：采用基础／逐步描述；w/ Direct：采用直接编辑设置；w/ L-I：采用先定位后补全；HS：人工筛选。
+- VR：有效比例；JSD、CD、D-CLIP 保留原指标缩写；↑越大越好，↓越小越好。
+
+::: details 对照英文原文
+
+Table 2. Ablation studies. The CAD-Editor-mini is trained on a small set with 10k examples.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 2，PDF 第 8 页。
 
 - Direct：直接编辑，VR **86.1%**。
@@ -162,6 +254,23 @@ GPT-4o-IC 的 VR 为 **84.5%**、H-Eval 为 **15.6%**。这支持本文在该任
 ## 局限与多轮编辑的证据范围 {#_8-局限与多轮编辑的证据范围}
 
 <PaperFigure src="/papers/cad-editor/figure10_iterative.png" title="CAD-Editor 原图 10：连续编辑示例" source="https://arxiv.org/abs/2502.03997" :page="9" />
+
+<!-- figure-translation:/papers/cad-editor/figure10_iterative.png -->
+**原文翻译（图注）**
+
+图10：反复应用 CAD-Editor 编辑一个 CAD 模型，直至满足用户要求。
+
+**图内文字与标记**
+
+- 图中显示的编辑指令包括：“将底座改为六边形，并从孔处拉伸出圆柱”“去掉顶部圆柱，保持中心孔不变”“增加一个更大的矩形底座”“将中心圆孔改为长槽”“将圆孔改为六边形切口”“将角部倒圆”“填上两个较小的孔”“填补切口”“增加四条圆柱腿”。
+
+::: details 对照英文原文
+
+Figure 10. Apply CAD-Editor iteratively to edit a CAD model until it meets user requirements.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 10，PDF 第 9 页。
 

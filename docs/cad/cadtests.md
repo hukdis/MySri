@@ -43,6 +43,27 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/cadtests/figure01_motivation.png" title="CADTests 原图 1：相似与符合要求的差别" source="https://arxiv.org/abs/2605.07807" :page="2" />
 
+<!-- figure-translation:/papers/cadtests/figure01_motivation.png -->
+**原文翻译（图注）**
+
+图1：CADTESTS 是直接在生成几何上验证提示规格的可执行程序。它们能够处理含糊的设计提示（左），并识别细微的结构错误（右）。为便于展示，图中省略了 CADTESTS 的实现。
+
+**图内文字与标记**
+
+- Reference / Generated B-Rep：参考／生成的边界表示；Chamfer Distance (high / low)：倒角距离（高／低）；Passed All Tests (True / False)：全部测试通过（是／否）。
+- 左侧提示：“创建一个细长的矩形棱柱，然后沿其长度切除一个半圆形。”测试1检查至少存在一个由半圆切口形成的圆柱面；测试2检查模型是否细长，即最大尺寸显著大于最小尺寸。
+- 右侧提示：“创建一个矩形块，在顶部中心开一个圆孔，并从圆孔向最近边缘延伸出一条细的线切割槽。”测试4要求顶点总数恰为16，以符合矩形块、贯通孔与贯通槽的预期拓扑。
+- 右侧失败提示：“预计带贯通孔和槽的矩形块恰有16个顶点，实际发现18个。”参考模型的细槽完全切穿；生成模型的槽未切穿，仍残留一层薄壁。
+- 左图注记：“与参考模型偏差较大，但通过全部 CADTests。”右图注记：“与参考模型接近，但因结构错误未通过测试。”
+
+::: details 对照英文原文
+
+Figure 1: CADTESTS are executable programs that verify prompt specifications directly on the generated geometry. CADTESTS can account for ambiguous design prompts (left) and identify subtle structural errors (right). The figure ommits CADTEST implementations for clarity.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 1，PDF 第 2 页。
 
 文本没有规定的细节可以变化。一个模型与参考差异较大，仍可能满足所有明确要求；另一个模型整体很像参考，却可能有孔不贯通等关键错误。
@@ -83,6 +104,29 @@ updated: '2026-10-20'
 ## 方法：如何用故意错误改进测试？ {#_5-方法-如何用故意错误改进测试}
 
 <PaperFigure src="/papers/cadtests/figure02_pipeline.png" title="CADTests 原图 2：测试合成与迭代改进" source="https://arxiv.org/abs/2605.07807" :page="5" />
+
+<!-- figure-translation:/papers/cadtests/figure02_pipeline.png -->
+**原文翻译（图注）**
+
+图2：所提出的 CADTest 合成流水线。上部将设计提示与参考 CAD 程序提供给 LLM 规划器，以生成 CAD 变异体；下部由规划器生成测试套件，并根据正确样本集合与变异集合上的执行反馈迭代改进。本例中，第1轮未被检出的变异，在第 N 轮加入比较内外圆柱面“体积”的测试后被检出。
+
+**图内文字与标记**
+
+- Planner：规划器；Mutation Generation：变异生成；Mutated CAD Program：变异 CAD 程序；Execution：执行；Test Suite：测试套件；Passing Set / Mutation Set：正确样本集合／变异集合。
+- 设计提示：“创建一个矮而宽的圆柱体，宽度大于高度，并在中心开一个贯穿整个高度的圆孔。”
+- 四个变异分别违反以下要求：①主体应为圆柱，却被改成立方体；②中心切口应较小，却被改大；③只应有一个中心切口，却被改成多个小孔；④内部切口应贯穿圆柱的全部高度。
+- 第1轮的测试：检查有两个圆柱面（外圆柱和内切口）；通过检查实体中心不在材料内部来确认通孔；检查总面数为4（两个圆柱面、两个平面）。
+- 第 N 轮新增测试4：“验证内部圆柱面的面积远小于外部圆柱面的面积。”Round 1 / Round N：第1轮／第 N 轮。
+
+**译注**：原图注使用 volumes（体积），图内新增测试文字使用 face area（面面积）；译文按原图分别保留，二者不能混作同一几何量。
+
+::: details 对照英文原文
+
+Figure 2: Illustration of the proposed CADTest synthesis pipeline. (Top) A design prompt and reference CAD program are provided to an LLM planner to generate CAD mutants. (Bottom) The planner generates a test suite that is iteratively refined using execution feedback from the passing and mutation sets. In this example, a mutation that is not killed in R = 1 is detected in R = N after adding a test comparing the volumes of the inner and outer cylindrical faces.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 2，PDF 第 5 页；对应 §4。
 
@@ -142,6 +186,25 @@ mutant 生成使用 GPT-4.1，基准测试生成使用 Claude-Sonnet-4.6，见�
 
 <PaperFigure src="/papers/cadtests/table01_test_generation.png" title="CADTests 原表 1：测试生成能力" source="https://arxiv.org/abs/2605.07807" :page="6" />
 
+<!-- figure-translation:/papers/cadtests/table01_test_generation.png -->
+**原文翻译（表注）**
+
+表1：针对抽象提示，以有效性、健全性和变异分数评价 CADTESTS 的生成性能。比较不同 LLM 规划器，以及两种提示策略：在上下文中提供20个 CAD 测试示例，或提供说明测试编写方式的技能文件。表中同时给出百分比和总计数。
+
+**图内文字与标记**
+
+- Model / Prompting：模型／提示方式；20-shot：20个示例；Skilled：提供技能文件。
+- Valid (#valid/#total)：有效测试数／全部测试数；Sound (#sound/#valid)：健全测试数／有效测试数；MScore：变异分数。
+- ✓／✕表示使用／不使用相应提示方式；模型名称保留原文。
+
+::: details 对照英文原文
+
+Table 1: CADTESTS generation performance for abstract prompts in terms of validity, soundness, and mutation score. We evaluate various LLM planners and compare two prompting strategies: providing the planner with 20 CAD test demonstrations in its context, or supplying a skill file that disambiguated how tests should be written. The table presents both percentages and total counts.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 1，PDF 第 6 页；抽象提示实验。
 
 Claude-4.6-Sonnet 初始测试 Valid **97.8%**，Sound **90.6%**，mutation score **63.0%**。能够运行且参考可通过，不意味着已检测全部错误。
@@ -152,6 +215,24 @@ Claude-4.6-Sonnet 初始测试 Valid **97.8%**，Sound **90.6%**，mutation scor
 
 <PaperFigure src="/papers/cadtests/table02_refinement.png" title="CADTests 原表 2：反馈迭代改进" source="https://arxiv.org/abs/2605.07807" :page="7" />
 
+<!-- figure-translation:/papers/cadtests/table02_refinement.png -->
+**原文翻译（表注）**
+
+表2：迭代改进闭环的有效性。分别对参考实现、CAD 变异体及其增强版本报告分数。
+
+**图内文字与标记**
+
+- Prompt：提示；Detailed / Abstract：详细／抽象提示；Model：模型；#total：总数。
+- Sound：健全性；SoundAugm：增强版本的健全性；MScore：变异分数；MScoreAugm：增强版本的变异分数；± 后的数值按原表保留。
+
+::: details 对照英文原文
+
+Table 2: Effectiveness of the refinement loop. Scores are reported for the reference implementation, CAD mutants, as well as their augmented variants.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 2，PDF 第 7 页。
 
 详细/抽象提示的 mutation score 为 **0.91 / 0.93**；变换增强后的统计也另列。它说明针对构建的变体，测试辨别力得到改善。
@@ -161,6 +242,25 @@ Claude-4.6-Sonnet 初始测试 Valid **97.8%**，Sound **90.6%**，mutation scor
 ### 用测试评测 CAD 生成 {#_7-3-用测试评测-cad-生成}
 
 <PaperFigure src="/papers/cadtests/table03_generation.png" title="CADTests 原表 3：文本到 CAD 基准" source="https://arxiv.org/abs/2605.07807" :page="7" />
+
+<!-- figure-translation:/papers/cadtests/table03_generation.png -->
+**原文翻译（表注）**
+
+表3：在 CADTESTBENCH 上评价文本到 CAD 方法，分别报告抽象与详细两个子集的结果。文本到 CAD 基线使用不同的 LLM 规划器，以通过率、要求得分和无效比例衡量性能。
+
+**图内文字与标记**
+
+- Method / Planner：方法／规划器；Detailed / Abstract：详细／抽象提示子集。
+- IR：无效比例；RS：要求得分；PR：通过率；↑越大越好，↓越小越好。
+- Finetuned Method：微调方法；Train-Free Methods：免训练方法；Test-based Baselines：基于测试的基线；CADTests + Log：CADTests 加执行日志。
+
+::: details 对照英文原文
+
+Table 3: Evaluation of Text-to-CAD methods on CADTESTBENCH. Results are reported for both the abstract and detailed partitions. Text-to-CAD baselines are evaluated using different LLM planners. Performance is measured in terms of pass rate, requirement score, and invalidity rate.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原表 3，PDF 第 7 页。
 
@@ -176,6 +276,24 @@ Claude-4.6-Sonnet 的 ReAct 详细/抽象 PR 为 **0.580 / 0.715**；CADTests+Lo
 
 <PaperFigure src="/papers/cadtests/table04_human.png" title="CADTests 原表 4：人工一致性" source="https://arxiv.org/abs/2605.07807" :page="9" />
 
+<!-- figure-translation:/papers/cadtests/table04_human.png -->
+**原文翻译（表注）**
+
+表4：与人工共识标注的一致性，Cohen 的 κ=0.54。左侧比较 CADTESTS 与文献[38]中基于 LLM 的指标在通过率判定上的一致性；右侧以二元人工标签为依据，报告连续评分指标的 AUC。
+
+**图内文字与标记**
+
+- Pass-Rate Metric：通过率指标；Accuracy：准确率；Precision：精确率；Recall：召回率；F1：F1 分数。
+- Metric：指标；AUC：曲线下面积；Chamfer Distance：倒角距离；CLIP Score：CLIP 得分；CADTests (RS Score)：CADTests 要求得分；LVM 保留原指标名称。
+
+::: details 对照英文原文
+
+Table 4: Agreement with human consensus annotations (Cohen’s κ=0.54). Left: Pass-rate agreement for CADTESTS and the LLM-based metric of [38]. Right: AUC for continuous score metrics against the binary human label.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 4，PDF 第 9 页；125 个随机生成结果、两名专家标注者。
 
 CADTests 与人工共识的准确率 **0.938**，RS 的 AUC **0.928**。两名标注者自身 Cohen’s κ 为 **0.54**，属于存在明显歧义的判断。
@@ -185,6 +303,28 @@ CADTests 与人工共识的准确率 **0.938**，RS 的 AUC **0.928**。两名�
 ## 局限与测试误判 {#_8-局限与测试误判}
 
 <PaperFigure src="/papers/cadtests/figure04_examples.png" title="CADTests 原图 4：测试通过与失败案例" source="https://arxiv.org/abs/2605.07807" :page="9" />
+
+<!-- figure-translation:/papers/cadtests/figure04_examples.png -->
+**原文翻译（图注）**
+
+图4：由 CADTest-Claude 基线生成、并使用 CADTESTS 评价的示例。绿色表示测试通过，红色表示测试失败。为便于阅读，图中仅展示部分测试描述，省略完整测试实现。
+
+**图内文字与标记**
+
+- Reference / Generated B-Rep：参考／生成的边界表示；Prompt：提示；Failure：失败。
+- 左侧提示：“创建一个星形三维物体。先绘制一个五角星草图，再将其拉伸，每个顶点应形成略有不同的角度。”测试依次检查：至少12个面；存在拉伸且最大尺寸明显大于最小尺寸；顶点数为偶数；恰有一个实体；五个外侧星尖在轮廓平面内具有不均匀角间距。
+- 左侧失败提示：“星尖角间距近似均匀，相对离散程度为0.0031，间距为[72.11,72.07,71.94,71.89,71.99]；但提示要求各顶点形成略有不同的角度。”
+- 中间提示：“创建一张四腿桌子。先创建矩形，再从矩形各角的底部连接四个细长的拉伸正方形。”测试检查：桌面与四腿构成一个统一实体；所有面均为平面；四个最小面即腿底为正方形；总面数恰为18；包围盒长宽比在细长桌腿的合理范围内。
+- 右侧提示：“创建一个圆并将其拉伸，再开四个小孔，使它们按正方形排列。”测试检查：恰有一个实体；恰有5个圆柱面（主体与四个孔壁）；至少10条圆边；平面多于2个；体积小于完整包围盒体积；四个孔壁圆柱面的半径相同。
+- 右侧失败提示：“预计有5个圆柱面（1个主体圆柱和4个孔），实际发现8个。”
+
+::: details 对照英文原文
+
+Figure 4: Example generations from the CADTest-Claude baseline evaluated via CADTESTS. Green indicates passed tests and red indicates failed tests. For clarity, only a subset of test descriptions is shown and full test implementations are omitted.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 4，PDF 第 9 页。绿色通过、红色失败，原图仅展示部分测试说明。
 

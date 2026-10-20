@@ -36,6 +36,17 @@ def verify_files() -> dict:
             content=reader.get_text(' ',strip=True)
             for phrase in ['待人工复核','来源稿整理','你来填写','论文解读模板','来源与维护']:
                 assert phrase not in content,(str(file),phrase)
+        if reader and reader.select('.paper-figure'):
+            events=[]
+            for node in reader.descendants:
+                if getattr(node,'name',None)=='figure' and 'paper-figure' in node.get('class',[]):
+                    events.append('figure')
+                elif getattr(node,'name',None)=='strong':
+                    label=node.get_text(strip=True)
+                    if label.startswith('原文翻译（'):events.append('translation')
+                    elif label=='图表解读':events.append('explanation')
+            assert events==['figure','translation','explanation']*len(reader.select('.paper-figure')),(str(file),events)
+            assert len([x for x in reader.select('details summary') if x.get_text(strip=True)=='对照英文原文'])==len(reader.select('.paper-figure'))
         documents[file] = soup
     for file, soup in documents.items():
         for link in soup.select('a[href]'):

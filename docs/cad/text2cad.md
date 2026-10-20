@@ -56,6 +56,30 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/text2cad/figure04_prompt_levels.png" title="Text2CAD 原图 4：四级文本提示" source="https://arxiv.org/abs/2409.17106" :page="7" />
 
+<!-- figure-translation:/papers/text2cad/figure04_prompt_levels.png -->
+**原文翻译（图注）**
+
+图4：Text2CAD Transformer 使用不同文本提示生成参数化 CAD 模型。文本提示遵循一定结构，强调 CAD 构建流程中不同的设计要素，并以不同颜色区分。
+
+**图内文字与标记**
+
+- Groundtruth CAD model：真实 CAD 模型；Abstract / Beginner / Intermediate / Expert Level：抽象级 L0／初学者级 L1／中等级 L2／专家级 L3；Prompt and Output Model：提示及输出模型。
+- L0 提示：“一个圆柱形物体。”L1 提示：“该 CAD 模型由一个圆柱形物体构成。”
+- L2 提示：“该 CAD 模型由一个中间圆柱形物体构成。通过建立坐标系、在同一平面上绘制两个同心圆，再沿法向拉伸草图，形成实体。得到的部件高度约为0.75个单位。”
+- L3 提示（第一段）：“创建 CAD 模型的第一个部件，一个中间圆柱形物体。首先在原点建立没有旋转的新坐标系，欧拉角为(0.0, 0.0, 0.0)，平移向量为(0.0, 0.0, 0.0)。”
+- L3 提示（第二段）：“在该坐标系的面1上创建二维草图，并以两个同心圆作为环。环1的圆心为(0.1875, 0.1875)，半径为0.1875；环2圆心相同，半径较小，为0.0754。”
+- L3 提示（第三段）：“沿法向将草图拉伸0.75，反方向不拉伸。草图尺度设为0.375，执行‘新建实体’操作，创建新的实体。”
+- L3 提示（第四段）：“第一个部件的长和宽均为0.375，来自草图尺度；高为0.75，来自拉伸深度。该部件接近圆柱形物体，沿长度方向略有弯曲。”
+- Extrusion Height：拉伸高度；Extrusion Details：拉伸细节；Simple sketch details：简单草图细节；Shape description：形状描述。
+
+::: details 对照英文原文
+
+Figure 4: Parametric CAD model generation by Text2CAD transformer using different text prompts. Our text prompts follow a certain structure highlighting the different design aspects of CAD construction workflow (shown in different colors).
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 4，PDF 第 7 页。
 
 - **L0，抽象级**：概括最终形状。
@@ -85,6 +109,27 @@ updated: '2026-10-20'
 
 <PaperFigure src="/papers/text2cad/figure02_annotation.png" title="Text2CAD 原图 2：标注流水线" source="https://arxiv.org/abs/2409.17106" :page="4" />
 
+<!-- figure-translation:/papers/text2cad/figure02_annotation.png -->
+**原文翻译（图注）**
+
+图2：Text2CAD 数据标注流水线。该流程生成不同复杂程度的多层次文本提示，用于描述 CAD 模型的构建过程。采用两个阶段：第一阶段使用视觉语言模型（VLM）生成形状描述；第二阶段使用大语言模型（LLM）生成多层次文本标注。
+
+**图内文字与标记**
+
+- 3D CAD Model：三维 CAD 模型；Multi-View Images Extractor：多视图图像提取器；Shape information：形状信息。
+- Minimal Metadata Generator：最小元数据生成器；Minimal JSON：最小化 JSON；K-Shot：K 个示例提示。
+- Natural Language Instruction (NLI)：自然语言指令；Generation Prompt：生成提示。
+- Level-0/1/2/3：抽象级／初学者级／中等级／专家级 CAD 指令；LLaVaNext、Mistral-7B 为模型名称。
+- 示例元数据中的 final_shape、parts、coordinate_system、sketch、extrusion 分别表示最终形状、部件、坐标系、草图和拉伸；代码与数值保持原样。
+
+::: details 对照英文原文
+
+Figure 2: Text2CAD Data Annotation Pipeline: Our data annotation pipeline generates multi-level text prompts describing the construction workflow of a CAD model with varying complexities. We use a two-stage method - (Stage 1) Shape description generation using VLM (Stage 2) Multi-Level textual annotation generation using LLM.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原图 2，PDF 第 4 页；对应 §3。
 
 流程可以理解为：
@@ -104,6 +149,27 @@ v1 图和正文对 Mistral/Mixtral 的命名存在不同写法。阅读时可记
 ### CAD 生成网络 {#_5-2-cad-生成网络}
 
 <PaperFigure src="/papers/text2cad/figure03_network.png" title="Text2CAD 原图 3：生成网络" source="https://arxiv.org/abs/2409.17106" :page="6" />
+
+<!-- figure-translation:/papers/text2cad/figure03_network.png -->
+**原文翻译（图注）**
+
+图3：网络结构。Text2CAD Transformer 的输入为文本提示 T 和长度为 t−1 的 CAD 子序列 C1:t−1。使用预训练 BeRT 编码器[7]及其后的可训练自适应层，从 T 中提取文本嵌入 Tadapt。该嵌入与 CAD 序列嵌入 F⁰t−1 一起经过 L 个解码器模块，以自回归方式生成完整 CAD 序列。
+
+**图内文字与标记**
+
+- Pre-trained BeRT Encoder：预训练 BeRT 编码器；Adaptive Layer：自适应层；Downsampler：下采样器。
+- Sketch Tokens / Extrusion Tokens：草图／拉伸标记；Input / Output CAD Tokens：输入／输出 CAD 标记。
+- MHA：多头注意力；Cross-Attention：交叉注意力；FFN：前馈网络；MLP：多层感知机；Positional Encoding：位置编码。
+- Trainable / Frozen Parameters：可训练／冻结参数；Reconstructed 3D CAD Model：重建的三维 CAD 模型。
+- 图中抽象描述：“该 CAD 模型具有优雅、弯曲、中空的设计，灵感来自风格化的字母 O。”较详细描述说明先在坐标平面绘制草图，再拉伸成高约0.75个单位的实体；专家提示进一步给出欧拉角(0.0, 0.0, −90.0)、平移向量(0, 0.0208, 0)以及环、面的构建信息，省略号按原图保留。
+
+::: details 对照英文原文
+
+Figure 3: Network architecture: Text2CAD Transformer takes as input a text prompt T and a CAD subsequence C1:t−1 of length t−1. The text embedding Tadapt is extracted from T using a pretrained BeRT Encoder ([7]) followed by a trainable Adaptive layer. The resulting embedding Tadapt and the CAD sequence embedding F0t−1 is passed through L decoder blocks to generate the full CAD sequence in auto-regressive way.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：原图 3，PDF 第 6 页；对应 §4。
 
@@ -135,6 +201,24 @@ Adaptive Layer 是一个 Transformer 编码层，用于将通用文本特征适�
 
 <PaperFigure src="/papers/text2cad/table01_expert.png" title="Text2CAD 原表 1：L3 提示下的结果" source="https://arxiv.org/abs/2409.17106" :page="8" />
 
+<!-- figure-translation:/papers/text2cad/table01_expert.png -->
+**原文翻译（表注）**
+
+表1：DeepCAD[55]与本文方法的定量比较，AL 表示自适应层。只使用专家级（L3）提示计算分数。结果包括几何基元和拉伸的 F1 分数，以及 CD 的均值、中位数和 IR。CD 的显示值乘以10³。
+
+**图内文字与标记**
+
+- Model：模型；Line / Arc / Circle / Extrusion：直线／圆弧／圆／拉伸。
+- Median / Mean CD：CD 中位数／均值；IR：无效比例；w/o AL：不使用自适应层。
+
+::: details 对照英文原文
+
+Table 1: Quantitative evaluation between DeepCAD [55] and our method (AL is Adaptive Layer). The scores are evaluated only for Expert Level (L3) prompts. The results include F1 scores for primitives and extrusions as well as mean and median CD and IR. CD is multiplied by 10³.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 1，PDF 第 8 页。CD 显示值乘以 1000。
 
 Text2CAD 的线/弧/圆/拉伸 F1 为 **81.13 / 36.03 / 74.25 / 93.31**，中位 CD **0.37**、平均 CD **26.41**、IR **0.93%**。
@@ -150,6 +234,24 @@ Text2CAD 的线/弧/圆/拉伸 F1 为 **81.13 / 36.03 / 74.25 / 93.31**，中位
 
 <PaperFigure src="/papers/text2cad/table02_preferences.png" title="Text2CAD 原表 2：自动与人工偏好评价" source="https://arxiv.org/abs/2409.17106" :page="9" />
 
+<!-- figure-translation:/papers/text2cad/table02_preferences.png -->
+**原文翻译（表注）**
+
+表2：每个提示层级使用1000条提示所生成的 CAD 模型进行 GPT-4 评价，并对每个层级的100个样本开展用户研究。在两类评价中，总体上 Text2CAD 比 DeepCAD 更受偏好。
+
+**图内文字与标记**
+
+- GPT-4 Evaluation / User Study-based Evaluation：GPT-4 评价／基于用户研究的评价，单位均为百分比。
+- Undecided：未作出选择；Abstract / Beginner / Intermediate / Expert：抽象级／初学者级／中等级／专家级。
+
+::: details 对照英文原文
+
+Table 2: We conduct GPT-4 evaluation of the CAD models generated from 1000 prompts per level and User studies of 100 samples per level. In both evaluations, overall Text2CAD is a favored choice over DeepCAD.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
 **来源**：原表 2，PDF 第 9 页。GPT 评价每级 1000 个提示；用户研究每级 100 个样本、共五名不同经验的 CAD 设计者。
 
 GPT 评价中，L1 下 Text2CAD 的偏好比例为 **48.35%**，低于 DeepCAD 的 **51.15%**。人工评价中，L0 下 Text2CAD 为 **49.05%**，低于 DeepCAD 的 **50.95%**。
@@ -161,6 +263,25 @@ GPT 评价中，L1 下 Text2CAD 的偏好比例为 **48.35%**，低于 DeepCAD �
 ## 局限与失败案例 {#_8-局限与失败案例}
 
 <PaperFigure src="/papers/text2cad/figure09_failures.png" title="Text2CAD 原图 9：无效结果与文本不匹配" source="https://arxiv.org/abs/2409.17106" :page="17" />
+
+<!-- figure-translation:/papers/text2cad/figure09_failures.png -->
+**原文翻译（图注）**
+
+图9：Text2CAD Transformer 的失败案例。左侧的无效样本中，网络未能生成任何有效的 CAD 模型；右侧的不一致案例中，生成的 CAD 模型与输入文本提示不符。
+
+**图内文字与标记**
+
+- Invalidity / INVALID：无效／无效模型；Discrepancy：不一致；Input Text：输入文本。
+- 左侧提示片段包含直线端点(0.0, 0.0)、(0.001, 0.0)、草图尺度0.25、拉伸0.75，以及沿 Z 方向拉伸0.0012的长方体等信息。
+- 右侧提示片段分别描述矩形棱柱底座及与已有部件连接的第二个部件、类似字母 S 或扭曲带子的弯曲环状金属物体，以及具有弯曲边缘、类似锅铲或桨的平面形状；片段中的省略号与原图一致。
+
+::: details 对照英文原文
+
+Figure 9: Failure cases for Text2CAD Transformer. Invalid Samples (left): The network fails to generate any valid CAD model. Discrepancy Cases (right): The generated CAD model does not match the input text prompts.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
 
 **来源**：补充材料原图 9，PDF 第 17 页。左侧无法构建有效实体；右侧实体有效但不符合描述。
 
