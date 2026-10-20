@@ -16,7 +16,7 @@ const edges = computed(()=>data.relations.filter(r=>r.from===focus.value||r.to==
     <p class="cad-description" role="status">{{ title(focus) }} · {{ edges.length }} 条已记录关系</p>
     <div v-for="edge in edges" :key="edge.id" class="cad-relation-edge">
       <div class="cad-edge-nodes"><a v-if="url(edge.from)" :href="siteLink(url(edge.from)!)">{{ title(edge.from) }}</a><span v-else>{{ title(edge.from) }}</span><span class="cad-edge-arrow" aria-label="关联到">→</span><a v-if="url(edge.to)" :href="siteLink(url(edge.to)!)">{{ title(edge.to) }}</a><span v-else>{{ title(edge.to) }}</span></div>
-      <span class="cad-eyebrow">{{ edge.id }} · {{ edge.type }}</span><p>{{ edge.description }}</p><small>证据定位（来源记录）：{{ edge.evidence?.locator || '待核对' }}</small>
+      <span class="cad-eyebrow">{{ edge.id }} · {{ edge.type }}</span><p>{{ edge.description }}</p><small>原文位置：{{ edge.evidence?.locator || '待核对' }}</small>
     </div>
   </section>
 </template>

@@ -11,13 +11,13 @@ export default defineConfig({
   themeConfig: {
     nav: [{text:'速览',link:'/'},...sections.map(([key,text])=>({text,link:`/${key}/`})),{text:'文章索引',link:'/library'}],
     sidebar: [
-      {text:'开始学习',items:[{text:'学习地图',link:'/'},{text:'文章索引',link:'/library'},{text:'资料整理指南',link:'/guide'}]},
+      {text:'开始学习',items:[{text:'学习地图',link:'/'},{text:'文章索引',link:'/library'}]},
       ...sections.map(([key,title])=>({ text:title, collapsed:false, items:key==='cad'?
         [{text:'第二版 · 研究发展树',link:'/cad/'},
           {text:'四任务主线',collapsed:false,items:[{text:'CAD 生成',link:'/cad/tasks/generation'},{text:'CAD 重建',link:'/cad/tasks/reconstruction'},{text:'CAD 编辑',link:'/cad/tasks/editing'},{text:'理解、评估与规划',link:'/cad/tasks/analysis'}]},
           {text:'资料与问题',collapsed:false,items:[{text:'共用基础',link:'/cad/foundations'},{text:'论文资料库',link:'/cad/reading-navigation'},{text:'数据与评测资源',link:'/cad/resources'},{text:'发展关系',link:'/cad/relationships'},{text:'具体问题与待验证方法',link:'/cad/issues'}]},
           {text:'九篇论文详读',collapsed:true,items:research.papers.filter(p=>p.hasReading).map(p=>({text:p.short,link:p.urlLocal}))},
-          {text:'术语与维护',collapsed:true,items:[{text:'术语与小练习',link:'/cad/concepts'},{text:'论文解读模板',link:'/cad/paper-reading'},{text:'来源与维护',link:'/cad/about'}]}]:
+          {text:'基础阅读',collapsed:true,items:[{text:'术语与小练习',link:'/cad/concepts'}]}]:
         key==='reinforcement-learning'?
         [{text:'栏目总览',link:`/${key}/`},
           {text:'RL基础',collapsed:false,items:catalog.filter(p=>p.category===key&&p.id==='rl-0003').map(p=>({text:p.navTitle??p.title,link:p.url}))},
@@ -28,6 +28,6 @@ export default defineConfig({
     outline: {level:[2,3],label:'本页目录'},
     darkModeSwitchTitle:'切换到深色主题',lightModeSwitchTitle:'切换到浅色主题',
     docFooter:{prev:'上一篇',next:'下一篇'}, sidebarMenuLabel:'文章目录', returnToTopLabel:'回到顶部', darkModeSwitchLabel:'切换主题',
-    footer:{message:'基础知识 · 强化学习 · CAD',copyright:'学习图谱 2.0 · 内容待人工复核'}
+    footer:{message:'基础知识 · 强化学习 · CAD',copyright:'学习图谱 · 基础、算法与研究'}
   }
 })

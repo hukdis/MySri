@@ -4,26 +4,30 @@ title: GRPO：组内相对优势与 PPO 对比
 navTitle: GRPO：组内相对优势
 category: reinforcement-learning
 type: concept
-tags: [GRPO, 组内优势, PPO, 语言模型]
-prerequisites: [rl-0003, basic-0001, rl-0004]
-related: [rl-0004]
+tags:
+  - GRPO
+  - 组内优势
+  - PPO
+  - 语言模型
+prerequisites:
+  - rl-0003
+  - basic-0001
+  - rl-0004
+related:
+  - rl-0004
 sources:
-  - https://zhoujx4.github.io/llm-atlas/rlhf/grpo
-  - https://zhoujx4.github.io/llm-atlas/rlhf/
-  - https://arxiv.org/abs/2402.03300
-  - https://huggingface.co/docs/trl/grpo_trainer
+  - 'https://zhoujx4.github.io/llm-atlas/rlhf/grpo'
+  - 'https://zhoujx4.github.io/llm-atlas/rlhf/'
+  - 'https://arxiv.org/abs/2402.03300'
+  - 'https://huggingface.co/docs/trl/grpo_trainer'
 status: draft
 reviewed: false
 order: 13
 created: '2026-10-08'
-updated: '2026-10-08'
+updated: '2026-10-20'
 ---
 
 # GRPO：组内相对优势与 PPO 对比
-
-::: info 高阶算法 · 待人工复核
-主题参考 [LLM Atlas 的 GRPO 系列](https://zhoujx4.github.io/llm-atlas/rlhf/grpo)，公式对照 DeepSeekMath 原论文重新整理。本文讲解结果奖励版本；手算、解释与流程图为本站教学内容。
-:::
 
 > **阅读目标**：理解“同一道题多次采样”如何提供相对优势，明确省去 Critic 后仍然需要哪些计算。
 

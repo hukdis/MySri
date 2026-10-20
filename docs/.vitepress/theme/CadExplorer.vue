@@ -102,7 +102,7 @@ watch(filters,()=>{
       <div v-if="isPaper&&expanded" class="cad-facet-row"><label v-for="f in data.facets" :key="f.id">{{ f.title }}<select :aria-label="f.title" v-model="filters[f.id as 'inputs']"><option value="">不限{{ f.title }}</option><option v-for="value in f.values" :key="value" :value="value">{{ value }}</option></select></label></div>
       </fieldset>
     </form>
-    <div class="cad-results-heading"><span role="status" aria-live="polite">找到 <strong>{{ results.length }}</strong> 条{{ mode==='resources'?'资源':mode==='issues'?'问题':'论文' }}</span><small>{{ isPaper?'资料记录 ≠ 全文详读':'来源材料记录 · 待人工复核' }}</small></div>
+    <div class="cad-results-heading"><span role="status" aria-live="polite">找到 <strong>{{ results.length }}</strong> 条{{ mode==='resources'?'资源':mode==='issues'?'问题':'论文' }}</span><small>{{ isPaper?'按任务与技术标签浏览':'按研究问题查找' }}</small></div>
     <p v-if="activeCount" class="cad-active-filters">当前筛选：{{ summary }}</p>
     <p v-if="filters.from&&filters.to&&Number(filters.from)>Number(filters.to)" class="cad-empty">起始年份大于结束年份，请调整年份范围。</p>
     <p v-else-if="!results.length" class="cad-empty">没有找到匹配资料。可以减少筛选条件，或点击“重置筛选”。</p>
@@ -110,7 +110,7 @@ watch(filters,()=>{
       <h3>{{ group.title }} <small>{{ group.items.length }} 条</small></h3>
       <div class="cad-timeline">
         <article v-for="card in group.items" :key="card.id" class="cad-record">
-          <div class="cad-record-top"><span>{{ card.id }}<template v-if="card.date"> · {{ card.date }}</template></span><span class="cad-record-state" :class="{'is-reading':card.hasReading}">{{ card.hasReading?'已有详读':card.kind==='issue'?(card.status==='supported_scoped_problem'?'范围限定问题':'候选 · 待验证'):card.kind==='foundation'?'基础记录':card.kind==='resource'?'资源记录':'论文记录' }}</span></div>
+          <div class="cad-record-top"><span>{{ card.date || (card.kind==='issue'?'研究问题':'数据资源') }}</span><span class="cad-record-state" :class="{'is-reading':card.hasReading}">{{ card.hasReading?'论文解读':card.kind==='issue'?(card.status==='supported_scoped_problem'?'范围限定问题':'候选 · 待验证'):card.kind==='foundation'?'基础阅读':card.kind==='resource'?'数据资源':'论文概览' }}</span></div>
           <a class="cad-record-title" :href="siteLink(card.url)">{{ card.title }} <span>↗</span></a>
           <p>{{ card.detail }}</p>
           <div class="cad-tags"><span v-if="card.task" class="cad-task-tag">{{ taskName(card.task) }}</span><span v-if="card.kind==='resource'&&card.access">{{ accessLabels[card.access]||card.access }}</span><template v-for="facet in data.facets" :key="facet.id"><button v-for="value in (card.tags[facet.id]||[]).slice(0,2)" :key="facet.id+value" type="button" :disabled="!ready" :aria-label="'筛选'+facet.title+'：'+value" @click="selectTag(facet.id,value)">{{ value }}</button></template><span v-for="format in card.formats.slice(0,4)" :key="format">{{ format }}</span></div>

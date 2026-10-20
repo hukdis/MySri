@@ -13,17 +13,15 @@ status: draft
 reviewed: false
 order: 12
 created: '2026-10-07'
-updated: '2026-10-19'
+updated: '2026-10-20'
 ---
 # CAD 论文资料导航
 
-按任务、年份和独立标签浏览 134 条论文记录；九篇已有 source 详读与原论文截图。资料记录与详读深度分别标出，不规定首次阅读顺序。
+按任务、年份与技术标签查找论文，也可筛选带有图表与方法讲解的详读文章。
 
 <CadExplorer mode="library" />
 
-## 旧资料的对应记录
-
-原 19 篇资料均保留对应入口。两篇 IterCAD 与 Pointer-CAD 的不同版本分别记录，避免按短名误合并。
+## 延伸阅读
 
 - [DeepCAD](/cad/deepcad)
 - [Text2CAD](/cad/text2cad)
@@ -45,4 +43,4 @@ updated: '2026-10-19'
 - [IterCAD · 多模态代理](/cad/papers/hu26)
 - [Pointer-CAD](/cad/papers/qi26b)
 
-[论文解读模板](/cad/paper-reading) · [术语与小练习](/cad/concepts)
+[术语与小练习](/cad/concepts)

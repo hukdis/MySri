@@ -54,3 +54,9 @@ PPO、GRPO 使用紧凑流程图，补充计算示例、更新伪代码和训练
 `node scripts/index.mjs` 会调用 `scripts/build-cad-v2.mjs` 生成资料记录与入口页；自动生成页面应修改该脚本或公开快照，不直接改生成结果。原 HTML、私人计划和本地证据文件不随网站发布。重新导入原 HTML 时使用 `python scripts/import-cad-tree.py 原文件路径`，再检查公开字段与映射，最后执行 `pnpm build`。
 
 完整检索截止为 2026-10-14、来源分类更新于 2026-10-15；整合不等于本次独立核查论文、数据可用性或学术正确性。
+
+## 阅读版内容格式 · 2026-10-20
+
+页面不再展示整理过程、复核状态、空白填写卡与维护入口；draft/reviewed 元数据保留用于内部管理。论文来源、原图、条件限制和方法假设继续保留。
+
+`scripts/reader-format.mjs` 统一清理作者提示与占位内容；`catalog/reader-heading-anchors.json` 保存旧章节锚点，显示标题去编号后旧链接仍可访问。`scripts/build-cad-v2.mjs` 负责资料页的公共阅读结构；未填写的字段不展示。原模板与维护地址保留简短导航，设为 unlisted 且不进入全文搜索。

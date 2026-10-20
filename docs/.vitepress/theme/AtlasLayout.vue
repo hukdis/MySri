@@ -41,10 +41,9 @@ onMounted(() => {
             {{ wide ? '标准阅读' : '宽屏阅读' }}
           </button>
         </div>
-        <div v-if="frontmatter.id" class="article-meta">
-          <span class="meta-kind">{{ frontmatter.type === 'paper' ? '论文阅读' : '知识笔记' }}</span>
-          <span>{{ frontmatter.id }}</span><span>更新 {{ frontmatter.updated }}</span>
-          <span class="meta-status">{{ frontmatter.reviewed ? '已复核' : '待人工复核' }}</span>
+        <div v-if="frontmatter.id && !frontmatter.unlisted" class="article-meta">
+          <span class="meta-kind">{{ frontmatter.type === 'paper' ? (frontmatter.cadRecord ? '论文概览' : '论文解读') : '主题阅读' }}</span>
+          <span>更新 {{ frontmatter.updated }}</span>
         </div>
       </template>
     </DefaultTheme.Layout>

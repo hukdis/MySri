@@ -3,7 +3,7 @@ import catalog from '../../../catalog/content-index.json'
 import { siteLink } from './siteLink'
 const topics = [
   { key: 'basics', number: '01', title: '基础知识', sub: '建立理解算法的语言', text: '从信息论到研究写作，把概念、问题和证据连起来。', url: '/basics/', links: [{ title: '信息论基础', url: '/basics/probability' }, { title: '研究与写作', url: '/basics/research-writing' }] },
-  { key: 'reinforcement-learning', number: '02', title: '强化学习', sub: '从课程基础走向策略优化', text: '沿着你的课程知识地图，再深入 PPO 与 GRPO。', url: '/reinforcement-learning/', links: [{ title: 'RL基础', url: '/reinforcement-learning/algorithm-map' }, { title: 'PPO', url: '/reinforcement-learning/ppo' }, { title: 'GRPO', url: '/reinforcement-learning/grpo' }] },
+  { key: 'reinforcement-learning', number: '02', title: '强化学习', sub: '从课程基础走向策略优化', text: '从课程知识地图出发，深入 PPO 与 GRPO。', url: '/reinforcement-learning/', links: [{ title: 'RL基础', url: '/reinforcement-learning/algorithm-map' }, { title: 'PPO', url: '/reinforcement-learning/ppo' }, { title: 'GRPO', url: '/reinforcement-learning/grpo' }] },
   { key: 'cad', number: '03', title: 'CAD', sub: '沿研究问题阅读论文', text: '按生成、重建、编辑与理解评估，连接论文、数据和研究问题。', url: '/cad/', links: [{ title: '第二版研究树', url: '/cad/' }, { title: '论文库', url: '/cad/reading-navigation' }, { title: '问题分析', url: '/cad/issues' }] }
 ]
 const count = (key: string) => catalog.filter(row => row.category === key).length
@@ -47,7 +47,7 @@ const recent = [...catalog].sort((a, b) => String(b.updated).localeCompare(Strin
       <a :href="siteLink('/reinforcement-learning/grpo')"><span>02 / GRPO</span><strong>如何用一组回答学习？</strong><small>组内统计 · KL · 算法对比 ↗</small></a>
     </div>
     <div class="home-section-heading"><div><span class="section-eyebrow">RECENT NOTES</span><h2 id="近期整理">近期整理</h2></div><a :href="siteLink('/recent')">查看全部更新 ↗</a></div>
-    <div class="recent-grid"><a v-for="row in recent" :key="row.id" :href="siteLink(row.url)" class="recent-note"><small>{{ row.updated }} <span>待人工复核</span></small><strong>{{ row.title }}</strong><span class="recent-tags">{{ row.tags.slice(0, 3).join(' / ') }}</span><span class="recent-arrow">↗</span></a></div>
-    <div class="home-footnote"><span class="status-dot"></span><p>内容包含整理草稿，尚待人工复核。CAD 第二版整合研究发展树，保留九篇详读与原论文截图；原始资料与个人笔记保留在本地。</p><a :href="siteLink('/guide')">资料整理指南 →</a></div>
+    <div class="recent-grid"><a v-for="row in recent" :key="row.id" :href="siteLink(row.url)" class="recent-note"><small>{{ row.updated }} </small><strong>{{ row.title }}</strong><span class="recent-tags">{{ row.tags.slice(0, 3).join(' / ') }}</span><span class="recent-arrow">↗</span></a></div>
+    <div class="home-footnote"><span class="status-dot"></span><p>从基础概念到算法推导，再到论文方法与图表，沿着研究问题展开阅读。</p><a :href="siteLink('/cad/')">探索 CAD 研究 →</a></div>
   </div>
 </template>

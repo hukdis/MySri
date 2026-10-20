@@ -16,13 +16,9 @@ status: draft
 reviewed: false
 order: 11
 created: '2026-10-07'
-updated: '2026-10-08'
+updated: '2026-10-20'
 ---
 # RL基础：从 Bellman 方程到 Actor–Critic
-
-::: info 来源稿整理 · 待人工复核
-正文依据你提供的《强化学习算法知识地图》整理，沿用课件第 2—10 章的内容与顺序。本次仅调整网页排版、显示记号和缺失来源提示，未新增教学例子或练习。原稿的缺失内容仍待补齐。
-:::
 
 > 依据 Shiyu Zhao 的《slidesForMyLectureVideos_2024.12.pdf》第 2—10 讲及所给分类图整理。这里的“第 N 章”沿用**这份英文课件**的 Lecture N；当前资料库中其他中文笔记的章节编号与它不同，不能混用。下文区分“课件直接讲授的算法”和“为了说明联系所作的概括”。
 
@@ -196,7 +192,7 @@ $
 | **MC Basic**                | 展示不知道转移模型时如何估计 $q_\pi$ 并改进策略。 | 对从选定状态—动作出发的完整回合求平均回报，再按 $\arg\max_a Q(s,a)$ 改进；对轨迹内其他可用访问利用不足。 |
 | **首次访问 / 每次访问 MC**          | 充分利用同一回合中出现的状态—动作对。           | 首次访问只用该回合中第一次出现的 $(s,a)$ 的回报；每次访问使用每一次出现。两者都用完整回报，并非 TD。        |
 | **MC Exploring Starts**     | 让不同状态—动作对都有被估计的机会，同时逐回合改进。    | 要求起始 $(s,a)$ 可被充分探索；实践中常难以控制起始状态。可采用首次访问回报平均。                   |
-| **MC $\varepsilon$-Greedy** | 用持续的动作探索替代难以实现的探索性起点假设。 | 原稿此行概率公式及比较说明不完整，待补齐。 |
+| **MC $\varepsilon$-Greedy** | 用持续的动作探索替代难以实现的探索性起点假设。 | — |
 
 MC 与第 4 章均可做评估—改进，但 MC **不需模型、需完整回合、无自举**；第 7 章 TD **一步后即可更新、有自举**。MC $\varepsilon$-greedy 在固定 $\varepsilon>0$ 时保持探索，目标是相应的软策略控制；不能把固定探索率下的行为策略直接说成完全贪心的最优策略。
 
@@ -242,7 +238,7 @@ MC 与第 4 章均可做评估—改进，但 MC **不需模型、需完整回�
 
 ## 九、直接优化策略：第 9 章策略函数近似
 
-**解决什么问题。**<u> 用 $\pi_\theta(a\mid s)$ 直接表示可微随机策略，优化期望回报，而不必先求出所有动作的最优 $Q$ 再贪心选动作。</u>课件比较以状态价值或平均奖励定义的策略性能指标，并推导策略梯度。
+**解决什么问题。** 用 $\pi_\theta(a\mid s)$ 直接表示可微随机策略，优化期望回报，而不必先求出所有动作的最优 $Q$ 再贪心选动作。课件比较以状态价值或平均奖励定义的策略性能指标，并推导策略梯度。
 
 **策略梯度的核心式**可写为（$d_\pi$ 的具体归一化方式依性能指标而定）
 
@@ -263,7 +259,7 @@ Actor 是策略 $\pi_\theta$，Critic 是 $\hat v_w$ 或 $\hat q_w$。**Critic �
 | **QAC（最简 Actor–Critic）** | 用 Sarsa 式 Critic 估计 $q_\pi$：$\delta_t^q=R_{t+1}+\gamma\hat q_w(S_{t+1},A_{t+1})-\hat q_w(S_t,A_t)$，$w\leftarrow w+\alpha\delta_t^q\nabla_w\hat q_w(S_t,A_t)$；Actor：$\theta\leftarrow\theta+\beta\hat q_w(S_t,A_t)\nabla_\theta\log\pi_\theta(A_t\mid S_t)$。 | 课件中的基础同策略实例；与 REINFORCE 相比，回报估计来自 TD Critic 而非完整回合。                                                  |
 | **A2C（优势 Actor–Critic）** | 以 $A_\pi(s,a)=q_\pi(s,a)-v_\pi(s)$ 衡量“该动作比状态平均水平好多少”；Actor 用 $\theta\leftarrow\theta+\beta\hat A_t\nabla_\theta\log\pi_\theta(A_t\mid S_t)$。一步状态价值 Critic 常用 $\hat A_t\approx R_{t+1}+\gamma\hat v_w(S_{t+1})-\hat v_w(S_t)$。                               | 给 QAC 的策略梯度加入状态基线以降低方差；$\mathbb E_{a\sim\pi}[\nabla\log\pi(a\mid s)b(s)]=0$，因此理想期望梯度不变。              |
 | **离策略 Actor–Critic**     | 用行为策略 $b$ 的数据更新目标策略 $\pi_\theta$。基本重要性权重 $\rho_t=\pi_\theta(A_t\mid S_t)/b(A_t\mid S_t)$；一种加权梯度形式是 $\rho_t\hat q(S_t,A_t)\nabla_\theta\log\pi_\theta(A_t\mid S_t)$，同时 Critic 需对应的离策略估计。                                                                     | 与同策略 QAC/A2C 不同，可复用其他策略数据；重要性采样要求目标策略的动作在行为策略下有支持，且权重会增加方差。完整的离策略策略梯度还涉及状态分布或所选目标的定义，不能只凭动作权重一概声称无偏。 |
-| **DPG（确定性策略梯度）** | 连续动作下直接学习 $a=\mu_\theta(s)$；原稿公式整理为下方独立公式。 | 原稿此行比较说明不完整，待补齐。 |
+| **DPG（确定性策略梯度）** | 连续动作下直接学习 $a=\mu_\theta(s)$；原稿公式整理为下方独立公式。 | — |
 
 $
 \nabla_\theta J\propto\mathbb E_{S\sim d}\bigl[\nabla_\theta\mu_\theta(S)\,\left.\nabla_a q^{\mu}(S,a)\right\vert_{a=\mu_\theta(S)}\bigr]

@@ -28,29 +28,9 @@
     "reviewed": false,
     "order": 1,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-20",
     "file": "basics/probability.md",
     "url": "/basics/probability"
-  },
-  {
-    "id": "cad-0001",
-    "title": "论文解读模板",
-    "category": "cad",
-    "type": "paper",
-    "tags": [
-      "论文阅读",
-      "模板"
-    ],
-    "prerequisites": [],
-    "related": [],
-    "sources": [],
-    "status": "template",
-    "reviewed": false,
-    "order": 4,
-    "created": "2026-10-07",
-    "updated": "2026-10-07",
-    "file": "cad/paper-reading.md",
-    "url": "/cad/paper-reading"
   },
   {
     "id": "basic-0002",
@@ -71,7 +51,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-20",
     "file": "basics/research-writing.md",
     "url": "/basics/research-writing"
   },
@@ -95,7 +75,7 @@
     "reviewed": false,
     "order": 11,
     "created": "2026-10-07",
-    "updated": "2026-10-08",
+    "updated": "2026-10-20",
     "file": "reinforcement-learning/algorithm-map.md",
     "url": "/reinforcement-learning/algorithm-map"
   },
@@ -116,7 +96,7 @@
     "reviewed": false,
     "order": 12,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/reading-navigation.md",
     "url": "/cad/reading-navigation"
   },
@@ -150,7 +130,7 @@
     "reviewed": false,
     "order": 12,
     "created": "2026-10-08",
-    "updated": "2026-10-08",
+    "updated": "2026-10-20",
     "file": "reinforcement-learning/ppo.md",
     "url": "/reinforcement-learning/ppo"
   },
@@ -183,7 +163,7 @@
     "reviewed": false,
     "order": 13,
     "created": "2026-10-07",
-    "updated": "2026-10-07",
+    "updated": "2026-10-20",
     "file": "cad/concepts.md",
     "url": "/cad/concepts"
   },
@@ -217,7 +197,7 @@
     "reviewed": false,
     "order": 13,
     "created": "2026-10-08",
-    "updated": "2026-10-08",
+    "updated": "2026-10-20",
     "file": "reinforcement-learning/grpo.md",
     "url": "/reinforcement-learning/grpo"
   },
@@ -247,7 +227,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/deepcad.md",
     "url": "/cad/deepcad"
   },
@@ -278,7 +258,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/text2cad.md",
     "url": "/cad/text2cad"
   },
@@ -309,7 +289,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/cad-llama.md",
     "url": "/cad/cad-llama"
   },
@@ -340,7 +320,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/cad-recode.md",
     "url": "/cad/cad-recode"
   },
@@ -371,7 +351,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/cad-mllm.md",
     "url": "/cad/cad-mllm"
   },
@@ -402,7 +382,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/cadreview.md",
     "url": "/cad/cadreview"
   },
@@ -433,7 +413,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/cadtests.md",
     "url": "/cad/cadtests"
   },
@@ -464,7 +444,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/cad-editor.md",
     "url": "/cad/cad-editor"
   },
@@ -495,7 +475,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/cad-assistant.md",
     "url": "/cad/cad-assistant"
   },
@@ -518,7 +498,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/yua24.md",
     "url": "/cad/papers/yua24"
@@ -541,7 +521,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/codebench26.md",
     "url": "/cad/papers/codebench26"
@@ -565,7 +545,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-b-02.md",
     "url": "/cad/issues/i-b-02"
@@ -588,7 +568,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/kri95.md",
     "url": "/cad/papers/kri95"
@@ -612,7 +592,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-e-02.md",
     "url": "/cad/issues/i-e-02"
@@ -632,7 +612,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/relationships.md",
     "url": "/cad/relationships"
   },
@@ -654,7 +634,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-e-01.md",
     "url": "/cad/issues/i-e-01"
@@ -677,7 +657,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/bal26c.md",
     "url": "/cad/papers/bal26c"
@@ -697,7 +677,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/foundations.md",
     "url": "/cad/foundations"
   },
@@ -720,7 +700,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/kra90.md",
     "url": "/cad/papers/kra90"
@@ -744,7 +724,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/tan22.md",
     "url": "/cad/papers/tan22"
@@ -768,7 +748,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-h-02.md",
     "url": "/cad/issues/i-h-02"
@@ -792,7 +772,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/li18b.md",
     "url": "/cad/papers/li18b"
@@ -815,7 +795,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-g-03.md",
     "url": "/cad/issues/i-g-03"
@@ -835,7 +815,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/issues.md",
     "url": "/cad/issues"
   },
@@ -858,7 +838,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-g-04.md",
     "url": "/cad/issues/i-g-04"
@@ -881,29 +861,10 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-f-01.md",
     "url": "/cad/issues/i-f-01"
-  },
-  {
-    "id": "cad-v2-about",
-    "title": "来源、范围与维护",
-    "category": "cad",
-    "type": "concept",
-    "tags": [
-      "研究树第二版"
-    ],
-    "prerequisites": [],
-    "related": [],
-    "sources": [],
-    "status": "draft",
-    "reviewed": false,
-    "order": 60,
-    "created": "2026-10-19",
-    "updated": "2026-10-19",
-    "file": "cad/about.md",
-    "url": "/cad/about"
   },
   {
     "id": "cad-issue-i-a-01",
@@ -927,7 +888,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-a-01.md",
     "url": "/cad/issues/i-a-01"
@@ -950,7 +911,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-h-04.md",
     "url": "/cad/issues/i-h-04"
@@ -973,7 +934,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/hof93.md",
     "url": "/cad/papers/hof93"
@@ -996,7 +957,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/req80.md",
     "url": "/cad/papers/req80"
@@ -1022,7 +983,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-b-03.md",
     "url": "/cad/issues/i-b-03"
@@ -1042,7 +1003,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/resources.md",
     "url": "/cad/resources"
   },
@@ -1063,7 +1024,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/bid05.md",
     "url": "/cad/papers/bid05"
@@ -1086,7 +1047,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-f-02.md",
     "url": "/cad/issues/i-f-02"
@@ -1109,7 +1070,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-h-06.md",
     "url": "/cad/issues/i-h-06"
@@ -1133,7 +1094,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-c-02.md",
     "url": "/cad/issues/i-c-02"
@@ -1155,7 +1116,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/physicalposition26.md",
     "url": "/cad/papers/physicalposition26"
@@ -1179,7 +1140,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-e-03.md",
     "url": "/cad/issues/i-e-03"
@@ -1204,7 +1165,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-g-02.md",
     "url": "/cad/issues/i-g-02"
@@ -1229,7 +1190,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-c-01.md",
     "url": "/cad/issues/i-c-01"
@@ -1253,7 +1214,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-d-01.md",
     "url": "/cad/issues/i-d-01"
@@ -1277,7 +1238,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-d-02.md",
     "url": "/cad/issues/i-d-02"
@@ -1300,7 +1261,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/lin03.md",
     "url": "/cad/papers/lin03"
@@ -1325,7 +1286,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-b-01.md",
     "url": "/cad/issues/i-b-01"
@@ -1347,7 +1308,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2610_13466.md",
     "url": "/cad/papers/ax2610_13466"
@@ -1371,7 +1332,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-h-01.md",
     "url": "/cad/issues/i-h-01"
@@ -1396,7 +1357,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-h-07.md",
     "url": "/cad/issues/i-h-07"
@@ -1420,7 +1381,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_abc.md",
     "url": "/cad/datasets/ds_abc"
@@ -1443,7 +1404,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/koc18.md",
     "url": "/cad/papers/koc18"
@@ -1469,7 +1430,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/sin26b.md",
     "url": "/cad/papers/sin26b"
@@ -1494,7 +1455,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/geo26.md",
     "url": "/cad/papers/geo26"
@@ -1521,7 +1482,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/jon25b.md",
     "url": "/cad/papers/jon25b"
@@ -1544,7 +1505,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/san90.md",
     "url": "/cad/papers/san90"
@@ -1569,7 +1530,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/don26b.md",
     "url": "/cad/papers/don26b"
@@ -1594,7 +1555,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_automate.md",
     "url": "/cad/datasets/ds_automate"
@@ -1617,7 +1578,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/jon21.md",
     "url": "/cad/papers/jon21"
@@ -1640,7 +1601,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/liu25.md",
     "url": "/cad/papers/liu25"
@@ -1663,7 +1624,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/zha26.md",
     "url": "/cad/papers/zha26"
@@ -1687,7 +1648,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_benchcad.md",
     "url": "/cad/datasets/ds_benchcad"
@@ -1711,7 +1672,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-f-03.md",
     "url": "/cad/issues/i-f-03"
@@ -1735,7 +1696,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/li26i.md",
     "url": "/cad/papers/li26i"
@@ -1759,7 +1720,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/kim26b.md",
     "url": "/cad/papers/kim26b"
@@ -1782,7 +1743,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/xu24b.md",
     "url": "/cad/papers/xu24b"
@@ -1806,7 +1767,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/lam21.md",
     "url": "/cad/papers/lam21"
@@ -1830,7 +1791,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/gan21.md",
     "url": "/cad/papers/gan21"
@@ -1854,7 +1815,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/dor25.md",
     "url": "/cad/papers/dor25"
@@ -1879,7 +1840,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/gua25.md",
     "url": "/cad/papers/gua25"
@@ -1904,7 +1865,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadeditor.md",
     "url": "/cad/datasets/ds_cadeditor"
@@ -1929,7 +1890,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/liu26.md",
     "url": "/cad/papers/liu26"
@@ -1953,7 +1914,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wan24b.md",
     "url": "/cad/papers/wan24b"
@@ -1978,7 +1939,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ana25.md",
     "url": "/cad/papers/ana25"
@@ -2003,7 +1964,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadrecode.md",
     "url": "/cad/datasets/ds_cadrecode"
@@ -2027,7 +1988,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/kha24c.md",
     "url": "/cad/papers/kha24c"
@@ -2052,7 +2013,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_drawing2cad.md",
     "url": "/cad/datasets/ds_drawing2cad"
@@ -2072,7 +2033,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/tasks/editing.md",
     "url": "/cad/tasks/editing"
   },
@@ -2095,7 +2056,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/har26b.md",
     "url": "/cad/papers/har26b"
@@ -2115,7 +2076,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/tasks/analysis.md",
     "url": "/cad/tasks/analysis"
   },
@@ -2138,7 +2099,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2610_11896.md",
     "url": "/cad/papers/ax2610_11896"
@@ -2158,7 +2119,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/tasks/generation.md",
     "url": "/cad/tasks/generation"
   },
@@ -2181,7 +2142,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-g-01.md",
     "url": "/cad/issues/i-g-01"
@@ -2201,7 +2162,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "file": "cad/tasks/reconstruction.md",
     "url": "/cad/tasks/reconstruction"
   },
@@ -2223,7 +2184,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/dor26.md",
     "url": "/cad/papers/dor26"
@@ -2247,7 +2208,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadbench.md",
     "url": "/cad/datasets/ds_cadbench"
@@ -2273,7 +2234,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/alr24.md",
     "url": "/cad/papers/alr24"
@@ -2296,7 +2257,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/kab26.md",
     "url": "/cad/papers/kab26"
@@ -2321,7 +2282,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadenabench.md",
     "url": "/cad/datasets/ds_cadenabench"
@@ -2344,7 +2305,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/sin26.md",
     "url": "/cad/papers/sin26"
@@ -2369,7 +2330,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2610_09127.md",
     "url": "/cad/papers/ax2610_09127"
@@ -2395,7 +2356,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/lu26g.md",
     "url": "/cad/papers/lu26g"
@@ -2420,7 +2381,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadfs.md",
     "url": "/cad/datasets/ds_cadfs"
@@ -2444,7 +2405,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/pya26.md",
     "url": "/cad/papers/pya26"
@@ -2468,7 +2429,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wan25.md",
     "url": "/cad/papers/wan25"
@@ -2493,7 +2454,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadfusion.md",
     "url": "/cad/datasets/ds_cadfusion"
@@ -2518,7 +2479,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadgenbench.md",
     "url": "/cad/datasets/ds_cadgenbench"
@@ -2543,7 +2504,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/liu26b.md",
     "url": "/cad/papers/liu26b"
@@ -2567,7 +2528,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/gov25.md",
     "url": "/cad/papers/gov25"
@@ -2592,7 +2553,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ma25.md",
     "url": "/cad/papers/ma25"
@@ -2615,7 +2576,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/zho23.md",
     "url": "/cad/papers/zho23"
@@ -2641,7 +2602,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadreview.md",
     "url": "/cad/datasets/ds_cadreview"
@@ -2667,7 +2628,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/bar26.md",
     "url": "/cad/papers/bar26"
@@ -2692,7 +2653,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/yua23.md",
     "url": "/cad/papers/yua23"
@@ -2716,7 +2677,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadtalk.md",
     "url": "/cad/datasets/ds_cadtalk"
@@ -2741,7 +2702,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cadtestbench.md",
     "url": "/cad/datasets/ds_cadtestbench"
@@ -2763,7 +2724,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/don26.md",
     "url": "/cad/papers/don26"
@@ -2786,7 +2747,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/jia26b.md",
     "url": "/cad/papers/jia26b"
@@ -2809,7 +2770,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2609_36806.md",
     "url": "/cad/papers/ax2609_36806"
@@ -2833,7 +2794,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cc3d.md",
     "url": "/cad/datasets/ds_cc3d"
@@ -2858,7 +2819,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/du26.md",
     "url": "/cad/papers/du26"
@@ -2880,7 +2841,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/clamp26.md",
     "url": "/cad/papers/clamp26"
@@ -2905,7 +2866,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-h-03.md",
     "url": "/cad/issues/i-h-03"
@@ -2928,7 +2889,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_cncgen.md",
     "url": "/cad/datasets/ds_cncgen"
@@ -2951,7 +2912,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2609_39738.md",
     "url": "/cad/papers/ax2609_39738"
@@ -2974,7 +2935,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/fre26.md",
     "url": "/cad/papers/fre26"
@@ -2998,7 +2959,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_codecad.md",
     "url": "/cad/datasets/ds_codecad"
@@ -3021,7 +2982,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/guo22.md",
     "url": "/cad/papers/guo22"
@@ -3046,7 +3007,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/zha26g.md",
     "url": "/cad/papers/zha26g"
@@ -3070,7 +3031,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/sha17.md",
     "url": "/cad/papers/sha17"
@@ -3095,7 +3056,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wil21.md",
     "url": "/cad/papers/wil21"
@@ -3120,7 +3081,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_deepcad.md",
     "url": "/cad/datasets/ds_deepcad"
@@ -3146,7 +3107,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/cas25.md",
     "url": "/cad/papers/cas25"
@@ -3171,7 +3132,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wel26.md",
     "url": "/cad/papers/wel26"
@@ -3195,7 +3156,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/kim26.md",
     "url": "/cad/papers/kim26"
@@ -3219,7 +3180,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/qin25.md",
     "url": "/cad/papers/qin25"
@@ -3242,7 +3203,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/drawings26.md",
     "url": "/cad/papers/drawings26"
@@ -3268,7 +3229,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/liu26c.md",
     "url": "/cad/papers/liu26c"
@@ -3291,7 +3252,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/jay06.md",
     "url": "/cad/papers/jay06"
@@ -3316,7 +3277,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/son26.md",
     "url": "/cad/papers/son26"
@@ -3341,7 +3302,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-h-05.md",
     "url": "/cad/issues/i-h-05"
@@ -3363,7 +3324,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/zha26b.md",
     "url": "/cad/papers/zha26b"
@@ -3386,7 +3347,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_fllumaone.md",
     "url": "/cad/datasets/ds_fllumaone"
@@ -3408,7 +3369,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/li22.md",
     "url": "/cad/papers/li22"
@@ -3432,7 +3393,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wil20b.md",
     "url": "/cad/papers/wil20b"
@@ -3458,7 +3419,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_f360_assembly.md",
     "url": "/cad/datasets/ds_f360_assembly"
@@ -3484,7 +3445,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_f360_joints.md",
     "url": "/cad/datasets/ds_f360_joints"
@@ -3510,7 +3471,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_f360_reconstruction.md",
     "url": "/cad/datasets/ds_f360_reconstruction"
@@ -3536,7 +3497,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_f360_segmentation.md",
     "url": "/cad/datasets/ds_f360_segmentation"
@@ -3562,7 +3523,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/gia26.md",
     "url": "/cad/papers/gia26"
@@ -3588,7 +3549,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/bal26.md",
     "url": "/cad/papers/bal26"
@@ -3611,7 +3572,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/issues/i-e-04.md",
     "url": "/cad/issues/i-e-04"
@@ -3635,7 +3596,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2610_15681.md",
     "url": "/cad/papers/ax2610_15681"
@@ -3659,7 +3620,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/col22.md",
     "url": "/cad/papers/col22"
@@ -3683,7 +3644,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/xu26b.md",
     "url": "/cad/papers/xu26b"
@@ -3706,7 +3667,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/don25.md",
     "url": "/cad/papers/don25"
@@ -3729,7 +3690,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_histcad.md",
     "url": "/cad/datasets/ds_histcad"
@@ -3754,7 +3715,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/xu23.md",
     "url": "/cad/papers/xu23"
@@ -3777,7 +3738,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/liu25b.md",
     "url": "/cad/papers/liu25b"
@@ -3801,7 +3762,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/you24.md",
     "url": "/cad/papers/you24"
@@ -3825,7 +3786,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2410_03417.md",
     "url": "/cad/papers/ax2410_03417"
@@ -3848,7 +3809,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/intent26.md",
     "url": "/cad/papers/intent26"
@@ -3872,7 +3833,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/du18.md",
     "url": "/cad/papers/du18"
@@ -3898,7 +3859,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/hu26.md",
     "url": "/cad/papers/hu26"
@@ -3924,7 +3885,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wu26.md",
     "url": "/cad/papers/wu26"
@@ -3949,7 +3910,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wil21c.md",
     "url": "/cad/papers/wil21c"
@@ -3974,7 +3935,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/sun26.md",
     "url": "/cad/papers/sun26"
@@ -3998,7 +3959,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/jad24.md",
     "url": "/cad/papers/jad24"
@@ -4021,7 +3982,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/noe22.md",
     "url": "/cad/papers/noe22"
@@ -4047,7 +4008,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_mfcad.md",
     "url": "/cad/datasets/ds_mfcad"
@@ -4072,7 +4033,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_mfcadpp.md",
     "url": "/cad/datasets/ds_mfcadpp"
@@ -4095,7 +4056,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/zha26c.md",
     "url": "/cad/papers/zha26c"
@@ -4118,7 +4079,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_mmcad.md",
     "url": "/cad/datasets/ds_mmcad"
@@ -4143,7 +4104,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/bha26.md",
     "url": "/cad/papers/bha26"
@@ -4166,7 +4127,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/don26c.md",
     "url": "/cad/papers/don26c"
@@ -4191,7 +4152,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_neuralcadedit.md",
     "url": "/cad/datasets/ds_neuralcadedit"
@@ -4214,7 +4175,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/per26.md",
     "url": "/cad/papers/per26"
@@ -4240,7 +4201,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_omnicad.md",
     "url": "/cad/datasets/ds_omnicad"
@@ -4263,7 +4224,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_omnimech.md",
     "url": "/cad/datasets/ds_omnimech"
@@ -4285,7 +4246,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/lu26.md",
     "url": "/cad/papers/lu26"
@@ -4310,7 +4271,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/liu23.md",
     "url": "/cad/papers/liu23"
@@ -4334,7 +4295,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/uy21.md",
     "url": "/cad/papers/uy21"
@@ -4358,7 +4319,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/qi26b.md",
     "url": "/cad/papers/qi26b"
@@ -4382,7 +4343,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/qi26.md",
     "url": "/cad/papers/qi26"
@@ -4406,7 +4367,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2610_08698.md",
     "url": "/cad/papers/ax2610_08698"
@@ -4429,7 +4390,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/li26g.md",
     "url": "/cad/papers/li26g"
@@ -4455,7 +4416,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/zhe26.md",
     "url": "/cad/papers/zhe26"
@@ -4479,7 +4440,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/kod23b.md",
     "url": "/cad/papers/kod23b"
@@ -4503,7 +4464,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/zou25.md",
     "url": "/cad/papers/zou25"
@@ -4526,7 +4487,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/mal23.md",
     "url": "/cad/papers/mal23"
@@ -4550,7 +4511,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ax2610_11954.md",
     "url": "/cad/papers/ax2610_11954"
@@ -4572,7 +4533,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/li20.md",
     "url": "/cad/papers/li20"
@@ -4596,7 +4557,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/par21.md",
     "url": "/cad/papers/par21"
@@ -4620,7 +4581,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_sketchgraphs.md",
     "url": "/cad/datasets/ds_sketchgraphs"
@@ -4643,7 +4604,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/sef20.md",
     "url": "/cad/papers/sef20"
@@ -4667,7 +4628,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/sut63.md",
     "url": "/cad/papers/sut63"
@@ -4692,7 +4653,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/xu22.md",
     "url": "/cad/papers/xu22"
@@ -4717,7 +4678,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_skexgen.md",
     "url": "/cad/datasets/ds_skexgen"
@@ -4741,7 +4702,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/so3brep26.md",
     "url": "/cad/papers/so3brep26"
@@ -4765,7 +4726,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/jay22.md",
     "url": "/cad/papers/jay22"
@@ -4791,7 +4752,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/neh26b.md",
     "url": "/cad/papers/neh26b"
@@ -4815,7 +4776,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/xie25.md",
     "url": "/cad/papers/xie25"
@@ -4840,7 +4801,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_text2cad.md",
     "url": "/cad/datasets/ds_text2cad"
@@ -4863,7 +4824,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/wan26.md",
     "url": "/cad/papers/wan26"
@@ -4889,7 +4850,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/fan26.md",
     "url": "/cad/papers/fan26"
@@ -4914,7 +4875,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/dup24.md",
     "url": "/cad/papers/dup24"
@@ -4938,7 +4899,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/yin26f.md",
     "url": "/cad/papers/yin26f"
@@ -4962,7 +4923,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/jay21.md",
     "url": "/cad/papers/jay21"
@@ -4987,7 +4948,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/yu26b.md",
     "url": "/cad/papers/yu26b"
@@ -5011,7 +4972,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/li26f.md",
     "url": "/cad/papers/li26f"
@@ -5037,7 +4998,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/che26e.md",
     "url": "/cad/papers/che26e"
@@ -5062,7 +5023,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/sef21.md",
     "url": "/cad/papers/sef21"
@@ -5088,7 +5049,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/ata26.md",
     "url": "/cad/papers/ata26"
@@ -5112,7 +5073,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_zerocad_100k.md",
     "url": "/cad/datasets/ds_zerocad_100k"
@@ -5136,7 +5097,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/datasets/ds_zerocad_1m.md",
     "url": "/cad/datasets/ds_zerocad_1m"
@@ -5160,7 +5121,7 @@
     "reviewed": false,
     "order": 60,
     "created": "2026-10-19",
-    "updated": "2026-10-19",
+    "updated": "2026-10-20",
     "cadRecord": true,
     "file": "cad/papers/xu21.md",
     "url": "/cad/papers/xu21"

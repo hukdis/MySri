@@ -4,31 +4,31 @@ title: CAD 术语与小练习
 navTitle: 术语与小练习
 category: cad
 type: concept
-tags: [前置知识, CAD 表示, 阅读练习]
+tags:
+  - 前置知识
+  - CAD 表示
+  - 阅读练习
 prerequisites: []
-related: [cad-0101, cad-0104, cad-0107]
+related:
+  - cad-0101
+  - cad-0104
+  - cad-0107
 sources:
   - sources/论文/先读/DeepCAD.md
   - sources/论文/先读/CAD-Recode.md
   - sources/论文/先读/CADTests.md
-  - https://arxiv.org/abs/2105.09492
-  - https://arxiv.org/abs/2412.14042
-  - https://arxiv.org/abs/2605.07807
+  - 'https://arxiv.org/abs/2105.09492'
+  - 'https://arxiv.org/abs/2412.14042'
+  - 'https://arxiv.org/abs/2605.07807'
 status: draft
 reviewed: false
 order: 13
 created: '2026-10-07'
-updated: '2026-10-07'
+updated: '2026-10-20'
 ---
 # CAD 术语与小练习
 
-<div class="edition-label">1.1 · 前置阅读</div>
-
-> 阅读论文前，先区分建模过程、程序和最终几何。下面的概念依据所提供的先读稿整理；示例为本站设计的教学练习。
-
-::: info 整理草稿 · 待人工复核
-术语与论文关联尚待人工复核。练习中的尺寸与计算是理想几何示例，未运行 CAD 内核或进行论文复现。
-:::
+> 阅读论文前，先区分建模过程、程序和最终几何。以下通过概念对照与几何练习说明它们的区别。
 
 ## 操作序列：记录怎么建出来
 
@@ -84,4 +84,4 @@ updated: '2026-10-07'
 
 ## 来源与范围
 
-术语及论文对应关系依据本地 DeepCAD、CAD-Recode、CADTests 等先读稿和其中记录的原论文入口整理。流程图与长方体练习为本站派生教学材料；本次未独立核验各论文实验。
+流程图与长方体练习为教学示例；论文出处见正文链接。

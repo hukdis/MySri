@@ -4,6 +4,7 @@ import crypto from 'node:crypto'
 import matter from 'gray-matter'
 import { fileURLToPath } from 'node:url'
 import { papers } from './cad-guide.mjs'
+import { readerBody } from './reader-format.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const mappings = []
@@ -50,7 +51,7 @@ for (const paper of papers) {
   body += '\n\n## 本站阅读来源\n\n正文来自 '+source+'；图表从同一论文的原 PDF 裁切图恢复，保留原图注。截图映射和页码记录在 catalog/cad-figure-source-map.json，原始资料保持不变。\n\n[返回 CAD 总览](/cad/)\n'
   data.status='draft'; data.reviewed=false; data.updated='2026-10-08'
   data.sources=[...new Set([...(data.sources||[]),source,paper.source])]
-  await fs.writeFile(path.join(root,target),matter.stringify(body.trimEnd()+'\n',data))
+  await fs.writeFile(path.join(root,target),matter.stringify(readerBody(body,'/cad/'+paper.slug),data))
 }
 await fs.writeFile(path.join(root,'catalog/cad-figure-source-map.json'),JSON.stringify({date:'2026-10-08',authorization:'用户明确要求将 source 中的论文截图加入网站',scope:'仅发布九篇已接入论文正文引用的截图；不发布原 PDF 或个人笔记',mappings,reviewed:false},null,2)+'\n')
 console.log('已恢复 9 篇 CAD 来源稿结构与 '+mappings.length+' 张原论文截图。')

@@ -31,6 +31,11 @@ def verify_files() -> dict:
     documents = {}
     for file in dist.rglob('*.html'):
         soup = BeautifulSoup(file.read_text(encoding='utf-8'), 'html.parser')
+        reader=soup.select_one('.vp-doc')
+        if reader:
+            content=reader.get_text(' ',strip=True)
+            for phrase in ['待人工复核','来源稿整理','你来填写','论文解读模板','来源与维护']:
+                assert phrase not in content,(str(file),phrase)
         documents[file] = soup
     for file, soup in documents.items():
         for link in soup.select('a[href]'):

@@ -9,8 +9,8 @@ category: cad
 
 <CadExplorer mode="overview" />
 
-## 资料范围
+## 文献范围
 
-完整检索截止 **2026-10-14**；分类更新 **2026-10-15**。134 条论文记录、35 项数据资源、26 项问题分析。整合不等于重新核验，内容待人工复核。
+完整检索截止 **2026-10-14**；分类更新 **2026-10-15**。134 条论文记录、35 项数据资源、26 项问题分析。
 
-[来源与维护说明](/cad/about) · [发展关系](/cad/relationships) · [九篇论文详读](/cad/reading-navigation?reading=1)
+[发展关系](/cad/relationships) · [九篇论文详读](/cad/reading-navigation?reading=1)

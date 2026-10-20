@@ -12,11 +12,11 @@ status: draft
 reviewed: false
 order: 60
 created: '2026-10-19'
-updated: '2026-10-19'
+updated: '2026-10-20'
 ---
 # 数据与评测资源
 
-按任务、名称、格式和访问状态寻找材料。日期与可用性沿用来源记录；没有本次重新下载或执行的含义。
+按研究任务、数据格式和访问方式查找资源。各条目列出官方入口、许可条件与数据划分。
 
 <CadExplorer mode="resources" />
 

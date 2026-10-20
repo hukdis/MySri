@@ -12,7 +12,7 @@ status: draft
 reviewed: false
 order: 60
 created: '2026-10-19'
-updated: '2026-10-19'
+updated: '2026-10-20'
 ---
 # CAD生成
 

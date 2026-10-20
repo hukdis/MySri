@@ -4,27 +4,30 @@ title: PPO：裁剪目标与语言模型训练
 navTitle: PPO：裁剪策略优化
 category: reinforcement-learning
 type: concept
-tags: [PPO, 策略梯度, Actor–Critic, RLHF]
-prerequisites: [rl-0003, basic-0001]
-related: [rl-0005]
+tags:
+  - PPO
+  - 策略梯度
+  - Actor–Critic
+  - RLHF
+prerequisites:
+  - rl-0003
+  - basic-0001
+related:
+  - rl-0005
 sources:
-  - https://zhoujx4.github.io/llm-atlas/rlhf/ppo
-  - https://zhoujx4.github.io/llm-atlas/rlhf/training-loop
-  - https://arxiv.org/abs/1707.06347
-  - https://arxiv.org/abs/1506.02438
-  - https://arxiv.org/abs/2203.02155
+  - 'https://zhoujx4.github.io/llm-atlas/rlhf/ppo'
+  - 'https://zhoujx4.github.io/llm-atlas/rlhf/training-loop'
+  - 'https://arxiv.org/abs/1707.06347'
+  - 'https://arxiv.org/abs/1506.02438'
+  - 'https://arxiv.org/abs/2203.02155'
 status: draft
 reviewed: false
 order: 12
 created: '2026-10-08'
-updated: '2026-10-08'
+updated: '2026-10-20'
 ---
 
 # PPO：裁剪目标与语言模型训练
-
-::: info 高阶算法 · 待人工复核
-主题参考 [LLM Atlas 的 PPO 系列](https://zhoujx4.github.io/llm-atlas/rlhf/ppo)，独立整理表述，公式依据原论文。手算与流程图为本站教学示例，不是实验结果。
-:::
 
 > **阅读目标**：理解概率比、优势和裁剪如何共同决定更新，再区分采样旧策略与 KL 参考策略。
 

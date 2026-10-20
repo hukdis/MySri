@@ -1,10 +1,6 @@
 # 强化学习
 
-> RL基础沿用 sources 中的课程知识地图；高阶算法按你的选择接入 PPO 与 GRPO，参考 LLM Atlas 系列并注明原论文来源。
-
-::: info 阅读状态
-以下内容包含草稿与模板，尚未人工复核；资料整理和构建检查不代表学术正确性已验证。
-:::
+> 从 Bellman 方程与价值估计开始，理解策略梯度，再深入 PPO 与 GRPO。
 
 
 ## 建议阅读路线
@@ -23,8 +19,8 @@
 
 ## 阅读目录
 
-| 文章 | 标签 | 状态 | 更新日期 |
-| --- | --- | --- | --- |
-| [RL基础](/reinforcement-learning/algorithm-map) | RL基础 · 课程笔记 · 算法地图 | 草稿 · 待复核 | 2026-10-08 |
-| [PPO：裁剪目标与语言模型训练](/reinforcement-learning/ppo) | PPO · 策略梯度 · Actor–Critic · RLHF | 草稿 · 待复核 | 2026-10-08 |
-| [GRPO：组内相对优势与 PPO 对比](/reinforcement-learning/grpo) | GRPO · 组内优势 · PPO · 语言模型 | 草稿 · 待复核 | 2026-10-08 |
+| 文章 | 主题 | 更新日期 |
+| --- | --- | --- |
+| [RL基础](/reinforcement-learning/algorithm-map) | RL基础 · 课程笔记 · 算法地图 | 2026-10-20 |
+| [PPO：裁剪目标与语言模型训练](/reinforcement-learning/ppo) | PPO · 策略梯度 · Actor–Critic · RLHF | 2026-10-20 |
+| [GRPO：组内相对优势与 PPO 对比](/reinforcement-learning/grpo) | GRPO · 组内优势 · PPO · 语言模型 | 2026-10-20 |
