@@ -36,6 +36,30 @@ updated: '2026-10-22'
 
 **Text2CAD 的主线是让同一个生成器接住不同详细程度的语言。** 难点首先出现在数据上：只有 CAD 操作历史，没有与不同用户表达相对应的文字；然后才是模型如何把文字逐步变成建模操作。本文依次解决这两步，最终仍输出草图—拉伸序列。
 
+## 阅读前需要了解的技术 {#technical-primer}
+
+本文有两条不同流程：大模型辅助制作文字标注，生成网络学习把文字变成 CAD。下面四个概念主要用于理解后一条流程。
+
+### BERT 与文本特征：把一句话变成一组数值表示 {#primer-bert}
+
+文本先被拆成 token，即模型处理的文字片段，再映射成向量。BERT 根据上下文更新这些向量：同样是“孔”，与“中心”“贯穿”“两个”连用时，表示应包含不同信息。输入是 token 序列，输出是上下文相关的文本特征；在本文中，它负责提供语言条件，不直接输出 CAD 命令。
+
+### 交叉注意力：生成 CAD 时读取相关文字 {#primer-cross-attention}
+
+与在同一序列内汇总信息的自注意力不同，交叉注意力让一条序列读取另一条序列。这里 CAD 解码状态提供查询，文本特征提供可读取的内容，输出是加权汇总的语言信息。例如预测拉伸参数时，模型有机会利用“高度”附近的信息；这种读取是学习得到的，不是人为把某个词硬绑定到某条命令。
+
+### 自回归与 teacher forcing：训练和使用时的前文不同 {#primer-autoregression}
+
+自回归按顺序预测下一个 CAD token，并把已生成内容作为后续条件。训练常用 **teacher forcing**：提供正确的前序 token，让模型学习正确后续；推理时则只能接着自己的输出生成。因此，前面一次预测错误可能传到后面。训练的交叉熵损失惩罚“正确下一个 token 的预测概率过低”，不是直接检查最终实体的几何约束。
+
+### 文本—CAD 对齐：让描述和建模目标对应 {#primer-text-cad-alignment}
+
+在这里，“对齐”先指数据配对：同一条描述应对应正确 CAD 及其操作，再通过条件生成训练学习这种关系。它不是把两个坐标系叠合，也不表示每个词都已经对应唯一操作。Adaptive Layer（适配层）对 BERT 特征做可训练变换，帮助 CAD 解码器使用语言信息；是否真正符合要求，还要检查生成实体。
+
+**理解示例**：输入“中间有贯通孔的圆柱”，BERT 提供文本特征，解码器边读取文本边生成草图与拉伸 token，最后执行成实体。代码能执行，并不能代替“孔是否真的贯穿”的检查。
+
+概念依据：[BERT 原论文](https://arxiv.org/abs/1810.04805)、[Transformer 原论文](https://arxiv.org/abs/1706.03762)；具体应用见 [Text2CAD §3–4](https://arxiv.org/abs/2409.17106)。
+
 ## 同一个模型，为什么需要四种描述 {#_3-问题、输入输出与必要术语}
 
 <PaperFigure src="/papers/text2cad/figure04_prompt_levels.png" title="Text2CAD 原图 4：四级文本提示" source="https://arxiv.org/abs/2409.17106" :page="7" />
@@ -98,7 +122,7 @@ v1 的图与正文对 Mistral/Mixtral 系列标注模型的写法不完全一致
 
 ## 第二处困难：一句话如何约束每一步建模 {#_5-方法-标注流水线与生成网络分开读}
 
-配对数据准备好以后，还需要让生成器在预测具体操作时使用文本。Text2CAD 没有直接把最终生成器做成标注阶段使用的大模型，而是用 BERT 编码语言、专用 Transformer 自回归解码 CAD token。
+配对数据准备好以后，还需要让生成器在预测具体操作时使用文本。Text2CAD 没有直接把最终生成器做成标注阶段使用的大模型，而是用 [BERT](#primer-bert) 编码语言、专用 Transformer [自回归](#primer-autoregression)解码 CAD token。
 
 <PaperFigure src="/papers/text2cad/figure03_network.png" title="Text2CAD 原图 3：生成网络" source="https://arxiv.org/abs/2409.17106" :page="6" />
 
@@ -119,7 +143,7 @@ Figure 3: Network architecture: Text2CAD Transformer takes as input a text promp
 **图表解读**
 <!-- /figure-translation -->
 
-图 3 中，文本先经过预训练 BERT，再经过可训练的 Adaptive Layer；CAD 解码器读取前序 token，通过交叉注意力获取文本条件，预测下一个 CAD token。沿用前面的例子，当文本提供同心圆与拉伸深度时，这些条件应在相应的草图、拉伸步骤中发挥作用。（§4。）
+图 3 中，文本先经过预训练 BERT，再经过可训练的 Adaptive Layer；CAD 解码器读取前序 token，通过[交叉注意力](#primer-cross-attention)获取文本条件，预测下一个 CAD token。沿用前面的例子，当文本提供同心圆与拉伸深度时，这些条件应在相应的草图、拉伸步骤中发挥作用。（§4。）
 
 Adaptive Layer 的任务是将通用语言特征适配到 CAD。这个选择可以通过去除该层的实验检验，而不必仅凭网络图推断它一定有效。训练时使用真实前序 token，推理时使用自己生成的前序输出，所以前一步错误也可能影响后续建模。
 
