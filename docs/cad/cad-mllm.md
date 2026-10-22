@@ -60,6 +60,8 @@ Perceiver 用一组可学习的查询向量，通过注意力从较多输入特�
 
 概念依据：[Perceiver 原论文](https://arxiv.org/abs/2103.03206)、[LoRA 原论文](https://arxiv.org/abs/2106.09685)；对齐方式与训练设置见 [CAD-MLLM §5](https://arxiv.org/abs/2411.04954)。
 
+配套实践：[只训练连接器的最小实验](/basics/practice/alignment)。
+
 ## 统一模型之前，先统一它们要生成的对象 {#_4-数据与表示-更大数据并未扩大所有操作}
 
 设想用户既有零件外观图，也有局部点云。训练时必须知道它们与哪条 CAD 操作序列对应，否则模型无从学习图像、点云和语言之间的关系。Omni-CAD 数据建设承担了这层[对齐](#primer-multimodal-alignment)。

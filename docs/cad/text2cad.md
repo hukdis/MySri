@@ -60,6 +60,8 @@ updated: '2026-10-22'
 
 概念依据：[BERT 原论文](https://arxiv.org/abs/1810.04805)、[Transformer 原论文](https://arxiv.org/abs/1706.03762)；具体应用见 [Text2CAD §3–4](https://arxiv.org/abs/2409.17106)。
 
+配套实践：[文本条件与答案区损失](/basics/practice/sft)。
+
 ## 同一个模型，为什么需要四种描述 {#_3-问题、输入输出与必要术语}
 
 <PaperFigure src="/papers/text2cad/figure04_prompt_levels.png" title="Text2CAD 原图 4：四级文本提示" source="https://arxiv.org/abs/2409.17106" :page="7" />

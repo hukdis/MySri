@@ -8,6 +8,10 @@ catalog/source-report.json
 notes/*
 !notes/README.md
 artifacts/
+docs/public/practice-lab/
+examples/technical-practice/runs/
+examples/technical-practice/.venv/
+examples/technical-practice/__pycache__/
 .env
 .env.*
 !.env.example

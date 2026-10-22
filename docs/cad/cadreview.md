@@ -60,6 +60,8 @@ updated: '2026-10-22'
 
 概念依据：[DPO 原论文](https://arxiv.org/abs/2305.18290)、[LoRA 原论文](https://arxiv.org/abs/2106.09685)；视觉定位、SGO 与反馈链见 [CADReview §4](https://arxiv.org/abs/2505.22304)。
 
+配套实践：[监督微调、适配器保存与重载](/basics/practice/pretrained)。
+
 ## 槽少了，应该修改常量还是循环逻辑 {#_3-问题、输入输出与术语}
 
 <PaperFigure src="/papers/cadreview/figure06_correction.png" title="CADReview 原图 6：错误定位与修正案例" source="https://arxiv.org/abs/2505.22304" :page="8" />

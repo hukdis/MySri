@@ -11,4 +11,4 @@
 | [CADTests：用可执行几何测试检查文本要求是否满足](/cad/cadtests) | 论文阅读 · 反馈与评测 | 2026-10-22 |
 | [CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列](/cad/cad-editor) | 论文阅读 · 指令编辑 | 2026-10-22 |
 | [CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务](/cad/cad-assistant) | 论文阅读 · 反馈与评测 | 2026-10-22 |
-| [信息论基础：熵、交叉熵与 KL 散度](/basics/probability) | 信息论 · 熵 · 交叉熵 · KL散度 · 困惑度 | 2026-10-20 |
+| [技术实践：微调、对齐与 CAD](/basics/practice/index) | 技术实践 · 学习路线 | 2026-10-22 |

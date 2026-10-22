@@ -60,6 +60,8 @@ mutant 是故意改错一个要求的程序及其实体。例如将通孔改成�
 
 技术定义与本文用法见 [CADTests §3–5](https://arxiv.org/abs/2605.07807)，实现接口见 [CADTestBench 作者代码](https://github.com/dimitrismallis/CADTestBench)。
 
+配套实践：[独立检查参数要求](/basics/practice/text-cad)。
+
 ## 一个很像的错误答案，为什么可能得到好分数 {#_3-为什么-cd-和-iou-不够}
 
 <PaperFigure src="/papers/cadtests/figure01_motivation.png" title="CADTests 原图 1：相似与符合要求的差别" source="https://arxiv.org/abs/2605.07807" :page="2" />

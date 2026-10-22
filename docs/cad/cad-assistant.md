@@ -60,6 +60,8 @@ updated: '2026-10-22'
 
 概念参考：[ReAct 原论文中的推理—行动交互](https://arxiv.org/abs/2210.03629)；本文工具、求解器与观察方式见 [CAD-Assistant §3–4](https://arxiv.org/abs/2412.13810)。
 
+配套实践：[区分参数训练与执行结果检查](/basics/practice/evaluation)。
+
 ## 让模型行动之前，先让它能够观察实际 CAD 状态 {#_4-框架与工具集}
 
 <PaperFigure src="/papers/cad-assistant/figure02_loop.png" title="CAD-Assistant 原图 2：闭环框架" source="https://arxiv.org/abs/2412.13810" :page="4" />

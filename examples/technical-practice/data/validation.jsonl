@@ -1,0 +1,12 @@
+{"geometry_id": "cylinder-r1-h3", "prompt": "make cylinder radius 1 height 3", "target": "CYL 1 3", "radius": 1, "height": 3}
+{"geometry_id": "cylinder-r1-h3", "prompt": "create cylinder radius 1 height 3", "target": "CYL 1 3", "radius": 1, "height": 3}
+{"geometry_id": "cylinder-r1-h6", "prompt": "make cylinder radius 1 height 6", "target": "CYL 1 6", "radius": 1, "height": 6}
+{"geometry_id": "cylinder-r1-h6", "prompt": "create cylinder radius 1 height 6", "target": "CYL 1 6", "radius": 1, "height": 6}
+{"geometry_id": "cylinder-r3-h2", "prompt": "make cylinder radius 3 height 2", "target": "CYL 3 2", "radius": 3, "height": 2}
+{"geometry_id": "cylinder-r3-h2", "prompt": "create cylinder radius 3 height 2", "target": "CYL 3 2", "radius": 3, "height": 2}
+{"geometry_id": "cylinder-r3-h5", "prompt": "make cylinder radius 3 height 5", "target": "CYL 3 5", "radius": 3, "height": 5}
+{"geometry_id": "cylinder-r3-h5", "prompt": "create cylinder radius 3 height 5", "target": "CYL 3 5", "radius": 3, "height": 5}
+{"geometry_id": "cylinder-r5-h1", "prompt": "make cylinder radius 5 height 1", "target": "CYL 5 1", "radius": 5, "height": 1}
+{"geometry_id": "cylinder-r5-h1", "prompt": "create cylinder radius 5 height 1", "target": "CYL 5 1", "radius": 5, "height": 1}
+{"geometry_id": "cylinder-r5-h4", "prompt": "make cylinder radius 5 height 4", "target": "CYL 5 4", "radius": 5, "height": 4}
+{"geometry_id": "cylinder-r5-h4", "prompt": "create cylinder radius 5 height 4", "target": "CYL 5 4", "radius": 5, "height": 4}

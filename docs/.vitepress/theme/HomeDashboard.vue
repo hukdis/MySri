@@ -2,7 +2,7 @@
 import catalog from '../../../catalog/content-index.json'
 import { siteLink } from './siteLink'
 const topics = [
-  { key: 'basics', number: '01', title: '基础知识', sub: '建立理解算法的语言', text: '从信息论到研究写作，把概念、问题和证据连起来。', url: '/basics/', links: [{ title: '信息论基础', url: '/basics/probability' }, { title: '研究与写作', url: '/basics/research-writing' }] },
+  { key: 'basics', number: '01', title: '基础知识', sub: '建立理解算法的语言', text: '从信息论、研究写作到训练实践，把概念、代码和证据连起来。', url: '/basics/', links: [{ title: '信息论基础', url: '/basics/probability' }, { title: '研究与写作', url: '/basics/research-writing' }, { title: '技术实践', url: '/basics/practice/' }] },
   { key: 'reinforcement-learning', number: '02', title: '强化学习', sub: '从课程基础走向策略优化', text: '从课程知识地图出发，深入 PPO 与 GRPO。', url: '/reinforcement-learning/', links: [{ title: 'RL基础', url: '/reinforcement-learning/algorithm-map' }, { title: 'PPO', url: '/reinforcement-learning/ppo' }, { title: 'GRPO', url: '/reinforcement-learning/grpo' }] },
   { key: 'cad', number: '03', title: 'CAD', sub: '沿研究问题阅读论文', text: '按生成、重建、编辑与理解评估，连接论文、数据和研究问题。', url: '/cad/', links: [{ title: '第二版研究树', url: '/cad/' }, { title: '论文库', url: '/cad/reading-navigation' }, { title: '问题分析', url: '/cad/issues' }] }
 ]

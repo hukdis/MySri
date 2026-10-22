@@ -60,6 +60,8 @@ mask 是占位标记，表示哪些位置待修改或插入；infill 指依据�
 
 概念依据：[LoRA 原论文](https://arxiv.org/abs/2106.09685)；LCS 监督、定位后补全与人工筛选见 [CAD-Editor §4–5](https://arxiv.org/abs/2502.03997)。
 
+配套实践：[理解指令适配中的 LoRA](/basics/practice/lora)。
+
 ## 一次编辑包含两个目标：改变指定部分，保留其余部分 {#_3-问题、输入输出与必要术语}
 
 <PaperFigure src="/papers/cad-editor/figure02_task.png" title="CAD-Editor 原图 2：任务输入输出" source="https://arxiv.org/abs/2502.03997" :page="3" />
