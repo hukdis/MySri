@@ -85,7 +85,7 @@ watch(filters,()=>{
       <div class="cad-task-grid">
         <a v-for="t in data.tasks" :key="t.id" class="cad-task-card" :href="siteLink('/cad/tasks/'+taskSlugs[t.id])"><span class="cad-eyebrow">{{ t.number }} / {{ t.id }}</span><strong>{{ t.title }} <span>↗</span></strong><p>{{ t.question }}</p><small>{{ data.papers.filter(p=>p.classification.primary_task===t.id).length }} 条方法研究</small></a>
       </div>
-      <nav class="cad-jump-links" aria-label="CAD 资料入口"><a :href="siteLink('/cad/foundations')">共用基础 →</a><a :href="siteLink('/cad/reading-navigation')">全部论文 →</a><a :href="siteLink('/cad/resources')">数据与评测 →</a><a :href="siteLink('/cad/issues')">问题分析 →</a></nav>
+      <nav class="cad-jump-links" aria-label="CAD 资料入口"><a :href="siteLink('/cad/foundations')">CAD 基础 →</a><a :href="siteLink('/cad/reading-navigation')">全部论文 →</a><a :href="siteLink('/cad/resources')">数据与评测 →</a><a :href="siteLink('/cad/issues')">问题分析 →</a></nav>
       <h2 id="任务时间树">任务时间树</h2><p class="cad-description">按主要研究交付组织方法工作。时间先后不自动表示继承；点击论文可查看贡献、来源与已记录的发展关系。</p>
     </template>
     <form class="cad-filter-panel" role="search" aria-label="CAD 资料筛选" :aria-busy="!ready" @submit.prevent>

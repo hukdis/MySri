@@ -978,25 +978,6 @@
     "url": "/cad/papers/bal26c"
   },
   {
-    "id": "cad-v2-foundations",
-    "title": "共用基础",
-    "category": "cad",
-    "type": "concept",
-    "tags": [
-      "研究树第二版"
-    ],
-    "prerequisites": [],
-    "related": [],
-    "sources": [],
-    "status": "draft",
-    "reviewed": false,
-    "order": 60,
-    "created": "2026-10-19",
-    "updated": "2026-10-20",
-    "file": "cad/foundations.md",
-    "url": "/cad/foundations"
-  },
-  {
     "id": "cad-ref-kra90",
     "title": "几何约束的自由度分析",
     "category": "cad",
@@ -2086,6 +2067,27 @@
     "cadRecord": true,
     "file": "cad/papers/lam21.md",
     "url": "/cad/papers/lam21"
+  },
+  {
+    "id": "cad-v2-foundations",
+    "title": "CAD 基础",
+    "category": "cad",
+    "type": "concept",
+    "tags": [
+      "研究树第二版"
+    ],
+    "prerequisites": [],
+    "related": [
+      "cad-0003"
+    ],
+    "sources": [],
+    "status": "draft",
+    "reviewed": false,
+    "order": 60,
+    "created": "2026-10-19",
+    "updated": "2026-10-23",
+    "file": "cad/foundations.md",
+    "url": "/cad/foundations"
   },
   {
     "id": "cad-ref-gan21",

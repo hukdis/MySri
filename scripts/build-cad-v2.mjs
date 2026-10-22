@@ -93,7 +93,21 @@ export async function buildCadV2() {
   }
   const legacyIds=['Wu21','Kha24b','Li25','Ruk24','Xu24','Che25','Mal26','Yua25','Mal24','Sef20','Wan24b','Gov25','Sun26','Wu26','Du26','Zha26','Don25','Hu26','Qi26b']
   await write('reading-navigation','cad-0002','CAD 论文资料导航',`\n按任务、年份与技术标签查找论文，也可筛选带有图表与方法讲解的详读文章。\n\n<CadExplorer mode="library" />\n\n## 延伸阅读\n\n原 19 篇资料均保留对应入口。两篇 IterCAD 与 Pointer-CAD 的不同版本分别记录，避免按短名误合并。\n\n${legacyIds.map(id=>'- '+paperLink(id)).join('\n')}\n\n[术语与小练习](/cad/concepts)\n`,['sources/论文/00_阅读导航.md'],{order:12,created:'2026-10-07'})
-  await write('foundations','cad-v2-foundations','共用基础',`\n几何表示、草图约束、参数依赖、实体选择与交互建模构成不同任务的共同语言。历史记录提供背景，不标成现代大模型方法。\n\n[术语与小练习](/cad/concepts)\n\n<CadExplorer mode="foundations" />\n`)
+  await write('foundations','cad-v2-foundations','CAD 基础',`
+<span id="共用基础"></span>
+
+从术语与小练习开始，再按需要查阅几何表示、草图约束、参数依赖、实体选择与交互建模的基础文献。
+
+## 先读：术语与小练习
+
+[进入术语与小练习](/cad/concepts)：通过建模流程、概念对照和修改高度的练习，区分建模过程、程序与最终几何，并了解执行、形状和要求检查的区别。
+
+## 继续查阅：历史与理论基础
+
+以下文献按年份排列，可通过关键词和技术标签筛选。历史记录提供背景，不标成现代大模型方法。
+
+<CadExplorer mode="foundations" />
+`,[],{related:['cad-0003'],updated:'2026-10-23'})
   let resources='\n按研究任务、数据格式和访问方式查找资源。各条目列出官方入口、许可条件与数据划分。\n\n<CadExplorer mode="resources" />\n\n## 评测、数据与综述论文\n\n纯资源论文与方法研究分开，资源条目与介绍它的论文也分别保留。\n\n'
   resources+=data.papers.filter(p=>p.classification.entry_type==='resource').map(p=>`- ${paperLink(p.id)}：${text(p.contribution?.[0])}`).join('\n')
   await write('resources','cad-v2-resources','数据与评测资源',resources)
