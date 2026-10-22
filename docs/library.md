@@ -23,15 +23,15 @@
 | --- | --- | --- |
 | [CAD 论文资料导航](/cad/reading-navigation) | 研究树第二版 | 2026-10-20 |
 | [CAD 术语与小练习](/cad/concepts) | 前置知识 · CAD 表示 · 阅读练习 | 2026-10-20 |
-| [DeepCAD：把 CAD 建模过程变成可学习的操作序列](/cad/deepcad) | 论文阅读 · 表示基础 | 2026-10-20 |
-| [Text2CAD：从不同详细程度的文本生成 CAD 建模序列](/cad/text2cad) | 论文阅读 · 条件生成 | 2026-10-20 |
-| [CAD-Llama：让预训练语言模型学习带层次描述的 CAD 代码](/cad/cad-llama) | 论文阅读 · 条件生成 | 2026-10-20 |
-| [CAD-Recode：把点云反向工程成可执行 CadQuery 代码](/cad/cad-recode) | 论文阅读 · 几何重建 | 2026-10-20 |
-| [CAD-MLLM：统一文本、图像和点云条件的 CAD 生成](/cad/cad-mllm) | 论文阅读 · 条件生成 | 2026-10-20 |
-| [CADReview：先定位 CAD 程序错误，再生成反馈与修正代码](/cad/cadreview) | 论文阅读 · 反馈与评测 | 2026-10-20 |
-| [CADTests：用可执行几何测试检查文本要求是否满足](/cad/cadtests) | 论文阅读 · 反馈与评测 | 2026-10-20 |
-| [CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列](/cad/cad-editor) | 论文阅读 · 指令编辑 | 2026-10-20 |
-| [CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务](/cad/cad-assistant) | 论文阅读 · 反馈与评测 | 2026-10-20 |
+| [DeepCAD：把 CAD 建模过程变成可学习的操作序列](/cad/deepcad) | 论文阅读 · 表示基础 | 2026-10-22 |
+| [Text2CAD：从不同详细程度的文本生成 CAD 建模序列](/cad/text2cad) | 论文阅读 · 条件生成 | 2026-10-22 |
+| [CAD-Llama：让预训练语言模型学习带层次描述的 CAD 代码](/cad/cad-llama) | 论文阅读 · 条件生成 | 2026-10-22 |
+| [CAD-Recode：把点云反向工程成可执行 CadQuery 代码](/cad/cad-recode) | 论文阅读 · 几何重建 | 2026-10-22 |
+| [CAD-MLLM：统一文本、图像和点云条件的 CAD 生成](/cad/cad-mllm) | 论文阅读 · 条件生成 | 2026-10-22 |
+| [CADReview：先定位 CAD 程序错误，再生成反馈与修正代码](/cad/cadreview) | 论文阅读 · 反馈与评测 | 2026-10-22 |
+| [CADTests：用可执行几何测试检查文本要求是否满足](/cad/cadtests) | 论文阅读 · 反馈与评测 | 2026-10-22 |
+| [CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列](/cad/cad-editor) | 论文阅读 · 指令编辑 | 2026-10-22 |
+| [CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务](/cad/cad-assistant) | 论文阅读 · 反馈与评测 | 2026-10-22 |
 | [3D-PreMise](/cad/papers/yua24) | 论文资料记录 · 语言模型 | 2026-10-20 |
 | [3DCodeBench](/cad/papers/codebench26) | 论文资料记录 | 2026-10-20 |
 | [薄结构与复杂拓扑使图像feature-mesh转B-Rep仍在分割、装配和有效性检查中失败](/cad/issues/i-b-02) | 范围限定问题 · 待验证方法 | 2026-10-20 |

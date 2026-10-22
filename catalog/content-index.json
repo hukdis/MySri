@@ -205,6 +205,10 @@
     "id": "cad-0101",
     "title": "DeepCAD：把 CAD 建模过程变成可学习的操作序列",
     "navTitle": "DeepCAD",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -227,7 +231,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/deepcad.md",
     "url": "/cad/deepcad"
   },
@@ -235,6 +239,10 @@
     "id": "cad-0102",
     "title": "Text2CAD：从不同详细程度的文本生成 CAD 建模序列",
     "navTitle": "Text2CAD",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -258,7 +266,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/text2cad.md",
     "url": "/cad/text2cad"
   },
@@ -266,6 +274,10 @@
     "id": "cad-0103",
     "title": "CAD-Llama：让预训练语言模型学习带层次描述的 CAD 代码",
     "navTitle": "CAD-Llama",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -289,7 +301,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/cad-llama.md",
     "url": "/cad/cad-llama"
   },
@@ -297,6 +309,10 @@
     "id": "cad-0104",
     "title": "CAD-Recode：把点云反向工程成可执行 CadQuery 代码",
     "navTitle": "CAD-Recode",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -320,7 +336,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/cad-recode.md",
     "url": "/cad/cad-recode"
   },
@@ -328,6 +344,10 @@
     "id": "cad-0105",
     "title": "CAD-MLLM：统一文本、图像和点云条件的 CAD 生成",
     "navTitle": "CAD-MLLM",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -351,7 +371,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/cad-mllm.md",
     "url": "/cad/cad-mllm"
   },
@@ -359,6 +379,10 @@
     "id": "cad-0106",
     "title": "CADReview：先定位 CAD 程序错误，再生成反馈与修正代码",
     "navTitle": "CADReview",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -382,7 +406,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/cadreview.md",
     "url": "/cad/cadreview"
   },
@@ -390,6 +414,10 @@
     "id": "cad-0107",
     "title": "CADTests：用可执行几何测试检查文本要求是否满足",
     "navTitle": "CADTests",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -413,7 +441,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/cadtests.md",
     "url": "/cad/cadtests"
   },
@@ -421,6 +449,10 @@
     "id": "cad-0108",
     "title": "CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列",
     "navTitle": "CAD-Editor",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -444,7 +476,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/cad-editor.md",
     "url": "/cad/cad-editor"
   },
@@ -452,6 +484,10 @@
     "id": "cad-0109",
     "title": "CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务",
     "navTitle": "CAD-Assistant",
+    "outline": [
+      2,
+      2
+    ],
     "category": "cad",
     "type": "paper",
     "tags": [
@@ -475,7 +511,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-20",
+    "updated": "2026-10-22",
     "file": "cad/cad-assistant.md",
     "url": "/cad/cad-assistant"
   },

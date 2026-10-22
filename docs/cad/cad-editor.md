@@ -2,6 +2,9 @@
 id: cad-0108
 title: CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列
 navTitle: CAD-Editor
+outline:
+  - 2
+  - 2
 category: cad
 type: paper
 tags:
@@ -21,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-20'
+updated: '2026-10-22'
 ---
 # CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列
 
@@ -29,18 +32,11 @@ updated: '2026-10-20'
 > **研究任务 · CAD编辑** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)
 <!-- /cad-v2-context -->
 
-## 论文信息 {#_1-论文信息与方向定位}
+“把圆柱变高一点，同时缩小直径”听起来只是局部修改，但模型若重新生成整条 CAD 序列，可能连不相关的结构也一起改变。编辑的目标不仅是得到新形状，还包括确定哪些内容应该保留。
 
-- **全名**：CAD-Editor: A Locate-then-Infill Framework with Automated Training Data Synthesis for Text-Based CAD Editing。
-- **作者**：Yu Yuan、Shizhao Sun、Qi Liu、Jiang Bian。
-- **年份与版本**：2025；所用版本为 arXiv **2502.03997v2，2025-07-03**，共 16 页。
-- **来源**：[arXiv](https://arxiv.org/abs/2502.03997)、[作者代码链接](https://github.com/microsoft/CAD-Editor)。
+**CAD-Editor 将这个目标拆成先定位、再补全。** 它先自动构造“原模型—指令—目标模型”的训练样本，再从模型对中生成修改区域监督，最后让语言模型围绕该区域生成新内容。读这篇论文，应沿着“修改数据从哪里来—位置怎样确定—位置确定后是否更容易改对”推进。
 
-**一句话理解**：针对按文字修改已有 CAD 时缺少编辑训练数据、直接重写整个序列难以集中修改目标部分的问题，CAD-Editor 自动构造原模型、编辑指令和目标模型的三元组，用 LoRA 微调 LLaMA3-8B 学习 Locate-then-Infill（定位后补全），先标记并遮蔽待修改区域，再结合原序列和指令补入新内容，得到编辑后的建模序列。
-
-不要把“原模型 + 指令 → 新模型”与“只有文本 → 从零生成模型”当成同一任务。编辑还要求处理哪些内容应该保持。
-
-## 问题、输入输出与必要术语 {#_3-问题、输入输出与必要术语}
+## 一次编辑包含两个目标：改变指定部分，保留其余部分 {#_3-问题、输入输出与必要术语}
 
 <PaperFigure src="/papers/cad-editor/figure02_task.png" title="CAD-Editor 原图 2：任务输入输出" source="https://arxiv.org/abs/2502.03997" :page="3" />
 
@@ -61,23 +57,13 @@ Figure 2. Left: Example input and output for CAD-Editor. The input combines the 
 **图表解读**
 <!-- /figure-translation -->
 
-**来源**：原图 2，PDF 第 3 页；对应 §3。
+图 2 中，输入是原始草图—拉伸序列与编辑指令，输出是编辑后的序列。与从零生成不同，系统必须理解原模型如何构成，再把“增加高度”“减小直径”落到对应的参数或操作上。（原文 §3。）
 
-**输入**：原始 CAD 序列 + 自然语言编辑指令。
-**输出**：编辑后的 CAD 序列，执行后得到新实体。
+图中渲染帮助人理解变化，但推理输入仍是文本化序列与指令，并非用户截图直接驱动的多模态编辑。这个任务定义也限定了后面所谓“定位”：它首先是在序列中找修改区域，不是已经解决任意 B-rep 面、边选择。
 
-操作可以是增添、删除、替换或参数变化。图中的视觉展示帮助理解任务，但本文编辑器推理阶段以文本化序列和指令为输入，不能自动称为直接图像编辑模型。
+## 先有真实变化，再把变化说成一条指令 {#_4-数据合成-先有-cad-对-再写编辑指令}
 
-术语：
-
-- **SE 序列**：Sketch-and-Extrude，草图与拉伸的建模过程。
-- **mask**：标记需要填入或修改的区域。
-- **LCS**：Longest Common Subsequence，寻找两条序列中按顺序保留的共同 token。
-- **locate-then-infill**：先确定修改区域，再生成修改内容。
-- **编辑三元组**：指令、原模型、编辑后模型组成一个监督样本。
-- **D-CLIP**：比较图像变化方向与文本编辑方向的相似性，不是几何约束验证器。
-
-## 数据合成：先有 CAD 对，再写编辑指令 {#_4-数据合成-先有-cad-对-再写编辑指令}
+缺少大量人工编辑记录时，怎样获得训练三元组？作者先让模型发生变化，再为变化生成语言，而不是先随意写指令、再假设能找到准确目标。
 
 <PaperFigure src="/papers/cad-editor/figure03_dataset.png" title="CAD-Editor 原图 3：训练数据合成" source="https://arxiv.org/abs/2502.03997" :page="4" />
 
@@ -98,23 +84,19 @@ Figure 3. Illustration of automated data synthesis pipeline.
 **图表解读**
 <!-- /figure-translation -->
 
-**来源**：原图 3，PDF 第 4 页；对应 §4。
+图 3 从 DeepCAD 模型出发，用 **Hnc-CAD** 生成设计变体，再将原模型与变体、不同变体两两配对，形成增加、删除、替换等差异。随后利用渲染图与序列观察变化，先描述两者、再比较差异、最后压缩成指令。（§4。）
 
-流水线：
+这种分步过程给指令生成提供了可追溯的变化依据。GPT-4o 处理视觉，LLaMA-3-70B 处理序列：前者更容易描述外形结构，后者更接近具体参数。但一个模型对可能存在多处差异，生成的一句话未必覆盖全部变化，因而合成监督仍可能有错。
 
-1. 从 DeepCAD 取模型，用 **Hnc-CAD** 生成设计变体。
-2. 原模型与变体、变体与原模型、不同变体两两配对，覆盖增加、删除和替换。
-3. 使用渲染图和序列分别观察变化。
-4. 先描述两模型，再总结差异，再压缩成编辑指令。
-5. 拼成监督三元组。
+:::: details 数据规模与划分
 
-视觉差异更适合描述整体结构变化，序列差异更适合捕捉具体参数。数据合成用 **GPT-4o** 处理视觉、**LLaMA-3-70B** 处理序列。
+DeepCAD 约 178K 原模型按 90/5/5 分割并去重，合成约 **120K 编辑三元组**；从测试部分取 **2K 例**生成编辑对并人工检查。每例生成五个输出，共约 **10K 结果**参与评价。（§6.1。）
 
-**重要边界**：生成一个模型对，不意味着模型间所有差异都已被指令完整覆盖。分步描述用于改善准确性，但合成标注仍可能错误。
+相关变体与逆向编辑应按原模型来源理解划分；最后三元组互斥不自动排除上游变体生成器的数据重叠。图像参与合成标注，不改变最终编辑器的序列输入定义。
 
-图像只用于合成更丰富的指令；最终 CAD 模型表示是 SE 序列。这与一个直接接收用户 CAD 截图进行编辑的多模态模型不同。
+::::
 
-## 方法：定位与补全如何训练？ {#_5-方法-定位与补全如何训练}
+## 用不变部分界定修改范围，再生成变化部分 {#_5-方法-定位与补全如何训练}
 
 <PaperFigure src="/papers/cad-editor/figure04_network.png" title="CAD-Editor 原图 4：定位与补全网络" source="https://arxiv.org/abs/2502.03997" :page="5" />
 
@@ -135,85 +117,21 @@ Figure 4. (a)-(b): Overview of Locate-then-Infill framework. (c): Examples of in
 **图表解读**
 <!-- /figure-translation -->
 
-**来源**：原图 4，PDF 第 5 页；对应 §5。
+图 4 的定位模型读取原序列与指令，输出带 mask 的序列：保留部分复制，要改或插入的区域标记出来。补全模型再结合原模型、指令和 mask 结果生成最终编辑序列。（§5。）
 
-### 定位阶段 {#_5-1-定位阶段}
+定位监督来自原序列与目标序列的 **LCS（最长公共子序列）**：共同 token 作为保留内容，差异和插入处转为 mask，连续 mask 合并。这使监督能够从编辑对自动获得，而无需逐 token 人工标注。
 
-输入原序列与编辑指令，输出带 mask 的序列。需要保留的 token 被复制，要改或新增的区域由 mask 标记。
+沿着圆柱例子看，方法希望把注意力集中到高度、直径及相关操作。但 LCS 只按 token 对齐，不保证找到唯一的语义修改区域；重复结构或等价建模历史，都可能使文本差异与几何编辑含义错位。因此，定位后补全是一种结构约束，而不是正确编辑的保证。
 
-定位监督不是人工逐 token 标注。作者比较原序列与目标序列，用 **LCS** 保留共同部分、遮蔽差异并标记插入位置，合并连续 mask。
+作者还生成候选，由人工挑选较好结果形成 selective dataset 后继续微调。这一训练步骤包含人工筛选，应与前面的自动合成区分。（§5。）
 
-LCS 是基于 token 的对齐，不能直接等同于“唯一正确的几何实体定位”。重复结构、不同等价建模历史都可能让序列差异与语义编辑区域不同。
+:::: details 模型、训练与候选预算
 
-### 补全阶段 {#_5-2-补全阶段}
+使用 **Llama-3-8B-Instruct**，LoRA rank 32、序列长度 1024，在 4 张 A800-80GB 上训练 70 epochs。定位与补全顺序运行，温度和 top-p 均为 0.9。评价每例五个输出，不能理解成确定性单候选结果。（§6.1。）
 
-输入原模型、指令和带 mask 的序列，生成最终编辑序列。目标是修改指定区域，同时保留其余内容。
+::::
 
-作者先用合成数据微调，再生成多个候选，由人工选择较好结果形成 **selective dataset**，继续微调。它是人工筛选辅助训练，不是纯自动标注。
-
-### 训练与推理设置 {#_5-3-训练与推理设置}
-
-§6.1（PDF 第 6 页）使用 **Llama-3-8B-Instruct**、LoRA rank **32**、序列长度 **1024**，在 **4 张 A800-80GB** 上训练 **70 epochs**。这里没有给出可换算为本地成本的总时长。
-
-推理阶段定位和补全按顺序运行，温度和 top-p 均设为 **0.9**。测试为每个例子生成 **5 个结果**，计算评价；不要将论文所有成绩理解为确定性单候选输出。
-
-## 数据划分与指标 {#_6-数据划分与指标}
-
-原始 DeepCAD 约 **178K 模型**，按 **90/5/5** 分割并去重。训练合成约 **120K 编辑三元组**；从测试部分取 **2K 例**生成编辑对并人工检查。每例五个输出，得到约 **10K 生成结果**用于评测（§6.1）。
-
-应按原 CAD 来源划分，避免同一模型的变体或逆向编辑跨集合。使用设计变体模型也需要检查其训练数据来源，不能只看最后三元组的划分。
-
-指标：
-
-- **VR**：序列能成功解析并渲染成三维对象的比例。
-- **JSD**：生成结果分布与真实结果分布差异。
-- **CD**：编辑后实体与目标实体的几何距离。
-- **D-CLIP**：原图→编辑图的变化与文本编辑方向的一致程度。
-- **H-Eval**：人工检查文本对齐及较高视觉质量的成功评分。
-
-CD 依赖参考目标；模糊指令可能有多个合理结果。D-CLIP 属于视觉语义信号，不能精准检测每个尺寸、隐藏结构或保持约束。
-
-原文并没有用表 1 的这些指标直接证明“所有未编辑设计约束都保持不变”。
-
-## 实验：有效率与成功率的差距 {#_7-实验-有效率与成功率的差距}
-
-### 主结果 {#_7-1-主结果}
-
-<PaperFigure src="/papers/cad-editor/table01_main.png" title="CAD-Editor 原表 1：主实验" source="https://arxiv.org/abs/2502.03997" :page="7" />
-
-<!-- figure-translation:/papers/cad-editor/table01_main.png -->
-**原文翻译（表注）**
-
-表1：定量评价。SkexGen、Hnc-CAD、FlexCAD 和 Text2CAD 不支持基于文本的编辑，因此只比较它们的生成质量。JSD、CD 和 D-CLIP 的显示值乘以10²。↑表示越大越好，↓表示越小越好。
-
-**关键标记**
-
-VR：有效比例；H-Eval：人工评价。
-
-::: details 对照英文原文
-
-Table 1. Quantitative evaluations. SkexGen, Hnc-CAD, FlexCAD and Text2CAD do not support text-based editing, so only their generation quality is compared. JSD, CD, and D-CLIP values are scaled by 10². ↑: the higher the better, ↓: the lower the better.
-:::
-
-**图表解读**
-<!-- /figure-translation -->
-
-**来源**：原表 1，PDF 第 7 页。JSD、CD 和 D-CLIP 显示值乘以 100；↑/↓ 见原表。
-
-CAD-Editor 的：
-
-- **VR 95.6%**；
-- **JSD 0.65**，**CD 1.18**；
-- **D-CLIP 0.11**；
-- **H-Eval 43.2%**。
-
-**最值得记住的对比**：有效率接近 96%，人工成功评价约 43%。可生成实体与正确执行编辑仍有很大距离。
-
-GPT-4o-IC 的 VR 为 **84.5%**、H-Eval 为 **15.6%**。这支持本文在该任务与协议中优于所列基线，不意味着任意真实用户编辑都能成功。
-
-表中 SkexGen、Hnc-CAD、FlexCAD 与 Text2CAD 不具备同样的文本编辑任务定义；作者仅比较部分生成质量。不能把缺失的编辑指标解释为这些方法在完整编辑测试中被击败。
-
-### 消融不是所有指标都同向改善 {#_7-2-消融不是所有指标都同向改善}
+## 先检验核心设计：定位是否比直接重写更稳 {#_7-2-消融不是所有指标都同向改善}
 
 <PaperFigure src="/papers/cad-editor/table02_ablation.png" title="CAD-Editor 原表 2：消融实验" source="https://arxiv.org/abs/2502.03997" :page="8" />
 
@@ -234,17 +152,46 @@ Table 2. Ablation studies. The CAD-Editor-mini is trained on a small set with 10
 **图表解读**
 <!-- /figure-translation -->
 
-**来源**：原表 2，PDF 第 8 页。
+表 2 中，Direct 直接编辑的有效比例 VR 为 **86.1%**，Locate-then-Infill 为 **96.5%**。这一消融直接回应方法选择：先标出修改区域，再生成内容，在当前协议下更容易得到可解析、可渲染的模型。（§6，表 2。）
 
-- Direct：直接编辑，VR **86.1%**。
-- L-I：定位后补全，VR **96.5%**、CD **1.13**。
-- L-I & HS：加人工筛选，VR **95.6%**、CD **1.18**，D-CLIP 从 **0.03** 升至 **0.11**，JSD 从 **0.67** 降至 **0.65**。
+人工筛选又带来不同取舍：L-I & HS 的 VR 从 **96.5%** 变为 **95.6%**，CD 从 **1.13** 变为 **1.18**，但 D-CLIP 从 **0.03** 提高到 **0.11**，JSD 从 **0.67** 降至 **0.65**。因此，筛选改善了某些语义/分布指标，没有让所有指标同时更好。
 
-因此人工筛选改善了某些语义/分布指标，却没有让 VR 和 CD 同时更好。应描述取舍，不应写“加入人工筛选后所有能力全面提高”。
+小规模 10K 样本消融也显示分步描述优于直接写指令。它支持的是本文的数据合成流程，而不是任意任务采用分步提示都会受益。
 
-小规模 10K 样本消融显示 stepwise captioning 比直接写指令效果更好。它检验的是本数据合成策略，不是所有分步提示都有效。
+## 模型能执行之后，距离“改对”还有多远 {#_7-实验-有效率与成功率的差距}
 
-## 局限与多轮编辑的证据范围 {#_8-局限与多轮编辑的证据范围}
+<PaperFigure src="/papers/cad-editor/table01_main.png" title="CAD-Editor 原表 1：主实验" source="https://arxiv.org/abs/2502.03997" :page="7" />
+
+<!-- figure-translation:/papers/cad-editor/table01_main.png -->
+**原文翻译（表注）**
+
+表1：定量评价。SkexGen、Hnc-CAD、FlexCAD 和 Text2CAD 不支持基于文本的编辑，因此只比较它们的生成质量。JSD、CD 和 D-CLIP 的显示值乘以10²。↑表示越大越好，↓表示越小越好。
+
+**关键标记**
+
+VR：有效比例；H-Eval：人工评价。
+
+::: details 对照英文原文
+
+Table 1. Quantitative evaluations. SkexGen, Hnc-CAD, FlexCAD and Text2CAD do not support text-based editing, so only their generation quality is compared. JSD, CD, and D-CLIP values are scaled by 10². ↑: the higher the better, ↓: the lower the better.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
+表 1 最值得并排看的两个数字是 **VR 95.6%** 与 **H-Eval 43.2%**。前者衡量能否解析并渲染，后者衡量人工认为文本对齐且视觉质量较高的成功情况。方法很大程度改善了可执行性，但正确完成编辑仍然困难。（§6，表 1。）
+
+GPT-4o-IC 的对应结果为 **84.5% / 15.6%**，支持本方法在所列协议中的收益。表中若干生成方法不具有同样的文本编辑任务，只比较部分生成质量，不能将空缺的编辑指标当成它们在完整任务中全部失败。
+
+:::: details 指标为何不能合成一个“约束保持率”
+
+主方法 JSD 为 **0.65**、CD **1.18**、D-CLIP **0.11**，按原表乘以 100 显示。JSD 比较分布，CD 比较目标几何，D-CLIP 比较视觉变化与文本方向；H-Eval 为人工评价。它们都没有直接逐项验证所有未编辑约束是否保持。
+
+尤其是模糊指令可能容许多个正确目标，CD 依赖具体参考，D-CLIP 也未必发现隐藏结构和精确尺寸错误。VR 高不能替代这些要求检查。
+
+::::
+
+## 单次局部修改，不等于长期编辑都能保持设计 {#_8-局限与多轮编辑的证据范围}
 
 <PaperFigure src="/papers/cad-editor/figure10_iterative.png" title="CAD-Editor 原图 10：连续编辑示例" source="https://arxiv.org/abs/2502.03997" :page="9" />
 
@@ -261,56 +208,34 @@ Figure 10. Apply CAD-Editor iteratively to edit a CAD model until it meets user 
 **图表解读**
 <!-- /figure-translation -->
 
-**来源**：原图 10，PDF 第 9 页。
+图 10 展示连续指令使模型逐步变化，但属于定性示例，没有同等规模的多轮稳定性基准。原文还指出多图标注成本及长上下文、长输出对复杂 CAD 的限制。（§7。）
 
-图中展示多次指令逐步修改模型。但这是定性示例，不能等同于完整多轮稳定性基准，也不能证明长期编辑过程中的约束保持。
+把这些限制接回方法，可以看到错误传递的来源：定位一旦出错，补全会沿着错误区域修改；单次结果看似合理，也可能在多轮后逐渐丢失原有关系。后者是对系统链路的分析，并非论文已经测量的长期退化规律。
 
-原文 §7 明确指出：
+CAD-Editor 的贡献是为局部修改建立了可训练的结构。继续阅读时，应同时问“改在哪里、怎样改、其他部分是否保持”。[CADReview](/cad/cadreview) 从错误诊断提供修改位置，[CADTests](/cad/cadtests) 从实体属性提供要求检查；二者可以帮助区分编辑生成与编辑验证。
 
-- LVLM 标注成本高，多图处理困难。
-- 长上下文与长输出限制复杂 CAD 的编辑。
+[原论文 PDF：CAD-Editor，2502.03997v2](https://arxiv.org/pdf/2502.03997) · [作者代码](https://github.com/microsoft/CAD-Editor)。图表出处及 PDF 页码见各图说明。
 
-**分析**：定位错误会传给补全阶段；token 匹配无法自动覆盖语义实体选择；单次评价不够判断长期编辑保持。图中“round corners”等描述也不能据此推断输出已有任意 B-rep 圆角 API，表示范围仍须按 SE 说明判断。
+:::: details 论文信息与版本
 
-## 相关研究 {#_9-放回方向地图-与生成和修复区别开}
+<span id="_1-论文信息与方向定位"></span>
 
-- **编辑与交互**：直接任务是按用户指令编辑已有模型。
-- **数据与评测**：三元组合成、人工筛选和编辑指标是关键支撑。
+- **全名**：CAD-Editor: A Locate-then-Infill Framework with Automated Training Data Synthesis for Text-Based CAD Editing。
+- **作者**：Yu Yuan、Shizhao Sun、Qi Liu、Jiang Bian。
+- **年份与版本**：2025；所用版本为 arXiv **2502.03997v2，2025-07-03**，共 16 页。
+- **来源**：[arXiv](https://arxiv.org/abs/2502.03997)、[作者代码链接](https://github.com/microsoft/CAD-Editor)。
 
-与 CAD-Llama：CAD-Llama 验证部件增删等任务，本篇专门建模编辑定位与补全。
-与 CADReview：CADReview 依据参考图纠错，本篇依据用户指令改变设计。
-与 CADTests：本篇的 VR/CD/D-CLIP 还不能完整覆盖设计要求及未修改约束。
+::::
 
-可进一步思考的问题：编辑对象怎么指代？哪些区域允许改变？哪些属性必须保持？如何独立检测变化与保持？这些问题应先作为阅读线索，不能未经后续检索就宣称新颖选题。
-
-## 思考与自测 {#_10-阅读自测与阅读卡}
-
-1. 编辑输入比 Text2CAD 多了什么？
-2. 图像在本方法中主要用于哪一阶段？
-3. 定位监督如何构建？
-4. LCS 是否等于语义实体的唯一正确对应？
-5. 95.6% VR 与 43.2% H-Eval 各表示什么？
-6. 人工筛选是否改善了表 2 所有指标？
-7. 图 10 是否证明长期多轮约束保持？
-
-<details>
-<summary>参考答案：完成自测后展开</summary>
-
-1. 多了已有 CAD 模型及需要修改它的指令。
-2. 数据合成阶段；最终编辑器主要使用序列与文本。
-3. 用原序列与目标序列的最长公共子序列构造 mask。
-4. 不是，它是 token 层面的对齐。
-5. 前者是可解析渲染的比例，后者是人工文本对齐和视觉质量成功评价。
-6. 不是，VR 和 CD 略差，JSD 与 D-CLIP 改善。
-7. 不证明，它是定性连续编辑示例。
-
-</details>
-
-## 参考文献 {#_11-来源与核查记录}
-
-- [原论文 PDF](https://arxiv.org/pdf/2502.03997)
-
-图表引自原论文，图号与 PDF 页码见各图说明。
+<!-- Published section anchors retained for incoming links. -->
+<span id="_5-1-定位阶段"></span>
+<span id="_5-2-补全阶段"></span>
+<span id="_5-3-训练与推理设置"></span>
+<span id="_6-数据划分与指标"></span>
+<span id="_7-1-主结果"></span>
+<span id="_9-放回方向地图-与生成和修复区别开"></span>
+<span id="_10-阅读自测与阅读卡"></span>
+<span id="_11-来源与核查记录"></span>
 
 <!-- cad-v2-relations -->
 ::: details 研究树关联：发展关系、资源与问题

@@ -2,6 +2,9 @@
 id: cad-0106
 title: CADReview：先定位 CAD 程序错误，再生成反馈与修正代码
 navTitle: CADReview
+outline:
+  - 2
+  - 2
 category: cad
 type: paper
 tags:
@@ -21,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-20'
+updated: '2026-10-22'
 ---
 # CADReview：先定位 CAD 程序错误，再生成反馈与修正代码
 
@@ -29,236 +32,11 @@ updated: '2026-10-20'
 > **研究任务 · CAD编辑** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)
 <!-- /cad-v2-context -->
 
-## 论文信息 {#_1-论文信息与方向定位}
+一段 CAD 程序可以顺利运行，却把槽的数量、部件位置或切除逻辑写错。解释器只能告诉我们程序是否可执行，未必能指出为什么生成的形状与目标不符。
 
-- **全名**：CADReview: Automatically Reviewing CAD Programs with Error Detection and Correction。
-- **作者**：Jiali Chen、Xusen Hei、Hongfei Liu 等。
-- **出处与版本**：矩阵出版 DOI 指向 ACL 2025；所用版本为 arXiv **2505.22304v1，2025-05-28**，共 19 页，含附录。
-- **来源**：[arXiv](https://arxiv.org/abs/2505.22304)、[ACL 出版页](https://aclanthology.org/2025.acl-long.489/)、[作者项目页](https://cgl-pro.github.io/cadreview)。
-- **名字消歧**：**CADReview** 是论文/数据任务名称；**ReCAD** 是本文方法名称。
+**CADReview 把这类错误拆成“看出差异—定位代码—生成修复”三步。** 它用正确参考图与当前渲染作对照，训练 ReCAD 先将几何部件与代码块对应，再生成错误反馈并修改 OpenSCAD 程序。主线中的难点是从可见症状追溯到可修改的原因。
 
-**一句话理解**：针对 CAD 程序即使能够运行也可能生成错误形状、难以从外观异常定位并修正代码的问题，CADReview 构造参考图像、错误程序与修正反馈的配对数据，通过几何组件识别（GCR）与空间几何操作（SGO）训练 ReCAD 对齐几何和代码，再由反馈生成器定位错误、代码编辑器依据反馈修改 OpenSCAD 程序，使其生成形状接近参考。
-
-论文任务不是仅修复语法或运行时崩溃。许多错误程序可以正常运行，但生成形状与参考不一致。
-
-## 问题、输入输出与术语 {#_3-问题、输入输出与术语}
-
-**输入**包括：错误或可疑 CAD 程序、正确参考图像，以及程序当前渲染结果。
-**输出**包括：自然语言反馈和修正后的 CAD 程序。
-
-有参考图的审查，不等于没有目标参照的通用错误发现。研究时应先问：系统凭什么确定当前形状错了？
-
-术语：
-
-- **OpenSCAD**：通过文本脚本及构造实体几何操作描述模型的语言。
-- **代码块（block）**：拆分后带编号的程序单元，用来定位异常来源。
-- **GCR**：Geometric Component Recognition，几何组件识别，用于视觉与程序对齐。
-- **SGO**：Spatial Geometric Operation，空间几何操作学习，用于从反馈转成参数/操作修改。
-- **SFT**：监督微调，用标注答案训练模型。
-- **DPO**：根据优选/劣选输出对进行偏好优化；不是任意在线强化学习算法的同义词。
-
-## 数据与错误表示 {#_4-数据与错误表示}
-
-### 数据怎样构建？ {#_4-1-数据怎样构建}
-
-<PaperFigure src="/papers/cadreview/figure02_dataset.png" title="CADReview 原图 2：数据构建" source="https://arxiv.org/abs/2505.22304" :page="3" />
-
-<!-- figure-translation:/papers/cadreview/figure02_dataset.png -->
-**原文翻译（图注）**
-
-图2：CADReview 数据集的构建流程，包括收集程序—图像对、创建错误，以及标注反馈。
-
-**关键标记**
-
-Error Creation：错误创建；Feedback Annotation：反馈标注。
-
-::: details 对照英文原文
-
-Figure 2: Construction workflow of our CADReview dataset, including program-drawing pairs collection, error creation and feedback annotation.
-:::
-
-**图表解读**
-<!-- /figure-translation -->
-
-**来源**：原图 2，PDF 第 3 页；对应 §3。
-
-数据有两类来源：
-
-- 约 **1.5K 人工设计 OpenSCAD 程序**，从设计社区收集过滤。
-- 约 **1.6K 机器构建程序**，将 PartNet 家具等结构抽象为几何基元。
-
-作者将代码拆块，渲染参考图，然后由熟悉 OpenSCAD 的设计者修改正确程序、制造错误；GPT-4o 辅助写反馈，并由人工检查。
-
-这里要分别统计“原始正确程序数”和“加入不同错误后的样本数”，不能把后者全当作独立物体。
-
-### 八种错误 {#_4-2-八种错误}
-
-<PaperFigure src="/papers/cadreview/figure03_errors.png" title="CADReview 原图 3：八类程序错误" source="https://arxiv.org/abs/2505.22304" :page="4" />
-
-<!-- figure-translation:/papers/cadreview/figure03_errors.png -->
-**原文翻译（图注）**
-
-图3：CADReview 数据集中八类 CAD 程序错误的示例。第一行为从一个采样视角观察到的参考图像；第二行展示对 CAD 程序创建错误时修改的代码片段；最后一行为错误程序渲染出的三维物体。
-
-**关键标记**
-
-Primitive／Rotation／Position／Size：基元／旋转／位置／尺寸；Logic／Missing／Redundant：逻辑／缺失／冗余。
-
-::: details 对照英文原文
-
-Figure 3: Examples of 8 types of CAD program error from our CADReview dataset. Top row: The reference images from one sampled viewpoint. Second row: Error creation on CAD programs, showing the edited code segments. Bottom row: The rendered 3D objects by erroneous programs.
-:::
-
-**图表解读**
-<!-- /figure-translation -->
-
-**来源**：原图 3，PDF 第 4 页。
-
-包括：**基元、旋转、位置、尺寸、常量、逻辑、缺失代码块、冗余代码块**。
-
-对照图看：
-
-- 修改尺寸或位置可能得到可执行但错误的实体。
-- 逻辑错误可能影响循环生成的数量，不能只靠替换某个数值修复。
-- 缺失与冗余需要添加或删除代码，而非仅调整坐标。
-
-这是任务预设的错误分布。真实 LLM 生成错误还可能包含其他类型，不能直接声称全面覆盖所有 CAD 缺陷。
-
-## 方法：为什么先学对齐与空间操作？ {#_5-方法-为什么先学对齐与空间操作}
-
-<PaperFigure src="/papers/cadreview/figure04_network.png" title="CADReview 原图 4：ReCAD 框架" source="https://arxiv.org/abs/2505.22304" :page="5" />
-
-<!-- figure-translation:/papers/cadreview/figure04_network.png -->
-**原文翻译（图注）**
-
-图4：ReCAD 概览。分别设计几何部件识别（GCR）与空间几何操作（SGO）机制，初始化反馈生成器 φ1 和代码编辑器 φ2。
-
-**关键标记**
-
-GCR：几何部件识别；SGO：空间几何操作；DPO：直接偏好优化。
-
-::: details 对照英文原文
-
-Figure 4: Overview of our ReCAD. We design geometric component recognition (GCR) and spatial geometric operation (SGO) mechanisms to initialize feedback generator φ1 and code editor φ2, respectively.
-:::
-
-**图表解读**
-<!-- /figure-translation -->
-
-**来源**：原图 4，PDF 第 5 页；对应 §4。
-
-### 反馈生成器 {#_5-1-反馈生成器}
-
-先通过 GCR 学习：
-
-1. 描述可见几何组件。
-2. 将组件语义、图像位置与代码块对应。
-3. 在 CADReview 上微调生成错误反馈。
-
-辅助数据包括 Text2CAD、CADTalk 和额外合成数据。原文报告 GCR 使用 **超过 700K** 条描述与定位数据；这不是 CADReview 测试集规模。
-
-反馈目标包含：形状异常是什么、哪个代码块错、属于什么错误。
-
-### 代码编辑器 {#_5-2-代码编辑器}
-
-代码编辑器以已经学习几何对齐的模型为起点，通过遮蔽 **30% 代码块**的补全任务学习空间操作，再在错误修复数据上微调。
-
-为强调数字，作者对空间值量化，并将数字 token 的损失权重提高。其作用是防止代码语法很容易学会，却掩盖关键参数预测不准的问题。
-
-随后编辑器读取参考图、原程序、当前渲染和反馈，生成修改代码。
-
-### 偏好优化 {#_5-3-偏好优化}
-
-作者生成多条候选反馈，根据：
-
-- 代码块及错误类型诊断是否正确；
-- 修正结果与参考渲染的视觉相似程度；
-
-组织偏好对，对反馈生成器做 DPO。它优化的是特定反馈链，不能据此称为一个无需训练、自由调用 CAD 工具的代理。
-
-### 训练资源 {#_5-4-训练资源}
-
-§5.1（PDF 第 7 页）报告 **4 张 A100-80GB**，骨干分别为约 7B 的 **Qwen2-VL / LLaVA-OV**，对应 ReCAD-QW / ReCAD-LA。
-
-反馈 LoRA rank **8**、上下文上限 **3072**；编辑器 rank **64**、上下文 **8192**。训练包含多阶段辅助任务，不能只计算最后 CADReview 微调的成本。该段未给出可直接换算本地四张 4090 的总训练时长。
-
-## 划分、统计问题与指标 {#_6-划分、统计问题与指标}
-
-主文 §3 记录训练/验证/测试为 **17,334 / 2,000 / 1,615**，合计 **20,949**；附录 A.1 记录总量 **21,949**。两处相差 1000。
-
-**如何处理这处不一致**：本笔记保留原文两种记录，不猜哪一个正确。若以后复现，须检查实际发布文件与划分清单。附录说明各集合的原始三维对象互斥，这比仅随机拆错误版本更有意义。
-
-指标分两组：
-
-1. **反馈质量**：ROUGE-L、BERTScore，以及 **Acc**。Acc 要求错误代码块和错误类型同时预测正确；文本说得流畅不代表定位正确。
-2. **修正结果**：CD、MMD、JSD 与 IR。几何指标比较修正实体与目标，IR 衡量无效程序/结果。
-
-表 1 中 **RL 表示 ROUGE-L**，不是 reinforcement learning。这是阅读该表容易混淆的缩写。
-
-程序语法正确、实体有效、几何贴近参考、诊断反馈正确四件事应分开报告。
-
-## 实验与消融 {#_7-实验与消融}
-
-### 人工程序和机器程序分别看 {#_7-1-人工程序和机器程序分别看}
-
-<PaperFigure src="/papers/cadreview/table01_main.png" title="CADReview 原表 1：主结果" source="https://arxiv.org/abs/2505.22304" :page="7" />
-
-<!-- figure-translation:/papers/cadreview/table01_main.png -->
-**原文翻译（表注）**
-
-表1：基线与 ReCAD 的主要结果。†表示在 CADReview 数据集上进行微调。CD、MMD 和 JSD 的显示值乘以10³；粗体表示最佳结果。
-
-**关键标记**
-
-RL：ROUGE-L，此处并非强化学习；BS：BERTScore；Acc：错误定位准确率。
-
-::: details 对照英文原文
-
-Table 1: Main results of baselines and our ReCAD. †: fine-tuning on CADReview dataset. CD, MMD and JSD are multiplied by 10³. Bold: best results.
-:::
-
-**图表解读**
-<!-- /figure-translation -->
-
-**来源**：原表 1，PDF 第 7 页。CD/MMD/JSD 显示值乘以 1000。
-
-ReCAD-QW：
-
-- 机器程序：诊断 Acc **71.83%**，CD **1.43**，IR **0.00%**。
-- 人工程序：诊断 Acc **63.60%**，CD **4.42**，IR **10.59%**。
-
-GPT-4o 的机器/人工程序诊断 Acc 分别为 **41.54% / 31.84%**。这两个数值按表格列标题记录，避免跟正文中交换顺序的表述混淆。
-
-人工程序明显更难。机器程序上的 IR=0 不表示所有程序都修对，也不能推广到人类复杂程序。
-
-### 反馈是否真的有帮助？ {#_7-2-反馈是否真的有帮助}
-
-<PaperFigure src="/papers/cadreview/table02_ablation.png" title="CADReview 原表 2：模块消融" source="https://arxiv.org/abs/2505.22304" :page="7" />
-
-<!-- figure-translation:/papers/cadreview/table02_ablation.png -->
-**原文翻译（表注）**
-
-表2：消融研究结果。Fed 表示反馈，Red 表示奖励函数。CD 和 JSD 的显示值乘以10³；粗体表示最佳结果。
-
-**关键标记**
-
-w/o：去掉对应模块；GCR／SGO：几何部件识别／空间几何操作。
-
-::: details 对照英文原文
-
-Table 2: Results of ablation study. Fed: feedback. Red: reward functions. CD and JSD are multiplied by 10³. Bold: best results.
-:::
-
-**图表解读**
-<!-- /figure-translation -->
-
-**来源**：原表 2，PDF 第 7 页。
-
-去掉 GCR 会降低诊断准确率；去掉 SGO 或反馈，会影响修正后几何质量。例如 QW 人工程序一列，去掉 SGO 时 CD **8.08**，完整方法为 **4.42**。
-
-消融支持视觉–代码对齐、空间操作与反馈链在本任务中的作用。但不是独立证明“反馈文本越长越好”或“任意自反思都有效”。
-
-### 原图中的错误定位 {#_7-3-原图中的错误定位}
+## 槽少了，应该修改常量还是循环逻辑 {#_3-问题、输入输出与术语}
 
 <PaperFigure src="/papers/cadreview/figure06_correction.png" title="CADReview 原图 6：错误定位与修正案例" source="https://arxiv.org/abs/2505.22304" :page="8" />
 
@@ -279,68 +57,178 @@ Figure 6: Cases of different methods. The green and red denote correct and incor
 **图表解读**
 <!-- /figure-translation -->
 
-**来源**：原图 6，PDF 第 8 页。
+图 6 展示一个贯穿全文的区别：基线也发现槽数不一致，却把问题归到不合适的常量；ReCAD 进一步定位到相关的循环逻辑代码块。只会描述“看起来不一样”，还不足以指导正确修改。（原文图 6。）
 
-图中基线发现槽数不一致，却修改了不合适的常量；ReCAD 将问题定位为循环逻辑相关代码块。阅读时问：反馈究竟给出了正确因果位置，还是仅描述表面症状？
+因此，任务输入不只有可疑程序，还包含**正确参考图和当前渲染**；输出既包括诊断反馈，也包括修改后的程序。参考图提供“应该是什么样”的依据，这与没有目标参照的通用错误检测不同。CADReview 是论文及任务名称，ReCAD 是本文方法名称。
 
-**分析**：若要研究修复，诊断定位与编辑正确性最好分开控制，才能判断收益来自“找对问题”还是“更会改代码”。
+## 要学会定位原因，数据必须把错误与代码关联起来 {#_4-数据与错误表示}
 
-## 局限与证据范围 {#_8-局限与证据范围}
+<PaperFigure src="/papers/cadreview/figure02_dataset.png" title="CADReview 原图 2：数据构建" source="https://arxiv.org/abs/2505.22304" :page="3" />
 
-原文 §7（PDF 第 9 页）明确说明：
+<!-- figure-translation:/papers/cadreview/figure02_dataset.png -->
+**原文翻译（图注）**
 
-- 没有定义并求解最优代码编辑方案，同一几何可由不同程序实现。
-- 当前数据仅覆盖 OpenSCAD；迁移其他 CAD 语言是后续方向，不是已经验证的能力。
+图2：CADReview 数据集的构建流程，包括收集程序—图像对、创建错误，以及标注反馈。
 
-还应注意：
+**关键标记**
 
-- 人工造错不等于真实生成器自然产生的错误分布。
-- 修复依赖参考图，多视图也可能看不清隐藏结构或精确尺寸。
-- 好的反馈指标不能替代最终实体和要求验证。
-- 训练辅助数据与 CADReview 划分共同决定复现成本和泛化范围。
+Error Creation：错误创建；Feedback Annotation：反馈标注。
 
-后四点为结合任务设定的**分析**，用于提出后续核查问题。
+::: details 对照英文原文
 
-## 相关研究 {#_9-放回方向地图-与编辑-代理路线区分}
+Figure 2: Construction workflow of our CADReview dataset, including program-drawing pairs collection, error creation and feedback annotation.
+:::
 
-- **执行反馈**：以反馈辅助错误修复为核心。
-- **编辑与交互**：通过修改程序实现编辑，但目标是纠错，不是自由设计变更。
-- **数据与评测**：错误类型、原物体划分和诊断/修正指标构成基准。
+**图表解读**
+<!-- /figure-translation -->
 
-与 CAD-Editor：后者按照用户编辑指令改变已有模型；本篇按照参考图纠正不一致程序。
-与 CAD-Assistant：本篇是经过训练的诊断–修复链；后者让通用模型调用 CAD 工具并读取执行状态。
-与 CADTests：参考图相似与文本要求测试有不同证据范围。
+图 2 的流程先收集正确程序、拆分代码块并渲染参考，再由熟悉 OpenSCAD 的设计者修改程序制造错误，GPT-4o 辅助生成反馈并由人工检查。数据同时包括人工编写程序和由几何基元构成的机器程序，使系统有机会学习不同结构下的错误。（§3。）
 
-现阶段先记录：错误来源、可用目标参照、反馈内容、被修代码位置和最终验证。后续选择修复方向时，才能明确自己的问题与这篇有何区别。
+<PaperFigure src="/papers/cadreview/figure03_errors.png" title="CADReview 原图 3：八类程序错误" source="https://arxiv.org/abs/2505.22304" :page="4" />
 
-## 思考与自测 {#_10-阅读自测与阅读卡}
+<!-- figure-translation:/papers/cadreview/figure03_errors.png -->
+**原文翻译（图注）**
 
-1. CADReview 与 ReCAD 分别指什么？
-2. 输入程序是否一定不能运行？
-3. GCR 与 SGO 各解决什么？
-4. 表中的 RL 与 Acc 是什么？
-5. 机器程序 IR=0 是否代表全部修复正确？
-6. 原文划分与总量存在什么统计问题？
-7. 是否已验证能迁移到 CadQuery？
+图3：CADReview 数据集中八类 CAD 程序错误的示例。第一行为从一个采样视角观察到的参考图像；第二行展示对 CAD 程序创建错误时修改的代码片段；最后一行为错误程序渲染出的三维物体。
 
-<details>
-<summary>参考答案：完成自测后展开</summary>
+**关键标记**
 
-1. 前者是论文/数据任务名称，后者是方法名。
-2. 不一定，能运行但生成错误几何也属于任务。
-3. GCR 对齐视觉组件与代码，SGO 学习空间操作和数值修改。
-4. RL 是 ROUGE-L，Acc 要求错误代码块和类型同时正确。
-5. 不是，只说明该列没有无效输出，几何和诊断仍可能出错。
-6. 主文划分合计 20,949，附录写 21,949，需要核查发布数据。
-7. 本版本没有据此提供全面迁移验证。
+Primitive／Rotation／Position／Size：基元／旋转／位置／尺寸；Logic／Missing／Redundant：逻辑／缺失／冗余。
 
-</details>
+::: details 对照英文原文
 
-## 参考文献 {#_11-来源与核查记录}
+Figure 3: Examples of 8 types of CAD program error from our CADReview dataset. Top row: The reference images from one sampled viewpoint. Second row: Error creation on CAD programs, showing the edited code segments. Bottom row: The rendered 3D objects by erroneous programs.
+:::
 
-- [原论文 PDF](https://arxiv.org/pdf/2505.22304)
+**图表解读**
+<!-- /figure-translation -->
 
-图表引自原论文，图号与 PDF 页码见各图说明。
+图 3 规定八类错误：基元、旋转、位置、尺寸、常量、逻辑、缺失与冗余代码块。它们要求不同的修改方式：位置错可能调整变换，缺失需要新增代码，逻辑错则可能必须改循环。把问题统一看成数字替换，就会错过开头的槽数案例。（§3。）
+
+这些是作者构造的错误分布，不等于真实生成器自然错误的完整覆盖。约 1.5K 人工程序与约 1.6K 机器程序是来源程序数量，多次造错后的样本不能都视为独立物体。
+
+## 从视觉症状走到代码修改，需要两种不同能力 {#_5-方法-为什么先学对齐与空间操作}
+
+<PaperFigure src="/papers/cadreview/figure04_network.png" title="CADReview 原图 4：ReCAD 框架" source="https://arxiv.org/abs/2505.22304" :page="5" />
+
+<!-- figure-translation:/papers/cadreview/figure04_network.png -->
+**原文翻译（图注）**
+
+图4：ReCAD 概览。分别设计几何部件识别（GCR）与空间几何操作（SGO）机制，初始化反馈生成器 φ1 和代码编辑器 φ2。
+
+**关键标记**
+
+GCR：几何部件识别；SGO：空间几何操作；DPO：直接偏好优化。
+
+::: details 对照英文原文
+
+Figure 4: Overview of our ReCAD. We design geometric component recognition (GCR) and spatial geometric operation (SGO) mechanisms to initialize feedback generator φ1 and code editor φ2, respectively.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
+图 4 中，反馈生成器先通过 **GCR（几何组件识别）**学习组件描述及图像位置与代码块的对应，再学习判断哪个块属于哪类错误。它解决的是“该改哪里、为什么改”。相关辅助描述与定位数据超过 700K，并非 CADReview 测试集规模。（§4。）
+
+代码编辑器还要解决“具体怎样改”。作者用 **SGO（空间几何操作）**相关学习，包括遮蔽 30% 代码块的补全任务，并提高数字 token 的损失权重，让训练不能仅靠学会语法就获得较低损失。之后编辑器结合参考、当前程序、渲染与诊断反馈生成修改。
+
+反馈是否有用，也不能只看文字流畅程度。作者生成多条候选反馈，依据错误块/类型诊断以及修正后视觉相似性组织偏好对，使用 DPO 优化反馈生成器。这里优化的是特定诊断与修复链，不是泛指任意在线工具代理。（§4。）
+
+:::: details 数据记录、划分与训练配置
+
+主文训练/验证/测试为 **17,334 / 2,000 / 1,615**，合计 **20,949**；附录 A.1 总量记录为 **21,949**，相差 1000。此处保留差异，复现应核对实际清单，不能猜测补齐。附录说明不同集合的原始对象互斥。
+
+骨干为约 7B 的 Qwen2-VL / LLaVA-OV，对应 ReCAD-QW / ReCAD-LA；使用 **4 张 A100-80GB**。反馈 LoRA rank 8、上下文 3072，编辑器 rank 64、上下文 8192。训练成本还包含 GCR、SGO 等辅助阶段。（§5.1。）
+
+::::
+
+## 先问定位是否准确，再问形状是否修好 {#_7-实验与消融}
+
+<PaperFigure src="/papers/cadreview/table01_main.png" title="CADReview 原表 1：主结果" source="https://arxiv.org/abs/2505.22304" :page="7" />
+
+<!-- figure-translation:/papers/cadreview/table01_main.png -->
+**原文翻译（表注）**
+
+表1：基线与 ReCAD 的主要结果。†表示在 CADReview 数据集上进行微调。CD、MMD 和 JSD 的显示值乘以10³；粗体表示最佳结果。
+
+**关键标记**
+
+RL：ROUGE-L，此处并非强化学习；BS：BERTScore；Acc：错误定位准确率。
+
+::: details 对照英文原文
+
+Table 1: Main results of baselines and our ReCAD. †: fine-tuning on CADReview dataset. CD, MMD and JSD are multiplied by 10³. Bold: best results.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
+表 1 的诊断 Acc 要求**代码块与错误类型同时正确**。ReCAD-QW 在机器程序上为 **71.83%**，人工程序上为 **63.60%**；GPT-4o 对应为 **41.54% / 31.84%**。这表明本任务中的专门训练改善了诊断，但仍有相当部分错误没有定位正确。（§5，表 1。）
+
+再看修复结果：机器程序 CD 为 **1.43**、IR 为 **0.00%**，人工程序为 **4.42、10.59%**。人工程序显然更难。机器程序没有无效结果，也不能说全部修对：程序有效与几何符合参考由不同指标检验。
+
+把两组指标拆开，才能判断系统是找错了位置，还是定位正确却修改失败。ROUGE-L、BERTScore 描述反馈文本质量，也不能代替这两个判断。表头 **RL 是 ROUGE-L**，并非强化学习；CD/MMD/JSD 按表头乘以 1000 显示。
+
+## 把对齐、空间学习与反馈拿掉，结果怎样变化 {#_7-2-反馈是否真的有帮助}
+
+<PaperFigure src="/papers/cadreview/table02_ablation.png" title="CADReview 原表 2：模块消融" source="https://arxiv.org/abs/2505.22304" :page="7" />
+
+<!-- figure-translation:/papers/cadreview/table02_ablation.png -->
+**原文翻译（表注）**
+
+表2：消融研究结果。Fed 表示反馈，Red 表示奖励函数。CD 和 JSD 的显示值乘以10³；粗体表示最佳结果。
+
+**关键标记**
+
+w/o：去掉对应模块；GCR／SGO：几何部件识别／空间几何操作。
+
+::: details 对照英文原文
+
+Table 2: Results of ablation study. Fed: feedback. Red: reward functions. CD and JSD are multiplied by 10³. Bold: best results.
+:::
+
+**图表解读**
+<!-- /figure-translation -->
+
+表 2 中，去掉 GCR 会降低诊断准确率；去掉 SGO 或反馈会影响修复后的几何。例如 QW 人工程序一列，去掉 SGO 时 CD 为 **8.08**，完整方法为 **4.42**。（§5，表 2。）
+
+这与前面的设计链相互呼应：视觉—代码对应帮助找到修改位置，空间操作学习帮助做出修改，反馈把二者衔接起来。但它并不支持“反馈越长越好”或“让任意模型自我反思就能修复”。这些收益依赖当前数据、辅助训练和参照条件。
+
+## 修复依赖什么，就应把什么当作结论边界 {#_8-局限与证据范围}
+
+回到槽数错误，系统若没有看到隐藏结构，或参考图本身存在歧义，就可能缺少判断依据；即使修出相似形状，也未必恢复原始程序。作者明确指出，同一几何可以有不同程序，本文没有求解最优代码编辑，且数据只覆盖 OpenSCAD。（§7。）
+
+进一步的任务分析是：人工造错可能与真实模型错误不同，正确诊断不保证修改不损伤其他部分，视觉相似也不检验全部尺寸要求。因此，对修复系统应保留“诊断准确—修改有效—几何接近—要求满足”的分层评价，而不是一个笼统成功率。
+
+CADReview 将“看出有错”推进到“定位并指导代码修改”；[CAD-Editor](/cad/cad-editor) 则从用户主动编辑出发学习修改区域，[CADTests](/cad/cadtests) 尝试把文字要求变成可执行判定。三者分别提供修改目标、修改位置和检查依据，参照条件各不相同。
+
+[原论文 PDF：CADReview，2505.22304v1](https://arxiv.org/pdf/2505.22304) · [ACL 出版页](https://aclanthology.org/2025.acl-long.489/)。图表出处与 PDF 页码见各图说明。
+
+:::: details 论文信息与版本
+
+<span id="_1-论文信息与方向定位"></span>
+
+- **全名**：CADReview: Automatically Reviewing CAD Programs with Error Detection and Correction。
+- **作者**：Jiali Chen、Xusen Hei、Hongfei Liu 等。
+- **出处与版本**：矩阵出版 DOI 指向 ACL 2025；所用版本为 arXiv **2505.22304v1，2025-05-28**，共 19 页，含附录。
+- **来源**：[arXiv](https://arxiv.org/abs/2505.22304)、[ACL 出版页](https://aclanthology.org/2025.acl-long.489/)、[作者项目页](https://cgl-pro.github.io/cadreview)。
+- **名字消歧**：**CADReview** 是论文/数据任务名称；**ReCAD** 是本文方法名称。
+
+::::
+
+<!-- Published section anchors retained for incoming links. -->
+<span id="_4-1-数据怎样构建"></span>
+<span id="_4-2-八种错误"></span>
+<span id="_5-1-反馈生成器"></span>
+<span id="_5-2-代码编辑器"></span>
+<span id="_5-3-偏好优化"></span>
+<span id="_5-4-训练资源"></span>
+<span id="_6-划分、统计问题与指标"></span>
+<span id="_7-1-人工程序和机器程序分别看"></span>
+<span id="_7-3-原图中的错误定位"></span>
+<span id="_9-放回方向地图-与编辑-代理路线区分"></span>
+<span id="_10-阅读自测与阅读卡"></span>
+<span id="_11-来源与核查记录"></span>
 
 <!-- cad-v2-relations -->
 ::: details 研究树关联：发展关系、资源与问题
