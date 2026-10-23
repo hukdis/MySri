@@ -1,23 +1,34 @@
 ---
 id: basic-practice-0003
 title: 监督微调：输入、答案掩码与一次参数更新
-navTitle: 02 · 监督微调与损失
+navTitle: 损失与参数更新（小模型）
 category: basics
 type: concept
-tags: [技术实践, SFT, 交叉熵]
-prerequisites: [basic-practice-0002]
-related: [basic-practice-0004, cad-0102]
-sources: [https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html, https://github.com/rasbt/LLMs-from-scratch]
+tags:
+- 技术实践
+- SFT
+- 交叉熵
+prerequisites:
+- basic-practice-0002
+related:
+- basic-practice-0004
+- cad-0102
+sources:
+- https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html
+- https://github.com/rasbt/LLMs-from-scratch
 status: draft
 reviewed: false
-order: 32
+order: 70
 created: '2026-10-22'
-updated: '2026-10-22'
-outline: [2, 2]
+updated: '2026-10-23'
+outline:
+- 2
+- 2
+practiceGroup: lab
 ---
 # 监督微调：输入、答案掩码与一次参数更新
 
-这一课将“用答案训练模型”展开成可检查的张量。模型是本章自写的小型因果 Transformer，宽度 48、两层，便于在 CPU 上观察；真实预训练模型的迁移放在[第六课](./pretrained)。
+这是配合[真实模型微调](./pretrained)阅读的原理实验。先用一个能在 CPU 上运行的小模型，观察输入、标签和一次参数更新；需要训练内部细节时再进入本页。
 
 ## 先区分教学基座与微调目标
 
@@ -101,4 +112,4 @@ python check_cad.py runs/sft-metrics.json
 
 从这一步开始，loss 下降只作为训练是否发生的信号，不能替代任务是否完成的证据。
 
-[下一课：LoRA 与冻结](./lora)
+[对应主线：真实模型微调](./pretrained) · [继续看原理：LoRA 与冻结](./lora)

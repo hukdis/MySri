@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # CAD-Llama：让预训练语言模型学习带层次描述的 CAD 代码
 
@@ -60,7 +60,7 @@ SPCC 将整体描述、部件名称、部件描述与对应代码分层组织。
 
 概念依据：[LoRA 原论文](https://arxiv.org/abs/2106.09685)；训练阶段与 SPCC 组织见 [CAD-Llama §3–4](https://arxiv.org/abs/2505.04481)。
 
-配套实践：[LoRA 参数与冻结检查](/basics/practice/lora)。
+配套实践：[真实模型 LoRA 微调](/basics/practice/pretrained) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 语言描述落到哪里，决定模型能够学到什么 {#_3-问题、任务与必要术语}
 

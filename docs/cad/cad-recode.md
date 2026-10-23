@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # CAD-Recode：把点云反向工程成可执行 CadQuery 代码
 
@@ -60,7 +60,7 @@ updated: '2026-10-22'
 
 概念依据：[Fourier Features 原论文](https://arxiv.org/abs/2006.10739)；具体接口、代码训练与筛选见 [CAD-Recode §4](https://arxiv.org/abs/2412.14042)。
 
-配套实践：[点云特征怎样接入解码器](/basics/practice/alignment)。
+配套实践：[点云采样与编码](/basics/practice/multimodal#point-features) · [测试时筛选](/basics/practice/feedback#candidate-selection) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 要恢复可修改的对象，先选择怎样的输出 {#_4-为什么用代码表示}
 

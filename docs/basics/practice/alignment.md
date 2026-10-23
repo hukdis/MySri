@@ -1,23 +1,35 @@
 ---
 id: basic-practice-0005
 title: 多模态连接：冻结语言模型，只训练输入接口
-navTitle: 04 · 多模态连接
+navTitle: 连接器与冻结梯度
 category: basics
 type: concept
-tags: [技术实践, 多模态对齐, 连接器]
-prerequisites: [basic-practice-0003]
-related: [cad-0105, cad-0104, basic-practice-0008]
-sources: [https://github.com/TinyLLaVA/TinyLLaVA_Factory, https://arxiv.org/abs/2411.04954]
+tags:
+- 技术实践
+- 多模态对齐
+- 连接器
+prerequisites:
+- basic-practice-0003
+related:
+- cad-0105
+- cad-0104
+- basic-practice-0008
+sources:
+- https://github.com/TinyLLaVA/TinyLLaVA_Factory
+- https://arxiv.org/abs/2411.04954
 status: draft
 reviewed: false
-order: 34
+order: 72
 created: '2026-10-22'
-updated: '2026-10-22'
-outline: [2, 2]
+updated: '2026-10-23'
+outline:
+- 2
+- 2
+practiceGroup: lab
 ---
 # 多模态连接：冻结语言模型，只训练输入接口
 
-文字生成命令的流程已经有了。现在把输入换成点云：语言模型参数保持不变，能否通过训练一个连接器，让它仍输出对应的 `CYL r h`？这一步把“对齐”具体化成一个可训练、可消融的接口。
+先读[多模态输入专题](./multimodal)，再用本页的小实验观察连接器如何获得梯度。实验把合成点云转成已知几何属性，冻结教学解码器，只训练条件接口。
 
 ## 先看完整信息流
 
@@ -84,4 +96,4 @@ python check_cad.py runs/align-metrics.json
 
 这些结果不能证明真实视觉—语言语义对齐。它们只回答这个连接器是否能把已知几何属性接到已训练解码器，为阅读实际多模态论文提供可操作的参照。
 
-[下一课：文本与 CAD 对应学习](./text-cad)
+[回到多模态专题](./multimodal) · [查看评估与排错](./evaluation)

@@ -231,7 +231,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/deepcad.md",
     "url": "/cad/deepcad"
   },
@@ -266,7 +266,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/text2cad.md",
     "url": "/cad/text2cad"
   },
@@ -301,7 +301,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/cad-llama.md",
     "url": "/cad/cad-llama"
   },
@@ -336,7 +336,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/cad-recode.md",
     "url": "/cad/cad-recode"
   },
@@ -371,7 +371,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/cad-mllm.md",
     "url": "/cad/cad-mllm"
   },
@@ -406,7 +406,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/cadreview.md",
     "url": "/cad/cadreview"
   },
@@ -441,7 +441,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/cadtests.md",
     "url": "/cad/cadtests"
   },
@@ -476,7 +476,7 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/cad-editor.md",
     "url": "/cad/cad-editor"
   },
@@ -511,14 +511,14 @@
     "status": "draft",
     "reviewed": false,
     "created": "2026-10-07",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "file": "cad/cad-assistant.md",
     "url": "/cad/cad-assistant"
   },
   {
     "id": "basic-practice-0001",
-    "title": "技术实践：微调、对齐与 CAD",
-    "navTitle": "技术实践 · 学习路线",
+    "title": "CAD 论文技术实践",
+    "navTitle": "路线 · 从真实模型到 CAD 技术",
     "category": "basics",
     "type": "concept",
     "tags": [
@@ -527,9 +527,10 @@
     ],
     "prerequisites": [],
     "related": [
-      "cad-0102",
-      "cad-0105",
-      "cad-0103"
+      "basic-practice-0010",
+      "basic-practice-0007",
+      "cad-0103",
+      "cad-0105"
     ],
     "sources": [
       "https://github.com/rasbt/LLMs-from-scratch",
@@ -541,17 +542,18 @@
     "reviewed": false,
     "order": 30,
     "created": "2026-10-22",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "outline": [
       2,
       2
     ],
+    "practiceGroup": "start",
     "file": "basics/practice/index.md",
     "url": "/basics/practice/index"
   },
   {
     "id": "basic-practice-0002",
-    "title": "环境与数据：先看懂一条训练样本",
+    "title": "准备环境与训练样本",
     "navTitle": "01 · 环境与数据",
     "category": "basics",
     "type": "concept",
@@ -564,8 +566,8 @@
       "basic-practice-0001"
     ],
     "related": [
-      "basic-practice-0003",
-      "basic-practice-0006"
+      "basic-practice-0009",
+      "basic-practice-0007"
     ],
     "sources": [
       "https://pytorch.org/get-started/locally/",
@@ -575,158 +577,51 @@
     "reviewed": false,
     "order": 31,
     "created": "2026-10-22",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "outline": [
       2,
       2
     ],
+    "practiceGroup": "start",
     "file": "basics/practice/setup.md",
     "url": "/basics/practice/setup"
   },
   {
-    "id": "basic-practice-0003",
-    "title": "监督微调：输入、答案掩码与一次参数更新",
-    "navTitle": "02 · 监督微调与损失",
+    "id": "basic-practice-0009",
     "category": "basics",
     "type": "concept",
     "tags": [
-      "技术实践",
-      "SFT",
-      "交叉熵"
+      "技术实践"
     ],
     "prerequisites": [
       "basic-practice-0002"
     ],
     "related": [
-      "basic-practice-0004",
-      "cad-0102"
+      "basic-practice-0007"
     ],
     "sources": [
-      "https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html",
-      "https://github.com/rasbt/LLMs-from-scratch"
+      "https://huggingface.co/docs/transformers/v4.57.1/en/chat_templating",
+      "https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct"
     ],
-    "status": "draft",
-    "reviewed": false,
+    "created": "2026-10-23",
+    "title": "先运行一个真实预训练模型",
+    "navTitle": "02 · 真实模型推理",
+    "practiceGroup": "start",
     "order": 32,
-    "created": "2026-10-22",
-    "updated": "2026-10-22",
-    "outline": [
-      2,
-      2
-    ],
-    "file": "basics/practice/sft.md",
-    "url": "/basics/practice/sft"
-  },
-  {
-    "id": "basic-practice-0004",
-    "title": "LoRA：只训练低秩增量，怎样证明原权重没变",
-    "navTitle": "03 · LoRA 与冻结",
-    "category": "basics",
-    "type": "concept",
-    "tags": [
-      "技术实践",
-      "LoRA",
-      "参数冻结"
-    ],
-    "prerequisites": [
-      "basic-practice-0003"
-    ],
-    "related": [
-      "basic-practice-0007",
-      "cad-0103",
-      "cad-0108"
-    ],
-    "sources": [
-      "https://arxiv.org/abs/2106.09685",
-      "https://huggingface.co/docs/peft/en/quicktour"
-    ],
     "status": "draft",
     "reviewed": false,
-    "order": 33,
-    "created": "2026-10-22",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "outline": [
       2,
       2
     ],
-    "file": "basics/practice/lora.md",
-    "url": "/basics/practice/lora"
-  },
-  {
-    "id": "basic-practice-0005",
-    "title": "多模态连接：冻结语言模型，只训练输入接口",
-    "navTitle": "04 · 多模态连接",
-    "category": "basics",
-    "type": "concept",
-    "tags": [
-      "技术实践",
-      "多模态对齐",
-      "连接器"
-    ],
-    "prerequisites": [
-      "basic-practice-0003"
-    ],
-    "related": [
-      "cad-0105",
-      "cad-0104",
-      "basic-practice-0008"
-    ],
-    "sources": [
-      "https://github.com/TinyLLaVA/TinyLLaVA_Factory",
-      "https://arxiv.org/abs/2411.04954"
-    ],
-    "status": "draft",
-    "reviewed": false,
-    "order": 34,
-    "created": "2026-10-22",
-    "updated": "2026-10-22",
-    "outline": [
-      2,
-      2
-    ],
-    "file": "basics/practice/alignment.md",
-    "url": "/basics/practice/alignment"
-  },
-  {
-    "id": "basic-practice-0006",
-    "title": "文本与 CAD 对应学习：从配对数据到独立要求检查",
-    "navTitle": "05 · 文本与 CAD",
-    "category": "basics",
-    "type": "concept",
-    "tags": [
-      "技术实践",
-      "文本到CAD",
-      "要求验证"
-    ],
-    "prerequisites": [
-      "basic-practice-0003"
-    ],
-    "related": [
-      "cad-0102",
-      "cad-0107",
-      "basic-practice-0008"
-    ],
-    "sources": [
-      "https://arxiv.org/abs/2409.17106",
-      "https://arxiv.org/abs/2605.07807",
-      "https://cadquery.readthedocs.io/en/latest/quickstart.html"
-    ],
-    "status": "draft",
-    "reviewed": false,
-    "order": 35,
-    "created": "2026-10-22",
-    "updated": "2026-10-22",
-    "outline": [
-      2,
-      2
-    ],
-    "file": "basics/practice/text-cad.md",
-    "url": "/basics/practice/text-cad"
+    "file": "basics/practice/inference.md",
+    "url": "/basics/practice/inference"
   },
   {
     "id": "basic-practice-0007",
-    "title": "迁移到预训练模型：聊天模板、PEFT 与权重保存",
-    "navTitle": "06 · 预训练模型迁移",
+    "title": "完成一次真实模型的 LoRA 微调",
+    "navTitle": "03 · LoRA 微调与重载",
     "category": "basics",
     "type": "concept",
     "tags": [
@@ -735,12 +630,13 @@
       "PEFT"
     ],
     "prerequisites": [
-      "basic-practice-0004"
+      "basic-practice-0009"
     ],
     "related": [
+      "basic-practice-0003",
+      "basic-practice-0004",
       "cad-0103",
-      "cad-0108",
-      "basic-practice-0008"
+      "cad-0105"
     ],
     "sources": [
       "https://huggingface.co/docs/transformers/v4.57.1/en/chat_templating",
@@ -749,50 +645,244 @@
     ],
     "status": "draft",
     "reviewed": false,
-    "order": 36,
+    "order": 33,
     "created": "2026-10-22",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "outline": [
       2,
       2
     ],
+    "practiceGroup": "start",
     "file": "basics/practice/pretrained.md",
     "url": "/basics/practice/pretrained"
   },
   {
-    "id": "basic-practice-0008",
-    "title": "评估与排错：区分跑通、记忆与泛化",
-    "navTitle": "07 · 评估与排错",
+    "id": "basic-practice-0010",
     "category": "basics",
     "type": "concept",
     "tags": [
-      "技术实践",
-      "评估",
-      "排错"
+      "技术实践"
     ],
-    "prerequisites": [
-      "basic-practice-0003"
-    ],
+    "prerequisites": [],
     "related": [
-      "basic-practice-0005",
-      "basic-practice-0006",
-      "cad-0107"
+      "cad-0101",
+      "cad-0102",
+      "cad-0103",
+      "cad-0104",
+      "cad-0105",
+      "cad-0106",
+      "cad-0107",
+      "cad-0108",
+      "cad-0109"
     ],
     "sources": [
-      "https://arxiv.org/abs/2605.07807",
-      "https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html"
+      "https://arxiv.org/abs/2105.09492",
+      "https://arxiv.org/abs/2409.17106",
+      "https://arxiv.org/abs/2505.04481",
+      "https://arxiv.org/abs/2412.14042",
+      "https://arxiv.org/abs/2411.04954",
+      "https://arxiv.org/abs/2502.03997",
+      "https://arxiv.org/abs/2412.13810",
+      "https://arxiv.org/abs/2505.22304",
+      "https://arxiv.org/abs/2605.07807"
     ],
+    "created": "2026-10-23",
+    "title": "从 CAD 论文找到要学的技术",
+    "navTitle": "论文—技术—实践地图",
+    "practiceGroup": "papers",
+    "order": 39,
     "status": "draft",
     "reviewed": false,
-    "order": 37,
-    "created": "2026-10-22",
-    "updated": "2026-10-22",
+    "updated": "2026-10-23",
     "outline": [
       2,
       2
     ],
-    "file": "basics/practice/evaluation.md",
-    "url": "/basics/practice/evaluation"
+    "file": "basics/practice/paper-map.md",
+    "url": "/basics/practice/paper-map"
+  },
+  {
+    "id": "basic-practice-0011",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践"
+    ],
+    "prerequisites": [
+      "basic-practice-0010"
+    ],
+    "related": [
+      "cad-0101",
+      "cad-0103",
+      "cad-0104"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/2105.09492",
+      "https://arxiv.org/abs/1406.2661",
+      "https://arxiv.org/abs/2412.14042",
+      "https://arxiv.org/abs/2505.04481"
+    ],
+    "created": "2026-10-23",
+    "title": "CAD 怎样变成模型能学习的表示",
+    "navTitle": "CAD 表示与序列生成",
+    "practiceGroup": "papers",
+    "order": 40,
+    "status": "draft",
+    "reviewed": false,
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "file": "basics/practice/representation.md",
+    "url": "/basics/practice/representation"
+  },
+  {
+    "id": "basic-practice-0012",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践"
+    ],
+    "prerequisites": [
+      "basic-practice-0011"
+    ],
+    "related": [
+      "cad-0102",
+      "cad-0104",
+      "cad-0105",
+      "basic-practice-0005"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/1706.03762",
+      "https://arxiv.org/abs/2006.10739",
+      "https://arxiv.org/abs/2103.03206",
+      "https://arxiv.org/abs/2412.14042",
+      "https://arxiv.org/abs/2411.04954",
+      "https://github.com/TinyLLaVA/TinyLLaVA_Factory"
+    ],
+    "created": "2026-10-23",
+    "title": "文字、图像和点云怎样进入模型",
+    "navTitle": "多模态输入与注意力",
+    "practiceGroup": "papers",
+    "order": 42,
+    "status": "draft",
+    "reviewed": false,
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "file": "basics/practice/multimodal.md",
+    "url": "/basics/practice/multimodal"
+  },
+  {
+    "id": "basic-practice-0013",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践"
+    ],
+    "prerequisites": [
+      "basic-practice-0011"
+    ],
+    "related": [
+      "cad-0108",
+      "basic-practice-0014"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/2502.03997",
+      "https://github.com/microsoft/CAD-Editor"
+    ],
+    "created": "2026-10-23",
+    "title": "局部编辑：先定位，再补全",
+    "navTitle": "编辑 · 定位与补全",
+    "practiceGroup": "papers",
+    "order": 44,
+    "status": "draft",
+    "reviewed": false,
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "file": "basics/practice/editing.md",
+    "url": "/basics/practice/editing"
+  },
+  {
+    "id": "basic-practice-0014",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践"
+    ],
+    "prerequisites": [
+      "basic-practice-0011"
+    ],
+    "related": [
+      "cad-0104",
+      "cad-0106",
+      "cad-0107",
+      "cad-0109"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/2412.14042",
+      "https://arxiv.org/abs/2412.13810",
+      "https://arxiv.org/abs/2505.22304",
+      "https://arxiv.org/abs/2605.07807",
+      "https://github.com/dimitrismallis/CAD-Assistant",
+      "https://github.com/dimitrismallis/CADTestBench"
+    ],
+    "created": "2026-10-23",
+    "title": "生成之后：执行、检查与反馈",
+    "navTitle": "执行反馈与工具",
+    "practiceGroup": "papers",
+    "order": 45,
+    "status": "draft",
+    "reviewed": false,
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "file": "basics/practice/feedback.md",
+    "url": "/basics/practice/feedback"
+  },
+  {
+    "id": "basic-practice-0015",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践"
+    ],
+    "prerequisites": [
+      "basic-practice-0007",
+      "basic-practice-0014"
+    ],
+    "related": [
+      "cad-0106",
+      "rl-0004",
+      "rl-0005"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/2305.18290",
+      "https://arxiv.org/abs/2505.22304",
+      "https://github.com/eric-mitchell/direct-preference-optimization"
+    ],
+    "created": "2026-10-23",
+    "title": "从标准答案到偏好与奖励",
+    "navTitle": "偏好学习与强化学习",
+    "practiceGroup": "papers",
+    "order": 46,
+    "status": "draft",
+    "reviewed": false,
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "file": "basics/practice/optimization.md",
+    "url": "/basics/practice/optimization"
   },
   {
     "id": "cad-ref-yua24",
@@ -5442,5 +5532,185 @@
     "cadRecord": true,
     "file": "cad/papers/xu21.md",
     "url": "/cad/papers/xu21"
+  },
+  {
+    "id": "basic-practice-0003",
+    "title": "监督微调：输入、答案掩码与一次参数更新",
+    "navTitle": "损失与参数更新（小模型）",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践",
+      "SFT",
+      "交叉熵"
+    ],
+    "prerequisites": [
+      "basic-practice-0002"
+    ],
+    "related": [
+      "basic-practice-0004",
+      "cad-0102"
+    ],
+    "sources": [
+      "https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html",
+      "https://github.com/rasbt/LLMs-from-scratch"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 70,
+    "created": "2026-10-22",
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "practiceGroup": "lab",
+    "file": "basics/practice/sft.md",
+    "url": "/basics/practice/sft"
+  },
+  {
+    "id": "basic-practice-0004",
+    "title": "LoRA：只训练低秩增量，怎样证明原权重没变",
+    "navTitle": "LoRA 矩阵与冻结",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践",
+      "LoRA",
+      "参数冻结"
+    ],
+    "prerequisites": [
+      "basic-practice-0003"
+    ],
+    "related": [
+      "basic-practice-0007",
+      "cad-0103",
+      "cad-0108"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/2106.09685",
+      "https://huggingface.co/docs/peft/en/quicktour"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 71,
+    "created": "2026-10-22",
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "practiceGroup": "lab",
+    "file": "basics/practice/lora.md",
+    "url": "/basics/practice/lora"
+  },
+  {
+    "id": "basic-practice-0005",
+    "title": "多模态连接：冻结语言模型，只训练输入接口",
+    "navTitle": "连接器与冻结梯度",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践",
+      "多模态对齐",
+      "连接器"
+    ],
+    "prerequisites": [
+      "basic-practice-0003"
+    ],
+    "related": [
+      "cad-0105",
+      "cad-0104",
+      "basic-practice-0008"
+    ],
+    "sources": [
+      "https://github.com/TinyLLaVA/TinyLLaVA_Factory",
+      "https://arxiv.org/abs/2411.04954"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 72,
+    "created": "2026-10-22",
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "practiceGroup": "lab",
+    "file": "basics/practice/alignment.md",
+    "url": "/basics/practice/alignment"
+  },
+  {
+    "id": "basic-practice-0006",
+    "title": "文本与 CAD 对应学习：从配对数据到独立要求检查",
+    "navTitle": "文本要求与几何检查",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践",
+      "文本到CAD",
+      "要求验证"
+    ],
+    "prerequisites": [
+      "basic-practice-0003"
+    ],
+    "related": [
+      "cad-0102",
+      "cad-0107",
+      "basic-practice-0008"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/2409.17106",
+      "https://arxiv.org/abs/2605.07807",
+      "https://cadquery.readthedocs.io/en/latest/quickstart.html"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 73,
+    "created": "2026-10-22",
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "practiceGroup": "lab",
+    "file": "basics/practice/text-cad.md",
+    "url": "/basics/practice/text-cad"
+  },
+  {
+    "id": "basic-practice-0008",
+    "title": "评估与排错：区分跑通、记忆与泛化",
+    "navTitle": "评估、排错与运行记录",
+    "category": "basics",
+    "type": "concept",
+    "tags": [
+      "技术实践",
+      "评估",
+      "排错"
+    ],
+    "prerequisites": [
+      "basic-practice-0007"
+    ],
+    "related": [
+      "basic-practice-0003",
+      "basic-practice-0005",
+      "basic-practice-0014"
+    ],
+    "sources": [
+      "https://arxiv.org/abs/2605.07807",
+      "https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html"
+    ],
+    "status": "draft",
+    "reviewed": false,
+    "order": 79,
+    "created": "2026-10-22",
+    "updated": "2026-10-23",
+    "outline": [
+      2,
+      2
+    ],
+    "practiceGroup": "lab",
+    "file": "basics/practice/evaluation.md",
+    "url": "/basics/practice/evaluation"
   }
 ]

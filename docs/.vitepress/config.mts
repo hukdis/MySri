@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import catalog from '../../catalog/content-index.json'
 import research from '../../catalog/cad-research.json'
 const sections = [ ['basics', '基础知识'], ['reinforcement-learning', '强化学习'], ['cad', 'CAD'] ]
+const practiceGroups = [['start','从真实模型开始'],['papers','CAD 论文技术'],['lab','原理实验与排错']]
 const base = process.env.VITEPRESS_BASE || '/'
 export default defineConfig({
   base,
@@ -22,7 +23,7 @@ export default defineConfig({
           {text:'RL基础',collapsed:false,items:catalog.filter(p=>p.category===key&&p.id==='rl-0003').map(p=>({text:p.navTitle??p.title,link:p.url}))},
           {text:'高阶算法 · PPO / GRPO',collapsed:false,items:catalog.filter(p=>p.category===key&&p.id!=='rl-0003').map(p=>({text:p.navTitle??p.title,link:p.url}))}]:
         [{text:'栏目总览',link:`/${key}/`},...catalog.filter(p=>p.category===key&&!p.id.startsWith('basic-practice-')).map(p=>({text:p.navTitle??p.title,link:p.url})),
-          {text:'技术实践',collapsed:false,items:catalog.filter(p=>p.id.startsWith('basic-practice-')).map(p=>({text:p.navTitle??p.title,link:p.url.endsWith('/practice/index')?'/basics/practice/':p.url}))}] }))
+          {text:'技术实践',collapsed:false,items:practiceGroups.map(([group,text])=>({text,collapsed:group==='lab',items:catalog.filter(p=>p.id.startsWith('basic-practice-')&&p.practiceGroup===group).map(p=>({text:p.navTitle??p.title,link:p.url.endsWith('/practice/index')?'/basics/practice/':p.url}))}))}] }))
     ],
     search: { provider:'local', options:{locales:{root:{translations:{button:{buttonText:'搜索笔记',buttonAriaLabel:'搜索笔记'},modal:{noResultsText:'没有找到相关笔记',resetButtonTitle:'清空',footer:{selectText:'选择',navigateText:'切换',closeText:'关闭'}}}}}} },
     outline: {level:[2,3],label:'本页目录'},

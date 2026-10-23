@@ -1,23 +1,36 @@
 ---
 id: basic-practice-0006
 title: 文本与 CAD 对应学习：从配对数据到独立要求检查
-navTitle: 05 · 文本与 CAD
+navTitle: 文本要求与几何检查
 category: basics
 type: concept
-tags: [技术实践, 文本到CAD, 要求验证]
-prerequisites: [basic-practice-0003]
-related: [cad-0102, cad-0107, basic-practice-0008]
-sources: [https://arxiv.org/abs/2409.17106, https://arxiv.org/abs/2605.07807, https://cadquery.readthedocs.io/en/latest/quickstart.html]
+tags:
+- 技术实践
+- 文本到CAD
+- 要求验证
+prerequisites:
+- basic-practice-0003
+related:
+- cad-0102
+- cad-0107
+- basic-practice-0008
+sources:
+- https://arxiv.org/abs/2409.17106
+- https://arxiv.org/abs/2605.07807
+- https://cadquery.readthedocs.io/en/latest/quickstart.html
 status: draft
 reviewed: false
-order: 35
+order: 73
 created: '2026-10-22'
-updated: '2026-10-22'
-outline: [2, 2]
+updated: '2026-10-23'
+outline:
+- 2
+- 2
+practiceGroup: lab
 ---
 # 文本与 CAD 对应学习：从配对数据到独立要求检查
 
-上一课让点云条件影响命令。现在回到文字，沿着“描述—目标命令—几何属性”的对应关系，检查模型究竟学会了什么。
+这是[执行反馈专题](./feedback)的补充实验。从文字、目标命令与几何属性的对应关系出发，分别检查语法、参数和可选的实体导出。
 
 ## 同一个对象可以有多种表达
 
@@ -96,4 +109,4 @@ cq.exporters.export(shape, "prediction.step")
 
 不能直接把 `CYL` 标签替换成几百行 CAD 程序并沿用所有结论。真实流程需要更长序列、几何约束和表示设计；[CAD-Llama](/cad/cad-llama) 的结构化代码与 [CAD-Recode](/cad/cad-recode) 的可执行 CadQuery 路线，正好展示了不同选择。
 
-[下一课：迁移到预训练模型](./pretrained)
+[回到执行反馈](./feedback) · [查看评估与排错](./evaluation)

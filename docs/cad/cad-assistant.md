@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务
 
@@ -60,7 +60,7 @@ updated: '2026-10-22'
 
 概念参考：[ReAct 原论文中的推理—行动交互](https://arxiv.org/abs/2210.03629)；本文工具、求解器与观察方式见 [CAD-Assistant §3–4](https://arxiv.org/abs/2412.13810)。
 
-配套实践：[区分参数训练与执行结果检查](/basics/practice/evaluation)。
+配套实践：[工具与反馈循环](/basics/practice/feedback#tool-loop) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 让模型行动之前，先让它能够观察实际 CAD 状态 {#_4-框架与工具集}
 

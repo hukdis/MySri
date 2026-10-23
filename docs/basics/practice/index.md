@@ -1,72 +1,79 @@
 ---
 id: basic-practice-0001
-title: 技术实践：微调、对齐与 CAD
-navTitle: 技术实践 · 学习路线
+title: CAD 论文技术实践
+navTitle: 路线 · 从真实模型到 CAD 技术
 category: basics
 type: concept
-tags: [技术实践, 学习路线]
+tags:
+- 技术实践
+- 学习路线
 prerequisites: []
-related: [cad-0102, cad-0105, cad-0103]
+related:
+- basic-practice-0010
+- basic-practice-0007
+- cad-0103
+- cad-0105
 sources:
-  - https://github.com/rasbt/LLMs-from-scratch
-  - https://github.com/HandsOnLLM/Hands-On-Large-Language-Models
-  - https://github.com/datawhalechina/self-llm
-  - https://github.com/TinyLLaVA/TinyLLaVA_Factory
+- https://github.com/rasbt/LLMs-from-scratch
+- https://github.com/HandsOnLLM/Hands-On-Large-Language-Models
+- https://github.com/datawhalechina/self-llm
+- https://github.com/TinyLLaVA/TinyLLaVA_Factory
 status: draft
 reviewed: false
 order: 30
 created: '2026-10-22'
-updated: '2026-10-22'
-outline: [2, 2]
+updated: '2026-10-23'
+outline:
+- 2
+- 2
+practiceGroup: start
 ---
-# 技术实践：微调、对齐与 CAD
+# CAD 论文技术实践
 
-知道“用了 LoRA”和真的看懂训练之间，还差几个具体环节：样本怎样进入模型，答案怎样变成损失，哪些参数得到梯度，以及模型是否真的利用了输入。本章用一组小实验把这些环节连起来，再迁移到真实预训练模型。
+<span id="技术实践-微调、对齐与-cad"></span>
+<span id="按这个顺序动手"></span>
+<span id="训练中到底改什么"></span>
+<span id="参考了哪些-github-知识框架"></span>
+<span id="从哪一步开始"></span>
 
-**贯穿任务**：把“生成半径为 2、高度为 4 的圆柱”转成 `CYL 2 4`。先学习文字条件，再把合成点云接到同一个解码器，最后分别检查语法、参数和实体。`CYL` 是本章自定义的教学命令，完整操作范围只有圆柱；小模型实验不代表论文复现或工业 CAD 能力。
+读到一篇 CAD 论文时，我们既要知道模型用了哪些技术，也要知道这些技术在解决什么问题。这里先完成真实模型的推理与微调，再逐步拆开 CAD 表示、多模态输入、局部编辑、执行反馈和偏好学习。
 
-## 按这个顺序动手
+第一次来，按下面的路线做；正在读论文，可以直接进入[论文—技术—实践地图](./paper-map)，找到对应的概念、实验和原始出处。
 
-| 课程 | 实际动手做什么 | 需要看懂的结果 |
-| --- | --- | --- |
-| [环境与数据](./setup) | 建环境，检查 JSONL 与几何划分 | 一条样本如何变成输入和目标 |
-| [监督微调与损失](./sft) | 运行可控小模型，检查答案掩码 | 预测错哪里、哪些位置计算损失 |
-| [LoRA 与冻结](./lora) | 只训练低秩增量，对比全量更新 | 参数量、梯度与冻结权重是否一致 |
-| [多模态连接](./alignment) | 从合成点云提取特征，只训练连接器 | 输入特征怎样影响 CAD token |
-| [文本与 CAD 对应学习](./text-cad) | 按几何分组留出，检查参数与导出 | 可执行与符合文本有什么区别 |
-| [迁移到预训练模型](./pretrained) | 用 Transformers + PEFT 运行 LoRA 配方 | 聊天模板、保存与重新加载 |
-| [评估与排错](./evaluation) | 对照消融、样本预测与梯度记录 | 区分跑通、记忆与泛化 |
+## 第一站：让真实模型跑起来
 
-主线实验只用 PyTorch 和合成数据，默认 CPU，不下载模型权重，也不调用收费 API。预训练模型课程另有显式下载步骤；STEP 导出需要独立的 CadQuery 环境。每一课都将这些条件写在运行入口附近。
+**[准备环境与样本](./setup) → [运行预训练模型](./inference) → [完成 LoRA 微调](./pretrained)。**
 
-## 训练中到底改什么
+这一段使用 HuggingFaceTB/SmolLM2-135M-Instruct 的真实预训练权重。先记录它对输入的原始回答，再用少量“描述—目标命令”配对数据训练，最后在新进程加载适配器，比较同一组输入。模型以英文为主，第一轮使用受控英文描述。
 
-| 实验 | 输入 → 输出 | 更新参数 | 优化信号 |
-| --- | --- | --- | --- |
-| SFT | 文本 → `CYL r h` | 教学语言模型全部参数 | 答案 token 的交叉熵 |
-| LoRA | 同上 | 线性层的 A、B 增量 | 同一答案损失 |
-| 连接器 | 点云 → 几何特征 → 软前缀 → 命令 | 连接器；语言模型冻结 | 经过冻结解码器回传的答案损失 |
-| 预训练迁移 | 聊天模板文本 → 命令 | PEFT 注入的 LoRA 参数 | 模型内部计算的因果语言损失 |
+入门任务是把 `make cylinder radius 2 height 4` 转成 `CYL 2 4`。这段短命令便于看见训练前后的变化；它是本站定义的数据格式。后续专题会采用各自合适的例子，不要求所有技术都围绕圆柱展开。
 
-“对齐”在这里有明确含义：数据层面让同一对象的文字、点云和命令配对；模型层面学习让条件特征有助于目标命令预测。它与把两个点云坐标系配准、让输出符合人类偏好不是同一个操作。
+首次使用需要下载模型权重；教程默认 CPU，可按环境切换 CUDA。网络与内存条件见运行页；不需要付费推理 API。
 
-## 参考了哪些 GitHub 知识框架
+## 第二站：沿论文学习关键技术
 
-先检索再组织本章，以下是截至 **2026-10-22** 阅读各仓库 README 后采用的结构。借鉴的是教学顺序与模块拆分，本章代码和圆柱数据另行编写。
+1. **[CAD 表示与序列生成](./representation)**：几何怎样变成模型能预测的对象？从命令与参数量化开始，理解潜向量和代码表示。
+2. **[多模态输入与注意力](./multimodal)**：模型怎样读取文字、图像和点云？运行点采样、Fourier 特征和注意力实验，再理解连接器。
+3. **[编辑：定位与补全](./editing)**：怎样只改要求修改的部分？用成对序列观察 LCS、mask 与补全目标。
+4. **[执行反馈与工具](./feedback)**：怎样发现并修正生成错误？从逐项检查走到候选筛选、反馈循环与工具调用。
+5. **[偏好学习与强化学习](./optimization)**：怎样利用好坏评价训练模型？先计算 DPO 目标，再连接 SFT、PPO 与 GRPO。
 
-| GitHub 项目 | 可借鉴的组织方式 | 在本章中的落点 |
-| --- | --- | --- |
-| [LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) | 从文本、注意力到模型与指令微调，附 LoRA | 先看小模型内部，再接真实权重 |
-| [Hands-On LLM](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) | 概念章节对应 notebook，多模态与微调各有章节 | 每课配可执行入口和结果检查 |
-| [self-llm](https://github.com/datawhalechina/self-llm) | 先环境、部署使用，再微调 | 环境与推理检查放在训练之前 |
-| [llm-course](https://github.com/mlabonne/llm-course) | 区分基础、训练研究与应用工程 | 只保留当前训练链路所需知识 |
-| [TinyLLaVA Factory](https://github.com/TinyLLaVA/TinyLLaVA_Factory) | 分开语言模型、视觉塔、连接器与训练配置 | 单独验证冻结语言模型的连接器 |
-| [llm-action](https://github.com/liguodongiot/llm-action) | 微调原理与实战代码对应 | 把参数、数据与运行命令对应起来 |
+这些页面先给具体例子和可运行的机制实验，再引导阅读论文实现。机制实验的运行条件、训练与否、几何执行与否均在各页说明。它们帮助理解论文中的环节，不代表已经复现整篇方法。
 
-这些框架覆盖面和运行条件不同；本章选择的小任务，是为了让初次实践能够看见每一步发生了什么，不以仓库规模或模型排名作为学习顺序。
+## 想看清训练内部时
 
-## 从哪一步开始
+| 补充实验 | 适合什么时候打开 |
+| --- | --- |
+| [答案区损失与参数更新](./sft) | 训练跑起来了，想知道一个 token 怎样产生梯度 |
+| [LoRA 低秩增量](./lora) | 想亲眼检查哪些权重改变、哪些保持不变 |
+| [冻结解码器的连接器](./alignment) | 想理解冻结模型为什么仍能传递梯度 |
+| [文本要求与几何检查](./text-cad) | 想区分命令正确、参数正确与实体正确 |
+| [评估与排错](./evaluation) | 遇到 loss 不降、重载不一致、训练好而测试差 |
 
-没有训练经验，先进入[环境与数据](./setup)。已经能运行 PyTorch，也建议读完[答案区损失](./sft#answer-loss)：后面的 LoRA、多模态连接和真实模型配方都依赖它。
+原有 CPU 小模型保留在这些补充实验中。可以在真实模型主线遇到疑问时按需阅读，不必先学完自写 Transformer 才开始微调。
 
-完成实验后，再回到 [Text2CAD](/cad/text2cad#technical-primer)、[CAD-Llama](/cad/cad-llama#technical-primer)、[CAD-MLLM](/cad/cad-mllm#technical-primer)，比较真实论文多出了哪些数据、表示和模型约束。
+## 从参考项目中学什么
+
+主线采用 [self-llm](https://github.com/datawhalechina/self-llm)“环境、模型使用、微调”的顺序；概念与关键代码分步展开，参考 [LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch)；每个专题配一个明确实验，参考 [Hands-On LLM](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) 的章节与 notebook 对应方式。
+
+多模态模块结合 [TinyLLaVA Factory](https://github.com/TinyLLaVA/TinyLLaVA_Factory) 的编码器、连接器、语言模型划分。具体 CAD 方法回到各论文原文及作者实现。本站小实验另行编写，来源与实验范围在对应文章中说明。

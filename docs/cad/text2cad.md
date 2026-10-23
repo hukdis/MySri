@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # Text2CAD：从不同详细程度的文本生成 CAD 建模序列
 
@@ -60,7 +60,7 @@ updated: '2026-10-22'
 
 概念依据：[BERT 原论文](https://arxiv.org/abs/1810.04805)、[Transformer 原论文](https://arxiv.org/abs/1706.03762)；具体应用见 [Text2CAD §3–4](https://arxiv.org/abs/2409.17106)。
 
-配套实践：[文本条件与答案区损失](/basics/practice/sft)。
+配套实践：[条件特征与交叉注意力](/basics/practice/multimodal#cross-attention) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 同一个模型，为什么需要四种描述 {#_3-问题、输入输出与必要术语}
 

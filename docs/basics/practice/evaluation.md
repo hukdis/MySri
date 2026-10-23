@@ -1,21 +1,35 @@
 ---
 id: basic-practice-0008
 title: 评估与排错：区分跑通、记忆与泛化
-navTitle: 07 · 评估与排错
+navTitle: 评估、排错与运行记录
 category: basics
 type: concept
-tags: [技术实践, 评估, 排错]
-prerequisites: [basic-practice-0003]
-related: [basic-practice-0005, basic-practice-0006, cad-0107]
-sources: [https://arxiv.org/abs/2605.07807, https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html]
+tags:
+- 技术实践
+- 评估
+- 排错
+prerequisites:
+- basic-practice-0007
+related:
+- basic-practice-0003
+- basic-practice-0005
+- basic-practice-0014
+sources:
+- https://arxiv.org/abs/2605.07807
+- https://docs.pytorch.org/docs/2.9/generated/torch.nn.CrossEntropyLoss.html
 status: draft
 reviewed: false
-order: 37
+order: 79
 created: '2026-10-22'
-updated: '2026-10-22'
-outline: [2, 2]
+updated: '2026-10-23'
+outline:
+- 2
+- 2
+practiceGroup: lab
 ---
 # 评估与排错：区分跑通、记忆与泛化
+
+本页供真实模型与原理实验共同查询。先看现象定位问题，再查看各次运行记录；真实预训练模型与教学小模型的数据分别保留。
 
 训练结束不等于任务完成。最有用的检查顺序是：先确认梯度和权重确实发生预期变化，再检查训练拟合，最后检查留出对象与条件消融。
 
@@ -51,7 +65,28 @@ outline: [2, 2]
 
 要研究泛化，应扩大独立对象和表达覆盖，建立更多种子与独立评价；本章 36 个圆柱和固定划分远不足以支撑论文级性能结论。
 
-## 本章代码的验证范围 {#verification-scope}
+## 真实预训练模型运行 {#real-model-run}
+
+2026-10-23 在 Windows / Python 3.13.11 / CPU 上实际加载了 SmolLM2-135M-Instruct，使用 PyTorch 2.9.1、Transformers 4.57.1、PEFT 0.17.1。模型版本为 `12fd25f77366fa6b3b4b768ec3050bf629380bac`。
+
+运行命令对应[真实模型微调页](./pretrained)：训练 20 步，batch 为 4，学习率 0.001，LoRA rank 为 4、alpha 为 8，种子 37。训练包含 48 条描述、24 个几何；测试为 12 条描述、6 个留出几何，生成上限为 16 个新 token，使用确定性解码。
+
+| 观察项 | 这一次运行的结果 |
+| --- | --- |
+| 训练前测试命令完整匹配 | 0/12 |
+| 训练后测试命令完整匹配 | 12/12 |
+| 训练后验证命令完整匹配 | 12/12 |
+| 可训练参数 / 总参数（含 LoRA） | 1,221,120 / 135,736,128 |
+| 首步 / 最后一步采样 batch 损失 | 3.40977 / 0.000743 |
+| 冻结参数摘要、保存后重载输出 | 一致 |
+
+例如测试输入 `make cylinder radius 2 height 2`，训练前回答以 `To make a cylinder...` 开头，训练后为 `CYL 2 2`。完整预测与运行条件见 [observed-pretrained-run.json](/practice-lab/observed-pretrained-run.json)。这份新记录独立于 2026-10-22 的小模型记录。
+
+这说明真实权重在这个固定小任务中学会了目标格式和留出参数组合。数据只有 36 个圆柱、两种固定表达，且只运行一个种子；不能由此推断任意语言、复杂 CAD 或其他数据分布的效果。原模型未被提示 `CYL` 格式，因此前后比较也包含输出约定学习。
+
+首末损失来自不同采样 batch，不是整套验证损失曲线。检查点重载一致只验证保存流程；本次没有执行 STEP/B-rep 导出。
+
+## 旧版 CPU 小模型的验证范围 {#verification-scope}
 
 以下记录来自 **2026-10-22** 的一次本地运行：Windows、Python 3.13.11、PyTorch 2.9.1+cpu、种子 37。教学基座预热 400 步，三个实验分别训练 400 步；测试含 12 个表达、对应 6 个独立几何。数值用于说明这份代码的行为，不是论文指标或跨硬件承诺。
 
@@ -70,7 +105,7 @@ outline: [2, 2]
 | CPU SFT、LoRA、连接器与条件消融 | 已实际运行，冻结权重未变化 |
 | 独立命令与半径/高度检查器 | 已实际运行，失败计入分母 |
 | Transformers/PEFT 随机小模型 smoke | 已运行两步，保存重载输出一致；任务匹配为零 |
-| 下载真实 SmolLM2 权重并微调 | 未执行，提供独立运行配方 |
+| 下载真实 SmolLM2 权重并微调 | 2026-10-22 未执行；2026-10-23 新记录见上节 |
 | CadQuery B-rep/STEP 导出 | 未执行，需额外 CAD 环境 |
 
 完整记录可下载 [observed-run.json](/practice-lab/observed-run.json)，包含逐条测试预测与上述范围标识。不把 smoke 结果当成预训练微调成果，也不把语法检查当成实体检查。

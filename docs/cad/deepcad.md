@@ -23,7 +23,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # DeepCAD：把 CAD 建模过程变成可学习的操作序列
 
@@ -59,7 +59,7 @@ GAN 包含生成器与判别器：生成器把随机噪声变成样本，判别�
 
 概念依据：[Transformer 原论文](https://arxiv.org/abs/1706.03762)、[GAN 原论文](https://arxiv.org/abs/1406.2661)；具体应用见 [DeepCAD §3–4](https://arxiv.org/abs/2105.09492)。
 
-配套实践：[用小模型观察参数更新与损失](/basics/practice/sft)。
+配套实践：[CAD 表示、自编码器与潜空间](/basics/practice/representation) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 从一个带孔零件开始：生成形状还缺少什么 {#_3-它解决什么问题-输入输出是什么}
 

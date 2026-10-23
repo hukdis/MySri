@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # CAD-MLLM：统一文本、图像和点云条件的 CAD 生成
 
@@ -60,7 +60,7 @@ Perceiver 用一组可学习的查询向量，通过注意力从较多输入特�
 
 概念依据：[Perceiver 原论文](https://arxiv.org/abs/2103.03206)、[LoRA 原论文](https://arxiv.org/abs/2106.09685)；对齐方式与训练设置见 [CAD-MLLM §5](https://arxiv.org/abs/2411.04954)。
 
-配套实践：[只训练连接器的最小实验](/basics/practice/alignment)。
+配套实践：[多模态连接与 Perceiver](/basics/practice/multimodal#connectors) · [冻结梯度实验](/basics/practice/alignment) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 统一模型之前，先统一它们要生成的对象 {#_4-数据与表示-更大数据并未扩大所有操作}
 

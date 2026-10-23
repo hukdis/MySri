@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # CADReview：先定位 CAD 程序错误，再生成反馈与修正代码
 
@@ -60,7 +60,7 @@ updated: '2026-10-22'
 
 概念依据：[DPO 原论文](https://arxiv.org/abs/2305.18290)、[LoRA 原论文](https://arxiv.org/abs/2106.09685)；视觉定位、SGO 与反馈链见 [CADReview §4](https://arxiv.org/abs/2505.22304)。
 
-配套实践：[监督微调、适配器保存与重载](/basics/practice/pretrained)。
+配套实践：[反馈定位](/basics/practice/feedback) · [DPO 偏好目标](/basics/practice/optimization#dpo) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 槽少了，应该修改常量还是循环逻辑 {#_3-问题、输入输出与术语}
 

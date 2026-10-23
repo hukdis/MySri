@@ -8,14 +8,21 @@
 | --- | --- | --- |
 | [信息论基础：熵、交叉熵与 KL 散度](/basics/probability) | 信息论 · 熵 · 交叉熵 · KL散度 · 困惑度 | 2026-10-20 |
 | [从找方向到讲清楚研究](/basics/research-writing) | 论文阅读 · 研究方法 · 学术写作 | 2026-10-20 |
-| [技术实践：微调、对齐与 CAD](/basics/practice/index) | 技术实践 · 学习路线 | 2026-10-22 |
-| [环境与数据：先看懂一条训练样本](/basics/practice/setup) | 技术实践 · 数据配对 · 环境 | 2026-10-22 |
-| [监督微调：输入、答案掩码与一次参数更新](/basics/practice/sft) | 技术实践 · SFT · 交叉熵 | 2026-10-22 |
-| [LoRA：只训练低秩增量，怎样证明原权重没变](/basics/practice/lora) | 技术实践 · LoRA · 参数冻结 | 2026-10-22 |
-| [多模态连接：冻结语言模型，只训练输入接口](/basics/practice/alignment) | 技术实践 · 多模态对齐 · 连接器 | 2026-10-22 |
-| [文本与 CAD 对应学习：从配对数据到独立要求检查](/basics/practice/text-cad) | 技术实践 · 文本到CAD · 要求验证 | 2026-10-22 |
-| [迁移到预训练模型：聊天模板、PEFT 与权重保存](/basics/practice/pretrained) | 技术实践 · Transformers · PEFT | 2026-10-22 |
-| [评估与排错：区分跑通、记忆与泛化](/basics/practice/evaluation) | 技术实践 · 评估 · 排错 | 2026-10-22 |
+| [CAD 论文技术实践](/basics/practice/index) | 技术实践 · 学习路线 | 2026-10-23 |
+| [准备环境与训练样本](/basics/practice/setup) | 技术实践 · 数据配对 · 环境 | 2026-10-23 |
+| [先运行一个真实预训练模型](/basics/practice/inference) | 技术实践 | 2026-10-23 |
+| [完成一次真实模型的 LoRA 微调](/basics/practice/pretrained) | 技术实践 · Transformers · PEFT | 2026-10-23 |
+| [从 CAD 论文找到要学的技术](/basics/practice/paper-map) | 技术实践 | 2026-10-23 |
+| [CAD 怎样变成模型能学习的表示](/basics/practice/representation) | 技术实践 | 2026-10-23 |
+| [文字、图像和点云怎样进入模型](/basics/practice/multimodal) | 技术实践 | 2026-10-23 |
+| [局部编辑：先定位，再补全](/basics/practice/editing) | 技术实践 | 2026-10-23 |
+| [生成之后：执行、检查与反馈](/basics/practice/feedback) | 技术实践 | 2026-10-23 |
+| [从标准答案到偏好与奖励](/basics/practice/optimization) | 技术实践 | 2026-10-23 |
+| [监督微调：输入、答案掩码与一次参数更新](/basics/practice/sft) | 技术实践 · SFT · 交叉熵 | 2026-10-23 |
+| [LoRA：只训练低秩增量，怎样证明原权重没变](/basics/practice/lora) | 技术实践 · LoRA · 参数冻结 | 2026-10-23 |
+| [多模态连接：冻结语言模型，只训练输入接口](/basics/practice/alignment) | 技术实践 · 多模态对齐 · 连接器 | 2026-10-23 |
+| [文本与 CAD 对应学习：从配对数据到独立要求检查](/basics/practice/text-cad) | 技术实践 · 文本到CAD · 要求验证 | 2026-10-23 |
+| [评估与排错：区分跑通、记忆与泛化](/basics/practice/evaluation) | 技术实践 · 评估 · 排错 | 2026-10-23 |
 
 ## 强化学习
 
@@ -31,15 +38,15 @@
 | --- | --- | --- |
 | [CAD 论文资料导航](/cad/reading-navigation) | 研究树第二版 | 2026-10-20 |
 | [CAD 术语与小练习](/cad/concepts) | 前置知识 · CAD 表示 · 阅读练习 | 2026-10-20 |
-| [DeepCAD：把 CAD 建模过程变成可学习的操作序列](/cad/deepcad) | 论文阅读 · 表示基础 | 2026-10-22 |
-| [Text2CAD：从不同详细程度的文本生成 CAD 建模序列](/cad/text2cad) | 论文阅读 · 条件生成 | 2026-10-22 |
-| [CAD-Llama：让预训练语言模型学习带层次描述的 CAD 代码](/cad/cad-llama) | 论文阅读 · 条件生成 | 2026-10-22 |
-| [CAD-Recode：把点云反向工程成可执行 CadQuery 代码](/cad/cad-recode) | 论文阅读 · 几何重建 | 2026-10-22 |
-| [CAD-MLLM：统一文本、图像和点云条件的 CAD 生成](/cad/cad-mllm) | 论文阅读 · 条件生成 | 2026-10-22 |
-| [CADReview：先定位 CAD 程序错误，再生成反馈与修正代码](/cad/cadreview) | 论文阅读 · 反馈与评测 | 2026-10-22 |
-| [CADTests：用可执行几何测试检查文本要求是否满足](/cad/cadtests) | 论文阅读 · 反馈与评测 | 2026-10-22 |
-| [CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列](/cad/cad-editor) | 论文阅读 · 指令编辑 | 2026-10-22 |
-| [CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务](/cad/cad-assistant) | 论文阅读 · 反馈与评测 | 2026-10-22 |
+| [DeepCAD：把 CAD 建模过程变成可学习的操作序列](/cad/deepcad) | 论文阅读 · 表示基础 | 2026-10-23 |
+| [Text2CAD：从不同详细程度的文本生成 CAD 建模序列](/cad/text2cad) | 论文阅读 · 条件生成 | 2026-10-23 |
+| [CAD-Llama：让预训练语言模型学习带层次描述的 CAD 代码](/cad/cad-llama) | 论文阅读 · 条件生成 | 2026-10-23 |
+| [CAD-Recode：把点云反向工程成可执行 CadQuery 代码](/cad/cad-recode) | 论文阅读 · 几何重建 | 2026-10-23 |
+| [CAD-MLLM：统一文本、图像和点云条件的 CAD 生成](/cad/cad-mllm) | 论文阅读 · 条件生成 | 2026-10-23 |
+| [CADReview：先定位 CAD 程序错误，再生成反馈与修正代码](/cad/cadreview) | 论文阅读 · 反馈与评测 | 2026-10-23 |
+| [CADTests：用可执行几何测试检查文本要求是否满足](/cad/cadtests) | 论文阅读 · 反馈与评测 | 2026-10-23 |
+| [CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列](/cad/cad-editor) | 论文阅读 · 指令编辑 | 2026-10-23 |
+| [CAD-Assistant：让视觉语言模型调用 CAD 工具完成任务](/cad/cad-assistant) | 论文阅读 · 反馈与评测 | 2026-10-23 |
 | [3D-PreMise](/cad/papers/yua24) | 论文资料记录 · 语言模型 | 2026-10-20 |
 | [3DCodeBench](/cad/papers/codebench26) | 论文资料记录 | 2026-10-20 |
 | [薄结构与复杂拓扑使图像feature-mesh转B-Rep仍在分割、装配和有效性检查中失败](/cad/issues/i-b-02) | 范围限定问题 · 待验证方法 | 2026-10-20 |

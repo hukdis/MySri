@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # CADTests：用可执行几何测试检查文本要求是否满足
 
@@ -60,7 +60,7 @@ mutant 是故意改错一个要求的程序及其实体。例如将通孔改成�
 
 技术定义与本文用法见 [CADTests §3–5](https://arxiv.org/abs/2605.07807)，实现接口见 [CADTestBench 作者代码](https://github.com/dimitrismallis/CADTestBench)。
 
-配套实践：[独立检查参数要求](/basics/practice/text-cad)。
+配套实践：[属性测试与变异测试](/basics/practice/feedback#property-tests) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 一个很像的错误答案，为什么可能得到好分数 {#_3-为什么-cd-和-iou-不够}
 

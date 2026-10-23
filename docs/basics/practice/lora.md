@@ -1,23 +1,35 @@
 ---
 id: basic-practice-0004
 title: LoRA：只训练低秩增量，怎样证明原权重没变
-navTitle: 03 · LoRA 与冻结
+navTitle: LoRA 矩阵与冻结
 category: basics
 type: concept
-tags: [技术实践, LoRA, 参数冻结]
-prerequisites: [basic-practice-0003]
-related: [basic-practice-0007, cad-0103, cad-0108]
-sources: [https://arxiv.org/abs/2106.09685, https://huggingface.co/docs/peft/en/quicktour]
+tags:
+- 技术实践
+- LoRA
+- 参数冻结
+prerequisites:
+- basic-practice-0003
+related:
+- basic-practice-0007
+- cad-0103
+- cad-0108
+sources:
+- https://arxiv.org/abs/2106.09685
+- https://huggingface.co/docs/peft/en/quicktour
 status: draft
 reviewed: false
-order: 33
+order: 71
 created: '2026-10-22'
-updated: '2026-10-22'
-outline: [2, 2]
+updated: '2026-10-23'
+outline:
+- 2
+- 2
+practiceGroup: lab
 ---
 # LoRA：只训练低秩增量，怎样证明原权重没变
 
-上一课更新了整个模型。现在保持同一训练数据、同一答案损失和同一个教学基座，只改变可训练参数，观察 LoRA 到底减少了什么。
+这是 LoRA 的原理补充实验：保持数据、答案损失和教学基座一致，对比全参数 SFT 与 LoRA SFT，亲眼检查哪些参数改变。真实权重的操作入口见[微调主线](./pretrained)。
 
 ## 一层线性映射怎样加入增量
 
@@ -70,4 +82,4 @@ python check_cad.py runs/lora-metrics.json
 
 本章固定步数没有为两种方法分别做超参数搜索，因而只能展示机制与这个小任务的结果；不能据此宣称 LoRA 普遍优于或劣于全参数微调。
 
-[下一课：只训练多模态连接器](./alignment)
+[回到真实模型](./pretrained) · [继续看原理：连接器梯度](./alignment)

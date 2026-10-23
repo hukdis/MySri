@@ -24,7 +24,7 @@ sources:
 status: draft
 reviewed: false
 created: '2026-10-07'
-updated: '2026-10-22'
+updated: '2026-10-23'
 ---
 # CAD-Editor：先定位修改区域，再补全编辑后的 CAD 序列
 
@@ -60,7 +60,7 @@ mask 是占位标记，表示哪些位置待修改或插入；infill 指依据�
 
 概念依据：[LoRA 原论文](https://arxiv.org/abs/2106.09685)；LCS 监督、定位后补全与人工筛选见 [CAD-Editor §4–5](https://arxiv.org/abs/2502.03997)。
 
-配套实践：[理解指令适配中的 LoRA](/basics/practice/lora)。
+配套实践：[局部编辑：定位与补全](/basics/practice/editing) · [全部技术地图](/basics/practice/paper-map)。
 
 ## 一次编辑包含两个目标：改变指定部分，保留其余部分 {#_3-问题、输入输出与必要术语}
 

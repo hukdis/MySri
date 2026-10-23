@@ -57,7 +57,7 @@ export async function buildCadV2() {
     if (p.hasReading) {
       const filename=path.join(root,'docs',p.urlLocal+'.md')
       const existing=matter(await fs.readFile(filename,'utf8'))
-      let content=existing.content.replace(/\n+<!-- cad-v2-context -->[\s\S]*?<!-- \/cad-v2-context -->\n+/g,'\n').replace(/\n<!-- cad-v2-relations -->[\s\S]*?<!-- \/cad-v2-relations -->\n/g,'\n')
+      let content=existing.content.replace(/\r\n/g,'\n').replace(/\n+<!-- cad-v2-context -->[\s\S]*?<!-- \/cad-v2-context -->\n+/g,'\n').replace(/\n<!-- cad-v2-relations -->[\s\S]*?<!-- \/cad-v2-relations -->\n/g,'\n')
       content=content.replace(/^(# .+)\n+/m,`$1\n\n<!-- cad-v2-context -->\n> **研究任务 · ${tasks.get(p.classification.primary_task)?.title ?? ''}** · [研究总览](/cad/) · [九篇详读](/cad/reading-navigation?reading=1)\n<!-- /cad-v2-context -->\n\n`)
       content=content.trimEnd()+`\n\n<!-- cad-v2-relations -->\n::: details 研究树关联：发展关系、资源与问题\n\n${relationsFor(p.id)}\n\n资源：${p.dataset_ids.map(datasetLink).join(' · ')||''}。\n\n问题：${p.issue_ids.map(issueLink).join(' · ')||''}。\n\n${taskLink(p.classification.primary_task)} · [发展关系](/cad/relationships)\n:::\n<!-- /cad-v2-relations -->\n`
       existing.data.updated=existing.data.updated || '2026-10-20';existing.data.status='draft';existing.data.reviewed=false
